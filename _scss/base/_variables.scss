@@ -1,0 +1,62 @@
+/**
+ * File name: base/_variables.scss
+ *
+ */
+
+
+
+
+
+// -----------------------------------------
+	// Font Sizes
+// -----------------------------------------
+$regularSize: 12;
+
+
+// -----------------------------------------
+	// Font Families
+// -----------------------------------------
+$helvetica: Helvetica, Arial, sans-serif;
+
+
+// -----------------------------------------
+	// Layout widths
+// -----------------------------------------
+
+$wrapperWidth: 960px; 
+$maxWidth-small: 400px;
+$maxWidth-xsmall: 550px;
+$maxWidth-medium: 700px;
+$maxWidth-large: 960px;
+$maxWidth-xlarge: 1300px;
+
+$formWidth-small: 400px;
+$formWidth-medium: 700px;
+$formWidth-large: 860px;
+
+
+// -----------------------------------------
+	// Layout widths
+// -----------------------------------------
+
+$accent: #1EAEDB;
+$accent-glow: lighten( $accent, 30% ); // #A0DEF2
+
+$red: #FF3E1A;
+$green: #18E55D;
+
+
+
+
+$dark: #3b3b3b;
+$light: #d6d6d6;
+$fieldset-border: lighten( $dark, 20% );
+
+
+
+$placeholder:  darken($light, 10% );
+
+
+
+
+

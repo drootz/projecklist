@@ -1,0 +1,76 @@
+/**
+ * File name: modules/_submit.scss
+ *
+ */
+
+
+
+
+
+#results-container {
+	overflow: hidden;
+}
+
+
+
+
+#results {
+	overflow-x: scroll;
+  	-webkit-overflow-scrolling: touch;
+  	margin-bottom: -15px;
+}
+
+
+
+
+.l-txt-center {
+	text-align: center;
+	margin-left: -5px;
+}
+
+
+
+
+.debug-posts {
+	font-family: 'Lucida Console', Monaco, monospace;
+	font-size: 0.8em;
+	margin: 0 auto;
+	width: 100%;
+	border-collapse: collapse;
+	
+	th,
+	td {
+		width: 50%;
+		border: 1px solid $light;
+		padding: 5px 10px;
+		text-align: left;
+	}
+}
+
+
+
+
+.data-na {
+	color: darken($light, 25%);
+}
+
+
+
+
+.dl-posts {
+	font-family: 'Lucida Console', Monaco, monospace;
+
+	dt {
+		font-weight: 600;
+	}
+
+	dd {
+		font-weight: 400;
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+}
+
+
+
+

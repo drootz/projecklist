@@ -1,0 +1,586 @@
+/**
+ * File name: base/_mixins.scss
+ *
+ */
+
+
+
+
+
+//------ SASS Useful Mixins ------
+// by Ryan Burgess
+// https://github.com/ryanburgess/SASS-Useful-Mixins
+
+// -----------------------------------------
+
+    // Margin auto
+
+// -------------------------------------------
+
+// example: @include margin-auto();
+
+@mixin margin-auto() {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+// -----------------------------------------
+
+	// Linear Gradients
+	
+ // -------------------------------------------
+
+ // example: @include linearGradient(#cccccc, #333333);
+
+@mixin linearGradient($top, $bottom){
+	background: $top; /* Old browsers */
+	background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 ); /* IE6-9 */
+}
+
+// -----------------------------------------
+
+	// REM Units with PX fallback
+
+// -------------------------------------------
+
+ // example: @include rem("margin", 10, 5, 10, 5);
+ // example: @include rem("font-size", 14);
+
+@mixin rem($property, $values...) {
+	$n: length($values);
+  	$i: 1;
+
+  	$pxlist: ();
+  	$remlist: ();
+
+  	@while $i <= $n {
+		$itemVal: (nth($values, $i));
+		@if $itemVal != "auto"{
+			$pxlist: append($pxlist, $itemVal + px);
+	    	$remlist: append($remlist, ($itemVal / 10) + rem); // Use this if you've set HTML font size value to 62.5%
+	    	//$remlist: append($remlist, ($itemVal / 16) + rem);
+		}@else{
+			$pxlist: append($pxlist, auto);
+			$remlist: append($remlist, auto);
+		}
+ 		
+	
+    	$i: $i + 1;
+  	}
+
+  	#{$property}: $pxlist;
+  	#{$property}: $remlist;
+}
+
+// -----------------------------------------
+
+	// Retina Images
+	
+ // -------------------------------------------
+
+// example: @include retina("logo2x.png", 100, 50);
+
+@mixin retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    background-image: url("#{$image}");
+    background-size: $width + px $height + px;
+  }
+}
+
+
+// -----------------------------------------
+
+	// Rounded Corners
+	
+// -------------------------------------------
+
+ // example: @include roundedCorners(10);
+
+@mixin roundedCorners($size){
+          	border-radius: $size + px;  
+}
+
+// Rounded Corners Top Only
+@mixin roundedTop($size){
+	border-radius:$size + px $size + px 0 0;
+}
+
+// Rounded Corner Top Left Only
+@mixin roundedTopLeft($size){
+	border-radius:$size + px 0 0 0;
+}
+
+// Rounded Corner Top Right Only
+@mixin roundedTopRight($size){
+	border-radius:0 $size + px 0 0;
+}
+
+// Rounded Corners Bottom Only
+@mixin roundedBottom($size){
+	border-radius: 0 0 $size + px $size + px;
+}
+
+// Rounded Corner Bottom Left Only
+@mixin roundedBottomLeft($size){
+	border-radius: 0 0 0 $size + px;
+}
+
+// Rounded Corner Bottom Right Only
+@mixin roundedBottomRight($size){
+	border-radius: 0 0 $size + px 0;
+}
+
+// Rounded Corners Left Only
+@mixin roundedLeft($size){
+	border-radius: $size + px 0 0 $size + px;
+}
+
+// Rounded Corners Right Only
+@mixin roundedRight($size){
+	border-radius: 0 $size + px $size + px 0;
+}
+
+// -----------------------------------------
+
+	// Opacity
+
+ // -------------------------------------------
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// -----------------------------------------
+
+	// Hover and Focus
+
+ // -------------------------------------------
+
+@mixin hoverFocus($property, $value) {
+    &:hover, &:focus {
+        #{$property}: $value;
+    }
+}
+
+
+// -----------------------------------------
+
+	// Arrows / Triangles
+
+ // -------------------------------------------
+
+ // example: @include arrow("left", #cccccc, 10);
+
+@mixin arrow($direction, $color, $size){
+	$pxSize: $size +px;
+	$remSize: ($size /10)+rem;
+	
+	#{width}: 0;
+  	#{height}: 0;
+	
+	@if $direction == "left"{
+		border-top: $pxSize solid transparent;
+		border-right: $pxSize solid $color;
+		border-bottom: $pxSize solid transparent;
+		
+		border-top: $remSize solid transparent;
+		border-right: $remSize solid $color;
+		border-bottom: $remSize solid transparent;
+	}@else if $direction == "right"{
+		border-top: $pxSize solid transparent;
+		border-bottom: $pxSize solid transparent;
+		border-left: $pxSize solid $color;
+		
+		border-top: $remSize solid transparent;
+		border-bottom: $remSize solid transparent;
+		border-left: $remSize solid $color;
+	}@else if $direction == "up"{
+		border-left: $pxSize solid transparent;
+		border-right: $pxSize solid transparent;
+		border-bottom: $pxSize solid $color;
+		
+		border-left: $remSize solid transparent;
+		border-right: $remSize solid transparent;
+		border-bottom: $remSize solid $color;
+	}@else if $direction == "down"{
+		border-left: $pxSize solid transparent;
+		border-right: $pxSize solid transparent;
+		border-top: $pxSize solid $color;
+		
+		border-left: $remSize solid transparent;
+		border-right: $remSize solid transparent;
+		border-top: $remSize solid $color;
+	}
+		
+}
+
+
+// -----------------------------------------
+
+	// Display inline block cross browser
+
+// -------------------------------------------
+
+// example: @include inline-block();
+
+@mixin inline-block() {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+// -----------------------------------------
+
+	// Replace text
+
+// -------------------------------------------
+
+// example: @include replace-text();
+
+@mixin replace-text() {
+  border: 0;
+  color: transparent;
+  font: 0/0 a;
+  text-shadow: none;
+}
+
+// -----------------------------------------
+
+	// Change placeholder text color
+
+// -------------------------------------------
+
+// example: @include placeholder-color(#333);
+
+@mixin placeholder-color($color){
+  &.placeholder{
+    color: $color
+  }
+
+  &:-moz-placeholder{
+    color: $color
+  }
+    
+  &::-webkit-input-placeholder{
+    color: $color
+  }
+
+  &:-ms-input-placeholder{
+    color: $color
+  }
+}
+
+// -----------------------------------------
+
+//	Box Model
+
+// -------------------------------------------
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model;
+     -moz-box-sizing: $box-model;
+          box-sizing: $box-model;
+}
+
+// -----------------------------------------
+
+	// Clearfix after element
+
+ // -------------------------------------------
+
+ // example: @include clearfix();
+
+@mixin clearfix() {
+
+
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+
+        clear: both;
+
+
+    // &:after,
+    // &:before {
+    //     clear: both;
+    // }
+
+    // clear: both;
+}
+
+// -----------------------------------------
+
+	// Hide Elements
+
+ // -------------------------------------------
+
+ // example: @include hide-text();
+
+@mixin hide-text() {
+ 	position:relative;
+    text-indent:-99999px;
+    display: inline-block;
+}
+
+// -----------------------------------------
+
+	// Translate
+
+// -------------------------------------------
+
+// example: @include translate(0);
+
+@mixin translate($value){
+    transform: translatez($value);
+}
+
+// -----------------------------------------
+
+	// Transitions
+
+// -------------------------------------------
+
+// example: @include single-transition(background, 1s, ease-in-out, 0);
+
+@mixin single-transition($property, $duration, $timing-function, $delay) {
+	transition: $property $duration $timing-function $delay;
+}
+
+// example: @include double-transition(background, 1s, ease-in-out, 0, opacity, .1s, ease-in-out, 0);
+
+@mixin double-transition($property1, $duration1, $timing-function1, $delay1, $property2, $duration2, $timing-function2, $delay2) {
+	transition: $property1 $duration1 $timing-function1 $delay1, $property2 $duration2 $timing-function2 $delay2;
+}
+
+// -----------------------------------------
+
+	// Keyframes
+
+// -------------------------------------------
+
+// example: @include keyframes(slide-down){0%{ opacity:1; } 90%{ opacity:0; }}
+
+@mixin keyframes($animation-name) {
+	@keyframes #{$animation-name} {
+	    @content;
+	}
+}
+
+// -----------------------------------------
+
+	// Animations
+
+// -------------------------------------------
+
+// example: @include animation('slide-down 5s 3');
+
+@mixin animation($str) {
+  animation: #{$str};      
+}
+
+// -----------------------------------------
+
+	// Transform
+
+// -------------------------------------------
+
+// example: @include transform("origin", 0, 0);
+
+@mixin transform($type, $values...) {
+	$n: length($values);
+  	$i: 1;
+
+  	$originVal: ();
+
+  	@while $i <= $n {
+  		$itemVal: (nth($values, $i));
+  		@if $type == "rotate" or $type == "rotateY" or $type == "rotateX"{
+  			$originVal: append($originVal, $itemVal + deg);
+  		}@else{
+  			$originVal: append($originVal, $itemVal + px);
+  		}
+
+		$i: $i + 1;
+  	}
+  	-webkit-transform: #{$type}($originVal);
+       -moz-transform: #{$type}($originVal);
+            transform: #{$type}($originVal);
+}
+
+
+// -----------------------------------------
+
+	// Backface-visibility
+
+// -------------------------------------------
+
+// example: @include backface-visibility("hidden");
+
+@mixin backface-visibility($value) {
+
+  	-webkit-backface-visibility: $value;
+	   -moz-backface-visibility: $value;
+			backface-visibility: $value;
+}
+
+// -----------------------------------------
+
+  // Animated link that has a fade-in underline
+
+// -------------------------------------------
+
+// example: @include animate-link($screenGreen, $gothamMedium, 14);
+
+@mixin animate-link($color, $font, $fontSize) {
+  font-family:$font;
+  
+  @include single-transition(border, 0.2s, ease-in-out, 0);
+  text-decoration:none;
+
+  color: $color;
+  border-bottom:1px solid transparent;
+
+  @include rem("font-size", $fontSize);
+  
+  &:focus,
+  &:hover {
+    border-color: $color;
+  }
+}
+
+
+// -----------------------------------------
+
+  // Media Query Breakpoints
+  // by Daniel Racine
+
+// -------------------------------------------
+
+//example @include breakpoint (tablet) { }
+
+
+ @mixin breakpoint($point) {
+
+  @if $point == portrait {
+      @media only screen and (orientation:portrait) { @content ; }
+  }
+  @else if $point == landscape {
+      @media only screen and (orientation:landscape) { @content ; }
+  }
+  @else if $point == mobileonly { // under 600px
+      @media only screen and (max-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly-portrait {
+      @media only screen and (max-width: 37.5em) and (orientation:portrait) { @content ; }
+  }
+  @else if $point == mobileonly-landscape {
+      @media only screen and (max-width: 37.5em) and (orientation:landscape) { @content ; }
+  }
+  @else if $point == phablet { // above 600px
+      @media only screen and (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == tablet { // above 768px
+      @media only screen and (min-width: 48em) { @content ; }
+  }
+  @else if $point == phablet-portrait {
+      @media only screen and (min-width: 37.5em) and (orientation:portrait)  { @content ; }
+  }
+  @else if $point == tablet-portrait {
+      @media only screen and (min-width: 48em) and (orientation:portrait) { @content ; }
+  }
+  @else if $point == phablet-landscape {
+      @media only screen and (min-width: 37.5em) and (orientation:landscape)  { @content ; }
+  }
+  @else if $point == tablet-landscape {
+      @media only screen and (min-width: 48em) and (orientation:landscape) { @content ; }
+  }
+  @else if $point == laptop { // above 1024px
+      @media only screen and (min-width: 65em) { @content ; }
+  }  
+  @else if $point == desktop { // above 1440px
+      @media only screen and (min-width: 95em) { @content ; }
+  }
+}
+
+
+/* Media Query helper classes
+---------------------------------------*/
+
+.breakpoints {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 900;
+    font-size: .8em;
+
+    li {
+      float: left;
+      background-color: rgba(0,250,0,.9);
+      padding: .2em;
+      color: #333;
+      margin-left: .5em;  
+    }
+}
+
+.portrait, .landscape, .mobileonly, .mobileonly-portrait, .mobileonly-landscape, .phablet, .phablet-portrait, .phablet-landscape, .tablet, .tablet-portrait, .tablet-landscape, .laptop, .desktop {
+  display: none;
+}
+
+.js-viewport-size {
+  list-style-type: none;
+}
+
+@include breakpoint (portrait) {          .breakpoints .portrait {          display: block; }} // portrait all sizes
+@include breakpoint (landscape) {         .breakpoints .landscape {         display: block; }} // landscape all sizes
+@include breakpoint (mobileonly) {        .breakpoints .mobileonly {        display: block; }} // under 600px
+@include breakpoint (mobileonly-portrait) {   .breakpoints .mobileonly-portrait {   display: block; }} 
+@include breakpoint (mobileonly-landscape) {  .breakpoints .mobileonly-landscape {  display: block; }}
+@include breakpoint (phablet) {           .breakpoints .phablet {           display: block; }} // above 600px
+@include breakpoint (phablet-portrait) {      .breakpoints .phablet-portrait {      display: block; }}
+@include breakpoint (phablet-landscape) {     .breakpoints .phablet-landscape {     display: block; }}
+@include breakpoint (tablet) {            .breakpoints .tablet {            display: block; }} // above 768px
+@include breakpoint (tablet-portrait) {       .breakpoints .tablet-portrait {       display: block; }}
+@include breakpoint (tablet-landscape) {      .breakpoints .tablet-landscape {      display: block; }}
+@include breakpoint (laptop) {            .breakpoints .laptop {            display: block; }} // above 1024px
+@include breakpoint (desktop) {           .breakpoints .desktop {           display: block; }} // above 1440px
+
+/* inlude this markup in html document
+<ul class="breakpoints clearfix">
+    <li class="landscape">landscape</li>
+    <li class="portrait">portrait</li>
+    <li class="mobileonly">mobileonly</li>
+    <li class="mobileonly-portrait">mobileonly-portrait</li>
+    <li class="mobileonly-landscape">mobileonly-landscape</li>
+    <li class="phablet">phablet</li>
+    <li class="phablet-portrait">phablet-portrait</li>
+    <li class="phablet-landscape">phablet-landscape</li>
+    <li class="tablet">tablet</li>
+    <li class="tablet-portrait">tablet-portrait</li>
+    <li class="tablet-landscape">tablet-landscape</li>
+    <li class="laptop">laptop</li>
+    <li class="desktop">desktop</li>
+</ul>
+*/

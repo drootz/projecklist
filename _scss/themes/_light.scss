@@ -1,0 +1,257 @@
+/**
+ * File name: themes/_light.scss
+ *
+ */
+
+
+
+
+
+$alt-main: #d6d6d6;
+$alt-alt: #3b3b3b;
+$alt-fieldset-border: darken($alt-main, 5%);
+
+$alt-white: #ffffff;
+
+
+body.th-light {
+	background-color: $alt-white;
+	color: $alt-alt;
+}
+
+
+
+
+.th-light {
+
+	.th-bg-alt {
+		background-color: $alt-main;
+		color: $alt-alt;
+	}
+
+	.th-divider {
+		@extend .e-banner;
+		&::before {
+			background-image: url(../img/patterns/grid_h_thLight_light.svg);
+		}
+
+		&::after {
+			background-image: url(../img/patterns/grid_h_thLight_dark.svg);
+		}
+	}
+
+
+
+
+	.th-hr-dark {
+		border-top: 1px solid darken($alt-white, 1% );
+		border-bottom: 1px solid darken( $alt-white, 10% );
+	}
+
+	.th-hr-light {
+		border-top: 1px solid lighten($alt-main, 10% );
+		border-bottom: 1px solid darken( $alt-main, 15% );
+	}
+
+
+	.th-divider-dark {
+		border-top-color: darken( $alt-white, 1% );
+		border-bottom-color: darken($alt-white, 10% );
+	}
+
+	.th-divider-light {
+		border-top-color: lighten($alt-main, 10% );
+		border-bottom-color: darken( $alt-main, 15% );
+	}
+
+
+	#overlay {
+		background-color: rgba(0,0,0,0.2); // Find transparent .png background for fallbacks
+	}
+
+
+
+
+	.m-theme-indicator {
+		background-color: $alt-main;
+	}
+
+	.m-coname {
+		border-color: lighten( $alt-alt, 5% );
+		box-shadow: -1px 0px 0px 0px darken($alt-alt, 10% );
+	}
+
+
+
+
+	.m-float-radial {
+		// background-color: $alt-white;
+	}
+
+	.m-hero {
+		background: rgba(0,0,0,0.5);
+		color: $alt-main;
+	}
+
+	.l-blocktext-wrapper {
+		border-left-color: transparentize($alt-main, 0.4);
+	}
+
+
+
+
+	.l-action-wrapper {
+		color: $dark;
+		background-color: $light;
+		box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+		// box-shadow: none;
+	}
+
+	.action-banner {
+		background-color: transparentize($light, 0.2);
+		box-shadow: 0 2px 2px rgba(255,255,255,1) inset;
+	}
+
+	.m-ico-label {
+		color: $alt-alt;
+	}
+
+
+
+
+	.m-sub-fieldset-inquiry {
+		border-color: $alt-fieldset-border;
+
+		.m-sub-inquiry-title {
+			border-left-color: $alt-fieldset-border;
+		}
+
+		.m-sub-passive-title {
+			color: $alt-fieldset-border;
+		}
+	}
+
+	.m-sub-inputlabel {
+		color: lighten( $alt-fieldset-border, 5% );
+	}
+
+
+
+
+	.m-inquiry-block {
+		&.toggle-on:before {
+			background: $accent;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1eaedb+0,1eaedb+100&amp;1+50,0+100 */
+			background: -moz-linear-gradient(top,  rgba(30,174,219,1) 0%, rgba(30,174,219,1) 50%, rgba(30,174,219,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,174,219,1)), color-stop(50%,rgba(30,174,219,1)), color-stop(100%,rgba(30,174,219,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(30,174,219,1) 0%,rgba(30,174,219,1) 50%,rgba(30,174,219,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(30,174,219,1) 0%,rgba(30,174,219,1) 50%,rgba(30,174,219,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(30,174,219,1) 0%,rgba(30,174,219,1) 50%,rgba(30,174,219,0) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(30,174,219,1) 0%,rgba(30,174,219,1) 50%,rgba(30,174,219,0) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1eaedb', endColorstr='#001eaedb',GradientType=0 ); /* IE6-9 */
+		}
+
+		&.toggle-on .m-btn-info {
+			color: $alt-white;
+
+			&:after {
+				border: 3px solid $accent;
+				background-color: $accent;
+			}
+		}
+
+	}
+
+	form .button {
+		color: $alt-white;
+	}
+
+	.f-section-footnotes {
+		border-top-color: $light;
+		box-shadow: 0 2px 2px -1px rgba(255,255,255,1) inset;
+	}
+
+
+
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
+	textarea {
+		color: $dark;
+		border-color: $alt-white;
+		background-color: lighten($alt-main, 11%);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4) inset;
+
+		&:focus {
+		 	background-color: transparentize($accent, 0.95);
+			box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+			transition: all 0.2s ease-out;
+			border: 1px solid $accent;
+			outline: 0;
+		}
+
+		&.has-value {
+			background-color: $alt-white;
+
+			&:focus {
+		 		background-color: transparentize($accent, 0.95);
+				box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+				border: 1px solid $accent;
+			}
+		}
+	}
+
+
+
+
+	select {
+		// background-color: darken($alt-main, 5%);
+		background-color: lighten($alt-main, 11%);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4) inset;
+		color: $alt-alt;
+		border-color: $alt-white;
+
+		&.has-selection {
+			background-color: $alt-white;
+			transition: all 0.3s ease-out;
+			outline: 0;
+		}
+
+		&:focus {
+	 		background-color: transparentize($accent, 0.95);
+			box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+			border: 1px solid $accent;
+		}
+	}
+
+	.button {
+		border: 1px solid darken($accent, 5%);
+	}
+
+
+
+
+	.error {
+		background: $alt-white;
+	}
+
+
+
+
+}
+
+
+
+
+html.touch .th-light select {
+	border-color: lighten($alt-main, 11%);
+
+	&.has-selection {
+		border-color: $alt-white;
+	}
+}
+
+
+

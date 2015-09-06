@@ -1,0 +1,217 @@
+/**
+ * File name: layout/_grid.scss
+ *
+ */
+
+
+
+
+
+/* Border Box all things
+--------------------------------------*/
+html *, html *:after, html *:before {
+  box-sizing: border-box;
+}
+
+
+
+
+.row {
+    @include clearfix();
+    padding: 0;
+    margin: 0 auto;
+    overflow: auto; // firefox clearfix fix
+}
+
+
+
+
+.row-fix {
+    overflow: visible;
+}
+
+
+
+
+[class*='col-'] {
+    // outline: 1px solid rgba(255,250,250,0.2);
+    float: left;
+    position: relative;
+    // overflow: hidden;
+}
+
+
+
+
+.col-01,
+.col-02,
+.col-03,
+.col-04,
+.col-05,
+.col-06,
+.col-07,
+.col-08,
+.col-09,
+.col-10,
+.col-11,
+.col-12 {
+    width: 100%;
+}
+
+
+
+
+.col-pad-01,
+.col-pad-02,
+.col-pad-03,
+.col-pad-04,
+.col-pad-05,
+.col-pad-06,
+.col-pad-07,
+.col-pad-08,
+.col-pad-09,
+.col-pad-10,
+.col-pad-11,
+.col-pad-12 {
+    width: 100%;
+}
+
+.col-btn {
+    width: 30px;
+}
+
+.col-title {
+    width: 50%;
+}
+
+
+
+
+[class*='col-pad-'] {
+    @include breakpoint (tablet) {
+        margin-left: 1.6%;
+        &:first-child {
+            margin-left:0;
+        }
+    }
+
+}
+
+
+
+
+.col-06-btn {
+    width: 49.2%;
+
+    margin-left: 1.6%;
+    &:first-child {
+        margin-left:0;
+    }
+
+    @include breakpoint (tablet) {
+        margin-bottom: 10px;
+        // width: 150px;
+    }
+}
+
+
+
+
+.m-site {
+    margin-left: 0;
+    &:first-child {
+        margin-left:0;
+    }
+    
+    @include breakpoint (laptop) {
+        margin-left: 1.6%;
+        &:first-child {
+            margin-left:0;
+        }
+    }
+    
+}
+
+
+
+
+@include breakpoint (tablet) {
+    .col-01 { width: 8.333333333%;  }
+    .col-02 { width: 16.66666667%;  }
+    .col-03 { width: 25%;           }
+    .col-04 { width: 33.33333333%;  }
+    .col-05 { width: 41.66666666%;  }
+    .col-06 { width: 50%;           }
+    .col-07 { width: 58.33333333%;  }
+    .col-08 { width: 66.66666666%;  }
+    .col-09 { width: 75%;           }
+    .col-10 { width: 83.333333333%; }
+    .col-11 { width: 91.66666666%;  }
+    .col-12 { width: 100%;          }
+
+    .col-pad-01 { width: 6.86666666667%; }   
+    .col-pad-02 { width: 15.3333333333%; }
+    .col-pad-03 { width: 23.8%;          }
+    .col-pad-04 { width: 100%; }
+    .col-pad-05 { width: 40.7333333333%; }
+    .col-pad-06.m-site { width: 100%;          }
+    .col-pad-06 { width: 49.2%;          }
+    .col-pad-07 { width: 57.6666666667%; }
+    .col-pad-08 { width: 66.1333333333%; }
+    .col-pad-09 { width: 74.6%;          }
+    .col-pad-10 { width: 83.0666666667%; }
+    .col-pad-11 { width: 91.5333333333%; }
+    .col-pad-12 { width: 100%; margin-left: 0; }
+    
+    .col-04.m-action-block { width: 100%; }
+    .col-06.m-hero-block { width: 100%; }
+}
+
+
+
+
+@include breakpoint (tablet) {
+    .col-04.m-action-block { width: 33.33333333%; }
+    .col-06.m-hero-block { width: 50%; }
+    .col-pad-04.m-footer-block { margin-left: 0; }
+}
+
+
+
+
+@include breakpoint (laptop) {
+    .col-01 { width: 8.333333333%;  }
+    .col-02 { width: 16.66666667%;  }
+    .col-03 { width: 25%;           }
+    .col-04 { width: 33.33333333%;  }
+    .col-05 { width: 41.66666666%;  }
+    .col-06 { width: 50%;           }
+    .col-07 { width: 58.33333333%;  }
+    .col-08 { width: 66.66666666%;  }
+    .col-09 { width: 75%;           }
+    .col-10 { width: 83.333333333%; }
+    .col-11 { width: 91.66666666%;  }
+    .col-12 { width: 100%;          }
+
+    .col-pad-01 { width: 6.86666666667%; }   
+    .col-pad-02 { width: 15.3333333333%; }
+    .col-pad-03 { width: 23.8%;          }
+    .col-pad-04 { width: 31.2666666667%; }
+    .col-pad-05 { width: 40.7333333333%; }
+    .col-pad-06.m-site { width: 49.2%;          }
+    .col-pad-06 { width: 49.2%;          }
+    .col-pad-07 { width: 57.6666666667%; }
+    .col-pad-08 { width: 66.1333333333%; }
+    .col-pad-09 { width: 74.6%;          }
+    .col-pad-10 { width: 83.0666666667%; }
+    .col-pad-11 { width: 91.5333333333%; }
+    .col-pad-12 { width: 100%; margin-left: 0; }
+
+    .col-pad-04.m-footer-block {
+        margin-left: 1.6%;
+        &:first-child {
+            margin-left:0;
+        }
+    }
+
+}

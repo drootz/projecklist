@@ -1,0 +1,280 @@
+/**
+ * File name: themes/_dark.scss
+ *
+ */
+
+
+
+
+
+body.th-dark {
+	background-color: $dark;
+	color: $light;
+}
+
+
+
+
+.th-dark {
+
+	.th-bg-alt {
+		background-color: lighten( $dark, 5% );
+		color: $light;
+	}
+
+	.th-divider {
+		@extend .e-banner;
+		&::before {
+			background-image: url(../img/patterns/grid_h_thDark_dark.svg);
+		}
+
+		&::after {
+			background-image: url(../img/patterns/grid_h_thDark_light.svg);
+		}
+	}
+
+
+
+
+	.th-hr-dark {
+		border-top: 1px solid darken($dark, 15% );
+		border-bottom: 1px solid lighten( $dark, 10% );
+	}
+
+	.th-hr-light {
+		border-top: 1px solid darken($dark, 5% );
+		border-bottom: 1px solid lighten( $dark, 15% );
+	}
+
+
+	.th-divider-dark {
+		border-top-color: lighten( $dark, 10% );
+		border-bottom-color: darken($dark, 10% );
+	}
+
+	.th-divider-light {
+		border-top-color: lighten( $dark, 15% );
+		border-bottom-color: darken($dark, 10% );
+	}
+
+	#overlay {
+		background-color: rgba(0,0,0,0.2); // Find transparent .png background for fallbacks
+	}
+
+
+
+
+	.m-theme-indicator {
+		background-color: $dark;
+	}
+
+	.m-coname {
+		border-color: lighten( $dark, 5% );
+		box-shadow: -1px 0px 0px 0px darken($dark, 10% );
+	}
+
+
+
+
+	.m-float-radial {
+		// background-color: $dark;
+	}
+
+	.m-hero {
+		background-color: rgba(0,0,0,0.5);
+
+		.button {
+			border: 1px solid darken($accent, 5%);
+		}
+	}
+
+	.l-blocktext-wrapper {
+		border-left-color: transparentize($light, 0.4);
+	}
+
+
+
+
+	.l-action-wrapper {
+		color: $dark;
+		background-color: $light;
+		box-shadow: 0 2px 2px rgba(0,0,0,1);
+	}
+
+	.action-banner {
+		background-color: transparentize($light, 0.2);
+		box-shadow: 0 2px 2px rgba(255,255,255,1) inset;
+	}
+
+	.m-ico-label {
+		color: $dark;
+	}
+
+
+
+
+	.m-sub-fieldset-inquiry {
+		border-color: $fieldset-border;
+
+		.m-sub-inquiry-title {
+			border-left-color: $fieldset-border;
+		}
+
+		.m-sub-passive-title {
+			color: $fieldset-border;
+		}
+	}
+
+	.m-sub-inputlabel {
+		color: lighten( $fieldset-border, 10% );
+	}
+
+
+	.f-section-footnotes {
+		border-top-color: lighten( $dark, 5% );
+		box-shadow: 0 2px 2px -1px rgba(255,255,255,0.6) inset;
+	}
+
+
+
+
+	.m-inquiry-block {
+		&.toggle-on:before {
+			background: $accent;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a0def2+0,a0def2+100&amp;1+50,0+100 */
+			background: -moz-linear-gradient(top,  rgba(160,222,242,1) 0%, rgba(160,222,242,1) 50%, rgba(160,222,242,0) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(160,222,242,1)), color-stop(50%,rgba(160,222,242,1)), color-stop(100%,rgba(160,222,242,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(160,222,242,1) 0%,rgba(160,222,242,1) 50%,rgba(160,222,242,0) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(160,222,242,1) 0%,rgba(160,222,242,1) 50%,rgba(160,222,242,0) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(160,222,242,1) 0%,rgba(160,222,242,1) 50%,rgba(160,222,242,0) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(160,222,242,1) 0%,rgba(160,222,242,1) 50%,rgba(160,222,242,0) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0def2', endColorstr='#00a0def2',GradientType=0 ); /* IE6-9 */
+		}
+
+		&.toggle-on .m-btn-info {
+			color: $dark;
+
+			&:after {
+				border: 3px solid $accent-glow;
+				background-color: $accent-glow;
+			}
+		}
+
+	}
+
+
+
+
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
+	textarea {
+		color: $dark;
+		border-color: $dark;
+		background-color: darken($light, 20%);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4) inset;
+
+		/**
+		 * <input> placeholder font/color management
+		 *
+		 */
+			&::-webkit-input-placeholder, {
+			   color: darken($placeholder, 30%);
+			}
+
+			&:-moz-placeholder { /* Firefox 18- */
+			   color: darken($placeholder, 30%);
+			}
+
+			&::-moz-placeholder {  /* Firefox 19+ */
+			   color: darken($placeholder, 30%);
+			}
+
+			&:-ms-input-placeholder {  
+			   color: darken($placeholder, 30%);
+			}
+
+		&:focus {
+			border: 1px solid $accent;
+			background-color: #a4c4ce;
+			box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+			transition: all 0.2s ease-out;
+			outline: 0;
+
+			/**
+			 * <input> placeholder font/color management
+			 *
+			 */
+				&::-webkit-input-placeholder, {
+				   color: darken($placeholder, 20%);
+				}
+
+				&:-moz-placeholder { /* Firefox 18- */
+				   color: darken($placeholder, 20%);
+				}
+
+				&::-moz-placeholder {  /* Firefox 19+ */
+				   color: darken($placeholder, 20%);
+				}
+
+				&:-ms-input-placeholder {  
+				   color: darken($placeholder, 20%);
+				}
+
+		}
+
+		&.has-value {
+			background-color: $light;
+
+			&:focus {
+				border: 1px solid $accent;
+				background-color: #a4c4ce;
+				box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+			}
+		}
+	}
+
+
+	select {
+		background-color: darken($light, 20%);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4) inset;
+		color: $dark;
+		border-color: $dark;
+
+		&.has-selection {
+			background-color: $light;
+			transition: all 0.3s ease-out;
+			outline: 0;
+		}
+
+		&:focus {
+			border: 1px solid $accent;
+			background-color: #a4c4ce;
+			box-shadow: 0 1px 2px transparentize($accent, 0.6) inset;
+		}
+	}
+
+
+
+
+	.error {
+		background: $dark;
+	}
+
+
+
+
+}
+
+
+
+
+html.touch .th-dark select {
+	border-color: darken($light, 20%);
+	&.has-selection {
+		border-color: $dark;
+	}
+}
+

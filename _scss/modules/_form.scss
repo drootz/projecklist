@@ -1,0 +1,540 @@
+/**
+ * File name: modules/_form.scss
+ *
+ */
+
+
+
+
+
+.l-main-fieldset {
+	width: 100%;
+	max-width: $formWidth-small;
+	margin: 0 auto;
+	padding: 25px 10px 25px;
+
+	@include breakpoint (tablet) {
+		max-width: $formWidth-medium;
+	}
+
+	@include breakpoint (laptop) {
+		max-width: $formWidth-large;
+	}
+
+	@media only screen and (max-width: 359px)  {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	hr {
+		margin: 25px 0;
+	}
+}
+
+
+
+
+.m-sub-wrapper {
+	@include breakpoint (tablet) {
+		padding-left: 25px;
+	}
+}
+
+
+
+
+.m-sub-fieldset-container {
+	margin: 20px auto 5px;
+	width: auto;	
+	max-width: $maxWidth-small;
+
+	.m-button-block {
+		margin-top: 15px;
+	}
+
+	@include breakpoint (tablet) {
+		max-width: $maxWidth-large;
+	}
+	@include breakpoint (tablet) {
+		// margin: 10px 23px 0 25px;
+		max-width: $maxWidth-large;
+	}
+}
+
+
+
+
+.m-sub-fieldset-inquiry {
+	border-width: 1px;
+	border-style: solid;
+	position: relative;
+	margin: 0 auto;
+	padding: 23px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 4px;
+	width: 100%;
+
+	.l-check-container {
+		margin-left: 4px;
+	}
+
+	.m-sub-inquiry-title {
+		display: block;
+		margin: 0;
+		padding: 0 15px 0 10px;
+		border-left-width: 1px;
+		border-left-style: solid;
+	}
+
+	.m-sub-passive-title {
+		display: block;
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+
+
+
+.l-hours .m-sub-fieldset-inquiry {
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@include breakpoint (tablet) {
+		padding-left: 23px;
+		padding-right: 23px;
+	}
+}
+
+
+
+
+.l-sub-check {
+	width: auto;
+	margin: 5px 0 25px 0;
+	padding: 10px 25px;
+
+	legend {
+		margin-left: -7px !important;
+	}
+
+	@include breakpoint (tablet) {
+		margin: 5px 0 25px 25px;
+	}
+}
+
+
+
+
+.m-sameas {
+	margin-bottom: 20px;
+}
+
+
+
+
+.m-inquiry-block {
+	position: relative;
+	margin-bottom: 30px;
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 8px; height: 100%;
+		top: 0; left: 25px;
+		background: none;
+		z-index: -1;
+	}
+
+	&.toggle-on:before {
+		transition: all 0.5s ease-out;
+	}
+    
+	.m-inquiry-title {
+		display: block;
+		position: relative;
+		margin: 10px 0 10px -5px;
+		padding-left: 60px;
+		font-weight: 600;
+	}
+  
+	.m-block-info {
+		margin: 0 auto;
+
+		.slide-left p {
+			transform: translateX(14px);
+			opacity: 0;
+		}
+
+		.slide-left.animate p {
+			transform: translateX(0px);
+			opacity: 1;
+			transition: transform 0.5s ease-out,
+						  opacity 0.5s ease-out;
+		}
+
+	}
+  
+}
+
+
+
+
+.m-inputfield-wrapper {
+	margin: 10px 23px 0 25px;
+	width: auto;
+	max-width: $maxWidth-small;
+
+	.m-button-block {
+		margin-top: 0px;
+	}
+
+	@include breakpoint (tablet) {
+		max-width: $maxWidth-large;
+	}
+}
+
+
+
+
+.l-check-container {
+	position: relative;
+	margin-bottom: 10px;
+
+	label {
+		display: inline;
+		width: auto;
+		@include breakpoint (tablet) {
+			width: auto;
+		}
+		padding-left: 5px;
+	}
+
+	.m-odtext {
+		position: relative;
+
+		textarea {
+			margin-top: 10px;
+			margin-bottom: 15px;
+		}
+
+		@include breakpoint (tablet) {
+			padding-left: 30px;
+
+		}
+	}
+
+	.f-tc-label {
+		padding-left: 25px;
+	}
+
+	.f-tc-cbx {
+		position: absolute;
+		top: 11.5px;
+		left: 0px;
+	}
+}
+
+
+
+
+.m-sub-inputlabel {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	margin-right: 5px;
+	font-style: italic;
+	font-size: 0.9em;
+	font-weight: 400;
+	color: lighten( $fieldset-border, 10% );
+	@include breakpoint (tablet) {
+		margin-left: 1px;
+	}
+}
+
+
+
+
+.m-hours-block {
+	display: block;
+
+	&.m-holidays {
+		label {
+			width: auto;
+		}
+	}
+
+	&.m-range {
+		margin-top: 10px;
+	}
+
+	&.m-closed {
+		display: block;
+		margin-left: 37px;
+		@include breakpoint (tablet) {
+			margin-left: 43px;
+		}
+		margin-top: 5px;
+
+		label {
+			margin: 0;
+			padding-left: 11px;
+			@include breakpoint (tablet) {
+				padding-left: 14px;
+			}
+			width: 65px;
+		}
+
+		input {
+			margin-bottom: 0px;
+		}
+	}
+
+	select {
+		margin-left: 5px;
+	}
+
+	@include breakpoint (laptop) {
+
+		label {
+			width: 60px;
+		}
+
+		&.m-from {
+			width: 350px;
+			float: left;
+		}
+		&.m-to {
+			width: 350px;
+			float: left;
+
+		}
+		&.m-closed {
+			width: 50%;
+			float: left;
+			margin-left: 40px;
+		}
+	}
+
+
+	@media only screen and (max-width: 359px)  {
+		text-align: left;
+		margin-left: 10%;
+
+		&.m-closed {
+			text-align: left;
+			margin-left: 10%;
+		}
+	}
+}
+
+
+
+
+.m-hours-label {
+	
+	@media only screen and (max-width: 359px)  {
+		text-align: left;
+	}
+
+	@media only screen and (min-width: 359px)  {
+		display: inline-block;
+		width: 55px;
+		text-align: right;
+		padding-right: 0px;
+	}
+
+	@include breakpoint (tablet) {
+		width: 65px;
+		padding-right: 5px;
+	}
+}
+
+.m-hours-dash {
+	display: none;
+}
+
+
+
+ 
+/**
+ * Input fields style
+ *
+ */
+ 	label {
+ 		margin-bottom: 0.2em;
+ 		padding-left: 1px;
+
+ 		&.f-tc-label {
+ 			margin-bottom: 0.6em;
+ 		}
+ 	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0px;
+		margin-top: -4px;
+		cursor: pointer;
+		transition: all .3s linear;
+		background: #ffffff;
+
+		&:checked {
+			background: #ffffff;
+		}
+	}
+
+	input[type="checkbox"] {
+		border-radius: 4px;
+	}
+
+	input[type="radio"] {
+		border-radius: 50%;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="tel"],
+	textarea {
+		width: 100%;
+		height: auto;
+		padding: 10px;
+	}
+
+	select {
+		height: 43px;
+	}
+
+
+
+
+/**
+ * <input> placeholder font/color management
+ *
+ */
+	::-webkit-input-placeholder {
+	   color: $placeholder;
+	   font-weight: 200;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: $placeholder;
+	   font-weight: 200;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: $placeholder;
+	   font-weight: 200;
+	}
+
+	:-ms-input-placeholder {  
+	   color: $placeholder;
+	   font-weight: 200;
+	}
+
+
+
+
+/**
+ * Required field notice 
+ *
+ */
+ 	.f-required {
+ 		position: relative;
+
+		&:after {
+			display: block;
+			position: absolute;
+			content: '*';
+			width: 20px; height: 20px;
+			top: 12px;
+			left: -20px;
+			font-size: 2em;
+			line-height: 10px;
+			text-align: center;
+			color: $red;
+			z-index: 100;
+		}
+
+		&.f-tc-label:after {
+			top: 6px;
+		}
+
+	}		
+
+	.required_notification {
+		padding-left: 4px;
+		font-style: italic;
+	}	
+
+	.f-red {
+		font-size: 2em;
+		line-height: 1.2;
+		transform: translate(2px, 8px);
+		color: $red;
+		margin-top: -10px;
+		display: inline-block;
+		width: 12px;
+		text-align: center;
+		font-style: normal;
+	}
+
+
+
+
+/**
+ * Email validation confirmation
+ *
+ */
+	.js-no-match {
+		border: 1px solid $red !important;
+		box-shadow: 0 0 0 1px $red inset !important;
+		color: $red;
+	}
+
+	.js-hint-no-match {
+		color: $red;
+	}
+
+	.js-hint-match {
+		color: $green;
+	}
+
+
+
+
+/**
+ * Form validation classes
+ *
+ */
+	.success {
+	}
+
+	.error {
+		color: $red;
+	}
+
+	label.error {
+		transform: translateY(-14px);
+		padding-left: 3px;
+		font-weight: 600;
+		letter-spacing: -0.05em;
+
+		&#bol_t_and_c_reviewed-error{	
+			display: block;
+			width: 100%;
+			margin-top: 10px;
+		}
+	}
+
+
+
+

@@ -1,0 +1,24 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+
+# TEAM
+                        
+    The Hobyist: Daniel Racine
+    Twitter: @idannniel  
+    Location: Montreal, Canada
+
+
+# THANKS
+
+    MDN -- https://developer.mozilla.org
+    PHP -- http://php.net
+    jQuery -- http://jquery.com
+
+
+# TECHNOLOGY COLOPHON
+
+    Standards: HTML5, CSS3/SASS, PHP, JAVASCRIPT
+    Components: GETTEXT, MODERNIZR, JQUERY, JQUERY VALIDATE, FONT AWESOME, GOOGLE FONTS, SKELETON, HTML5BP
+    Software: POEDIT, POSTFIX
+    Snippets: Implementation of existing solutions to common problems found online. Attribution notices are in the source code next to their implementation location.

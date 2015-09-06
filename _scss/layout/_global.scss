@@ -1,0 +1,321 @@
+/**
+ * File name: layout/_global.scss
+ *
+ */
+
+
+
+
+
+h1 {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+
+
+blockquote {
+	// border-left: 8px solid $accent;
+	margin: 0 0 0 24px;
+	padding: 10px 20px 15px 40px;
+	font-style: italic;
+
+	@media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+	only screen and (-o-min-device-pixel-ratio: 13/10),
+	only screen and (min-resolution: 120dpi)
+	{
+		font-weight: 200;
+		/* Your code to swap higher DPI images */
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	&.l-bq-header {
+		margin-left: 0;
+		margin-top: 50px;
+    	padding: 10px 40px 15px 40px;
+	}
+}
+
+
+
+
+.l-blocktext-wrapper {
+	border-left-width: 4px;
+	border-left-style: solid;
+	// border-left-color: transparentize($light, 0.4); added to theme
+	padding: 5px 0px 5px 20px;
+
+	@include breakpoint (tablet) {
+		overflow: hidden;
+	}
+	
+	p {
+		margin-bottom: 20px;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+sup {
+	font-size: 0.85em;
+	margin: -2px 4px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+
+
+
+.l-wrapper {
+	max-width: $maxWidth-small;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	@include breakpoint (tablet) {
+		max-width: $maxWidth-medium;
+	}
+	@include breakpoint (tablet-landscape) {
+		max-width: 85%;
+	}
+	@include breakpoint (laptop) {
+		max-width: $maxWidth-large;
+	}
+
+}
+
+
+
+
+.l-wrapper-nav {
+	@extend .l-wrapper;
+	max-width: $maxWidth-xlarge;
+	margin: 0 auto;
+	@include breakpoint (phablet) {
+		max-width: $maxWidth-medium;
+	}
+	@include breakpoint (tablet) {
+		max-width: $maxWidth-large;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	@include breakpoint (laptop) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+
+
+
+[class*='section-'] {
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+
+
+
+
+.section-action {
+	padding: 0 10px;
+}
+
+
+
+
+.section-intro {
+}
+
+
+
+
+.f-section-form {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+
+
+.f-section-planning {
+	h3 {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+.f-section-submit {
+	padding-top: 125px;
+	padding-bottom: 25px;
+}
+
+
+
+
+.f-section-footnotes {
+	position: relative;
+	z-index: 10;
+	box-shadow: 0px -5px 10px rgba(0,0,0,0.4);
+}
+
+
+
+
+.l-action-wrapper {
+	position: relative;
+	margin-top: -80px;
+	padding-top: 100px;
+	padding-bottom: 40px;
+	z-index: 25;
+	border-radius: 4px;
+
+	.action-banner {
+		position: absolute;
+		width: 100%; height: 100%;
+		top: 0; left: 0;
+		overflow: hidden;
+		border-radius: 4px;
+
+
+		@extend .e-banner;
+		&::before {
+			background-image: url(../img/patterns/grid_h_thDark_light.svg);
+		}
+
+		&::after {
+			background-image: url(../img/patterns/grid_h_thDark_dark.svg);
+		}
+
+
+		&::after,
+		&::before {
+			top: 0;
+			z-index: -2;
+		}
+	}
+}
+
+
+
+
+.l-sub-section-wrapper {
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+
+	@include breakpoint (tablet) {
+		max-width: $maxWidth-medium;
+	}
+
+	@include breakpoint (laptop) {
+		max-width: $maxWidth-large;
+	}
+}
+
+
+
+
+.l-sub-section {
+	width: 100%;
+	padding: 25px 0;
+
+	border-top-width: 1px;
+	border-top-style: solid;
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+
+	&:first-child {
+		border-top-width: 0px;
+	}
+
+	&:last-child {
+		border-bottom-width: 0px;
+	}
+
+}
+
+
+
+
+.m-center-block {
+	width: 304px;
+	margin: 0 auto;
+}
+
+
+
+
+.is-clear {
+	filter: none;
+}
+
+.is-blur {
+	filter: blur(3px);
+}
+
+
+
+
+.is-relative {
+	position: relative;
+}
+
+
+
+
+.l-mobile {
+	display: block;
+	@include breakpoint (tablet) {
+		display: none;
+	}
+}
+
+.l-desktop {
+	display: none;
+	@include breakpoint (tablet) {
+		display: block;
+	}
+}
+
+
+
+
+.is-visible {
+	display: default !important;
+}
+
+.is-hidden {
+	display: none !important;
+}
+
+
+
+
+.is-activated {
+	display: default !important;
+}
+
+.is-deactivated {
+	visibility: hidden !important;
+}
+
+.has-value {
+	background-color: yellow;
+}
+
+
+
+
+
+

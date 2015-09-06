@@ -1,0 +1,36 @@
+/**
+ * File name: layout/_form.scss
+ *
+ */
+
+
+
+
+
+fieldset {
+	margin: 0;
+	padding-top: 1px; // Fix "info" animation on show-hide
+}
+
+
+
+
+input,
+select {
+	margin-bottom: 15px;
+}
+
+
+
+
+.l-form-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+
+
+
+
+
+

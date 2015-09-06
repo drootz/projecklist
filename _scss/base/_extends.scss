@@ -1,0 +1,69 @@
+/**
+ * File name: base/_extends.scss
+ *
+ */
+
+
+
+
+
+%marginAuto{
+  @include margin-auto();
+}
+
+%clearfix{
+  @include clearfix();
+}
+
+%inlineBlock{
+  @include inline-block();
+}
+
+%hideText{
+  @include hide-text();
+}
+
+
+@keyframes grid-left-to-right {
+    0% {background-position: 0px center;}
+    100% {background-position: 1000px center;}
+}
+
+@keyframes grid-right-to-left {
+    0% {background-position: 0px center;}
+    100% {background-position: -500px center;}
+}
+
+.e-banner {
+	position: relative;
+
+	&::after,
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%; height: 80px;
+		top: -40px; left: 0;
+		z-index: 1;
+
+		background-position: left center;
+		background-repeat: repeat-x;
+	}
+
+	&::before {
+		// background-image: url(../img/patterns/grid_h_thLight_dark.svg); inThemeFiles
+		background-size: 500px auto;
+	}
+
+	&::after {
+		// background-image: url(../img/patterns/grid_h_thLight_light.svg); inThemeFiles
+		background-size: 1000px auto;
+	}
+
+	&.animate::before {
+		animation: grid-right-to-left 100s linear infinite;
+	}
+	&.animate::after {
+		animation: grid-left-to-right 50s linear infinite;
+	}
+}
