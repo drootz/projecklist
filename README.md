@@ -61,6 +61,8 @@ YES please
 - Saving progress function
 - Any other content or layout improvements that could help users of this form.
 
+> Make sure to create and change the [reCaptcha](https://www.google.com/recaptcha) site key for your own usage.
+
 ## Content and Dependencies
 
 ### Content Inspiration

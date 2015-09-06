@@ -1,0 +1,6 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^projecklist.oneprojct.space$
+RewriteRule ^/?$ "http\:\/\/www\.projecklist\.oneprojct\.space\/" [R=301,L]
+
