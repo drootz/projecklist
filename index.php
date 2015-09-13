@@ -16,6 +16,11 @@
 
 <?php
 
+    // Set your default timezone here
+    // http://php.net/manual/en/timezones.php
+    $timezone = 'America/Montreal';
+    date_default_timezone_set($timezone);
+
     //**** L18N support
     include 'php/localize.php';
 
@@ -3945,7 +3950,8 @@
                                 </div>
                             </div>
                             <div class="col-12 m-copyright">
-                                <p><a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a> | Created in Montreal</p>
+                                <p>Created in Montreal &copy; <?php echo date("Y")?></p>
+                                <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a>
                             </div>
 
                         </div> <!-- row END -->

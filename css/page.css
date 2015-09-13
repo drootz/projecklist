@@ -1348,11 +1348,10 @@ sup {
 .m-center-block {
   width: 302px;
   margin: 0 auto; }
-
-iframe {
-  width: 302px !important;
-  height: 76px !important;
-  border-radius: 4px !important; }
+  .m-center-block iframe {
+    width: 302px !important;
+    height: 76px !important;
+    border-radius: 4px !important; }
 
 .is-clear {
   -webkit-filter: none;
