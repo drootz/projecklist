@@ -3920,7 +3920,7 @@
                                 <div class="m-share">
                                     <h4>Share</h4>
                                     <ul>
-                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=www.projecklist.oneprojct.space"><span class="fa fa-facebook-square fa-2x"></span></a></li>
+                                        <li><a <?php echo "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
                                         <li><a href="#"><span class="fa fa-twitter-square fa-2x"></span></a></li>
                                         <li><a href="#"><span class="fa fa-linkedin-square fa-2x"></span></a></li>
                                     </ul>

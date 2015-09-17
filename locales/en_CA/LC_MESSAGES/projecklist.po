@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 21:47-0400\n"
-"PO-Revision-Date: 2015-09-16 21:52-0400\n"
+"POT-Creation-Date: 2015-09-16 21:59-0400\n"
+"PO-Revision-Date: 2015-09-16 22:03-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -1832,6 +1832,12 @@ msgid "form-footnote-fn9"
 msgstr ""
 "Example of tools: Git version control, SASS CSS pre-processors, auto-prefixers, "
 "image/vectors editing tools, etc."
+
+#: index.php:3923
+msgid "footer-fb-share-link"
+msgstr ""
+"https://www.facebook.com/sharer/sharer.php?u=www.projecklist.oneprojct.space/?"
+"lang=en_CA"
 
 #: php/functions.php:181
 msgid "process_email_attach_name"
