@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-16 16:17-0400\n"
-"PO-Revision-Date: 2015-09-16 20:17-0400\n"
+"PO-Revision-Date: 2015-09-16 20:43-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -100,7 +100,7 @@ msgstr "http://www.projecklist.oneprojct.space/img/og/fb-en.jpg"
 
 #: index.php:74
 msgid "head-og-fb-locale"
-msgstr "en_CA"
+msgstr "en_US"
 
 #: index.php:75
 msgid "head-og-fb-description"
