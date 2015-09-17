@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 21:34-0400\n"
-"PO-Revision-Date: 2015-09-16 21:40-0400\n"
+"POT-Creation-Date: 2015-09-16 21:47-0400\n"
+"PO-Revision-Date: 2015-09-16 21:48-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -101,6 +101,10 @@ msgstr "Projecklist pour sites web"
 #: index.php:68
 msgid "head-og-fb-image"
 msgstr "http://www.projecklist.oneprojct.space/img/og/fb_en.jpg"
+
+#: index.php:72
+msgid "head-og-fb-url"
+msgstr "http://www.projecklist.oneprojct.space/?lang=en_CA"
 
 #: index.php:74
 msgid "head-og-fb-locale"
