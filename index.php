@@ -67,8 +67,8 @@
     <meta property="og:title" content="Projecklist"/>
     <meta property="og:image" <?php echo "content=\"" . _( 'head-og-fb-image' ) . "\""; ?>/>
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1600">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1050">
     <meta property="og:url" content="http://www.projecklist.oneprojct.space"/>
     <meta property="og:site_name" content="Projecklist"/>
     <meta property="og:locale:alternate" <?php echo "content=\"" . _( 'head-og-fb-locale' ) . "\""; ?>/>
