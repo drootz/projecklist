@@ -65,25 +65,14 @@
 
     <!-- Schema.org markup for Facebook -->
     <meta property="og:title" content="Projecklist"/>
-    <meta property="og:image" content="http://creationsc.com/assets/logo-fb.jpg"/>
+    <meta property="og:image" <?php echo "value=\"" . _( 'head-og-fb-image' ) . "\""; ?>/>
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="http://creationsc.com"/>
-    <meta property="og:site_name" content="Créations C"/>
-    <meta property="og:locale:alternate" content="fr_CA"/>
-    <meta property="og:description" content="Design Intérieur | Home Staging | Décoration"/>
-
-    <!-- Schema.org markup for Twitter -->
-    <meta name="twitter:card" content="photo"/>
-    <meta name="twitter:site" content="@creationsCyn">
-    <meta name="twitter:creator" content="@creationsCyn">
-    <meta name="twitter:title" content="CréationsC - Design intérieur | Home staging | Décoration"/>
-    <meta name="twitter:description" content="site web"/>
-    <meta name="twitter:domain" content="creationsc.com"/>
-    <meta name="twitter:image" content="http://creationsc.com/assets/logo-tw.jpg"/>
-    <meta name="twitter:image:width" content="560">
-    <meta name="twitter:image:height" content="560">
+    <meta property="og:url" content="http://www.projecklist.oneprojct.space"/>
+    <meta property="og:site_name" content="Projecklist"/>
+    <meta property="og:locale:alternate" <?php echo "content=\"" . _( 'head-og-fb-locale' ) . "\""; ?>/>
+    <meta property="og:description" <?php echo "content=\"" . _( 'head-og-fb-description' ) . "\""; ?>/>
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory
@@ -3920,7 +3909,7 @@
                                 <div class="m-share">
                                     <h4>Share</h4>
                                     <ul>
-                                        <li><a href="#"><span class="fa fa-facebook-square fa-2x"></span></a></li>
+                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u=www.projecklist.oneprojct.space"><span class="fa fa-facebook-square fa-2x"></span></a></li>
                                         <li><a href="#"><span class="fa fa-twitter-square fa-2x"></span></a></li>
                                         <li><a href="#"><span class="fa fa-linkedin-square fa-2x"></span></a></li>
                                     </ul>
