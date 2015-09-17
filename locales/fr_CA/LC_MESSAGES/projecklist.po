@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-16 21:47-0400\n"
-"PO-Revision-Date: 2015-09-16 21:48-0400\n"
+"PO-Revision-Date: 2015-09-16 21:52-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -96,7 +96,7 @@ msgstr "Formulaire d’évaluation de projet en développement web."
 
 #: index.php:67
 msgid "head-og-fb-title"
-msgstr "Projecklist for websites"
+msgstr "Projecklist pour sites web"
 
 #: index.php:68
 msgid "head-og-fb-image"
