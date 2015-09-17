@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 16:16-0400\n"
-"PO-Revision-Date: 2015-09-16 21:19-0400\n"
+"POT-Creation-Date: 2015-09-16 21:34-0400\n"
+"PO-Revision-Date: 2015-09-16 21:36-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -94,6 +94,10 @@ msgstr "ÉVALUATION DE PROJET"
 msgid "form-htmlmeta-description"
 msgstr "Formulaire d’évaluation de projet en développement web."
 
+#: index.php:67
+msgid "head-og-fb-title"
+msgstr "Projecklist for websites"
+
 #: index.php:68
 msgid "head-og-fb-image"
 msgstr "http://www.projecklist.oneprojct.space/img/og/fb_fr.jpg"
@@ -104,7 +108,10 @@ msgstr "fr_CA"
 
 #: index.php:75
 msgid "head-og-fb-description"
-msgstr "DESCRIPTION DU SITE ICI\t"
+msgstr ""
+"Désirez-vous un site web ou êtes-vous concepteurs web indépendants? Facilitez "
+"le processus d’évaluation des couts et entamez de façon efficace le processus "
+"de conception avec ce questionnaire interactif."
 
 #: index.php:183
 msgid "form-dialogbox-pra-contact"
@@ -166,7 +173,7 @@ msgid "hero-pra-description"
 msgstr ""
 "Désirez-vous un site web ou êtes-vous concepteurs web indépendants? Facilitez "
 "le processus d’évaluation des couts et entamez de façon efficace le processus "
-"de conception web avec ce questionnaire interactif."
+"de conception avec ce questionnaire interactif."
 
 #: index.php:253
 msgid "hero-pra-action-description"

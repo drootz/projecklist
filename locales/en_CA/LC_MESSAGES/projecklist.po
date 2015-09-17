@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 16:17-0400\n"
-"PO-Revision-Date: 2015-09-16 21:20-0400\n"
+"POT-Creation-Date: 2015-09-16 21:34-0400\n"
+"PO-Revision-Date: 2015-09-16 21:36-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -94,6 +94,10 @@ msgstr "WEB PROJECT EVALUATION FORM"
 msgid "form-htmlmeta-description"
 msgstr "Client walkthrough project evaluation form."
 
+#: index.php:67
+msgid "head-og-fb-title"
+msgstr "Projecklist pour sites web"
+
 #: index.php:68
 msgid "head-og-fb-image"
 msgstr "http://www.projecklist.oneprojct.space/img/og/fb_en.jpg"
@@ -104,7 +108,10 @@ msgstr "en_US"
 
 #: index.php:75
 msgid "head-og-fb-description"
-msgstr "DESCRIPTION OF SITE HERE"
+msgstr ""
+"Do you need a web a site or are you a web developer yourself? Facilitate the "
+"cost estimation process and effectively initiate your project by using this "
+"interactive kick starter questionnaire."
 
 #: index.php:183
 msgid "form-dialogbox-pra-contact"

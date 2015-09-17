@@ -64,7 +64,7 @@
     
 
     <!-- Schema.org markup for Facebook -->
-    <meta property="og:title" content="Projecklist"/>
+    <meta property="og:title" <?php echo "content=\"" . _( 'head-og-fb-title' ) . "\""; ?>/>
     <meta property="og:image" <?php echo "content=\"" . _( 'head-og-fb-image' ) . "\""; ?>/>
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="2000">
