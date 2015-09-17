@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 21:59-0400\n"
-"PO-Revision-Date: 2015-09-16 22:03-0400\n"
+"POT-Creation-Date: 2015-09-17 09:31-0400\n"
+"PO-Revision-Date: 2015-09-17 09:36-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -94,24 +94,24 @@ msgstr "WEB PROJECT EVALUATION FORM"
 msgid "form-htmlmeta-description"
 msgstr "Client walkthrough project evaluation form."
 
-#: index.php:67
-msgid "head-og-fb-title"
+#: index.php:67 index.php:81
+msgid "head-og-title"
 msgstr "Projecklist for websites"
 
-#: index.php:68
-msgid "head-og-fb-image"
-msgstr "http://www.projecklist.oneprojct.space/img/og/fb_en.jpg"
+#: index.php:68 index.php:84
+msgid "head-og-image"
+msgstr "http://www.projecklist.oneprojct.space/img/og/og_en.jpg"
 
-#: index.php:72
-msgid "head-og-fb-url"
+#: index.php:72 index.php:83
+msgid "head-og-url"
 msgstr "http://www.projecklist.oneprojct.space/?lang=en_CA"
 
 #: index.php:74
 msgid "head-og-fb-locale"
 msgstr "en_US"
 
-#: index.php:75
-msgid "head-og-fb-description"
+#: index.php:75 index.php:82
+msgid "head-og-description"
 msgstr ""
 "Do you need a web a site or are you a web developer yourself? Facilitate the "
 "cost estimation process and effectively initiate your project by using this "
@@ -1846,45 +1846,3 @@ msgstr "changenameforprojectname"
 #: php/localize.php:200
 msgid "header-menuli-lang"
 msgstr "language"
-
-#~ msgid "opt_province_select"
-#~ msgstr " — choose — "
-
-#~ msgid "opt_province_ab"
-#~ msgstr "Alberta"
-
-#~ msgid "opt_province_bc"
-#~ msgstr "British Columbia"
-
-#~ msgid "opt_province_mb"
-#~ msgstr "Manitoba"
-
-#~ msgid "opt_province_nb"
-#~ msgstr "New Brunswick"
-
-#~ msgid "opt_province_nl"
-#~ msgstr "Newfoundland &amp; Labrador"
-
-#~ msgid "opt_province_ns"
-#~ msgstr "Nova Scotia"
-
-#~ msgid "opt_province_nt"
-#~ msgstr "Northwest Territories"
-
-#~ msgid "opt_province_nu"
-#~ msgstr "Nunavut"
-
-#~ msgid "opt_province_on"
-#~ msgstr "Ontario"
-
-#~ msgid "opt_province_pe"
-#~ msgstr "Prince Edward Island"
-
-#~ msgid "opt_province_qc"
-#~ msgstr "Quebec"
-
-#~ msgid "opt_province_sk"
-#~ msgstr "Saskatchewan"
-
-#~ msgid "opt_province_yt"
-#~ msgstr "Yukon"

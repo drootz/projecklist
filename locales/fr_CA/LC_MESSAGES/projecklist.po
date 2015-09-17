@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-16 22:03-0400\n"
-"PO-Revision-Date: 2015-09-16 22:03-0400\n"
+"POT-Creation-Date: 2015-09-17 09:31-0400\n"
+"PO-Revision-Date: 2015-09-17 09:36-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -94,24 +94,24 @@ msgstr "ÉVALUATION DE PROJET"
 msgid "form-htmlmeta-description"
 msgstr "Formulaire d’évaluation de projet en développement web."
 
-#: index.php:67
-msgid "head-og-fb-title"
+#: index.php:67 index.php:81
+msgid "head-og-title"
 msgstr "Projecklist pour sites web"
 
-#: index.php:68
-msgid "head-og-fb-image"
-msgstr "http://www.projecklist.oneprojct.space/img/og/fb_fr.jpg"
+#: index.php:68 index.php:84
+msgid "head-og-image"
+msgstr "http://www.projecklist.oneprojct.space/img/og/og_fr.jpg"
 
-#: index.php:72
-msgid "head-og-fb-url"
+#: index.php:72 index.php:83
+msgid "head-og-url"
 msgstr "http://www.projecklist.oneprojct.space/?lang=fr_CA"
 
 #: index.php:74
 msgid "head-og-fb-locale"
 msgstr "fr_CA"
 
-#: index.php:75
-msgid "head-og-fb-description"
+#: index.php:75 index.php:82
+msgid "head-og-description"
 msgstr ""
 "Désirez-vous un site web ou êtes-vous concepteurs web indépendants? Facilitez "
 "le processus d’évaluation des couts et entamez de façon efficace le processus "
@@ -1878,45 +1878,3 @@ msgstr "changerlenomdepiecejointe"
 #: php/localize.php:200
 msgid "header-menuli-lang"
 msgstr "Langue"
-
-#~ msgid "opt_province_select"
-#~ msgstr " — sélection — "
-
-#~ msgid "opt_province_ab"
-#~ msgstr "Alberta"
-
-#~ msgid "opt_province_bc"
-#~ msgstr "Colombie-Britannique"
-
-#~ msgid "opt_province_mb"
-#~ msgstr "Manitoba"
-
-#~ msgid "opt_province_nb"
-#~ msgstr "Nouveau-Brunswick"
-
-#~ msgid "opt_province_nl"
-#~ msgstr "Terre-Neuve-et-Labrador"
-
-#~ msgid "opt_province_ns"
-#~ msgstr "Nouvelle-Écosse"
-
-#~ msgid "opt_province_nt"
-#~ msgstr "Territoires du Nord-Ouest"
-
-#~ msgid "opt_province_nu"
-#~ msgstr "Nunavut"
-
-#~ msgid "opt_province_on"
-#~ msgstr "Ontario"
-
-#~ msgid "opt_province_pe"
-#~ msgstr "Île-du-Prince-Édouard"
-
-#~ msgid "opt_province_qc"
-#~ msgstr "Québec"
-
-#~ msgid "opt_province_sk"
-#~ msgstr "Saskatchewan"
-
-#~ msgid "opt_province_yt"
-#~ msgstr "Yukon"

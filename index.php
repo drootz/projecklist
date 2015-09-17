@@ -64,25 +64,25 @@
     
 
     <!-- Schema.org markup for Facebook -->
-    <meta property="og:title" <?php echo "content=\"" . _( 'head-og-fb-title' ) . "\""; ?>/>
-    <meta property="og:image" <?php echo "content=\"" . _( 'head-og-fb-image' ) . "\""; ?>/>
+    <meta property="og:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
+    <meta property="og:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="2000">
     <meta property="og:image:height" content="1050">
-    <meta property="og:url" <?php echo "content=\"" . _( 'head-og-fb-url' ) . "\""; ?>/> <!-- http://www.projecklist.oneprojct.space/?lang=en_CA -->
+    <meta property="og:url" <?php echo "content=\"" . _( 'head-og-url' ) . "\""; ?>/> <!-- http://www.projecklist.oneprojct.space/?lang=en_CA -->
     <meta property="og:site_name" content="Projecklist"/>
     <meta property="og:locale:alternate" <?php echo "content=\"" . _( 'head-og-fb-locale' ) . "\""; ?>/>
-    <meta property="og:description" <?php echo "content=\"" . _( 'head-og-fb-description' ) . "\""; ?>/>
+    <meta property="og:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
 
     <!-- Schema.org markup for Twitter -->
-   <!--  <meta name="twitter:card" content="photo"/>
-    <meta name="twitter:site" content="@creationsCyn">
-    <meta name="twitter:creator" content="@creationsCyn">
-    <meta name="twitter:title" content="CréationsC - Design intérieur | Home staging | Décoration"/>
-    <meta name="twitter:description" content="site web"/>
-    <meta name="twitter:domain" content="creationsc.com"/>
-    <meta name="twitter:image" content="http://creationsc.com/assets/logo-tw.jpg"/>
-    <meta name="twitter:image:width" content="560">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@projecklist">
+    <meta name="twitter:creator" content="@idannniel">
+    <meta name="twitter:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
+    <meta name="twitter:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
+    <meta name="twitter:domain" <?php echo "content=\"" . _( 'head-og-url' ) . "\""; ?>/>
+    <meta name="twitter:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
+    <!-- <meta name="twitter:image:width" content="560">
     <meta name="twitter:image:height" content="560"> -->
 
 
