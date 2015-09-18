@@ -1,4 +1,7 @@
 # robotstxt.org/
 
-User-Agent: *
+User-agent: Twitterbot
+Disallow:
+ 
+User-agent: *
 Disallow: /
