@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-17 09:31-0400\n"
-"PO-Revision-Date: 2015-09-17 09:36-0400\n"
+"POT-Creation-Date: 2015-09-17 21:17-0400\n"
+"PO-Revision-Date: 2015-09-17 21:18-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -98,11 +98,11 @@ msgstr "Client walkthrough project evaluation form."
 msgid "head-og-title"
 msgstr "Projecklist for websites"
 
-#: index.php:68 index.php:84
+#: index.php:68 index.php:83
 msgid "head-og-image"
 msgstr "http://www.projecklist.oneprojct.space/img/og/og_en.jpg"
 
-#: index.php:72 index.php:83
+#: index.php:72
 msgid "head-og-url"
 msgstr "http://www.projecklist.oneprojct.space/?lang=en_CA"
 
@@ -117,100 +117,100 @@ msgstr ""
 "cost estimation process and effectively initiate your project by using this "
 "interactive kick starter questionnaire."
 
-#: index.php:183
+#: index.php:182
 msgid "form-dialogbox-pra-contact"
 msgstr "Are you sure you want to remove the Alternate Contact field?"
 
-#: index.php:184
+#: index.php:183
 msgid "form-dialogbox-pra-hours"
 msgstr "Are you sure you want to remove the last set of hours field?"
 
-#: index.php:185
+#: index.php:184
 msgid "form-dialogbox-pra-competitors"
 msgstr "Are you sure you want to remove the last site field?"
 
-#: index.php:186
+#: index.php:185
 msgid "form-dialogbox-pra-weblist"
 msgstr "Are you sure you want to remove the last site field?"
 
-#: index.php:187
+#: index.php:186
 msgid "form-dialogbox-pra-domain"
 msgstr "Are you sure you want to remove the last domain field?"
 
-#: index.php:188
+#: index.php:187
 msgid "form-dialogbox-pra-primary"
 msgstr ""
 "Are you sure you want to replace the information you entered with the Primary "
 "Contact information?"
 
-#: index.php:189
+#: index.php:188
 msgid "form-dialogbox-pra-noprimary"
 msgstr "There is no Primary Contact information entered yet."
 
-#: index.php:190
+#: index.php:189
 msgid "form-dialogbox-btn-accept"
 msgstr "Accept"
 
-#: index.php:191
+#: index.php:190
 msgid "form-dialogbox-btn-decline"
 msgstr "Decline"
 
-#: index.php:192
+#: index.php:191
 msgid "form-dialogbox-btn-ok"
 msgstr "OK"
 
-#: index.php:224
+#: index.php:223
 msgid "form-navbar-titleAttr-langSwitch"
 msgstr "Language"
 
-#: index.php:241
+#: index.php:240
 msgid "hero-ttl-h1"
 msgstr "Help Me<br />Help You<br />Build Your<br />Website"
 
-#: index.php:247
+#: index.php:246
 msgid "hero-pra-description"
 msgstr ""
 "Do you need a web a site or are you a web developer yourself? Facilitate the "
 "cost estimation process and effectively initiate your project by using this "
 "interactive kick starter questionnaire."
 
-#: index.php:253
+#: index.php:252
 msgid "hero-pra-action-description"
 msgstr "Ready to share and printable summary sent by email!"
 
-#: index.php:254
+#: index.php:253
 msgid "hero-pra-action-button"
 msgstr "Exemple Here!"
 
-#: index.php:296
+#: index.php:295
 msgid "action-first-ttl"
 msgstr "Required Fields"
 
-#: index.php:297
+#: index.php:296
 msgid "action-first-txt"
 msgstr "Only 3 fields are required for to get your summary."
 
-#: index.php:313
+#: index.php:312
 msgid "action-second-ttl"
 msgstr "Optional fields"
 
-#: index.php:314
+#: index.php:313
 msgid "action-second-txt"
 msgstr "All other fields are optional, fill only what you need!"
 
-#: index.php:331
+#: index.php:330
 msgid "action-third-ttl"
 msgstr "Click Submit"
 
-#: index.php:332
+#: index.php:331
 msgid "action-third-txt"
 msgstr "Submit and monitor your mailbox!"
 
-#: index.php:355
+#: index.php:354
 msgid "form-intro-ttl"
 msgstr "Introduction"
 
-#: index.php:357
+#: index.php:356
 msgid "form-intro-pra-validate"
 msgstr ""
 "Please note that whether or not we complete this questionnaire together, we "
@@ -219,32 +219,32 @@ msgstr ""
 "define what success looks like, find agreement on the design process, set "
 "milestones and confirm next steps."
 
-#: index.php:359
+#: index.php:358
 msgid "form-intro-pra-design"
 msgstr ""
 "The content of this form is the starting point of the design process. Any "
 "additional requirements that are not listed here will gladly be discussed and "
 "included in our Terms &amp; Conditions where applicable."
 
-#: index.php:361
+#: index.php:360
 msgid "form-intro-pra-confirm"
 msgstr ""
 "I am sure you understand and agree that managing expectations with a good "
 "planning process leads to an efficient use of time, pleasant collaboration and "
 "cost reduction."
 
-#: index.php:363
+#: index.php:362
 msgid "form-intro-pra-article"
 msgstr ""
 "Before going any further I invite you to read this <a href=\"http://chrislema."
 "com/the-art-of-giving-an-estimate/\" target=\"_BLANK\">short article</a> on web "
 "developments estimates."
 
-#: index.php:365
+#: index.php:364
 msgid "form-intro-pra-end"
 msgstr "Thank you for going through the content of this form!"
 
-#: index.php:376
+#: index.php:375
 msgid "form-intro-pra-privacy"
 msgstr ""
 "<strong>Privacy:</strong> Your email address, name and any other information "
@@ -253,282 +253,282 @@ msgstr ""
 "invoices and fill our <a href=\"#\">Terms &amp; Conditions</a> (contract) if "
 "applicable. I do not sell or share your information with anyone."
 
-#: index.php:397
+#: index.php:396
 msgid "form-planning-ttl"
 msgstr "Planning"
 
-#: index.php:401
+#: index.php:400
 msgid "form-planning-note-required"
 msgstr "Required Field"
 
-#: index.php:413
+#: index.php:412
 msgid "form-planning-projectName-ttl"
 msgstr "Name your project!"
 
-#: index.php:418
+#: index.php:417
 msgid "form-planning-projectName-info"
 msgstr ""
 "It's always a good thing to name your project! It makes an easy reference in "
 "communications and it can be as simple as <b>Xxxxx’s website</b> for example."
 
-#: index.php:427
+#: index.php:426
 msgid "fld_project_name"
 msgstr "Project Name:"
 
-#: index.php:448
+#: index.php:447
 msgid "form-planning-contact-ttl"
 msgstr "Contact Information"
 
-#: index.php:453
+#: index.php:452
 msgid "form-planning-contact-info"
 msgstr "Only the primary contact will be contacted on submission of this form."
 
-#: index.php:463
+#: index.php:462
 msgid "form-planning-contact-primary-ttl"
 msgstr "Primary Contact"
 
-#: index.php:467
+#: index.php:466
 msgid "form-planning-contact-primary-stl-name"
 msgstr "Name:"
 
-#: index.php:471
+#: index.php:470
 msgid "fld_contact_primary_fn"
 msgstr "First Name:"
 
-#: index.php:477
+#: index.php:476
 msgid "fld_contact_primary_ln"
 msgstr "Last Name:"
 
-#: index.php:488
+#: index.php:487
 msgid "tel_contact_primary_tel"
 msgstr "Phone:"
 
-#: index.php:498
+#: index.php:497
 msgid "eml_contact_primary_email"
 msgstr "Email:"
 
-#: index.php:504
+#: index.php:503
 msgid "eml_contact_primary_email_verification"
 msgstr "Please confirm the Email:"
 
-#: index.php:527
+#: index.php:526
 msgid "form-planning-contact-alternate-ttl"
 msgstr "Alternate Contact"
 
-#: index.php:531
+#: index.php:530
 msgid "form-planning-contact-alternate-stl-name"
 msgstr "Name:"
 
-#: index.php:535
+#: index.php:534
 msgid "fld_contact_alt_fn"
 msgstr "First Name:"
 
-#: index.php:540
+#: index.php:539
 msgid "fld_contact_alt_ln"
 msgstr "Last Name:"
 
-#: index.php:552
+#: index.php:551
 msgid "tel_contact_alt_contact_tel"
 msgstr "Phone:"
 
-#: index.php:562
+#: index.php:561
 msgid "eml_contact_alt_email"
 msgstr "Email:"
 
-#: index.php:568
+#: index.php:567
 msgid "eml_contact_alt_email_verification"
 msgstr "Please confirm the Email:"
 
-#: index.php:586 index.php:2020 index.php:3003 index.php:3140 index.php:3268
-#: index.php:3651
+#: index.php:585 index.php:2019 index.php:3002 index.php:3139 index.php:3267
+#: index.php:3650
 msgid "form-subFields-btn-add"
 msgstr "ADD"
 
-#: index.php:589 index.php:2023 index.php:3006 index.php:3143 index.php:3271
-#: index.php:3654
+#: index.php:588 index.php:2022 index.php:3005 index.php:3142 index.php:3270
+#: index.php:3653
 msgid "form-subFields-btn-remove"
 msgstr "REMOVE"
 
-#: index.php:612
+#: index.php:611
 msgid "form-planning-familiarity-ttl"
 msgstr "How familiar are you with web development?"
 
-#: index.php:617
+#: index.php:616
 msgid "form-planning-familiarity-info"
 msgstr ""
 "I need to have a sense of how comfortable you are talking about web "
 "technologies and its development techniques. This will help me to adapt and "
 "make sure I share right information the right way."
 
-#: index.php:624
+#: index.php:623
 msgid "form-planning-familiarity-opt-choose"
 msgstr " — choose — "
 
-#: index.php:625
+#: index.php:624
 msgid "form-planning-familiarity-opt-notComfortable"
 msgstr "Not Familiar"
 
-#: index.php:626
+#: index.php:625
 msgid "form-planning-familiarity-opt-comfortable"
 msgstr "Familiar"
 
-#: index.php:627
+#: index.php:626
 msgid "form-planning-familiarity-opt-veryComfortable"
 msgstr "Very Familiar"
 
-#: index.php:646
+#: index.php:645
 msgid "form-planning-timeline-ttl"
 msgstr "Timeline"
 
-#: index.php:651
+#: index.php:650
 msgid "form-planning-timeline-info"
 msgstr "Please indicate if you have a specific timeline we need to meet."
 
-#: index.php:658
+#: index.php:657
 msgid "form-planning-timeline-opt-choose"
 msgstr " — choose — "
 
-#: index.php:659
+#: index.php:658
 msgid "form-planning-timeline-opt-none"
 msgstr "No specific timeline"
 
-#: index.php:660
+#: index.php:659
 msgid "form-planning-timeline-opt-weeks_0_5"
 msgstr "0-5 weeks"
 
-#: index.php:661
+#: index.php:660
 msgid "form-planning-timeline-opt-months_1_3"
 msgstr "1-3 months"
 
-#: index.php:662
+#: index.php:661
 msgid "form-planning-timeline-opt-months_3_6"
 msgstr "3-6 months"
 
-#: index.php:663
+#: index.php:662
 msgid "form-planning-timeline-opt-months_6plus"
 msgstr "6 months +"
 
-#: index.php:681
+#: index.php:680
 msgid "form-planning-budget-ttl"
 msgstr "Budget"
 
-#: index.php:686
+#: index.php:685
 msgid "form-planning-budget-info"
 msgstr ""
 "Have you establish a budget for your web project? If so, please indicate its "
 "range."
 
-#: index.php:694
+#: index.php:693
 msgid "form-planning-budget-opt-choose"
 msgstr " — choose — "
 
-#: index.php:695
+#: index.php:694
 msgid "form-planning-budget-opt-none"
 msgstr "No specific budget"
 
-#: index.php:696
+#: index.php:695
 msgid "form-planning-budget-opt-1k"
 msgstr "less than $1,000"
 
-#: index.php:697
+#: index.php:696
 msgid "form-planning-budget-opt-2k"
 msgstr "$1,000 - $2,000"
 
-#: index.php:698
+#: index.php:697
 msgid "form-planning-budget-opt-5k"
 msgstr "$2,000 - $5,000"
 
-#: index.php:699
+#: index.php:698
 msgid "form-planning-budget-opt-10k"
 msgstr "$5,000 - $10,000"
 
-#: index.php:700
+#: index.php:699
 msgid "form-planning-budget-opt-10kplus"
 msgstr "more than $10,000"
 
-#: index.php:719
+#: index.php:718
 msgid "form-planning-billing-ttl"
 msgstr "Billing"
 
-#: index.php:724
+#: index.php:723
 msgid "form-planning-billing-info"
 msgstr ""
 "This information will be use for invoices and to fill our terms and conditions "
 "if applicable."
 
-#: index.php:734
+#: index.php:733
 msgid "xxx_billing_sameas_primary"
 msgstr "Same information as the <u>Primary Contact</u>"
 
-#: index.php:741
+#: index.php:740
 msgid "form-planning-billing-stl-attn"
 msgstr "Attn.:"
 
-#: index.php:745
+#: index.php:744
 msgid "fld_billing_fn"
 msgstr "First Name"
 
-#: index.php:750
+#: index.php:749
 msgid "fld_billing_ln"
 msgstr "Last Name"
 
-#: index.php:762
+#: index.php:761
 msgid "fld_billing_coname"
 msgstr "Company Name:"
 
-#: index.php:768
+#: index.php:767
 msgid "fld_billing_area"
 msgstr "Department / Service:"
 
-#: index.php:778
+#: index.php:777
 msgid "tel_billing_tel"
 msgstr "Phone:"
 
-#: index.php:784
+#: index.php:783
 msgid "tel_billing_fax"
 msgstr "Fax:"
 
-#: index.php:792
+#: index.php:791
 msgid "form-planning-billing-stl-address"
 msgstr "Address:"
 
-#: index.php:796
+#: index.php:795
 msgid "fld_billing_address"
 msgstr "Line 1"
 
-#: index.php:801
+#: index.php:800
 msgid "fld_billing_address_2"
 msgstr "Line 2"
 
-#: index.php:809
+#: index.php:808
 msgid "fld_billing_city"
 msgstr "City"
 
-#: index.php:814
+#: index.php:813
 msgid "opt_billing_province"
 msgstr "Province"
 
-#: index.php:822
+#: index.php:821
 msgid "fld_billing_postalcode"
 msgstr "Postal Code"
 
-#: index.php:827
+#: index.php:826
 msgid "fld_billing_country"
 msgstr "Country"
 
-#: index.php:840
+#: index.php:839
 msgid "eml_billing_email"
 msgstr "Email:"
 
-#: index.php:846
+#: index.php:845
 msgid "eml_billing_email_verification"
 msgstr "Please confirm the Email:"
 
-#: index.php:872
+#: index.php:871
 msgid "form-planning-tc-ttl"
 msgstr "Terms and Conditions"
 
-#: index.php:877
+#: index.php:876
 msgid "form-planning-tc-info"
 msgstr ""
 "I invite you to review the this example of our <a href=\"#\">Terms &amp; "
@@ -539,292 +539,292 @@ msgstr ""
 "signed by both of us before any work begins."
 
 # Here you put the link to your T&C
-#: index.php:884
+#: index.php:883
 msgid "bol_t_and_c_reviewed"
 msgstr "I have reviewed the <a href=\"#\">T&amp;C</a>."
 
-#: index.php:909
+#: index.php:908
 msgid "form-content-ttl"
 msgstr "Content & Design"
 
-#: index.php:921
+#: index.php:920
 msgid "form-content-info-ttl"
 msgstr "Website Display Information"
 
-#: index.php:926
+#: index.php:925
 msgid "form-content-info-info"
 msgstr ""
 "General Information about your organization, company, project or event to "
 "display on your website."
 
-#: index.php:935
+#: index.php:934
 msgid "fld_info_legal"
 msgstr "Legal Name:"
 
-#: index.php:941
+#: index.php:940
 msgid "fld_info_brand"
 msgstr "Brand / Display Name:"
 
-#: index.php:948
+#: index.php:947
 msgid "fld_info_tagline"
 msgstr "Tagline:"
 
-#: index.php:954
+#: index.php:953
 msgid "eml_info_email"
 msgstr "Email:"
 
-#: index.php:962
+#: index.php:961
 msgid "tel_info_tel"
 msgstr "Phone:"
 
-#: index.php:970
+#: index.php:969
 msgid "tel_info_fax"
 msgstr "Fax:"
 
-#: index.php:978
+#: index.php:977
 msgid "form-content-info-adress-stl"
 msgstr "Address:"
 
-#: index.php:982
+#: index.php:981
 msgid "fld_info_address"
 msgstr "Line 1"
 
-#: index.php:987
+#: index.php:986
 msgid "fld_info_address_2"
 msgstr "Line 2"
 
-#: index.php:993
+#: index.php:992
 msgid "fld_info_city"
 msgstr "City"
 
-#: index.php:998
+#: index.php:997
 msgid "opt_info_province"
 msgstr "Province"
 
-#: index.php:1004
+#: index.php:1003
 msgid "fld_info_postalcode"
 msgstr "Postal Code"
 
-#: index.php:1009
+#: index.php:1008
 msgid "fld_info_country"
 msgstr "Country"
 
-#: index.php:1017
+#: index.php:1016
 msgid "txt_info_description"
 msgstr "Short description of your business, activities or event(s):"
 
-#: index.php:1038
+#: index.php:1037
 msgid "form-content-hours-ttl"
 msgstr "Regular hours of operation:"
 
-#: index.php:1043
+#: index.php:1042
 msgid "form-content-hours-info"
 msgstr ""
 "Please indicate what are your regular hours of operation to display on your "
 "site."
 
-#: index.php:1054 index.php:1199 index.php:1336 index.php:1473 index.php:1610
-#: index.php:1747 index.php:1884
+#: index.php:1053 index.php:1198 index.php:1335 index.php:1472 index.php:1609
+#: index.php:1746 index.php:1883
 msgid "form-planning-hours-stl-range"
 msgstr "Day(s)"
 
-#: index.php:1061 index.php:1202 index.php:1339 index.php:1476 index.php:1613
-#: index.php:1750 index.php:1887
+#: index.php:1060 index.php:1201 index.php:1338 index.php:1475 index.php:1612
+#: index.php:1749 index.php:1886
 msgid "form-planning-hours-range-opt-choose"
 msgstr " — choose — "
 
-#: index.php:1063 index.php:1204 index.php:1341 index.php:1478 index.php:1615
-#: index.php:1752 index.php:1889
+#: index.php:1062 index.php:1203 index.php:1340 index.php:1477 index.php:1614
+#: index.php:1751 index.php:1888
 msgid "form-planning-hours-range-lbl-days"
 msgstr "Weekly Range"
 
-#: index.php:1064 index.php:1205 index.php:1342 index.php:1479 index.php:1616
-#: index.php:1753 index.php:1890
+#: index.php:1063 index.php:1204 index.php:1341 index.php:1478 index.php:1615
+#: index.php:1752 index.php:1889
 msgid "form-planning-hours-range-opt-everyday"
 msgstr "Every Day"
 
-#: index.php:1065 index.php:1206 index.php:1343 index.php:1480 index.php:1617
-#: index.php:1754 index.php:1891
+#: index.php:1064 index.php:1205 index.php:1342 index.php:1479 index.php:1616
+#: index.php:1753 index.php:1890
 msgid "form-planning-hours-range-opt-weekend"
 msgstr "Weekend"
 
-#: index.php:1066 index.php:1207 index.php:1344 index.php:1481 index.php:1618
-#: index.php:1755 index.php:1892
+#: index.php:1065 index.php:1206 index.php:1343 index.php:1480 index.php:1617
+#: index.php:1754 index.php:1891
 msgid "form-planning-hours-range-opt-mondayToFriday"
 msgstr "Monday to Friday"
 
-#: index.php:1068 index.php:1209 index.php:1346 index.php:1483 index.php:1620
-#: index.php:1757 index.php:1894
+#: index.php:1067 index.php:1208 index.php:1345 index.php:1482 index.php:1619
+#: index.php:1756 index.php:1893
 msgid "form-planning-hours-range-lbl-day"
 msgstr "Single Days"
 
-#: index.php:1069 index.php:1210 index.php:1347 index.php:1484 index.php:1621
-#: index.php:1758 index.php:1895
+#: index.php:1068 index.php:1209 index.php:1346 index.php:1483 index.php:1620
+#: index.php:1757 index.php:1894
 msgid "form-planning-hours-range-opt-mon"
 msgstr "Monday"
 
-#: index.php:1070 index.php:1211 index.php:1348 index.php:1485 index.php:1622
-#: index.php:1759 index.php:1896
+#: index.php:1069 index.php:1210 index.php:1347 index.php:1484 index.php:1621
+#: index.php:1758 index.php:1895
 msgid "form-planning-hours-range-opt-tue"
 msgstr "Tuesday"
 
-#: index.php:1071 index.php:1212 index.php:1349 index.php:1486 index.php:1623
-#: index.php:1760 index.php:1897
+#: index.php:1070 index.php:1211 index.php:1348 index.php:1485 index.php:1622
+#: index.php:1759 index.php:1896
 msgid "form-planning-hours-range-opt-wed"
 msgstr "Wednesday"
 
-#: index.php:1072 index.php:1213 index.php:1350 index.php:1487 index.php:1624
-#: index.php:1761 index.php:1898
+#: index.php:1071 index.php:1212 index.php:1349 index.php:1486 index.php:1623
+#: index.php:1760 index.php:1897
 msgid "form-planning-hours-range-opt-thu"
 msgstr "Thursday"
 
-#: index.php:1073 index.php:1214 index.php:1351 index.php:1488 index.php:1625
-#: index.php:1762 index.php:1899
+#: index.php:1072 index.php:1213 index.php:1350 index.php:1487 index.php:1624
+#: index.php:1761 index.php:1898
 msgid "form-planning-hours-range-opt-fri"
 msgstr "Friday"
 
-#: index.php:1074 index.php:1215 index.php:1352 index.php:1489 index.php:1626
-#: index.php:1763 index.php:1900
+#: index.php:1073 index.php:1214 index.php:1351 index.php:1488 index.php:1625
+#: index.php:1762 index.php:1899
 msgid "form-planning-hours-range-opt-sat"
 msgstr "Saturday"
 
-#: index.php:1075 index.php:1216 index.php:1353 index.php:1490 index.php:1627
-#: index.php:1764 index.php:1901
+#: index.php:1074 index.php:1215 index.php:1352 index.php:1489 index.php:1626
+#: index.php:1763 index.php:1900
 msgid "form-planning-hours-range-opt-sun"
 msgstr "Sunday"
 
-#: index.php:1085 index.php:1222 index.php:1359 index.php:1496 index.php:1633
-#: index.php:1770 index.php:1907
+#: index.php:1084 index.php:1221 index.php:1358 index.php:1495 index.php:1632
+#: index.php:1769 index.php:1906
 msgid "form-planning-hours-stl-from"
 msgstr "From:"
 
-#: index.php:1087 index.php:1138 index.php:1224 index.php:1275 index.php:1361
-#: index.php:1412 index.php:1498 index.php:1549 index.php:1635 index.php:1686
-#: index.php:1772 index.php:1823 index.php:1909 index.php:1960
+#: index.php:1086 index.php:1137 index.php:1223 index.php:1274 index.php:1360
+#: index.php:1411 index.php:1497 index.php:1548 index.php:1634 index.php:1685
+#: index.php:1771 index.php:1822 index.php:1908 index.php:1959
 msgid "form-planning-hours-from-lbl-hours"
 msgstr "Hour"
 
-#: index.php:1114 index.php:1127 index.php:1165 index.php:1178 index.php:1251
-#: index.php:1264 index.php:1302 index.php:1315 index.php:1388 index.php:1401
-#: index.php:1439 index.php:1452 index.php:1525 index.php:1538 index.php:1576
-#: index.php:1589 index.php:1662 index.php:1675 index.php:1713 index.php:1726
-#: index.php:1799 index.php:1812 index.php:1850 index.php:1863 index.php:1936
-#: index.php:1949 index.php:1987 index.php:2000
+#: index.php:1113 index.php:1126 index.php:1164 index.php:1177 index.php:1250
+#: index.php:1263 index.php:1301 index.php:1314 index.php:1387 index.php:1400
+#: index.php:1438 index.php:1451 index.php:1524 index.php:1537 index.php:1575
+#: index.php:1588 index.php:1661 index.php:1674 index.php:1712 index.php:1725
+#: index.php:1798 index.php:1811 index.php:1849 index.php:1862 index.php:1935
+#: index.php:1948 index.php:1986 index.php:1999
 msgid "form-planning-hours-from-lbl-closed"
 msgstr "Closed"
 
-#: index.php:1120 index.php:1171 index.php:1257 index.php:1308 index.php:1394
-#: index.php:1445 index.php:1531 index.php:1582 index.php:1668 index.php:1719
-#: index.php:1805 index.php:1856 index.php:1942 index.php:1993
+#: index.php:1119 index.php:1170 index.php:1256 index.php:1307 index.php:1393
+#: index.php:1444 index.php:1530 index.php:1581 index.php:1667 index.php:1718
+#: index.php:1804 index.php:1855 index.php:1941 index.php:1992
 msgid "form-planning-hours-from-lbl-minutes"
 msgstr "Minute"
 
-#: index.php:1136 index.php:1273 index.php:1410 index.php:1547 index.php:1684
-#: index.php:1821 index.php:1958
+#: index.php:1135 index.php:1272 index.php:1409 index.php:1546 index.php:1683
+#: index.php:1820 index.php:1957
 msgid "form-planning-hours-stl-to"
 msgstr "To:"
 
-#: index.php:1186
+#: index.php:1185
 msgid "cbx_hours_regular_set_1_closed"
 msgstr "Closed"
 
-#: index.php:1323
+#: index.php:1322
 msgid "cbx_hours_regular_set_2_closed"
 msgstr "Closed"
 
-#: index.php:1460
+#: index.php:1459
 msgid "cbx_hours_regular_set_3_closed"
 msgstr "Closed"
 
-#: index.php:1597
+#: index.php:1596
 msgid "cbx_hours_regular_set_4_closed"
 msgstr "Closed"
 
-#: index.php:1734
+#: index.php:1733
 msgid "cbx_hours_regular_set_5_closed"
 msgstr "Closed"
 
-#: index.php:1871
+#: index.php:1870
 msgid "cbx_hours_regular_set_6_closed"
 msgstr "Closed"
 
-#: index.php:2008
+#: index.php:2007
 msgid "cbx_hours_regular_set_7_closed"
 msgstr "Closed"
 
-#: index.php:2046
+#: index.php:2045
 msgid "form-content-holiday-ttl"
 msgstr "Holidays hours of operation:"
 
-#: index.php:2051
+#: index.php:2050
 msgid "form-content-holiday-info"
 msgstr ""
 "Please indicate what are your hours of operation during holidays to display on "
 "your site."
 
-#: index.php:2075
+#: index.php:2074
 msgid "form-content-product-ttl"
 msgstr "List the top 3 products and/or services you provide."
 
-#: index.php:2080
+#: index.php:2079
 msgid "form-content-product-info"
 msgstr ""
 "Knowing what your top products and/or services are will help me prioritize the "
 "website content effectively and will contribute to a better design process "
 "overall."
 
-#: index.php:2123
+#: index.php:2122
 msgid "form-content-asset-ttl"
 msgstr "Do you have existing assets to use?"
 
-#: index.php:2128
+#: index.php:2127
 msgid "form-content-asset-info"
 msgstr ""
 "Please indicate if you have already existing content to use in your new "
 "website. For example, if you had a previous website, are there anything you "
 "would like to recycle as part of this new web project?"
 
-#: index.php:2136 index.php:2137
+#: index.php:2135 index.php:2136
 msgid "rdo_existing_asset-yes"
 msgstr "Yes"
 
-#: index.php:2141
+#: index.php:2140
 msgid "form-content-asset-stl-select"
 msgstr "which ones?"
 
-#: index.php:2144 index.php:2145
+#: index.php:2143 index.php:2144
 msgid "cbx_asset_logo"
 msgstr "Logo(s)"
 
-#: index.php:2148 index.php:2149
+#: index.php:2147 index.php:2148
 msgid "cbx_asset_img"
 msgstr "Image(s) / Photo(s)"
 
-#: index.php:2152 index.php:2153
+#: index.php:2151 index.php:2152
 msgid "cbx_asset_audio"
 msgstr "Audio(s)"
 
-#: index.php:2156 index.php:2157
+#: index.php:2155 index.php:2156
 msgid "cbx_asset_video"
 msgstr "Video(s)"
 
-#: index.php:2160 index.php:2161
+#: index.php:2159 index.php:2160
 msgid "cbx_asset_docs"
 msgstr "Document(s)"
 
-#: index.php:2165
+#: index.php:2164
 msgid "txt_asset_othercomments"
 msgstr "Other or Comments:"
 
-#: index.php:2176 index.php:2177
+#: index.php:2175 index.php:2176
 msgid "rdo_existing_asset-no"
 msgstr "No"
 
-#: index.php:2197
+#: index.php:2196
 msgid "form-content-content-ttl"
 msgstr "Wich content will you provide for your website?"
 
-#: index.php:2202
+#: index.php:2201
 msgid "form-content-content-info-1"
 msgstr ""
 "I am not a copywriter, graphic designer or photography expert. If you require "
@@ -832,7 +832,7 @@ msgstr ""
 "relevant and quality content. Alternatively, I have professional connections "
 "that can be hired."
 
-#: index.php:2203
+#: index.php:2202
 msgid "form-content-content-info-2"
 msgstr ""
 "It is always best when clients can provide or create the written content for "
@@ -842,31 +842,31 @@ msgstr ""
 "me, and might make some suggestions to make the content more friendly for "
 "search engines and user experience."
 
-#: index.php:2211 index.php:2212
+#: index.php:2210 index.php:2211
 msgid "cbx_content_copywriting"
 msgstr "Copywriting"
 
-#: index.php:2215 index.php:2216
+#: index.php:2214 index.php:2215
 msgid "cbx_content_graphicdesign"
 msgstr "Graphic Design"
 
-#: index.php:2219 index.php:2220
+#: index.php:2218 index.php:2219
 msgid "cbx_content_photography"
 msgstr "Photography"
 
-#: index.php:2223 index.php:2224
+#: index.php:2222 index.php:2223
 msgid "cbx_content_none"
 msgstr "None, I need Copywriting, Graphic Design and Photography services."
 
-#: index.php:2228
+#: index.php:2227
 msgid "xxx_content_otherdetails"
 msgstr "Other or Comments:"
 
-#: index.php:2253
+#: index.php:2252
 msgid "form-content-feature-ttl"
 msgstr "What features do you think your website should include?"
 
-#: index.php:2258
+#: index.php:2257
 msgid "form-content-feature-info"
 msgstr ""
 "Feature rich sites are more appealing but they also take a longuer time develop "
@@ -874,85 +874,85 @@ msgstr ""
 "having a better vision of what you are looking for, asking about features helps "
 "me to better evaluate the project scale."
 
-#: index.php:2265
+#: index.php:2264
 msgid "form-content-feature-par-instruction"
 msgstr ""
 "For every selection, provide a short description of what you are looking for "
 "and why you think you need the selected feature:"
 
-#: index.php:2270 index.php:2271
+#: index.php:2269 index.php:2270
 msgid "cbx_feature_forum"
 msgstr "Forum"
 
-#: index.php:2278 index.php:2279
+#: index.php:2277 index.php:2278
 msgid "cbx_feature_login"
 msgstr "Login"
 
-#: index.php:2287 index.php:2288
+#: index.php:2286 index.php:2287
 msgid "cbx_feature_chart"
 msgstr "Price Chart"
 
-#: index.php:2295 index.php:2296
+#: index.php:2294 index.php:2295
 msgid "cbx_feature_catalog"
 msgstr "Product Catalog"
 
-#: index.php:2303 index.php:2304
+#: index.php:2302 index.php:2303
 msgid "cbx_feature_comparechart"
 msgstr "Comparison Chart"
 
-#: index.php:2311 index.php:2312
+#: index.php:2310 index.php:2311
 msgid "cbx_feature_form"
 msgstr "Simple Contact Form"
 
-#: index.php:2319 index.php:2320
+#: index.php:2318 index.php:2319
 msgid "cbx_feature_advancedform"
 msgstr "Advanced Contact Form"
 
-#: index.php:2327 index.php:2328
+#: index.php:2326 index.php:2327
 msgid "cbx_feature_animation"
 msgstr "Animations"
 
-#: index.php:2339 index.php:2340
+#: index.php:2338 index.php:2339
 msgid "cbx_feature_search"
 msgstr "Search Box"
 
-#: index.php:2347 index.php:2348
+#: index.php:2346 index.php:2347
 msgid "cbx_feature_advancedsearch"
 msgstr "Advanced Search Box"
 
-#: index.php:2355 index.php:2356
+#: index.php:2354 index.php:2355
 msgid "cbx_feature_social"
 msgstr "Social Media Integration"
 
-#: index.php:2363 index.php:2364
+#: index.php:2362 index.php:2363
 msgid "cbx_feature_blog"
 msgstr "Blog"
 
-#: index.php:2372 index.php:2373
+#: index.php:2371 index.php:2372
 msgid "cbx_feature_timeline"
 msgstr "Custom Timeline"
 
-#: index.php:2380 index.php:2381
+#: index.php:2379 index.php:2380
 msgid "cbx_feature_newsletter"
 msgstr "Newsletter"
 
-#: index.php:2388 index.php:2389
+#: index.php:2387 index.php:2388
 msgid "cbx_feature_calculator"
 msgstr "Calculation Tool"
 
-#: index.php:2396 index.php:2397
+#: index.php:2395 index.php:2396
 msgid "cbx_feature_otherdetails"
 msgstr "Other:"
 
-#: index.php:2441
+#: index.php:2440
 msgid "form-design-ttl"
 msgstr "Design"
 
-#: index.php:2468
+#: index.php:2467
 msgid "form-design-siteGoal-ttl"
 msgstr "Site Goal"
 
-#: index.php:2473
+#: index.php:2472
 msgid "form-design-siteGoal-info"
 msgstr ""
 "A popular thought is that users will just come to the site. These questions "
@@ -961,87 +961,87 @@ msgstr ""
 "phone number. We can create a one page website for that. This helps me to "
 "identify the site’s goals."
 
-#: index.php:2482
+#: index.php:2481
 msgid "txt_site_goal_1"
 msgstr "Why do you think people will visit your site?"
 
-#: index.php:2491
+#: index.php:2490
 msgid "txt_site_goal_2"
 msgstr "When people don’t know you, how and why would they happen upon your site?"
 
-#: index.php:2500
+#: index.php:2499
 msgid "txt_site_goal_3"
 msgstr "If people know you, why would they visit your site?"
 
-#: index.php:2509
+#: index.php:2508
 msgid "txt_site_goal_4"
 msgstr "How is your site supposed to help your organization, project or company?"
 
-#: index.php:2533
+#: index.php:2532
 msgid "form-design-action-ttl"
 msgstr "What action(s) should the users perform when visiting your site?"
 
-#: index.php:2538
+#: index.php:2537
 msgid "form-design-action-info"
 msgstr ""
 "This information is used to get a sense for design and to know what components "
 "are expected."
 
-#: index.php:2545
+#: index.php:2544
 msgid "form-design-action-pra-apply"
 msgstr "Please check all that apply:"
 
-#: index.php:2550 index.php:2551
+#: index.php:2549 index.php:2550
 msgid "cbx_action_call"
 msgstr "Call You"
 
-#: index.php:2554 index.php:2555
+#: index.php:2553 index.php:2554
 msgid "cbx_action_mail"
 msgstr "Email You"
 
-#: index.php:2558 index.php:2559
+#: index.php:2557 index.php:2558
 msgid "cbx_action_fillform"
 msgstr "Fill out a form"
 
-#: index.php:2562 index.php:2563
+#: index.php:2561 index.php:2562
 msgid "cbx_action_socialshare"
 msgstr "Share content"
 
-#: index.php:2566 index.php:2567
+#: index.php:2565 index.php:2566
 msgid "cbx_action_subscribeemail"
 msgstr "Sign up for your mailing list"
 
-#: index.php:2570 index.php:2571
+#: index.php:2569 index.php:2570
 msgid "cbx_action_article"
 msgstr "Read an article"
 
-#: index.php:2574 index.php:2575
+#: index.php:2573 index.php:2574
 msgid "cbx_action_searchinfo"
 msgstr "Search for information"
 
-#: index.php:2578 index.php:2579
+#: index.php:2577 index.php:2578
 msgid "cbx_action_purchase"
 msgstr "Purchase a product(s)"
 
-#: index.php:2583
+#: index.php:2582
 msgid "txt_action_othercomments"
 msgstr "Other or Comments:"
 
-#: index.php:2610
+#: index.php:2609
 msgid "form-design-adjective-ttl"
 msgstr ""
 "Please list three adjectives that you think describe best your organization, "
 "company or project"
 
-#: index.php:2615
+#: index.php:2614
 msgid "form-design-adjective-info"
 msgstr "This information is used to get a sense for design."
 
-#: index.php:2650
+#: index.php:2649
 msgid "form-design-target-ttl"
 msgstr "Who is your target audience?"
 
-#: index.php:2655
+#: index.php:2654
 msgid "form-design-target-info"
 msgstr ""
 "What types of visitors do you want to get? A site layout targeting Japanese "
@@ -1052,349 +1052,349 @@ msgstr ""
 "the site functionality and user experience (UX). This information is used to "
 "get a sense for design."
 
-#: index.php:2665
+#: index.php:2664
 msgid "form-design-target-stl-age"
 msgstr "Age"
 
-#: index.php:2668 index.php:2669
+#: index.php:2667 index.php:2668
 msgid "cbx_audience_age_kids"
 msgstr "Kids"
 
-#: index.php:2672 index.php:2673
+#: index.php:2671 index.php:2672
 msgid "cbx_audience_age_teen"
 msgstr "Teenagers"
 
-#: index.php:2676 index.php:2677
+#: index.php:2675 index.php:2676
 msgid "cbx_audience_age_young"
 msgstr "Young adults"
 
-#: index.php:2680 index.php:2681
+#: index.php:2679 index.php:2680
 msgid "cbx_audience_age_adult"
 msgstr "Adults"
 
-#: index.php:2684 index.php:2685
+#: index.php:2683 index.php:2684
 msgid "cbx_audience_age_senior"
 msgstr "Senior adults"
 
-#: index.php:2696
+#: index.php:2695
 msgid "form-design-target-stl-geographic"
 msgstr "Geographic"
 
-#: index.php:2699 index.php:2700
+#: index.php:2698 index.php:2699
 msgid "cbx_audience_geo_local"
 msgstr "Reach a local community"
 
-#: index.php:2703 index.php:2704
+#: index.php:2702 index.php:2703
 msgid "cbx_audience_geo_city"
 msgstr "Reach a specific City"
 
-#: index.php:2707 index.php:2708
+#: index.php:2706 index.php:2707
 msgid "cbx_audience_geo_province"
 msgstr "Reach a specific Province"
 
-#: index.php:2711 index.php:2712
+#: index.php:2710 index.php:2711
 msgid "cbx_audience_geo_country"
 msgstr "Reach a specific Province"
 
-#: index.php:2715 index.php:2716
+#: index.php:2714 index.php:2715
 msgid "cbx_audience_geo_world"
 msgstr "Inernaltional"
 
-#: index.php:2730
+#: index.php:2729
 msgid "form-design-target-stl-education"
 msgstr "Education"
 
-#: index.php:2733 index.php:2734
+#: index.php:2732 index.php:2733
 msgid "cbx_audience_education_hschool"
 msgstr "High School"
 
-#: index.php:2737 index.php:2738
+#: index.php:2736 index.php:2737
 msgid "cbx_audience_education_college"
 msgstr "College"
 
-#: index.php:2741 index.php:2742
+#: index.php:2740 index.php:2741
 msgid "cbx_audience_education_undergrad"
 msgstr "Undergraduate"
 
-#: index.php:2745 index.php:2746
+#: index.php:2744 index.php:2745
 msgid "cbx_audience_education_grad"
 msgstr "Graduate"
 
-#: index.php:2749 index.php:2750
+#: index.php:2748 index.php:2749
 msgid "cbx_audience_education_none"
 msgstr "No Education"
 
-#: index.php:2761
+#: index.php:2760
 msgid "form-design-target-stl-job"
 msgstr "Job Status"
 
-#: index.php:2764 index.php:2765
+#: index.php:2763 index.php:2764
 msgid "cbx_audience_job_salaried"
 msgstr "Salaried"
 
-#: index.php:2768 index.php:2769
+#: index.php:2767 index.php:2768
 msgid "cbx_audience_job_self"
 msgstr "Self-employed"
 
-#: index.php:2772 index.php:2773
+#: index.php:2771 index.php:2772
 msgid "cbx_audience_job_professional"
 msgstr "Professional"
 
-#: index.php:2776 index.php:2777
+#: index.php:2775 index.php:2776
 msgid "cbx_audience_job_entrepreneur"
 msgstr "Entrepreneur"
 
-#: index.php:2780 index.php:2781
+#: index.php:2779 index.php:2780
 msgid "cbx_audience_job_unemployed"
 msgstr "Unemployed"
 
-#: index.php:2795
+#: index.php:2794
 msgid "form-design-target-stl-wealth"
 msgstr "Wealth"
 
-#: index.php:2798 index.php:2799
+#: index.php:2797 index.php:2798
 msgid "cbx_audience_wealth_below"
 msgstr "Below average"
 
-#: index.php:2802 index.php:2803
+#: index.php:2801 index.php:2802
 msgid "cbx_audience_wealth_average"
 msgstr "Average"
 
-#: index.php:2806 index.php:2807
+#: index.php:2805 index.php:2806
 msgid "cbx_audience_wealth_above"
 msgstr "Above average"
 
-#: index.php:2820
+#: index.php:2819
 msgid "form-design-target-stl-gender"
 msgstr "Gender"
 
-#: index.php:2823 index.php:2824
+#: index.php:2822 index.php:2823
 msgid "cbx_audience_gender_man"
 msgstr "Male"
 
-#: index.php:2827 index.php:2828
+#: index.php:2826 index.php:2827
 msgid "cbx_audience_gender_woman"
 msgstr "Female"
 
-#: index.php:2832
+#: index.php:2831
 msgid "xxx_gender_placeholder"
 msgstr "placeholder"
 
-#: index.php:2850
+#: index.php:2849
 msgid "txt_audience_description"
 msgstr "Describe your average visitor as best you can:"
 
-#: index.php:2878
+#: index.php:2877
 msgid "form-design-design-ttl"
 msgstr "Any visual design preferences or requirements?"
 
-#: index.php:2883
+#: index.php:2882
 msgid "form-design-design-info"
 msgstr ""
 "For each categories, please indicate what are your design preferences or "
 "requirements. This information is used to get a sense for design."
 
-#: index.php:2893
+#: index.php:2892
 msgid "txt_design_colour"
 msgstr "Colour"
 
-#: index.php:2901
+#: index.php:2900
 msgid "txt_design_theme"
 msgstr "Theme (ex. dark, girly, clear, refreshing, etc.)"
 
-#: index.php:2909
+#: index.php:2908
 msgid "txt_design_style"
 msgstr "Shape Style (ex. rounded, rectangular, lots of images, no images, etc.)"
 
-#: index.php:2917
+#: index.php:2916
 msgid "txt_design_brand"
 msgstr "Specific Brand requirements"
 
-#: index.php:2925
+#: index.php:2924
 msgid "txt_design_othercomments"
 msgstr "Other or Comments:"
 
-#: index.php:2949
+#: index.php:2948
 msgid "form-design-competitor-ttl"
 msgstr "URLs of competitors or similar web presence:"
 
-#: index.php:2954
+#: index.php:2953
 msgid "form-design-competitor-info"
 msgstr ""
 "In addition to getting a good look at what key terms we may be targeting, I "
 "will take a look at these sites to get an idea of the features we might need "
 "and the target audiences we should be considering. List at least one."
 
-#: index.php:3028
+#: index.php:3027
 msgid "form-design-like-ttl"
 msgstr "Please list at least two websites or more that you LIKE"
 
-#: index.php:3033
+#: index.php:3032
 msgid "form-design-like-info"
 msgstr ""
 "These sites don’t have to be in the same activity field. By getting sites you "
 "like, I get a sense of your design expectations. By finding out what you would "
 "improve upon, I learn a lot about what you are looking for."
 
-#: index.php:3040
+#: index.php:3039
 msgid "form-design-like-par-instruction"
 msgstr ""
 "For each sites indicate the url, one thing that you LIKE and one thing you "
 "would improve."
 
-#: index.php:3049
+#: index.php:3048
 msgid "form-design-like-stl-site-1"
 msgstr "first site"
 
-#: index.php:3052
+#: index.php:3051
 msgid "fld_like_1_url"
 msgstr "URL:"
 
-#: index.php:3056
+#: index.php:3055
 msgid "fld_like_1_like"
 msgstr "Like:"
 
-#: index.php:3060
+#: index.php:3059
 msgid "fld_like_1_improve"
 msgstr "Improve:"
 
-#: index.php:3070
+#: index.php:3069
 msgid "form-design-like-stl-site-2"
 msgstr "second site"
 
-#: index.php:3073
+#: index.php:3072
 msgid "fld_like_2_url"
 msgstr "URL:"
 
-#: index.php:3077
+#: index.php:3076
 msgid "fld_like_2_like"
 msgstr "Like:"
 
-#: index.php:3081
+#: index.php:3080
 msgid "fld_like_2_improve"
 msgstr "Improve:"
 
-#: index.php:3094
+#: index.php:3093
 msgid "form-design-like-stl-site-3"
 msgstr "third site"
 
-#: index.php:3097
+#: index.php:3096
 msgid "fld_like_3_url"
 msgstr "URL:"
 
-#: index.php:3101
+#: index.php:3100
 msgid "fld_like_3_like"
 msgstr "Like:"
 
-#: index.php:3105
+#: index.php:3104
 msgid "fld_like_3_improve"
 msgstr "Improve:"
 
-#: index.php:3115
+#: index.php:3114
 msgid "form-design-like-stl-site-4"
 msgstr "fourth site"
 
-#: index.php:3118
+#: index.php:3117
 msgid "fld_like_4_url"
 msgstr "URL:"
 
-#: index.php:3122
+#: index.php:3121
 msgid "fld_like_4_like"
 msgstr "Like:"
 
-#: index.php:3126
+#: index.php:3125
 msgid "fld_like_4_improve"
 msgstr "Improve"
 
-#: index.php:3169
+#: index.php:3168
 msgid "form-design-dislike-ttl"
 msgstr "Please list at least two websites you DON’T like"
 
-#: index.php:3174
+#: index.php:3173
 msgid "form-design-dislike-info"
 msgstr ""
 "The pitfalls you list tells me what you want to avoid. It helps me to better "
 "understand your preferences and requirements."
 
-#: index.php:3180
+#: index.php:3179
 msgid "form-design-dislike-par-instruction"
 msgstr "For each sites indicate the url and one thing that you DON'T like."
 
-#: index.php:3189
+#: index.php:3188
 msgid "form-design-dislike-stl-site-1"
 msgstr "first site"
 
-#: index.php:3192
+#: index.php:3191
 msgid "fld_dislike_1_url"
 msgstr "URL:"
 
-#: index.php:3196
+#: index.php:3195
 msgid "fld_dislike_1_dislike"
 msgstr "Dislike:"
 
-#: index.php:3206
+#: index.php:3205
 msgid "form-design-dislike-stl-site-2"
 msgstr "second site"
 
-#: index.php:3209
+#: index.php:3208
 msgid "fld_dislike_2_url"
 msgstr "URL:"
 
-#: index.php:3213
+#: index.php:3212
 msgid "fld_dislike_2_dislike"
 msgstr "Dislike:"
 
-#: index.php:3228
+#: index.php:3227
 msgid "form-design-dislike-stl-site-3"
 msgstr "third site"
 
-#: index.php:3231
+#: index.php:3230
 msgid "fld_dislike_3_url"
 msgstr "URL:"
 
-#: index.php:3235
+#: index.php:3234
 msgid "fld_dislike_3_dislike"
 msgstr "Dislike:"
 
-#: index.php:3246
+#: index.php:3245
 msgid "form-design-dislike-stl-site-4"
 msgstr "fourth site"
 
-#: index.php:3249
+#: index.php:3248
 msgid "fld_dislike_4_url"
 msgstr "URL:"
 
-#: index.php:3253
+#: index.php:3252
 msgid "fld_dislike_4_dislike"
 msgstr "Dislike:"
 
-#: index.php:3298
+#: index.php:3297
 msgid "form-design-remark-ttl"
 msgstr "Do you have any definite remarks on what you DON’T want on your website?"
 
-#: index.php:3303
+#: index.php:3302
 msgid "form-design-remark-info"
 msgstr ""
 "<strong>Examples:</strong> specific images or specific text, splash page, "
 "specific colour, etc."
 
-#: index.php:3312 index.php:3313
+#: index.php:3311 index.php:3312
 msgid "rdo_remark_yes"
 msgstr "Yes"
 
-#: index.php:3322 index.php:3323
+#: index.php:3321 index.php:3322
 msgid "rdo_remark_no"
 msgstr "No"
 
-#: index.php:3349
+#: index.php:3348
 msgid "form-technology-ttl"
 msgstr "Technology"
 
-#: index.php:3360
+#: index.php:3359
 msgid "form-technology-architecture-ttl"
 msgstr "Browser support and architecture"
 
-#: index.php:3365
+#: index.php:3364
 msgid "form-technology-architecture-info"
 msgstr ""
 "Whether or not you need a site that is responsive or need to work on legacy "
@@ -1404,49 +1404,49 @@ msgstr ""
 "Internet Explorer 8 is restrictive. It takes longer to develop good support for "
 "them)"
 
-#: index.php:3372
+#: index.php:3371
 msgid "form-technology-architecture-instruction"
 msgstr ""
 "Besides modern desktop web browser, please identify which platforms or devices "
 "your site should be compatible with. Please check all that apply."
 
-#: index.php:3375 index.php:3376
+#: index.php:3374 index.php:3375
 msgid "rdo_architecture_mobile"
 msgstr "Mobile only"
 
-#: index.php:3379 index.php:3380
+#: index.php:3378 index.php:3379
 msgid "rdo_architecture_desktop"
 msgstr "Desktop only"
 
-#: index.php:3383 index.php:3384
+#: index.php:3382 index.php:3383
 msgid "rdo_architecture_responsive"
 msgstr "Responsive Web Design"
 
-#: index.php:3384
+#: index.php:3383
 msgid "rdo_architecture_responsive_note"
 msgstr " (Mobile & Desktop)"
 
-#: index.php:3390 index.php:3391
+#: index.php:3389 index.php:3390
 msgid "cbx_architecture_hd"
 msgstr "High resolution image support"
 
-#: index.php:3394 index.php:3395
+#: index.php:3393 index.php:3394
 msgid "cbx_architecture_legacysupport"
 msgstr "Legacy browsers support"
 
-#: index.php:3395
+#: index.php:3394
 msgid "cbx_architecture_legacysupport_note"
 msgstr " (ex. Internet Explorer 6 - 9)"
 
-#: index.php:3399
+#: index.php:3398
 msgid "txt_architecture_othercomments"
 msgstr "Other or Comments:"
 
-#: index.php:3423
+#: index.php:3422
 msgid "form-technology-accessibility-ttl"
 msgstr "Accessibility and usability"
 
-#: index.php:3428
+#: index.php:3427
 msgid "form-technology-accessibility-info"
 msgstr ""
 "Similar to the previous question, whether or not you require a site that needs "
@@ -1457,44 +1457,44 @@ msgstr ""
 "needs to be optimized for non high definition devices as well to not affect the "
 "site performance.)"
 
-#: index.php:3435
+#: index.php:3434
 msgid "form-technology-accessibility-instruction"
 msgstr ""
 "Please check all that apply and please provide details for your selections. If "
 "you are not sure if you require these features or not that is fine, I can "
 "provide clarifications when we meet."
 
-#: index.php:3438 index.php:3439
+#: index.php:3437 index.php:3438
 msgid "cbx_accessibility_eyesight"
 msgstr "Users might have eyesight disability"
 
-#: index.php:3439
+#: index.php:3438
 msgid "cbx_accessibility_eyesight_note"
 msgstr " (screenreader requirement or design adjustment with bigger typefaces)"
 
-#: index.php:3442 index.php:3443
+#: index.php:3441 index.php:3442
 msgid "cbx_accessibility_mobility"
 msgstr "Users might have mobility restrictions"
 
-#: index.php:3443
+#: index.php:3442
 msgid "cbx_accessibility_mobility_note"
 msgstr " (keyboard navigation enhancement required)"
 
-#: index.php:3446 index.php:3447
+#: index.php:3445 index.php:3446
 msgid "cbx_accessibility_readinglevel"
 msgstr "Users might have a lower reading level compared to average"
 
-#: index.php:3451
+#: index.php:3450
 msgid "txt_accessibility_othercomments"
 msgstr "Other or Comments:"
 
-#: index.php:3475
+#: index.php:3474
 msgid "form-technology-seo-ttl"
 msgstr ""
 "Search Engine Optimization <sup><a id=\"ffn1\" href=\"#fn1\" class=\"footnote"
 "\">1</a></sup> (SEO)"
 
-#: index.php:3480
+#: index.php:3479
 msgid "form-technology-seo-info-1"
 msgstr ""
 "Our code is developed using current conventions and architectural best "
@@ -1504,7 +1504,7 @@ msgstr ""
 "impacts SEO rankings positively, it is only a small portion of an optimal and "
 "broader search engine optimization (SEO) process."
 
-#: index.php:3481
+#: index.php:3480
 msgid "form-technology-seo-info-2"
 msgstr ""
 "The below selections does NOT represent an exhaustive list of all SEO features. "
@@ -1512,146 +1512,146 @@ msgstr ""
 "require any additional/other SEO features not listed above, we have "
 "professional connections that can be hired."
 
-#: index.php:3488
+#: index.php:3487
 msgid "form-technology-seo-instruction"
 msgstr ""
 "In addition to optimal architectural development practices that we provide, "
 "please select all other SEO features you require in the list below:"
 
-#: index.php:3493
+#: index.php:3492
 msgid "xxx_seo_tool"
 msgstr ""
 "Integration and basic configuration of one or more <em>Webmaster Tools</em>"
 
-#: index.php:3493
+#: index.php:3492
 msgid "xxx_seo_tool_note"
 msgstr "including sitemaps and robots configuration"
 
-#: index.php:3497
+#: index.php:3496
 msgid "form-technology-seo-stl-wmt"
 msgstr "WMT available"
 
-#: index.php:3500 index.php:3502
+#: index.php:3499 index.php:3501
 msgid "cbx_seo_tool_google"
 msgstr "Google Search Console"
 
-#: index.php:3502
+#: index.php:3501
 msgid "https://www.google.ca/webmasters/"
 msgstr ""
 
-#: index.php:3506 index.php:3508
+#: index.php:3505 index.php:3507
 msgid "cbx_seo_tool_bing"
 msgstr "Bing Webmaster Tools"
 
-#: index.php:3508
+#: index.php:3507
 msgid "http://www.bing.com/toolbox/webmaster"
 msgstr ""
 
-#: index.php:3512 index.php:3514
+#: index.php:3511 index.php:3513
 msgid "cbx_seo_tool_yandex"
 msgstr "Yandex Webmaster"
 
-#: index.php:3514
+#: index.php:3513
 msgid "https://webmaster.yandex.com"
 msgstr ""
 
-#: index.php:3522
+#: index.php:3521
 msgid "cbx_seo_url_optimization"
 msgstr "URL optimization and canonicalization"
 
-#: index.php:3522
+#: index.php:3521
 msgid "cbx_seo_url_optimization_note"
 msgstr "common with a Content Management System website"
 
-#: index.php:3526
+#: index.php:3525
 msgid "cbx_seo_structured_data"
 msgstr "Rich Snippets and Structured Data"
 
-#: index.php:3526
+#: index.php:3525
 msgid "cbx_seo_structured_data_note"
 msgstr "schema.org, datavocabulary.org, microformats.org"
 
-#: index.php:3530
+#: index.php:3529
 msgid "cbx_seo_localization"
 msgstr "Target Multiple Languages"
 
-#: index.php:3530
+#: index.php:3529
 msgid "cbx_seo_localization_note"
 msgstr "localization"
 
-#: index.php:3534
+#: index.php:3533
 msgid "cbx_seo_mobile_meta"
 msgstr "Mobile web development meta tag configuration with subdomains"
 
-#: index.php:3534
+#: index.php:3533
 msgid "cbx_seo_mobile_meta_note"
 msgstr "ex. http://www<strong>.m</strong>.domain.com"
 
-#: index.php:3538
+#: index.php:3537
 msgid "xxx_seo_opengraph"
 msgstr "Open Graph"
 
-#: index.php:3538
+#: index.php:3537
 msgid "xxx_seo_opengraph_note"
 msgstr "social metadata configuration"
 
-#: index.php:3542
+#: index.php:3541
 msgid "form-technology-seo-stl-opengraph"
 msgstr "social networks"
 
-#: index.php:3546 index.php:3547
+#: index.php:3545 index.php:3546
 msgid "cbx_seo_opengraph_fb"
 msgstr "Facebook"
 
-#: index.php:3547
+#: index.php:3546
 msgid "https://www.facebook.com"
 msgstr ""
 
-#: index.php:3552 index.php:3553
+#: index.php:3551 index.php:3552
 msgid "cbx_seo_opengraph_tw"
 msgstr "Twitter"
 
-#: index.php:3553
+#: index.php:3552
 msgid "https://twitter.com"
 msgstr ""
 
-#: index.php:3558 index.php:3559
+#: index.php:3557 index.php:3558
 msgid "cbx_seo_opengraph_gplus"
 msgstr "Google plus"
 
-#: index.php:3559
+#: index.php:3558
 msgid "https://plus.google.com"
 msgstr ""
 
-#: index.php:3564 index.php:3565
+#: index.php:3563 index.php:3564
 msgid "cbx_seo_opengraph_linkedin"
 msgstr "LinkedIn"
 
-#: index.php:3565
+#: index.php:3564
 msgid "https://ca.linkedin.com/nhome/"
 msgstr ""
 
-#: index.php:3570 index.php:3571
+#: index.php:3569 index.php:3570
 msgid "cbx_seo_opengraph_pinterest"
 msgstr "Pinterest"
 
-#: index.php:3571
+#: index.php:3570
 msgid "https://www.pinterest.com"
 msgstr ""
 
-#: index.php:3579
+#: index.php:3578
 msgid "cbx_seo_analytic"
 msgstr "Integration and setup of a Google Analytics"
 
-#: index.php:3579
+#: index.php:3578
 msgid "cbx_seo_analytic_note"
 msgstr "account"
 
-#: index.php:3597
+#: index.php:3596
 msgid "form-technology-domain-ttl"
 msgstr "Domain Names"
 
-#: index.php:3602
+#: index.php:3601
 msgid "form-technology-domain-info"
 msgstr ""
 "Please list all your domains and subdomains for your website. If you do not "
@@ -1659,19 +1659,19 @@ msgstr ""
 "to use -> You can easily check its availability on the web or via this trusted "
 "registrar:"
 
-#: index.php:3602
+#: index.php:3601
 msgid "https://www.namecheap.com"
 msgstr ""
 
-#: index.php:3602
+#: index.php:3601
 msgid "Namecheap.com"
 msgstr "namecheap.com"
 
-#: index.php:3676
+#: index.php:3675
 msgid "form-technology-hosting-ttl"
 msgstr "Do you require web hosting?"
 
-#: index.php:3681
+#: index.php:3680
 msgid "form-technology-hosting-info"
 msgstr ""
 "I do not offer extensive hosting services but I can help with the hosting of "
@@ -1680,19 +1680,19 @@ msgstr ""
 "small to medium projects. Alternatively, I can install your site on any hosting "
 "service of your choice if you already have an account set up."
 
-#: index.php:3689 index.php:3690
+#: index.php:3688 index.php:3689
 msgid "rdo_requirehosting_yes"
 msgstr "Yes, I do need hosting services."
 
-#: index.php:3693 index.php:3694
+#: index.php:3692 index.php:3693
 msgid "rdo_requirehosting_no"
 msgstr "No, I have hosting services secured already."
 
-#: index.php:3713
+#: index.php:3712
 msgid "form-technology-email-ttl"
 msgstr "Do you require an email address matching your domain name?"
 
-#: index.php:3718
+#: index.php:3717
 msgid "form-technology-email-info"
 msgstr ""
 "If you require an email address matching your domain name, I can help with "
@@ -1701,19 +1701,19 @@ msgstr ""
 "mail in the cloud and make them accessible from all your devices easily "
 "(computer or mobile)."
 
-#: index.php:3725 index.php:3726
+#: index.php:3724 index.php:3725
 msgid "rdo_domain_mailmatch_yes"
 msgstr "Yes, I want to use Google Apps for Work"
 
-#: index.php:3729 index.php:3730
+#: index.php:3728 index.php:3729
 msgid "rdo_domain_mailmatch_no"
 msgstr "No"
 
-#: index.php:3749
+#: index.php:3748
 msgid "form-technology-maintenance-ttl"
 msgstr "Who will be responsible for the site maintenance?"
 
-#: index.php:3754
+#: index.php:3753
 msgid "form-technology-maintenance-info"
 msgstr ""
 "For example, if you ask for a forum, calendar or price tables, it will require "
@@ -1721,15 +1721,15 @@ msgstr ""
 "your company have the appropriate resource? (What is the skills level of person "
 "who will update the website? Is there a need for a CMS?)"
 
-#: index.php:3787
+#: index.php:3786
 msgid "form-other-ttl"
 msgstr "OTHER"
 
-#: index.php:3798
+#: index.php:3797
 msgid "form-other-future"
 msgstr "Anything you don’t need now but may want in the future?"
 
-#: index.php:3803
+#: index.php:3802
 msgid "form-other-future-info"
 msgstr ""
 "Please be as specific and future thinking as possible. Example: new pages, "
@@ -1738,30 +1738,30 @@ msgstr ""
 "order to accommodate the implementation of the said features at a later date. "
 "This will avoid you to have additional costs in development time in the future"
 
-#: index.php:3823
+#: index.php:3822
 msgid "form-other-comment"
 msgstr "Please share any additional information about your project here."
 
-#: index.php:3828
+#: index.php:3827
 msgid "form-other-comment-info"
 msgstr ""
 "This is the place to add any other requirements for your project and describe "
 "why it is important for you. Any additional information can only help me to "
 "better understand your needs and expectations.\""
 
-#: index.php:3849
+#: index.php:3848
 msgid "form-submit-ttl"
 msgstr ""
 
-#: index.php:3864
+#: index.php:3863
 msgid "form-btn-submit"
 msgstr "SUBMIT"
 
-#: index.php:3865
+#: index.php:3864
 msgid "form-btn-reset"
 msgstr "RESET"
 
-#: index.php:3899
+#: index.php:3898
 msgid "form-footnote-fn1"
 msgstr ""
 "Be aware that integration of SEO features are NOT required for the creation of "
@@ -1775,14 +1775,14 @@ msgstr ""
 "fancier the package, more likely your product will stand out from its "
 "competitors therefore, increasing its ranking on search engines."
 
-#: index.php:3900
+#: index.php:3899
 msgid "form-footnote-fn2"
 msgstr ""
 "Webmaster Tools (or WMT) are popular, powerful and mostly free SEO-tool. It "
 "enables webmasters, SEO-consultants and online marketers to gain important SEO "
 "insights and improve the visibility and user-friendliness of their websites."
 
-#: index.php:3901
+#: index.php:3900
 msgid "form-footnote-fn3"
 msgstr ""
 "In web search and search engine optimization (SEO), URL canonicalization deals "
@@ -1790,7 +1790,7 @@ msgstr ""
 "the same web content can cause problems for search engines - specifically in "
 "determining which URL should be shown in search results"
 
-#: index.php:3902
+#: index.php:3901
 msgid "form-footnote-fn4"
 msgstr ""
 "This approach allows software to process information intended for end-users "
@@ -1801,7 +1801,7 @@ msgstr ""
 "use it to provide a richer browsing experience for users. This feature "
 "contribute to a better SEO."
 
-#: index.php:3903
+#: index.php:3902
 msgid "form-footnote-fn5"
 msgstr ""
 "Language localization differs from translation activity because it involves a "
@@ -1809,13 +1809,13 @@ msgstr ""
 "product to local needs. (date and time format, currency, video/image langage, "
 "etc.) The HTML markup itself needs to be altered with specific tags."
 
-#: index.php:3904
+#: index.php:3903
 msgid "form-footnote-fn6"
 msgstr ""
 "Google recently announced that mobile friendly sites ranks better on google "
 "search performed from a mobile device."
 
-#: index.php:3905
+#: index.php:3904
 msgid "form-footnote-fn7"
 msgstr ""
 "Open Graphs are advanced HTML meta tags which add specific metadata information "
@@ -1823,21 +1823,26 @@ msgstr ""
 "networks when a user share its content via a dedicated share button. (author, "
 "images, description, dates, website links, etc.)"
 
-#: index.php:3906
+#: index.php:3905
 msgid "form-footnote-fn8"
 msgstr "Collect useful information about your site traffic."
 
-#: index.php:3907
+#: index.php:3906
 msgid "form-footnote-fn9"
 msgstr ""
 "Example of tools: Git version control, SASS CSS pre-processors, auto-prefixers, "
 "image/vectors editing tools, etc."
 
-#: index.php:3923
+#: index.php:3922
 msgid "footer-fb-share-link"
 msgstr ""
 "https://www.facebook.com/sharer/sharer.php?u=www.projecklist.oneprojct.space/?"
 "lang=en_CA"
+
+#: index.php:3923
+msgid "footer-tw-share-link"
+msgstr ""
+"https://twitter.com/home?status=www.projecklist.oneprojct.space/?lang=en_CA"
 
 #: php/functions.php:181
 msgid "process_email_attach_name"
