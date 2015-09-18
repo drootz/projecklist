@@ -3947,7 +3947,7 @@
                                 </div>
                             </div>
                             <div class="col-12 m-copyright">
-                                <p>Created in Montreal &copy; <?php echo date("Y")?></p>
+                                <p><?php echo _( 'footer-copy' ); ?> &copy; <?php echo date("Y")?></p>
                                 <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a>
                             </div>
 

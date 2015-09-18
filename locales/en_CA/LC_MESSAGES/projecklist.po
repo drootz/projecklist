@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-17 22:41-0400\n"
-"PO-Revision-Date: 2015-09-17 22:41-0400\n"
+"POT-Creation-Date: 2015-09-17 22:50-0400\n"
+"PO-Revision-Date: 2015-09-17 22:51-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: en_CA\n"
@@ -1848,6 +1848,10 @@ msgid "footer-in-share-link"
 msgstr ""
 "https://www.linkedin.com/shareArticle?mini=true&title&summary&url=http://www."
 "projecklist.oneprojct.space/?lang=en_CA"
+
+#: index.php:3950
+msgid "footer-copy"
+msgstr "Created in Montreal"
 
 #: php/functions.php:181
 msgid "process_email_attach_name"
