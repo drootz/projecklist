@@ -45,7 +45,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php echo $html_lang; ?>> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php echo $html_lang; ?> prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
 
 <head>
 
@@ -3919,7 +3919,7 @@
                                     <ul>
                                         <li><a <?php echo "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
                                         <li><a <?php echo "href=\"" . _( 'footer-tw-share-link' ) . "\""; ?>><span class="fa fa-twitter-square fa-2x"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-linkedin-square fa-2x"></span></a></li>
+                                        <li><a <?php echo "href=\"" . _( 'footer-in-share-link' ) . "\""; ?>><span class="fa fa-linkedin-square fa-2x"></span></a></li>
                                     </ul>
                                 </div>
                             </div>
