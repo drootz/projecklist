@@ -81,8 +81,6 @@
     <meta name="twitter:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
     <meta name="twitter:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
     <meta name="twitter:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
-    <!-- <meta name="twitter:image:width" content="560">
-    <meta name="twitter:image:height" content="560"> -->
 
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory
