@@ -77,7 +77,7 @@
     <!-- Schema.org markup for Twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@projecklist">
-    <meta name="twitter:creator" content="@idannniel">
+    <meta name="twitter:creator" content="@dracine-hub">
     <meta name="twitter:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
     <meta name="twitter:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
     <meta name="twitter:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
@@ -3920,6 +3920,7 @@
                                         <li><a <?php echo "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
                                         <li><a <?php echo "href=\"" . _( 'footer-tw-share-link' ) . "\""; ?>><span class="fa fa-twitter-square fa-2x"></span></a></li>
                                         <li><a <?php echo "href=\"" . _( 'footer-in-share-link' ) . "\""; ?>><span class="fa fa-linkedin-square fa-2x"></span></a></li>
+                                        <li><a href="https://twitter.com/intent/tweet?text=WEB PROJECT EVALUATION FORM&via=projecklist&url=http%3A%2F%2Fwww.projecklist.oneprojct.space%2F%3Flang%3Den_CA">Tweet</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -3931,15 +3932,15 @@
                                     <ul>
                                         <li>
                                             <!-- Place this tag where you want the button to render. -->
-                                            <a class="github-button" href="https://github.com/idannniel/projecklist" data-icon="octicon-eye" data-style="mega" aria-label="Watch idannniel/projecklist on GitHub">Watch</a>
+                                            <a class="github-button" href="https://github.com/dracine-hub/projecklist" data-icon="octicon-eye" data-style="mega" aria-label="Watch dracine-hub/projecklist on GitHub">Watch</a>
                                         </li>
                                         <li>
                                             <!-- Place this tag where you want the button to render. -->
-                                            <a class="github-button" href="https://github.com/idannniel/projecklist" data-icon="octicon-star" data-style="mega" aria-label="Star idannniel/projecklist on GitHub">Star</a>
+                                            <a class="github-button" href="https://github.com/dracine-hub/projecklist" data-icon="octicon-star" data-style="mega" aria-label="Star dracine-hub/projecklist on GitHub">Star</a>
                                         </li>
                                         <li>
                                             <!-- Place this tag where you want the button to render. -->
-                                            <a class="github-button" href="https://github.com/idannniel/projecklist/fork" data-icon="octicon-git-branch" data-style="mega" aria-label="Fork idannniel/projecklist on GitHub">Fork</a>
+                                            <a class="github-button" href="https://github.com/dracine-hub/projecklist/fork" data-icon="octicon-git-branch" data-style="mega" aria-label="Fork dracine-hub/projecklist on GitHub">Fork</a>
                                         </li>
                                     </ul>
                                     <!-- Place this tag right after the last button or just before your close body tag. -->
