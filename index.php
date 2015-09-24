@@ -77,7 +77,7 @@
     <!-- Schema.org markup for Twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@projecklist">
-    <meta name="twitter:creator" content="@dracine-hub">
+    <meta name="twitter:creator" content="@_dracine">
     <meta name="twitter:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
     <meta name="twitter:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
     <meta name="twitter:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
