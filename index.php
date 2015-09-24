@@ -3920,7 +3920,7 @@
                                         <li><a <?php echo "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
                                         <li><a <?php echo "href=\"" . _( 'footer-tw-share-link' ) . "\""; ?>><span class="fa fa-twitter-square fa-2x"></span></a></li>
                                         <li><a <?php echo "href=\"" . _( 'footer-in-share-link' ) . "\""; ?>><span class="fa fa-linkedin-square fa-2x"></span></a></li>
-                                        <li><a href="https://twitter.com/intent/tweet?text=WEB PROJECT EVALUATION FORM&via=projecklist&url=http%3A%2F%2Fwww.projecklist.oneprojct.space%2F%3Flang%3Den_CA">Tweet</a></li>
+                                        <!-- <li><a href="https://twitter.com/intent/tweet?text=WEB PROJECT EVALUATION FORM&via=projecklist&url=http%3A%2F%2Fwww.projecklist.oneprojct.space%2F%3Flang%3Den_CA">Tweet</a></li> testing tw link sharing -->
                                     </ul>
                                 </div>
                             </div>
