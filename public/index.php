@@ -8,32 +8,15 @@
  * You should have received a copy of the MIT License
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */
-?>
 
+//**** functions 
+require(__DIR__ . "/../includes/functions.php");
 
+//**** config
+require(__DIR__ . "/../includes/config.php");
 
-
-
-<?php
-
-    // Set your default timezone here
-    // http://php.net/manual/en/timezones.php
-    $timezone = 'America/Montreal';
-    date_default_timezone_set($timezone);
-
-    //**** L18N support
-    include 'php/localize.php';
-
-    //**** L18N support
-    include 'php/functions.php';
-
-    // Define html lang attribute
-    $html_lang = "lang=\"".$_SESSION['htmllang']."\"";
-
-    // Set Theme Dark/Light
-    $html_theme = "class=\"".setTheme()."\"";
-
-
+//**** config
+require(__DIR__ . "/../includes/session.php");
 
 ?>
 
@@ -157,7 +140,7 @@
             <?php      
 
                 //**** _debug output -> $_GET, %_SESSION, $_COOKIE, gettext plurals, phpinfo.php, languages
-                // include 'debug/session.php';
+                // include '../_debug/session.php';
 
             ?>
 

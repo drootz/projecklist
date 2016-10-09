@@ -9,40 +9,20 @@
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */
 
-
-
-
-    // Include settings.php $default variables
-    include 'php/_settings.php';
+	//**** DEBUG
+	require(__DIR__ . "/../_debug/functions.php");
 
 	//**** functions 
-	include 'php/functions.php';
+	require(__DIR__ . "/../includes/functions.php");
 
-	//**** DEBUG processed data -> development mode
-	include '_debug/functions.php';
-
-	//**** L18N support
-	include 'php/localize.php';
-
-
-
-
-    date_default_timezone_set($timezone);
+	//**** config
+	require(__DIR__ . "/../includes/config.php");
 
 	// execution starts here
 	if(isset($_POST['submit'])) {
 		// call form handler
 		$errorMsg = validateForm($_POST);
 	}
-
-
-
-
-
-
-
-
-	
 
 ?>
 
