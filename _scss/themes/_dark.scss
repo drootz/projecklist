@@ -71,6 +71,7 @@ body.th-dark {
 	.m-coname {
 		border-color: lighten( $dark, 5% );
 		box-shadow: -1px 0px 0px 0px darken($dark, 10% );
+		color: $light;
 	}
 
 
@@ -78,6 +79,16 @@ body.th-dark {
 
 	.m-float-radial {
 		// background-color: $dark;
+	}
+
+	.m-nav-login {
+		& > li {
+			color: $light;
+		}
+
+		a {
+			color: $accent;
+		}
 	}
 
 	.m-hero {
@@ -170,6 +181,7 @@ body.th-dark {
 	input[type="email"],
 	input[type="url"],
 	input[type="tel"],
+	input[type="password"],
 	textarea {
 		color: $dark;
 		border-color: $dark;

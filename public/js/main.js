@@ -1003,7 +1003,7 @@ function viewportIni() {
 // Window resize initialiser
 (function(){
 
-	viewportIni()
+	viewportIni();
 
 	// Older version of IE -> < 9
 	if(window.attachEvent)
@@ -1026,96 +1026,6 @@ function viewportIni() {
 
 })();
 
-
-
-
-/*
- * jQuery Autogrow Text Area
- * version 1.0
- * It automatically adjusts the height on text area.
- *
- * Written by Jerry Luk jerry@presdo.com
- *
- * Based on Chrys Bader's Auto Expanding Text area www.chrysbader.com
- * and Craig Buckler's TextAreaExpander  http://www.sitepoint.com/blogs/2009/07/29/build-auto-expanding-textarea-1/
- *
- * Licensed under MIT license.
- */
- 
-(function($) {
-  $.fn.autogrow = function(options) {
-    var defaults = {
-      expandTolerance: 1,
-      heightKeeperFunction: null
-    };
-    options = $.extend(defaults, options);
-    
-    // IE and Opera should never set a textarea height of 0px
-    // (DEPRECATED) -> var hCheck = !($.browser.msie || $.browser.opera);
-    
-    function resize(e) {
-      var $e            = $(e.target || e), // event or element
-          contentLength = $e.val().length,
-          elementWidth  = $e.innerWidth();
-      if ($e.is(":hidden")) {
-        // Do not do anything if the element is hidden as we cannot determine the height correctly
-        return $e;
-      }
-      if (contentLength != $e.data("autogrow-length") || elementWidth != $e.data("autogrow-width")) {
-        
-        // For non-IE and Opera browser, it requires setting the height to 0px to compute the right height
-        if (/* (DEPRECATED) -> hCheck && */(contentLength < $e.data("autogrow-length") || 
-          elementWidth != $e.data("autogrow-width"))) {
-          if ($.isFunction(options.heightKeeperFunction)) {
-            (options.heightKeeperFunction($e)).height((options.heightKeeperFunction($e)).height());
-          }
-          $e.css("height", "0px");
-        }
-        
-        var height = Math.max($e.data("autogrow-min"), Math.ceil(Math.min(
-          $e.prop("scrollHeight") + options.expandTolerance * $e.data("autogrow-line-height"), 
-          $e.data("autogrow-max"))));
-
-        $e.css("overflow", ($e.prop("scrollHeight") > height ? "auto" : "hidden"));
-        $e.css("height", height + "px");
-        if ($.isFunction(options.heightKeeperFunction)) {
-          (options.heightKeeperFunction($e)).css({ height: 'auto' });
-        }
-      }
-      
-      return $e;
-    };
-    
-    function parseNumericValue(v) {
-      var n = parseInt(v, 10);
-      return isNaN(n) ? null : n;
-    };
-    
-    function initElement($e) {
-      $e.data("autogrow-min", options.minHeight || parseNumericValue($e.css('min-height')) || 0);
-      $e.data("autogrow-max", options.maxHeight || parseNumericValue($e.css('max-height')) || 99999);
-      $e.data("autogrow-line-height", options.lineHeight || parseNumericValue($e.css('line-height')));
-      resize($e);
-    };
-    
-    this.each(function() {
-      var $this = $(this);
-            
-      if (!$this.data("autogrow-initialized")) {
-        $this.css("padding-top", 20).css("padding-bottom", 20); // Manually added padding to textareas
-        $this.bind("keyup", resize).bind("focus", resize);
-        $this.data("autogrow-initialized", true);
-      }
-      
-      initElement($this);
-      // Sometimes the CSS attributes are not yet there so the above computation might be wrong
-      // 100ms delay will do the job
-      setTimeout(function() { initElement($this); }, 100);
-    });
-    
-    return this;
-  };
-})(jQuery);
 
 
 
@@ -1168,6 +1078,47 @@ $( document ).ready(function() {
 	toFields = [ to_fn , to_ln , to_ph , to_email, to_emailValid ];
 
 
+	// Control Logo text color on light theme
+	if ($('.m-hero').length)
+	{
+		if (!$('.m-coname').hasClass('js-home')){
+			$('.m-coname').addClass('js-home');
+		}
+		if (!$('.m-nav-login').hasClass('js-home')){
+			$('.m-nav-login').addClass('js-home');
+		}
+	}
+
+	$divider = $(".th-divider");
+	if ($divider.length)
+	{
+		$divider.first().addClass("animate");
+	}
+
+
+	$(".m-mobile-menu").click( function() {
+		var ico = $(this).children();
+		if (ico.hasClass('fa-bars'))
+		{
+			ico.addClass('fa-times');
+			ico.removeClass('fa-bars');
+		}
+		else if (ico.hasClass('fa-times'))
+		{
+			ico.addClass('fa-bars');
+			ico.removeClass('fa-times');
+		}
+
+		var menu = $(this).siblings('.m-menu');
+		if (menu.is(':visible'))
+		{
+			menu.slideUp();
+		}
+		else
+		{
+			menu.slideDown();	
+		}
+	});
 
 
 	// Define Language menu button state behaviors touch/no-touch
@@ -1218,10 +1169,10 @@ $( document ).ready(function() {
 
 
  	// Manage theme toggle and update cookie values. ( also manage reCaptcha theme toggle )
- 	$(".menu-theme").click( function() {
+ 	$(".js-menu-theme").click( function() {
 
  		var body = $("body");
- 		var allButtons = $(".menu-theme");
+ 		var allButtons = $(".js-menu-theme");
 
  		var c_name = "theme";
  		var c_value;
@@ -1229,44 +1180,73 @@ $( document ).ready(function() {
 
  		switchClass(allButtons.children(),"fa-sun-o","fa-moon-o");
  		switchClass(body,"th-dark","th-light");
+
  		if (body.hasClass('th-dark')) {
- 			allButtons.attr("title","toggle day mode");
+ 			// allButtons.attr("title","toggle day mode");
  			c_value = "th-dark";
-	        grecaptcha.reset(widgetId1, {
-	            'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
-	            'theme' : 'dark'
-	        });
+ 			if($('#captcha').length)
+ 			{
+		        grecaptcha.reset(widgetId1, {
+		            'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
+		            'theme' : 'dark'
+		        });
+ 			}
  		}
  		else
  		{
- 			allButtons.attr("title","toggle night mode");
+ 			// allButtons.attr("title","toggle night mode");
  			c_value = "th-light";
-	        grecaptcha.reset(widgetId1, {
-	            'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
-	            'theme' : 'light'
-	        });
+ 			if($('#captcha').length)
+ 			{
+		        grecaptcha.reset(widgetId1, {
+		            'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
+		            'theme' : 'light'
+		        });
+ 			}
  		}
 
-		var exdate=new Date()
-		exdate.setDate(exdate.getDate()+c_exDate)
-		document.cookie=c_name+ "=" +escape(c_value)+
-		((c_exDate==null) ? "" : ";expires="+exdate.toGMTString())
+		var exdate = new Date();
+		exdate.setDate(exdate.getDate() + c_exDate);
+		document.cookie = c_name + "=" + escape(c_value) + ";expires=" + exdate.toGMTString();
 
+		if($('.m-mobile-menu').is(':visible'))
+		{
+
+			var ico = $('.m-mobile-menu').children();
+
+			if($('.m-menu').is(':visible'))
+			{
+				$('.m-menu').slideUp();
+				// $('.m-menu').hide();
+			}
+			
+			if (ico.hasClass('fa-bars'))
+			{
+				ico.addClass('fa-times');
+				ico.removeClass('fa-bars');
+			}
+			else if (ico.hasClass('fa-times'))
+			{
+				ico.addClass('fa-bars');
+				ico.removeClass('fa-times');
+			}
+
+
+		}
  	});
 
 
 
 
  	// Set autoGrow of textarea to all textarea tags
-	$("textarea").each( function() {
-		$(this).autogrow();
+	$("textarea").autogrow({
+		onInitialize: true
 	});
 
 
 
-
 	// Manage state of input fields if contains value.
-	$("[type='text'], [type='email'], [type='url'], [type='tel'], textarea").focusout( function() {
+	$("[type='text'], [type='password'], [type='email'], [type='url'], [type='tel'], textarea").focusout( function() {
 		var thisInput = $(this);
 		if (thisInput.val() != "")
 		{
@@ -1579,65 +1559,93 @@ $( document ).ready(function() {
 
 
 
-	 $('#projecklist').validate({
-	  // rules: {
-		 //   f_contact_firstname_1: {
-		 //    minlength: 2,
-		 //    maxLength: 100,
-		 //    required: true
-		 //   },
-		 //   f_contact_lastname_1: {
-		 //    minlength: 2,
-		 //    maxLength: 100,
-		 //    required: true
-		 // 	 //   f_contact_phone_1: {
-		 //    minlength: 2,
-		 //    maxLength: 14,
-		 //    required: true
-		 //   },
-		 //   f_contact_email_verification_1: {
-		 //    minlength: 2,
-		 //    maxLength: 100,
-		 //    email: true,
-		 //    required: true
-		 //   },
-		 //   f_contact_email_validator_1: {
-		 //    minlength: 2,
-		 //    maxLength: 100,
-		 //    email: true,
-		 //    required: true
-		 //   },
-		 //   f_condition: {
-		 //    minlength: 2,
-		 //    required: true
-		 //   }
-	  // },
-	  // highlight: function(element) {
-	  //  $(element).closest('.control-group').removeClass('success').addClass('error');
-	  // },
-	  // success: function(element) {
-	  //  element.text('OK!').addClass('valid').closest('.control-group').removeClass('error').addClass('success');
-	  // },
-	  submitHandler: function(form) {
-	   // do other stuff for a valid form
-	   $.post('process.php', $("#projecklist").serialize(), function(data) {
-	    // $("#projecklist").hide();
-	    $('#results').html(data);
-	   });
-	  }
-	 });
+	$('#projecklist').validate({
+		submitHandler: function(form) {
+			// do other stuff for a valid form
+			$.post('projeckt.php', $("#projecklist").serialize(), function(data) {
+				if(data === "SUCCESS")
+				{	
+					// redirect to home screen
+					// window.location.href = 'index.php';
+					$('#results').html(data);
+				}
+				else
+				{
+					// output errors detected on the form
+					$('#results').html(data);
 
+				}
+			});
+		}
+	});
+
+
+	$('#login').validate({
+		submitHandler: function(form) {
+			// do other stuff for a valid form
+			$.post('login.php', $("#login").serialize(), function(data) {
+				if(data === "SUCCESS")
+				{	
+					// redirect to home screen
+					window.location.href = 'index.php';
+				}
+				else
+				{
+					// output errors detected on the form
+					$('#login').trigger("reset");
+					$('#results').html(data);
+
+				}
+			});
+		}
+	});
+
+
+	$('#register').validate({
+		submitHandler: function(form) {
+			// do other stuff for a valid form
+			$.post('register.php', $("#register").serialize())
+			.done(function( data ) {
+				if(data === "SUCCESS")
+				{	
+					// redirect to home screen
+					window.location.href = 'index.php';
+				}
+				else
+				{
+					// output errors detected on the form
+					$('#results').html(data);
+				}
+			})
+			.fail(function() {
+				$('#results').html("Registration Failed");
+			});
+		}
+	});
+
+   // function(data) {
+			// 	alert(data.length);
+			// 	alert(data);
+			// 	if (data.length)
+			// 	{
+			// 		$('#results').html(data);
+			// 	}
+			// 	else
+			// 	{
+			// 		window.location = 'index.php';
+			// 	}
+			// });
 
 
 
 	// Set font proper awesome icon for theme selection buttons for the current theme.
 	function loadTheme() {
 	 	if ($("body").hasClass("th-light")) {
-	 		$(".menu-theme").children().addClass("fa-moon-o");
+	 		$(".js-menu-theme").children().addClass("fa-moon-o");
 	 	} 
 	 	else if ($("body").hasClass("th-dark"))
 	 	{
-	 		$(".menu-theme").children().addClass("fa-sun-o");
+	 		$(".js-menu-theme").children().addClass("fa-sun-o");
 	 	}
 	}
 	loadTheme();
@@ -1860,94 +1868,105 @@ $( window ).scroll(function() {
 
 
 	// Trigger the theme toggle button onScroll 
-	var themePos = ($(".section-action").offset().top)+($(".section-action").height() / 2);
-    if (scrollPostion > themePos)
-    {
-		var themeButton = $(".m-float-radial .menu-theme");
-    	if (!themeButton.is(":visible"))
-    	{
-    		themeButton.show();
-    	}
-    }
-    else
-    {
-		var themeButton = $(".m-float-radial .menu-theme");
-    	if (themeButton.is(":visible"))
-    	{
-    		themeButton.hide();
-    	}
-    }
-
-
-	// Trigger animation of "more info" block when info button is visible in viewport
-	if (!$(".js-hint").hasClass("anim-buzz"))
+	var secActionSel = $(".section-action");
+	if (secActionSel.length)
 	{
-		var hintSel = $(".js-hint");
-    	var hintPos = hintSel.offset().top;
-	    if (scrollPostion > (hintPos - st) && scrollPostion < (hintPos - nd) )
+		var themePos = (secActionSel.offset().top)+(secActionSel.height() / 2);
+	    if (scrollPostion > themePos)
 	    {
-		    hintSel.each( function() {
-		    	var thisButton = $(this);
-				if (verge.inY(thisButton, -animPosition))
-				{
-					thisButton.addClass("anim-buzz");
-				}
-		    });
+			var themeButton = $(".m-float-radial .js-menu-theme");
+	    	if (!themeButton.is(":visible"))
+	    	{
+	    		themeButton.show();
+	    	}
 	    }
-    }
+	    else
+	    {
+			var themeButton = $(".m-float-radial .js-menu-theme");
+	    	if (themeButton.is(":visible"))
+	    	{
+	    		themeButton.hide();
+	    	}
+	    }	
+	}	
+
+	var hintSel = $(".js-hint");
+	if (hintSel.length) {
+	    // Trigger animation of "more info" block when info button is visible in viewport
+		if (!hintSel.hasClass("anim-buzz"))
+		{
+	    	var hintPos = hintSel.offset().top;
+		    if (scrollPostion > (hintPos - st) && scrollPostion < (hintPos - nd) )
+		    {
+			    hintSel.each( function() {
+			    	var thisButton = $(this);
+					if (verge.inY(thisButton, -animPosition))
+					{
+						thisButton.addClass("anim-buzz");
+					}
+			    });
+		    }
+	    }
+	}
+	
     
     // on vwTablet and larger, trigger animation of action-section icons in sequence. 
-    if (vw >= vwTablet)
-    {
-		if (!$(".js-action-first").hasClass("anim-lock"))
-		{
-			var actionPos = $(".js-action-first").offset().top;
-	    	if ( scrollPostion > (actionPos - st) && scrollPostion < (actionPos - nd) )
-	    	{
-				if (verge.inY($(".js-action-first"), -animPosition)) 
-				{
-					$(".js-action-first").addClass("anim-lock");
-					var icoSelectors = $("[class*='js-action']");
 
-					var check = 1;
-					var x = 0;
-		            function spring( ico ) {
+	var jsActionFirstSel = $(".js-action-first");
+	if (jsActionFirstSel.length)
+	{
+	    if (vw >= vwTablet)
+	    {
+			if (!jsActionFirstSel.hasClass("anim-lock"))
+			{
+				var actionPos = jsActionFirstSel.offset().top;
+		    	if ( scrollPostion > (actionPos - st) && scrollPostion < (actionPos - nd) )
+		    	{
+					if (verge.inY(jsActionFirstSel, -animPosition)) 
+					{
+						jsActionFirstSel.addClass("anim-lock");
+						var icoSelectors = $("[class*='js-action']");
 
-						var thisIco = ico.find(".m-ico-wrapper");
+						var check = 1;
+						var x = 0;
+			            function spring( ico ) {
 
-		                switch (check !== 0) {    	
-							case (check == 1):
-		                    	x = x + 300;
-								break;
-							case (check == 2):
-		                    	x = x + 200;
-								break;
-							case (check == 3):
-		                    	x = x + 100;
-								break;
-							default:
-			                    x = 0;
-								break;
-		                }
+							var thisIco = ico.find(".m-ico-wrapper");
 
-		            	check++;
+			                switch (check !== 0) {    	
+								case (check == 1):
+			                    	x = x + 300;
+									break;
+								case (check == 2):
+			                    	x = x + 200;
+									break;
+								case (check == 3):
+			                    	x = x + 100;
+									break;
+								default:
+				                    x = 0;
+									break;
+			                }
 
-		                setTimeout( function() {
-							if (!thisIco.hasClass("js-in-view"))
-							{
-							    thisIco.addClass("js-in-view");
-							}
-		                }, x);
+			            	check++;
 
-		            }
+			                setTimeout( function() {
+								if (!thisIco.hasClass("js-in-view"))
+								{
+								    thisIco.addClass("js-in-view");
+								}
+			                }, x);
 
-		            icoSelectors.each( function() {
-		            	spring($(this));
-		            });
+			            }
+
+			            icoSelectors.each( function() {
+			            	spring($(this));
+			            });
+					}
 				}
 			}
-		}
-    }
+	    }
+	}
     
     // On mobilish display, trigger animation of action-section icons and action badge in .m-hero as they apear in viewport
     if (vw < vwTablet)

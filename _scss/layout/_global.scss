@@ -122,6 +122,19 @@ sup {
 }
 
 
+[class*='view-'] {
+	
+	margin-top: 175px;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	@include breakpoint (phablet) {
+		// margin-top: 175px;
+		// padding-top: 150px;
+		// padding-bottom: 50px;
+	}
+}
+
+
 
 
 .section-action {
@@ -247,16 +260,23 @@ sup {
 
 
 
-
 .m-center-block {
 	width: 302px;
 	margin: 0 auto;
+
+	@include breakpoint (phablet) {
+		margin: 0;
+	}
 	
 	iframe {
 		width: 302px !important;
 		height: 76px !important;
 		border-radius: 4px !important;
 	}
+}
+
+.m-inputfield-wrapper .m-center-block {
+	margin: 0 auto;
 }
 
 

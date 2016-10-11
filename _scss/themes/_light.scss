@@ -77,8 +77,15 @@ body.th-light {
 	}
 
 	.m-coname {
-		border-color: lighten( $alt-alt, 5% );
-		box-shadow: -1px 0px 0px 0px darken($alt-alt, 10% );
+		border-color: lighten( $alt-alt, 80% );
+		box-shadow: -1px 0px 0px 0px lighten($alt-alt, 70% );
+		color: $dark;
+	}
+
+	.m-coname.js-home {
+		border-color: lighten( $dark, 5% );
+		box-shadow: -1px 0px 0px 0px darken($dark, 10% );
+		color: $light;
 	}
 
 
@@ -86,6 +93,26 @@ body.th-light {
 
 	.m-float-radial {
 		// background-color: $alt-white;
+	}
+
+	.m-nav-login {
+		& > li {
+			color: $dark;
+		}
+
+		a {
+			color: $accent;
+		}
+	}
+
+	.m-nav-login.js-home {
+		& > li {
+			color: $light;
+		}
+
+		a {
+			color: $accent;
+		}
 	}
 
 	.m-hero {
@@ -178,6 +205,7 @@ body.th-light {
 	input[type="email"],
 	input[type="url"],
 	input[type="tel"],
+	input[type="password"],
 	textarea {
 		color: $dark;
 		border-color: $alt-white;

@@ -5,6 +5,41 @@
 
 
 
+.m-login {
+	width: 100%;
+	max-width: $formWidth-small;
+	margin: -50px auto 0;
+	padding: 25px 10px 25px;
+
+	// @include breakpoint (tablet) {
+	// 	max-width: $formWidth-medium;
+	// }
+
+	// @include breakpoint (laptop) {
+	// 	max-width: $formWidth-large;
+	// }
+
+	@media only screen and (max-width: 359px)  {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	hr {
+		margin: 25px 0;
+	}
+}
+
+.m-login-button {
+	text-align: center;
+	@include breakpoint (phablet) {
+		text-align: left;
+	}
+}
+
 
 
 .l-main-fieldset {
@@ -325,11 +360,11 @@
 
 	@media only screen and (max-width: 359px)  {
 		text-align: left;
-		margin-left: 10%;
+		// margin-left: 10%;
 
 		&.m-closed {
 			text-align: left;
-			margin-left: 10%;
+			margin-left: 2.5%;
 		}
 	}
 }
@@ -403,6 +438,7 @@
 	input[type="email"],
 	input[type="url"],
 	input[type="tel"],
+	input[type="password"],
 	textarea {
 		width: 100%;
 		height: auto;

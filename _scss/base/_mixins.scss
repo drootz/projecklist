@@ -499,7 +499,7 @@
       @media only screen and (max-width: 37.5em) and (orientation:landscape) { @content ; }
   }
   @else if $point == phablet { // above 600px
-      @media only screen and (min-width: 37.5em)  { @content ; }
+      @media only screen and (min-width: 25em)  { @content ; }
   }
   @else if $point == tablet { // above 768px
       @media only screen and (min-width: 48em) { @content ; }
