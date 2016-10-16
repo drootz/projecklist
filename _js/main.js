@@ -1936,7 +1936,7 @@ $( document ).ready(function() {
 
 
 
-
+	// console.log(document.getElementsByTagName('html').getAttribute('lang'))
 
 
 

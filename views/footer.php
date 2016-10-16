@@ -63,59 +63,57 @@
             </div>
         </section> -->
 
-
 </div> <!-- l-form-container END -->
 
 
 
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!-- End Document –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js"></script>
+    <!-- All libraries concatenated and minified in main-min.js -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script> -->
+    <!-- <script src="http://cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.js"></script> -->
+    <!-- <script src="js/vendor/autogrow/autogrow.min.js" async></script> -->
+    <!-- <script src="js/plugins-min.js" async></script> -->
 
+    <script src="js/main-min.js"></script>
 
-    <!-- reCAPTCHA api
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript">
 
-    if($('#captcha').length)
-    {
-        // var verifyCallback = function(response) {
-        //     // console.log(response);
-        //     // console.log("captcha: PASS");
-        // };
-
-
-        var widgetId1;
-        var c_theme = $("body").hasClass("th-light") ? "light" : "dark";
-        var onloadCallback = function() {
-            widgetId1 = grecaptcha.render('captcha', {
-                'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
-                'theme' : c_theme
-                // 'callback' : verifyCallback
-            });
-        };
-
-
-        var htmlLang = $("html").attr("lang");
-        if (htmlLang === "fr_CA")
+        var htmltag = document.getElementsByTagName('html');
+        var langAttr = htmltag[0].getAttribute('lang');
+        if (langAttr === "fr_CA")
         {
-            document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=fr-CA" async defer><\/script>')
+            document.write('<script src="js/vendor/jqueryValidate/localization/messages_fr.min.js" async defer><\/script>')
         }
-        else
+        // Default jQuery Validate labels to english
+
+
+        // reCAPTCHA api
+        if($('#captcha').length)
         {
-            document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer><\/script>')
+            var widgetId1;
+            var c_theme = $("body").hasClass("th-light") ? "light" : "dark";
+            var onloadCallback = function() {
+                widgetId1 = grecaptcha.render('captcha', {
+                    'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
+                    'theme' : c_theme
+                });
+            };
+
+            if (langAttr === "fr_CA")
+            {
+                document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=fr-CA" async defer><\/script>')
+            }
+            // Default ot english
+            else
+            {
+                document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer><\/script>')
+            }
         }
-    }
 
     </script>
-
-    <script src="js/vendor/autogrow/autogrow.min.js" async></script>
-    <script src="js/min/plugins-min.js" async></script>
-    <script src="js/main-min.js" async></script>
 
 </body>
 </html>
