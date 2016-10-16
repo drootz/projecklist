@@ -1550,19 +1550,165 @@ $( document ).ready(function() {
 
 
 
-	// Validation javascript
-	// if(grecaptcha.getResponse() == "")
-	//     alert("You can't proceed!");
-	// else
-	//     alert("Thank you");
+	// SHOW / HIDE Profile Forms on user profile page
+	$('.js-profile-changebtn, .js-profile-cancelbtn').click( function(e) {
+		e.preventDefault();
+		var inputField = $(this).parents('.row').find('form');
+		var resultLabel = $(this).parents('.row').find('.js-result');
+		var resultTxt = $(this).parents('.row').find('.js-result span');
+
+		// Remove result label if present
+		if ($(this).hasClass('js-profile-changebtn'))
+		{
+			if (resultLabel.hasClass('is-visible'))
+			{
+				resultLabel.removeClass('is-visible');
+				resultLabel.addClass('is-hidden');
+				resultTxt.text('');
+			}
+		}
+
+		// Close other visible forms on the form
+		var pageForms = $(this).parents('.row').siblings('.row').find('form');
+		if (pageForms.is(':visible'))
+		{
+			pageForms.addClass('is-hidden');
+			pageForms.removeClass('is-visible');
+			pageForms.trigger("reset");
+		}
+
+		// Open or close the form
+		if (inputField.is(':visible'))
+		{
+			inputField.addClass('is-hidden');
+			inputField.removeClass('is-visible');
+		}
+		else
+		{
+			inputField.removeClass('is-hidden');
+			inputField.addClass('is-visible');
+			inputField.trigger("reset");
+		}
+	});
 
 
 
 
-	$('#projecklist').validate({
+/* 
+ * FORM VALIDATION SCRIPTS
+ * 
+ */
+
+ 	// TODO: Finalize the localization of labels
+ 	// JS error output labels localization
+	$(function() {
+
+		$.post('ajax_localization.php')
+		.done(function( data ) {
+			var obj = $.parseJSON( data );
+			console.log(obj);
+		})
+		.fail(function() {
+			console.log('ajax_localization failed');
+		});
+
+	});
+
+
+	// Clear form input fields and re-instate their default placeholders (bug fix)
+	function clearForm(el) {
+		var inputs = el.find('input');
+		el.trigger('reset');
+		inputs.each(function() {
+			$(this).val("");
+			$(this).focus();
+		});
+	    inputs.last().blur();
+	}
+
+
+	$.validator.addMethod("pswCheck", function(value) {
+		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+			&& /[a-z]/.test(value) // has a lowercase letter
+			&& /[A-Z]/.test(value) // has a uppercase letter
+			&& /\d/.test(value) // has a digit
+	});
+
+	$.validator.addMethod("charCheck", function(value) {
+		return /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ\s\-]+$/.test(value);
+	});
+
+	$.validator.addMethod("alphaCheck", function(value) {
+		return /^[a-zA-Z]+$/.test(value);
+	});
+
+	$.validator.addMethod("digitCheck", function(value) {
+		//has a digit
+		return /\d/.test(value);
+	});
+
+	$.validator.addMethod("lowerCheck", function(value) {
+		//has a lowercase letter
+		return /[a-z]/.test(value);
+	});
+
+	$.validator.addMethod("capsCheck", function(value) {
+		return /[A-Z]/.test(value);
+	});
+
+
+	function formFailReset(el) {
+		if ($('#captcha').length)
+		{
+			grecaptcha.reset();	
+		}
+		clearForm(el);
+		$(document).scrollTop(el.offset().top);
+	}
+
+
+	function formDone(el, data) {
+		var form = el;
+		var obj = $.parseJSON( data );
+
+		// Display Modal Box Message
+		if (obj.modal)
+		{
+			alert(obj.data);
+		}
+
+		// Reset Form
+		if (obj.reset)
+		{
+			if($('#captcha').length)
+			{
+				grecaptcha.reset();
+			}
+			clearForm(form);
+		}
+
+		// transfer data to another page via GET
+		if (obj.transfer)
+		{
+			window.location.href = obj.location + "?transferData=" + obj.transferData;
+		}
+		// Redirect to another page
+		else if (obj.redirect)
+		{
+			window.location.href = obj.location;
+		}
+		// Output an error message
+		else
+		{
+			$('#js-form-output').html('<span>' + obj.data + '</span>');
+			$(document).scrollTop( form.offset().top );
+		}
+	}
+
+	var formProjecklist = $('#projecklist');
+	formProjecklist.validate({
 		submitHandler: function(form) {
-			// do other stuff for a valid form
-			$.post('projeckt.php', $("#projecklist").serialize(), function(data) {
+			$.post('projeckt.php', formProjecklist.serialize(), function(data) {
 				if(data === "SUCCESS")
 				{	
 					// redirect to home screen
@@ -1579,62 +1725,238 @@ $( document ).ready(function() {
 		}
 	});
 
-
-	$('#login').validate({
+	var formLogin = $('#login')
+	formLogin.validate({
 		submitHandler: function(form) {
-			// do other stuff for a valid form
-			$.post('login.php', $("#login").serialize(), function(data) {
-				if(data === "SUCCESS")
-				{	
-					// redirect to home screen
-					window.location.href = 'index.php';
-				}
-				else
-				{
-					// output errors detected on the form
-					$('#login').trigger("reset");
-					$('#results').html(data);
-
-				}
-			});
-		}
-	});
-
-
-	$('#register').validate({
-		submitHandler: function(form) {
-			// do other stuff for a valid form
-			$.post('register.php', $("#register").serialize())
+			$.post('login.php', formLogin.serialize())
 			.done(function( data ) {
-				if(data === "SUCCESS")
-				{	
-					// redirect to home screen
-					window.location.href = 'index.php';
-				}
-				else
-				{
-					// output errors detected on the form
-					$('#results').html(data);
-				}
+				formDone(formLogin, data);
 			})
 			.fail(function() {
-				$('#results').html("Registration Failed");
+				$('#js-form-output').html("<span>Sign in Failed</span>");
+				formFailReset(formLogin);
 			});
 		}
 	});
 
-   // function(data) {
-			// 	alert(data.length);
-			// 	alert(data);
-			// 	if (data.length)
-			// 	{
-			// 		$('#results').html(data);
-			// 	}
-			// 	else
-			// 	{
-			// 		window.location = 'index.php';
-			// 	}
-			// });
+	var formRegister = $('#register');
+	formRegister.validate({
+		// debug: true,
+        rules: {
+        	fld_register_email_confirm: {
+		    	equalTo: "#f-register-email"
+        	},
+            fld_register_fn: {
+                alphaCheck: true
+            },
+            fld_register_ln: {
+                alphaCheck: true
+            },
+            fld_register_psw: {
+                pswCheck: true,
+                rangelength: [6,20]
+            },
+		    fld_register_psw_confirm: {
+		      equalTo: "#f-register-password"
+		    }
+        },
+        messages: {
+        	fld_register_email_confirm: {
+		    	equalTo: 'Email Confirmation Mismatch'
+        	},
+            fld_register_fn: {
+                alphaCheck: 'Names must contain only letters, space and dashes.'
+            },
+            fld_register_ln: {
+                alphaCheck: 'Names must contain only letters, space and dashes.'
+            },
+            fld_register_psw: {
+                pswCheck: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
+                rangelength: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.'
+            },
+		    fld_register_psw_confirm: {
+		      equalTo: 'Password Confirmation Mismatch'
+		    }
+        },
+		submitHandler: function(form) {
+			$.post('register.php', formRegister.serialize())
+			.done(function( data ) {
+				formDone(formRegister, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>Registration Failed</span>");
+				formFailReset(formRegister);
+			});
+		}
+	});
+
+	var formForgot = $('#forgot');
+	formForgot.validate({
+		submitHandler: function(form) {
+			$.post('forgot.php', formForgot.serialize())
+			.done(function( data ) {
+				formDone(formForgot, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>Password Reset Failed</span>");
+				formFailReset(formForgot);
+			});
+		}
+	});
+
+	var formProfileName = $('#profile-name');
+	formProfileName.validate({
+		// debug: true,
+        rules: {
+            fld_profile_fn: {
+                alphaCheck: true
+            },
+            fld_profile_ln: {
+                alphaCheck: true
+            }
+        },
+        messages: {
+            fld_profile_fn: {
+                alphaCheck: 'Names must contain only letters, space and dashes.'
+            },
+            fld_profile_ln: {
+                alphaCheck: 'Names must contain only letters, space and dashes.'
+            }
+        },
+		submitHandler: function(form) {
+			$.post('profile.php', formProfileName.serialize())
+			.done(function( data ) {
+				var obj = $.parseJSON( data );
+				var isUpdated = obj.status;
+
+				// Update the page with the new value on success
+				if (isUpdated)
+				{
+					$('.js-profile-fn').text(obj.firstname);
+					$('.js-profile-ln').text(obj.lastname);
+					$('#f-profile-fn').attr("value", obj.firstname);
+					$('#f-profile-ln').attr("value", obj.lastname);
+					$('#js-display-name').text(obj.firstname);
+				}
+
+				if (formProfileName.is(':visible'))
+				{
+					formProfileName.addClass('is-hidden');
+					formProfileName.removeClass('is-visible');
+				}
+
+				if (!$('#js-result-name').is(':visible'))
+				{
+					$('#js-result-name span').text(obj.data);
+					$('#js-result-name').removeClass('is-hidden');
+					$('#js-result-name').addClass('is-visible');
+				}
+				formProfileName.trigger("reset");
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>Name Change Failed</span>");
+				clearForm(formProfileName);
+			});
+		}
+	});
+
+	var formProfileEmail = $('#profile-email');
+	formProfileEmail.validate({
+		// debug: true,
+        rules: {
+        	fld_profile_email_confirm: {
+		    	equalTo: "#f-profile-email"
+        	}
+        },
+        messages: {
+        	fld_profile_email_confirm: {
+		    	equalTo: 'Email Confirmation Mismatch'
+        	}
+        },
+		submitHandler: function(form) {
+			$.post('profile.php', formProfileEmail.serialize())
+			.done(function( data ) {
+				var obj = $.parseJSON( data );
+				var isUpdated = obj.status; // Bool
+
+				// Update the page with the new value on success
+				if (isUpdated)
+				{
+					$('.js-profile-email').text(obj.email);
+				}
+
+				// Close the form on completion
+				if (formProfileEmail.is(':visible'))
+				{
+					formProfileEmail.addClass('is-hidden');
+					formProfileEmail.removeClass('is-visible');
+				}
+
+				// Display the result message
+				if (!$('#js-result-email').is(':visible'))
+				{
+					$('#js-result-email span').text(obj.data);
+					$('#js-result-email').removeClass('is-hidden');
+					$('#js-result-email').addClass('is-visible');
+				}
+
+				// Reset the form
+				formProfileEmail.trigger("reset");
+				
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>Email Change Failed</span>");
+				clearForm(formProfileEmail);
+			});
+		}
+	});
+
+	var formProfilePassword = $('#profile-password');
+	formProfilePassword.validate({
+		// debug: true,
+        rules: {
+            fld_profile_new_psw: {
+                pswCheck: true,
+                rangelength: [6,20]
+            }
+        },
+        messages: {
+            fld_profile_new_psw: {
+                pswCheck: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
+                rangelength: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.'
+            }
+        },
+		submitHandler: function(form) {
+			$.post('profile.php', formProfilePassword.serialize())
+			.done(function( data ) {
+				var obj = $.parseJSON( data );
+
+				// Close the form on completion
+				if (formProfilePassword.is(':visible'))
+				{
+					formProfilePassword.addClass('is-hidden');
+					formProfilePassword.removeClass('is-visible');
+				}
+
+				// Display the result message
+				if (!$('#js-result-password').is(':visible'))
+				{
+					$('#js-result-password span').text(obj.data);
+					$('#js-result-password').removeClass('is-hidden');
+					$('#js-result-password').addClass('is-visible');
+				}
+
+				// Reset the form
+				formProfilePassword.trigger("reset");
+				
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>Password Change Failed</span>");
+				clearForm(formProfilePassword);
+			});
+		}
+	});
+
 
 
 
@@ -1650,8 +1972,8 @@ $( document ).ready(function() {
 	}
 	loadTheme();
 
-	// // DEBUG cookie content
-	// console.log(document.cookie);
+
+
 
 
 

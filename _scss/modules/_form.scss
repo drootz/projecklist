@@ -33,11 +33,54 @@
 	}
 }
 
+.m-profile {
+	width: 100%;
+	max-width: $maxWidth-medium;
+	margin: -50px auto 0;
+	padding: 25px 10px 25px;
+
+	// @include breakpoint (tablet) {
+	// 	max-width: $formWidth-medium;
+	// }
+
+	// @include breakpoint (laptop) {
+	// 	max-width: $formWidth-large;
+	// }
+
+	@media only screen and (max-width: 359px)  {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	hr {
+		margin: 25px 0;
+	}
+}
+
+.m-profile-subttl {
+	font-weight: bolder;
+	letter-spacing: -0.07em;
+}
+
 .m-login-button {
 	text-align: center;
 	@include breakpoint (phablet) {
 		text-align: left;
 	}
+}
+
+
+.m-form-output {
+	width: 100%;
+	max-width: $formWidth-small;
+	margin: 1em auto;
+	font-weight: 600;
+	letter-spacing: -0.05em;
+	color: $red;
 }
 
 

@@ -159,12 +159,13 @@
 
             <div class="l-wrapper-nav clearfix is-relative">
                 <ul class="m-nav-login">
-                    <li><span><?php echo _( 'Hello' ); ?></span>, <span><?= $s_displayname ?></span></li>
+                    <li><span><?= _( 'Hello' ); ?></span>, <span id="js-display-name"><?= $s_displayname ?></span></li>
                     <?php if (empty($_SESSION["id"])): ?>
                         <!-- <li <?php //echo "title=\"" . _( 'form-navbar-titleAttr-signIn' ) . "\""; ?>>Sign in&nbsp;&nbsp;<a href="login.php"><span class="fa fa-lg fa-sign-in" aria-hidden="true"></span></a></li> -->
                     <?php endif ?>
                     <?php if (!empty($_SESSION["id"])): ?>
                         <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-logOut' ) . "\""; ?>><a href="logout.php"><span class="fa fa-lg fa-sign-out" aria-hidden="true"></span></a></li>
+                        <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-profile' ) . "\""; ?>><a href="profile.php"><span class="fa fa-lg fa-user" aria-hidden="true"></span></a></li>
                     <?php endif ?>
                 </ul>
             </div>

@@ -18,6 +18,7 @@
 
 
     require_once("config.php");
+    require_once("../vendor/PHPMailer/PHPMailerAutoload.php"); 
 
     /**
      * Apologizes to user with message.
@@ -312,120 +313,6 @@
     	return $sanitizedForm;
     }
 
-
-    function validateRegistration($_postArray)
-    {
-        $sanitizedValues = sanitizeForm($_postArray);
-        $_required = [
-            "email"
-                => validateValue( $sanitizedValues['fld_register_email'], "EMAIL" ),
-            "email_confirm"
-                => validateValue( $sanitizedValues['fld_register_email_confirm'], "EMAIL" ),
-            "first_name"
-                => validateValue( $sanitizedValues['fld_register_fn'], "ALPHA" ),
-            "last_name"
-                => validateValue( $sanitizedValues['fld_register_ln'], "ALPHA" ),
-            "password"
-                => validateValue( $sanitizedValues['fld_register_psw'], "ALPHANUMERIC" ),
-            "password_confirm"
-                => validateValue( $sanitizedValues['fld_register_psw_confirm'], "ALPHANUMERIC" ),
-            "captcha" 
-                => $sanitizedValues['g-recaptcha-response']
-        ];
-        
-        $ajaxMsg  = "<h4>Submission Error</h4><p>Please review the following field(s):</p>";
-        $ajaxMsg .= "<ul>";
-        
-        $requiredCheck = 0;
-        foreach ($_required as $key => $value) {
-            // echo "-- Key: $key; Value: $value<br />\n";
-            if (!$value)
-            {
-                $requiredCheck++;
-                switch ($key) {
-                    case "email":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-email\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "email_confirm":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-email-confirm\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "first_name":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-fn\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "last_name":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-ln\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "password":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-password-confirm\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "password_confirm":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-password\">".htmlspecialchars($key)."</a> is required.</li>";
-                        break;
-                    case "captcha":
-                        $ajaxMsg .= "<li>The <a href=\"#captcha\">".htmlspecialchars($key)."</a> checkbox is required.</li>";
-                        break;
-                }
-            }
-            else if ($value == "invalid_data")
-            {
-                $requiredCheck++;
-                switch ($key) {
-                    case "email":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-email\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                    case "email_confirm":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-email-confirm\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                    case "first_name":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-fn\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                    case "last_name":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-ln\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                    case "password":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-password\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                    case "password_confirm":
-                        $ajaxMsg .= "<li>The <a href=\"#f-register-password-confirm\">".htmlspecialchars($key)."</a> is not valid.</li>";
-                        break;
-                }
-            }
-        }
-
-        if ($_required['email'] != $_required['email_confirm'])
-        {
-            $requiredCheck++;
-            $ajaxMsg .= "<li>The <a href=\"#f-register-email\">Email</a> confirmation missmatch.</li>";
-        }
-        else if ($_required['password'] != $_required['password_confirm'])
-        {
-            $requiredCheck++;
-            $ajaxMsg .= "<li>The <a href=\"#f-register-password\">Password</a> confirmation missmatch.</li>";
-        }
-        
-        $ajaxMsg .= "</ul>";
-
-        if ($requiredCheck != 0)
-        {
-            echo($ajaxMsg);
-
-            // DEBUG
-            // labelvalueSplit($_required);
-            // debug_SubmitTable(labelvalueSplit($_required));
-            // debug_rawTable($_required);
-            exit;
-        }
-
-        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LfS5ggTAAAAAKR6w3mDTrT9i7edXNxnmhBl4Kl9&response=" . $_required['captcha'] . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-
-        if($response == false)
-        {
-            echo('<h4>Unable to proceed with your request.</h4>');
-            exit;
-        }
-
-        return $_required;
-    }
 
 
     function validateForm($_postArray)
@@ -815,4 +702,46 @@
             setcookie('theme', $theme, time() + (3600 * 24 * 30));
             return $theme;
         }
+    }
+
+
+    function submitMail($_toAdd, $_subject, $_body, $_altBody) {
+
+        $mail = new PHPMailer;
+        $mail->setFrom('mailto.danielracine@gmail.com', 'Daniel Racine');
+        $mail->addAddress($_toAdd);
+        $mail->addReplyTo('mailto.danielracine@gmail.com', 'Daniel Racine');
+        $mail->isHTML(true);
+
+        $mail->Subject = $_subject;
+        $mail->Body    = $_body;
+        $mail->AltBody = $_altBody;
+
+        if(!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+            exit;
+        } else {
+            return true;
+        }
+    }
+
+    Function pseudostring($length = 8) {
+
+        // Generate arrays with characters and numbers
+        $lowerAlpha = range('a', 'z');
+        $upperAlpha = range('A', 'Z');
+        $numeric = range('0', '9');
+
+        // Merge the arrays
+        $workArray = array_merge($numeric, array_merge($lowerAlpha, $upperAlpha));
+        $returnString = "";
+
+        // Add random characters from the created array to a string
+        for ($i = 0; $i < $length; $i++) {
+            $character = $workArray[rand(0, 61)];
+            $returnString .= $character;
+        }
+
+        return $returnString;
     }

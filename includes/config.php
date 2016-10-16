@@ -14,9 +14,6 @@
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */
 
-
-
-
     // display errors, warnings, and notices
     ini_set("display_errors", true);
     error_reporting(E_ALL);
@@ -33,3 +30,4 @@
     // http://php.net/manual/en/timezones.php
     $timezone = 'America/Montreal';
     date_default_timezone_set($timezone);
+?>

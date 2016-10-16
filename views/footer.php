@@ -81,10 +81,12 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript">
 
-        var verifyCallback = function(response) {
-            // console.log(response);
-            console.log("captcha: PASS");
-        };
+    if($('#captcha').length)
+    {
+        // var verifyCallback = function(response) {
+        //     // console.log(response);
+        //     // console.log("captcha: PASS");
+        // };
 
 
         var widgetId1;
@@ -92,8 +94,8 @@
         var onloadCallback = function() {
             widgetId1 = grecaptcha.render('captcha', {
                 'sitekey' : '6LfS5ggTAAAAAERF8SrqqTaWKt4nYpvh0nCwiEmT',
-                'theme' : c_theme,
-                'callback' : verifyCallback
+                'theme' : c_theme
+                // 'callback' : verifyCallback
             });
         };
 
@@ -107,6 +109,7 @@
         {
             document.write('<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer><\/script>')
         }
+    }
 
     </script>
 

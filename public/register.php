@@ -1,6 +1,7 @@
 <?php
 
-    require_once(__DIR__ . "/../includes/config.php");
+    // configuration
+    require("../includes/config.php");
 
     // if user already logged in redirect to home page
     if (!empty($_SESSION["id"]))
@@ -11,46 +12,118 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     else if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
+        // Make data transfered from other page via GET avaialble
+        if (isset($_GET['transferData']))
+        {
+            render("register_form.php", "Registration", [
+                'transferData'  => $_GET['transferData']
+            ]);  
+        }
         // else render form
-        render("register_form.php", "Registration");
+        else
+        {
+            render("register_form.php", "Registration");   
+        }
     }
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        if(isset($_POST['submit'])) 
+        $post = sanitizeForm($_POST);
+        if(isset($post['submit'])) 
         {
-            $sanitized_post = validateRegistration($_POST);
+            if ($post['fld_register_email'] != $post['fld_register_email_confirm'])
+            {
+                $output = [
+                    'data'   => gettext('Email Confirmation Missmatch')
+                ];
+                echo(json_encode($output));
+                exit;
+            }
 
-            $rows = DB::query("INSERT IGNORE INTO users (user_email, firstname, lastname, hash) VALUES(?, ?, ?, ?)", $sanitized_post["email"], $sanitized_post["first_name"], $sanitized_post["last_name"], password_hash($sanitized_post["password"], PASSWORD_DEFAULT));
-            if ($rows != 0)
+            if ($post['fld_register_psw'] != $post['fld_register_psw_confirm'])
+            {
+                $output = [
+                    'data'      => gettext('Password Confirmation Missmatch'),
+                    'reset'     => true
+                ];
+                echo(json_encode($output));
+                exit;
+            }
+
+            if (!$post['g-recaptcha-response'])
+            {
+                $output = [
+                    'data' => gettext('The reCAPTCHA checkbox is required')
+                ];
+                echo(json_encode($output));
+                exit;
+            }
+
+            $captcha = $post['g-recaptcha-response'];
+            $secretKey = "6LfS5ggTAAAAAKR6w3mDTrT9i7edXNxnmhBl4Kl9";
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+            $responseKeys = json_decode($response,true);
+            if(intval($responseKeys["success"]) !== 1) {
+                $output = [
+                    'data'      => gettext('Unable to proceed with your request at this time.'),
+                    'reset'     => true,
+                    'modal'     => true,
+                    'redirect' => true,
+                    'location'  => 'index.php'
+                ];
+                echo(json_encode($output));
+                exit;
+            }
+
+            $rows = DB::query("INSERT IGNORE INTO users (user_email, firstname, lastname, hash) VALUES(?, ?, ?, ?)", $post["fld_register_email"], $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT));
+            
+            if (count($rows) != 0)
             {
                 // remember that user's now logged in by storing user's ID in session
-                $rows = DB::query("SELECT LAST_INSERT_ID() AS id");
-                $_SESSION["id"] = $rows[0]["id"];
-
-                $rows = DB::query("SELECT firstname FROM users WHERE id = ?", $_SESSION["id"]);
-                if ($rows != 0)
+                $added = DB::query("SELECT LAST_INSERT_ID() AS id");
+                if (count($added) != 0)
                 {
-                    // remember that user's now logged in by storing username or firstname in session
-                    $_SESSION["user_name"] = $rows[0]["firstname"];
-
-                    // output result status to ajax call
-                    echo("SUCCESS");
-                }
-                else
-                {
-                    // output result status to ajax call
-                    echo("SUCCESS");
+                    $_SESSION["id"] = $added[0]["id"];
+                    $name = DB::query("SELECT firstname FROM users WHERE id = ?", $_SESSION["id"]);
+                    if (count($name) != 0)
+                    {
+                        $_SESSION["user_name"] = $name[0]["firstname"];
+                        $output = [
+                            'data' => gettext('Registration Successful'),
+                            'modal'     => true,
+                            'redirect' => true,
+                            'location' => 'index.php',
+                            'notification' => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here")
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
+                    else
+                    {
+                        $output = [
+                            'data' => gettext('Registration Successful'),
+                            'modal'     => true,
+                            'redirect' => true,
+                            'location' => 'index.php',
+                            'notification' => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here")
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
                 }
             }
             else
             {
-                // else apologize
-                $ajaxMsg  = "<h3>Submission Error.</h3><p>Please review the following field(s):</p>";
-                $ajaxMsg .= "<ul>";
-                $ajaxMsg .= "<li>The email address \"". $sanitized_post["email"] . "\" is already registered.</li>";
-                $ajaxMsg .= "<ul>";
-                echo($ajaxMsg);
+                $output = [
+                    'data'      => gettext('Submission Error. The email address submitted is already registered.'),
+                    'modal'     => true,
+                    'redirect' => true,
+                    'location'  => 'logout.php',
+                ];
+                echo(json_encode($output));
+                exit;
             }
         }
     }
+?>
