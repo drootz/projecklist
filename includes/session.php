@@ -9,7 +9,7 @@
  * @package PROJECKLIST
  * @version 1
  *
- * Copyright (c) 2015 Daniel Racine
+ * Copyright (c) 2016 Daniel Racine
  * You should have received a copy of the MIT License
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */
@@ -39,19 +39,19 @@
     {
         $lang = $_GET['lang'];
         setLanguage( $lang );
-        // setcookie('lang', $lang, time() + (3600 * 24 * 30));
+        setcookie('lang', $lang, time() + (3600 * 24 * 30));
     }
     if ( isset( $_SESSION['lang'] ) )
     {
         $lang = $_SESSION['lang'];
         setLanguage( $lang );
-        // setcookie('lang', $lang, time() + (3600 * 24 * 30));
+        setcookie('lang', $lang, time() + (3600 * 24 * 30));
     }
     else if ( isset( $_COOKIE['lang'] ) )
     {
         $lang = $_COOKIE['lang'];
         setLanguage( $lang );
-        // setcookie('lang', $lang, time() + (3600 * 24 * 30));
+        setcookie('lang', $lang, time() + (3600 * 24 * 30));
     }
     else
     {

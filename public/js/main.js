@@ -12,21 +12,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*=======================================================================================
 	GLOBAL VARIABLES DECLARATION SECTION
 =======================================================================================*/
@@ -74,16 +59,6 @@
 
 	// Global variables use with the Other/Details toggled textarea
 	var theTextArea;
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -905,16 +880,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 /*=======================================================================================
 	PURE JS SCRIPT
 =======================================================================================*/
@@ -1035,26 +1000,11 @@ function viewportIni() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*=======================================================================================
 	DOCUMENT READY SCRIPT
 =======================================================================================*/
 
 $( document ).ready(function() {
-
-
-
 
 	// Set Global Variables for modal box and 
 
@@ -1380,7 +1330,6 @@ $( document ).ready(function() {
         		}
 	        }
 		}
-		
 	});
 
 
@@ -1405,6 +1354,7 @@ $( document ).ready(function() {
 			thisField.val("(" + thisValue +")");
 		}
 	});
+
 
 
 
@@ -1446,6 +1396,7 @@ $( document ).ready(function() {
 
 
 
+
 	// Manage input field values if "closed" option selected.
 	$("[id*='f-hours']").change( function() {
 		var closedCheckbox = $(this).closest("[class*='js-fieldset-']").find(".js-hours-closed");
@@ -1459,7 +1410,6 @@ $( document ).ready(function() {
 		{
 			closedCheckbox.prop('checked', true);
 		}
-
 	});
 
 
@@ -1594,25 +1544,116 @@ $( document ).ready(function() {
 
 
 
-/* 
- * FORM VALIDATION SCRIPTS
- * 
- */
+	// Set font proper awesome icon for theme selection buttons for the current theme.
+	function loadTheme() {
+	 	if ($("body").hasClass("th-light")) {
+	 		$(".js-menu-theme").children().addClass("fa-moon-o");
+	 	} 
+	 	else if ($("body").hasClass("th-dark"))
+	 	{
+	 		$(".js-menu-theme").children().addClass("fa-sun-o");
+	 	}
+	}
+	loadTheme();
 
- 	// TODO: Finalize the localization of labels
- 	// JS error output labels localization
-	$(function() {
 
-		$.post('ajax_localization.php')
-		.done(function( data ) {
-			var obj = $.parseJSON( data );
-			console.log(obj);
-		})
-		.fail(function() {
-			console.log('ajax_localization failed');
-		});
 
-	});
+
+
+
+
+
+
+
+	/* 
+	 * FORM VALIDATION SCRIPTS
+	 * 
+	 */
+
+	// function to get cookie by key
+	function getCookie(key) {
+		var regexp = new RegExp("(?:^" + key + "|;\s*"+ key + ")=(.*?)(?:;|$)", "g");
+		var result = regexp.exec(document.cookie);
+		return (result === null) ? null : result[1];
+	}
+
+	// Localize the form validation error labels
+	if (getCookie("lang") == 'fr_CA')
+	{
+		var ajxFailSignin   =   'Échec de connection',
+	        ajxFailRegister =   'Échec de l\'enregistrement',
+	        ajxFailReset    =   'Échec de la réinitialisation du courriel',
+	        ajxFailName    	=   'Échec du changement de nom',
+	        ajxFailEmail    =   'Échec du changement de courriel',
+	        ajxFailPsw    	=   'Échec du changement de password',
+	        v_pwdCheck      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.',
+	        v_nameCheck     =   'Les noms doivent contenir que des lettres, des espaces et des tirets.',
+	        v_alphaCheck    =   'Doit contenir uniquement des caractères alphabétique',
+	        v_digitCheck    =   'Doit contenir au moins 1 caractère numérique',
+	        v_lowerCheck    =   'Doit contenir au moins 1 caractère alphabétique minuscule',
+	        v_upperCheck    =   'Doit contenir au moins 1 caractère alphabétique majuscule',
+	        v_confirmMail   =   'Confirmation du courriel invalide',
+	        v_confirmPsw    =   'Confirmation du mot de passe invalide',
+	        v_rangePsw      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.';
+	}
+	// Default to english (en_CA)
+	else
+	{
+		var ajxFailSignin   =   'Sign in Failed',
+	        ajxFailRegister =   'Registration Failed',
+	        ajxFailReset    =   'Password Reset Failed',
+	        ajxFailName    	=   'Name Change Failed',
+	        ajxFailEmail    =   'Email Change Failed',
+	        ajxFailPsw    	=   'Password Change Failed',
+	        v_pwdCheck      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
+	        v_nameCheck     =   'Names must contain only letters, space and dashes.',
+	        v_alphaCheck    =   'Must contain only letter characters',
+	        v_digitCheck    =   'Must contain at least 1 digit character',
+	        v_lowerCheck    =   'Must contain at least 1 lower-case character',
+	        v_upperCheck    =   'Must contain at least 1 upper-case character',
+	        v_confirmMail   =   'Email Confirmation Mismatch',
+	        v_confirmPsw    =   'Password Confirmation Mismatch',
+	        v_rangePsw      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.';
+	}
+
+	// Declare jQuery Validation custom method
+	$.validator.addMethod("pwdCheck", function(value) {
+		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
+			&& /[a-z]/.test(value) // has a lowercase letter
+			&& /[A-Z]/.test(value) // has a uppercase letter
+			&& /\d/.test(value) // has a digit
+	}, v_pwdCheck);
+
+	$.validator.addMethod("nameCheck", function(value) {
+		return /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ\s\-]+$/.test(value);
+	}, v_nameCheck);
+
+	$.validator.addMethod("alphaCheck", function(value) {
+		return /^[a-zA-Z]+$/.test(value);
+	}, v_alphaCheck);
+
+	$.validator.addMethod("digitCheck", function(value) {
+		//has a digit
+		return /\d/.test(value);
+	}, v_digitCheck);
+
+	$.validator.addMethod("lowerCheck", function(value) {
+		//has a lowercase letter
+		return /[a-z]/.test(value);
+	}, v_lowerCheck);
+
+	$.validator.addMethod("upperCheck", function(value) {
+		return /[A-Z]/.test(value);
+	}, v_upperCheck);
+
+	$.validator.addMethod("confirmMail", $.validator.methods.equalTo,
+	v_confirmMail);
+
+	$.validator.addMethod("confirmPsw", $.validator.methods.equalTo,
+	v_confirmPsw);
+
+	$.validator.addMethod("rangePsw", $.validator.methods.rangelength,
+	v_rangePsw);
 
 
 	// Clear form input fields and re-instate their default placeholders (bug fix)
@@ -1626,37 +1667,7 @@ $( document ).ready(function() {
 	    inputs.last().blur();
 	}
 
-
-	$.validator.addMethod("pswCheck", function(value) {
-		return /^[A-Za-z0-9\d=!\-@._*]*$/.test(value) // consists of only these
-			&& /[a-z]/.test(value) // has a lowercase letter
-			&& /[A-Z]/.test(value) // has a uppercase letter
-			&& /\d/.test(value) // has a digit
-	});
-
-	$.validator.addMethod("charCheck", function(value) {
-		return /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ\s\-]+$/.test(value);
-	});
-
-	$.validator.addMethod("alphaCheck", function(value) {
-		return /^[a-zA-Z]+$/.test(value);
-	});
-
-	$.validator.addMethod("digitCheck", function(value) {
-		//has a digit
-		return /\d/.test(value);
-	});
-
-	$.validator.addMethod("lowerCheck", function(value) {
-		//has a lowercase letter
-		return /[a-z]/.test(value);
-	});
-
-	$.validator.addMethod("capsCheck", function(value) {
-		return /[A-Z]/.test(value);
-	});
-
-
+	// Reset form (single form on a page)
 	function formFailReset(el) {
 		if ($('#captcha').length)
 		{
@@ -1666,7 +1677,7 @@ $( document ).ready(function() {
 		$(document).scrollTop(el.offset().top);
 	}
 
-
+	// Successful AJAX form validation handling
 	function formDone(el, data) {
 		var form = el;
 		var obj = $.parseJSON( data );
@@ -1733,7 +1744,7 @@ $( document ).ready(function() {
 				formDone(formLogin, data);
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Sign in Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailSignin + "</span>");
 				formFailReset(formLogin);
 			});
 		}
@@ -1744,38 +1755,20 @@ $( document ).ready(function() {
 		// debug: true,
         rules: {
         	fld_register_email_confirm: {
-		    	equalTo: "#f-register-email"
+		    	confirmMail: "#f-register-email"
         	},
             fld_register_fn: {
-                alphaCheck: true
+                nameCheck: true
             },
             fld_register_ln: {
-                alphaCheck: true
+                nameCheck: true
             },
             fld_register_psw: {
-                pswCheck: true,
-                rangelength: [6,20]
+                pwdCheck: true,
+                rangePsw: [6,20]
             },
 		    fld_register_psw_confirm: {
-		      equalTo: "#f-register-password"
-		    }
-        },
-        messages: {
-        	fld_register_email_confirm: {
-		    	equalTo: 'Email Confirmation Mismatch'
-        	},
-            fld_register_fn: {
-                alphaCheck: 'Names must contain only letters, space and dashes.'
-            },
-            fld_register_ln: {
-                alphaCheck: 'Names must contain only letters, space and dashes.'
-            },
-            fld_register_psw: {
-                pswCheck: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
-                rangelength: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.'
-            },
-		    fld_register_psw_confirm: {
-		      equalTo: 'Password Confirmation Mismatch'
+		      	confirmPsw: "#f-register-password"
 		    }
         },
 		submitHandler: function(form) {
@@ -1784,7 +1777,7 @@ $( document ).ready(function() {
 				formDone(formRegister, data);
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Registration Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailRegister + "</span>");
 				formFailReset(formRegister);
 			});
 		}
@@ -1798,7 +1791,7 @@ $( document ).ready(function() {
 				formDone(formForgot, data);
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Password Reset Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailReset + "</span>");
 				formFailReset(formForgot);
 			});
 		}
@@ -1809,18 +1802,10 @@ $( document ).ready(function() {
 		// debug: true,
         rules: {
             fld_profile_fn: {
-                alphaCheck: true
+                nameCheck: true
             },
             fld_profile_ln: {
-                alphaCheck: true
-            }
-        },
-        messages: {
-            fld_profile_fn: {
-                alphaCheck: 'Names must contain only letters, space and dashes.'
-            },
-            fld_profile_ln: {
-                alphaCheck: 'Names must contain only letters, space and dashes.'
+                nameCheck: true
             }
         },
 		submitHandler: function(form) {
@@ -1854,7 +1839,7 @@ $( document ).ready(function() {
 				formProfileName.trigger("reset");
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Name Change Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailName + "</span>");
 				clearForm(formProfileName);
 			});
 		}
@@ -1865,12 +1850,7 @@ $( document ).ready(function() {
 		// debug: true,
         rules: {
         	fld_profile_email_confirm: {
-		    	equalTo: "#f-profile-email"
-        	}
-        },
-        messages: {
-        	fld_profile_email_confirm: {
-		    	equalTo: 'Email Confirmation Mismatch'
+		    	confirmMail: "#f-profile-email"
         	}
         },
 		submitHandler: function(form) {
@@ -1905,7 +1885,7 @@ $( document ).ready(function() {
 				
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Email Change Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailEmail + "</span>");
 				clearForm(formProfileEmail);
 			});
 		}
@@ -1916,14 +1896,8 @@ $( document ).ready(function() {
 		// debug: true,
         rules: {
             fld_profile_new_psw: {
-                pswCheck: true,
-                rangelength: [6,20]
-            }
-        },
-        messages: {
-            fld_profile_new_psw: {
-                pswCheck: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
-                rangelength: 'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.'
+                pwdCheck: true,
+                rangePsw: [6,20]
             }
         },
 		submitHandler: function(form) {
@@ -1951,7 +1925,7 @@ $( document ).ready(function() {
 				
 			})
 			.fail(function() {
-				$('#js-form-output').html("<span>Password Change Failed</span>");
+				$('#js-form-output').html("<span>" + ajxFailPsw + "</span>");
 				clearForm(formProfilePassword);
 			});
 		}
@@ -1960,39 +1934,16 @@ $( document ).ready(function() {
 
 
 
-	// Set font proper awesome icon for theme selection buttons for the current theme.
-	function loadTheme() {
-	 	if ($("body").hasClass("th-light")) {
-	 		$(".js-menu-theme").children().addClass("fa-moon-o");
-	 	} 
-	 	else if ($("body").hasClass("th-dark"))
-	 	{
-	 		$(".js-menu-theme").children().addClass("fa-sun-o");
-	 	}
-	}
-	loadTheme();
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	/* 
+	 * DEBUG SCRIPTS
+	 * 
+	 */
 
  	// DEBUG menu button click behavor -> Fill all input/textarea fieldsets
 	$("#f-debug-fill-form").click( function() {
@@ -2108,7 +2059,6 @@ $( document ).ready(function() {
 
 		});
 
-
 		$("textarea").each( function() {
 			var thisField = $(this);
 			if (!thisField.parents("[class*='js-fieldset']").hasClass("is-hidden")) {
@@ -2119,7 +2069,6 @@ $( document ).ready(function() {
 			}
 		});
 
-
 		$("#f-submit").focus();
 
 		// scroll to btn when finished *ios fix
@@ -2127,10 +2076,7 @@ $( document ).ready(function() {
 			scrollTop: $("#f-submit").offset().top - vh/2
 		}, 500);
 
-
 	});
-
-
 
 
 	// DEBUG -> Toggle Icon Debug Classes
@@ -2152,12 +2098,7 @@ $( document ).ready(function() {
 
 	});
 
-
-
-
-
-
-}); // document.ready END
+}); // DOCUMENT.READY END
 
 
 
@@ -2311,6 +2252,8 @@ $( window ).scroll(function() {
 
 		}
     }
+
+
 
 
     // Triger divider CCS3 animation as they come close to view.
