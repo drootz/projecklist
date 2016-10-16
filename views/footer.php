@@ -115,7 +115,7 @@
 
     <script src="js/vendor/autogrow/autogrow.min.js" async></script>
     <script src="js/min/plugins-min.js" async></script>
-    <script src="js/main.js" async></script>
+    <script src="js/main-min.js" async></script>
 
 </body>
 </html>
