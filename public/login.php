@@ -34,11 +34,12 @@
                 // compare hash of user's input against hash that's in database
                 if (password_verify($sanitizedPost["fld_login_psw"], $row["hash"]))
                 {
+                    $now = date('Y-m-d H:i:s');
                     // If this is a temporary password. Redirect user to password update screens...
-                    if ($row['reset_date'] != NULL)
+                    if ($row['psw_reset_date'] != NULL)
                     {
                         $currentDate = new DateTime(date('Y/m/d')); 
-                        $resetDate   = new DateTime($row['reset_date']);
+                        $resetDate   = new DateTime($row['psw_reset_date']);
                         $interval = $currentDate->diff($resetDate);
                         $dateDiff = $interval->format('%a');
 
@@ -50,7 +51,19 @@
                             $_SESSION["user_name"] = $row["firstname"];
 
                             // Reset password attempt counter on successful sign in
-                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
+                            // DB update error check
+                            if (count($attemptReset) == 0)
+                            {
+                                // TODO: Log error somehow
+                            }
+
+                            $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
+                            // DB update error check
+                            if (count($history) == 0)
+                            {
+                                // TODO: Log error somehow
+                            }
 
                             $output = [
                                 'data'      => gettext('Don\'t forget to change your temporary password before it expires.'),
@@ -84,7 +97,19 @@
                         $_SESSION["user_name"] = $row["firstname"];
 
                         // Reset password attempt counter on successful sign in
-                        $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+                        $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
+                        // DB update error check
+                        if (count($attemptReset) == 0)
+                        {
+                            // TODO: Log error somehow
+                        }
+
+                        $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
+                        // DB update error check
+                        if (count($history) == 0)
+                        {
+                            // TODO: Log error somehow
+                        }
 
                         $output = [
                             'redirect' => true,
@@ -150,5 +175,14 @@
                 exit;
             }
         }
+        else
+        {
+            // TODO: log errors internally somehow
+            redirect("/logout.php");
+        }
     }
-?>
+    else
+    {
+        // TODO: log errors internally somehow
+        redirect("/logout.php");
+    }

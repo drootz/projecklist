@@ -9,7 +9,7 @@
  * @package PROJECKLIST
  * @version 1
  *
- * Copyright (c) 2015 Daniel Racine
+ * Copyright (c) 2016 Daniel Racine
  * You should have received a copy of the MIT License
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */

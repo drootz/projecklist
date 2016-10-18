@@ -76,15 +76,26 @@
                 exit;
             }
 
-            $rows = DB::query("INSERT IGNORE INTO users (user_email, firstname, lastname, hash) VALUES(?, ?, ?, ?)", $post["fld_register_email"], $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT));
+            $currentDate = date('Y-m-d H:i:s');
+            $rows = DB::query("INSERT IGNORE INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date) VALUES(?, ?, ?, ?, ?, ?)", $post["fld_register_email"], $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate);
+
             
             if (count($rows) != 0)
             {
                 // remember that user's now logged in by storing user's ID in session
                 $added = DB::query("SELECT LAST_INSERT_ID() AS id");
+
                 if (count($added) != 0)
                 {
                     $_SESSION["id"] = $added[0]["id"];
+
+                    $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $currentDate);
+                    // DB update error check
+                    if (count($history) == 0)
+                    {
+                        // TODO: Log error somehow
+                    }
+
                     $name = DB::query("SELECT firstname FROM users WHERE id = ?", $_SESSION["id"]);
                     if (count($name) != 0)
                     {
@@ -112,6 +123,11 @@
                         exit;
                     }
                 }
+                else
+                {
+                    // TODO: log errors internally somehow
+                    redirect("/logout.php");
+                }
             }
             else
             {
@@ -125,5 +141,15 @@
                 exit;
             }
         }
+        else
+        {
+            // TODO: log errors internally somehow
+            redirect("/logout.php");
+        }
+    }
+    else
+    {
+        // TODO: log errors internally somehow
+        redirect("/logout.php");
     }
 ?>

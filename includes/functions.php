@@ -9,7 +9,7 @@
  * @package PROJECKLIST
  * @version 1
  *
- * Copyright (c) 2015 Daniel Racine
+ * Copyright (c) 2016 Daniel Racine
  * You should have received a copy of the MIT License
  * along with PROJECKLIST. If not, see <https://en.wikipedia.org/wiki/MIT_License>.
  */
@@ -238,6 +238,27 @@
     	{
     		return;
     	}
+    }
+
+
+
+
+    function getDeleteKey()
+    {
+        // query database for user
+        $rows = DB::query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
+        if (count($rows) != 0)
+        {
+            // Validate key to access delete.php page
+            $row = $rows[0];
+            $user_name = $row['firstname'] + + $row['lastname'];
+            $key = $_SESSION["id"];
+            for( $i = 0; $i <= strlen($user_name); $i++ )
+            {
+                $key = $key + ord(substr($user_name, $i, 1));
+            }
+            return $key;
+        }
     }
 
 

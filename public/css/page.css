@@ -2884,8 +2884,15 @@ select {
  * Form validation classes
  *
  */
+.success {
+  color: #579820;
+  letter-spacing: -0.05em;
+  font-weight: 600; }
+
 .error {
-  color: #FF3E1A; }
+  color: #FF3E1A;
+  letter-spacing: -0.05em;
+  font-weight: 600; }
 
 label.error {
   -webkit-transform: translateY(-14px);

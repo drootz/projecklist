@@ -1506,6 +1506,18 @@ $( document ).ready(function() {
 		var inputField = $(this).parents('.row').find('form');
 		var resultLabel = $(this).parents('.row').find('.js-result');
 		var resultTxt = $(this).parents('.row').find('.js-result span');
+		var deleteResultLabel = $('#js-result-delete');
+
+		if (deleteResultLabel.hasClass('is-visible'))
+		{
+			deleteResultLabel.removeClass('is-visible');
+			deleteResultLabel.addClass('is-hidden');
+
+			if (deleteResultLabel.hasClass('error'))
+			{
+				deleteResultLabel.removeClass('error');
+			}
+		}
 
 		// Remove result label if present
 		if ($(this).hasClass('js-profile-changebtn'))
@@ -1516,6 +1528,7 @@ $( document ).ready(function() {
 				resultLabel.addClass('is-hidden');
 				resultTxt.text('');
 			}
+
 		}
 
 		// Close other visible forms on the form
@@ -1539,6 +1552,7 @@ $( document ).ready(function() {
 			inputField.addClass('is-visible');
 			inputField.trigger("reset");
 		}
+
 	});
 
 
@@ -1586,6 +1600,7 @@ $( document ).ready(function() {
 	        ajxFailName    	=   'Échec du changement de nom',
 	        ajxFailEmail    =   'Échec du changement de courriel',
 	        ajxFailPsw    	=   'Échec du changement de password',
+	        ajxFailDelete	=	'Échec de la suppression de votre profile. Veuillez réessayer plus tard.',
 	        v_pwdCheck      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.',
 	        v_nameCheck     =   'Les noms doivent contenir que des lettres, des espaces et des tirets.',
 	        v_alphaCheck    =   'Doit contenir uniquement des caractères alphabétique',
@@ -1677,6 +1692,41 @@ $( document ).ready(function() {
 		$(document).scrollTop(el.offset().top);
 	}
 
+
+	function showResult(el, status, data) {
+
+		if (!el.is(':visible'))
+		{
+			if (status)
+			{
+				if (el.hasClass('error'))
+				{
+					el.removeClass('error');
+				}
+
+				if (!el.hasClass('succes'))
+				{
+					el.addClass('success');
+				}
+			}
+			else
+			{
+				if (el.hasClass('success'))
+				{
+					el.removeClass('success');
+				}
+
+				if (!el.hasClass('error'))
+				{
+					el.addClass('error');
+				}
+			}
+			el.text(data);
+			el.removeClass('is-hidden');
+			el.addClass('is-visible');
+		}
+	}
+
 	// Successful AJAX form validation handling
 	function formDone(el, data) {
 		var form = el;
@@ -1711,7 +1761,10 @@ $( document ).ready(function() {
 		// Output an error message
 		else
 		{
-			$('#js-form-output').html('<span>' + obj.data + '</span>');
+			if ($('#js-form-output').length)
+			{
+				$('#js-form-output').html('<span>' + obj.data + '</span>');
+			}
 			$(document).scrollTop( form.offset().top );
 		}
 	}
@@ -1783,16 +1836,16 @@ $( document ).ready(function() {
 		}
 	});
 
-	var formForgot = $('#forgot');
-	formForgot.validate({
+	var formReset = $('#forgot')
+	formReset.validate({
 		submitHandler: function(form) {
-			$.post('forgot.php', formForgot.serialize())
+			$.post('forgot.php', formReset.serialize())
 			.done(function( data ) {
-				formDone(formForgot, data);
+				formDone(formReset, data);
 			})
 			.fail(function() {
 				$('#js-form-output').html("<span>" + ajxFailReset + "</span>");
-				formFailReset(formForgot);
+				formFailReset(formReset);
 			});
 		}
 	});
@@ -1830,12 +1883,9 @@ $( document ).ready(function() {
 					formProfileName.removeClass('is-visible');
 				}
 
-				if (!$('#js-result-name').is(':visible'))
-				{
-					$('#js-result-name span').text(obj.data);
-					$('#js-result-name').removeClass('is-hidden');
-					$('#js-result-name').addClass('is-visible');
-				}
+				// Display the result message
+				showResult($('#js-result-name'), obj.status, obj.data);
+
 				formProfileName.trigger("reset");
 			})
 			.fail(function() {
@@ -1873,12 +1923,7 @@ $( document ).ready(function() {
 				}
 
 				// Display the result message
-				if (!$('#js-result-email').is(':visible'))
-				{
-					$('#js-result-email span').text(obj.data);
-					$('#js-result-email').removeClass('is-hidden');
-					$('#js-result-email').addClass('is-visible');
-				}
+				showResult($('#js-result-email'), obj.status, obj.data);
 
 				// Reset the form
 				formProfileEmail.trigger("reset");
@@ -1913,12 +1958,7 @@ $( document ).ready(function() {
 				}
 
 				// Display the result message
-				if (!$('#js-result-password').is(':visible'))
-				{
-					$('#js-result-password span').text(obj.data);
-					$('#js-result-password').removeClass('is-hidden');
-					$('#js-result-password').addClass('is-visible');
-				}
+				showResult($('#js-result-password'), obj.status, obj.data);
 
 				// Reset the form
 				formProfilePassword.trigger("reset");
@@ -1931,12 +1971,79 @@ $( document ).ready(function() {
 		}
 	});
 
+	var formProfileDelete = $('#profile-delete');
+	formProfileDelete.validate({
+		// debug: true,
+		submitHandler: function(form) {
+			$.post('profile.php', formProfileDelete.serialize())
+			.done(function( data ) {
+				var obj = $.parseJSON( data );
+
+				// Redirect to account deletion page with an access key -> "key"
+				if (obj.status)
+				{
+					// transfer data to another page via GET
+					if (obj.transfer)
+					{
+						window.location.href = obj.location + "?key=" + obj.key;
+					}
+					else
+					{
+						window.location.href = 'delete.php';	
+					}
+				}
+				else
+				{
+					// Display the result message
+					if (!$('#js-result-delete').is(':visible'))
+					{
+						if (!$('#js-result-delete').hasClass('error'))
+						{
+							$('#js-result-delete').addClass('error');
+						}
+						$('#js-result-delete span').text(obj.data);
+						$('#js-result-delete').removeClass('is-hidden');
+						$('#js-result-delete').addClass('is-visible');
+					}
+
+					// Reset the form
+					formProfileDelete.trigger("reset");
+					formProfileDelete.find('input').focus();
+					formProfileDelete.find('input').blur();
+				}
+
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>" + ajxFailDelete + "</span>");
+				clearForm(formProfileDelete);
+			});
+		}
+	});
+
+	$('#js-delete-cancelbtn').click( function(e) {
+		e.preventDefault();
+		window.location.href = 'profile.php';
+	});
+
+	var formForgot = $('#delete');
+	formForgot.validate({
+		submitHandler: function(form) {
+			$.post('delete.php', formForgot.serialize())
+			.done(function( data ) {
+				formDone(formForgot, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>" + ajxFailDelete + "</span>");
+				formFailReset(formForgot);
+			});
+		}
+	});
 
 
 
 
 
-	// console.log(document.getElementsByTagName('html').getAttribute('lang'))
+
 
 
 

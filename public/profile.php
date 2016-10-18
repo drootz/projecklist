@@ -55,7 +55,8 @@
                 else
                 {
                     $output = [
-                        'data'  => gettext('Name Updated!')
+                        'status'    => true,
+                        'data'      => gettext('Name Updated!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -137,7 +138,6 @@
                     echo(json_encode($output));
                     exit;
                 }
-
             }
 
             // Update Password
@@ -162,7 +162,7 @@
                     $row = $rows[0];
                     if (password_verify($sanitized_post["fld_profile_current_psw"], $row["hash"]))
                     {
-                        $updates = DB::query("UPDATE users SET hash = ?, reset_date = NULL, psw_attempt = 0 WHERE id = ?",
+                        $updates = DB::query("UPDATE users SET hash = ?, psw_reset_date = NULL, psw_attempt = 0 WHERE id = ?",
                             password_hash($sanitized_post["fld_profile_new_psw"], PASSWORD_DEFAULT), $_SESSION["id"]);
 
                         if (count($updates) != 0)
@@ -178,7 +178,7 @@
                         else
                         {
                             $output = [
-                                'status'    => false,
+                                'status'    => true,
                                 'data'      => gettext('Password updated!'),
                                 'notification' => submitMail($row["user_email"], "Password Change Notification", "Your password was updated! If you did not change your password we recommend you to reset your password now via this link: LINK", "Plain text goes here")
                             ];
@@ -205,25 +205,64 @@
                     echo(json_encode($output));
                     exit;
                 }
+            }
+
+            // Delete Account
+            else if ($sanitized_post['save'] === "delete")
+            {
+                // query database for user
+                $rows = DB::query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
+                if (count($rows) == 1)
+                {
+                    // Check if password is valid
+                    $row = $rows[0];
+                    if (password_verify($sanitized_post['fld_profile_psw_delete'], $row["hash"]))
+                    {
+                        $output = [
+                            'status'        => true,
+                            'transfer'      => true,
+                            // 'key'           => $key,
+                            'key'           => getDeleteKey(),
+                            'location'      => 'delete.php'
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
+                    else
+                    {
+                        $output = [
+                            'status'    => false,
+                            'data'      => gettext('Invalid password!')
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
+                }
+                else
+                {
+                    $output = [
+                        'status'    => false,
+                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
 
             }
             else
             {
-                $output = [
-                    'status'    => false,
-                    'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
-                ];
-                echo(json_encode($output));
-                exit;
+                // TODO: log errors internally somehow
+                redirect("/logout.php");
             }
         }
         else
         {
-            $output = [
-                'status'    => false,
-                'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
-            ];
-            echo(json_encode($output));
-            exit;
+            // TODO: log errors internally somehow
+            redirect("/logout.php");
         }
+    }
+    else
+    {
+        // TODO: log errors internally somehow
+        redirect("/logout.php");
     }

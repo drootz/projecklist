@@ -595,10 +595,15 @@
  *
  */
 	.success {
+		color: #579820; // Green
+		letter-spacing: -0.05em;
+		font-weight: 600;
 	}
 
 	.error {
 		color: $red;
+		letter-spacing: -0.05em;
+		font-weight: 600;
 	}
 
 	label.error {

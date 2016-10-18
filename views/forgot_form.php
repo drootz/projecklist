@@ -23,7 +23,7 @@
 
                 <div class="m-login-button">
                     <br/>
-                    <button class="button" type="submit" value="Submit" id="f-submit" name="submit">Submit</button>
+                    <button class="button" type="submit" value="submit" name="submit">Submit</button>
                 </div>
 
             </fieldset>

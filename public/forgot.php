@@ -31,7 +31,9 @@
             $ip = $_SERVER['REMOTE_ADDR'];
             $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
             $responseKeys = json_decode($response,true);
-            if(intval($responseKeys["success"]) !== 1) {
+
+            if(intval($responseKeys["success"]) !== 1)
+            {
                 $output = [
                     'data'      => gettext('Unable to proceed with your request at this time.'),
                     'reset'     => true,
@@ -57,31 +59,19 @@
                 // DEBUG tmp
                 $tempPsw = "12345";
 
-                $reset = DB::query("UPDATE users SET hash = ?, reset_date = ?, psw_attempt = 0 WHERE user_email = ?", password_hash($tempPsw, PASSWORD_DEFAULT), $currentDate, $row["user_email"]);
+                $reset = DB::query("UPDATE users SET hash = ?, psw_reset_date = ?, psw_attempt = 0 WHERE user_email = ?", password_hash($tempPsw, PASSWORD_DEFAULT), $currentDate, $row["user_email"]);
 
-                $userName = $row["firstname"] . " " . $row["lastname"];
-                if (count($reset) == 1)
+                if (count($reset) != 0)
                 {
-                    if (submitMail($row["user_email"], "Password Reset", "Reset TMP: " . $tempPsw, "Plain text goes here."))
-                    {
-                        $output = [
-                            'data' => gettext('Your password has been sent by email successfully and will exipre in 24 hours. Check your mail!'),
-                            'modal' => true,
-                            'redirect'  => true,
-                            'location'  => 'index.php'
-                        ];
-                        echo(json_encode($output));
-                        exit;
-                    }
-                    else
-                    {
-                        $output = [
-                            'data'  => gettext('Unable to reset your password at this time. Please try again.'),
-                            'reset' => true
-                        ];
-                        echo(json_encode($output));
-                        exit;
-                    }
+                    $output = [
+                        'data'          => gettext('Your password has been sent by email successfully and will exipre in 24 hours. Check your mail!'),
+                        'modal'         => true,
+                        'redirect'      => true,
+                        'location'      => 'index.php',
+                        'notification'  => submitMail($row["user_email"], "Password Reset Notification", "Reset TMP: " . $tempPsw, "Plain text goes here")
+                    ];
+                    echo(json_encode($output));
+                    exit;
                 }
                 else
                 {
@@ -103,6 +93,14 @@
                 exit;
             }
         }
+        else
+        {
+            // TODO: log errors internally somehow
+            redirect("/logout.php");
+        }
     }
-
-?>
+    else
+    {
+        // TODO: log errors internally somehow
+        redirect("/logout.php");
+    }
