@@ -228,7 +228,8 @@
 
     		foreach ($_SESSION['form_PO_support'] as $display => $code) {
     			$codeBloc .= "<li>";
-    			$codeBloc .= "<a href=\"?lang=" . $code . "\">" . $display . "<span class=\"fa fa-globe fa-lg\"></span>"."</a>";
+    			// $codeBloc .= "<a href=\"?lang=" . $code . "\">" . $display ."</a>";
+                $codeBloc .= "<a href=\"?lang=" . $code . "\">" . $display . "&nbsp;<span class=\"fa fa-globe fa-lg\"></span>"."</a>";
     			$codeBloc .= "</li>";
     		}
     		$codeBloc .= "</ul>";

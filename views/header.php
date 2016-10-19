@@ -147,11 +147,6 @@
                 <ul class="m-menu">
                     <!-- <li id="f-debug-fill-form" title="debug -> fill form button"><span class="fa fa-bug fa-lg"></span></li> -->
                     <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-getStarted' ) . "\""; ?>><a href="projeckt.php"><span class="fa fa-lg fa-rocket" aria-hidden="true"></span></a></li>
-                    <li class="m-menu-li-drop is-not-toggled" <?php echo "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?> >
-                        <!-- $_SESSION['lang'] -->
-                        <?php echo "<span class=\"fa fa-globe fa-lg\"></span><span class=\"m-currentlanguage\">" . htmlspecialchars($_SESSION['currentLanguage']) . "</span>"; ?>
-                        <?php echo setLanguageMenu(); ?>
-                    </li>
                     <!-- fa icon loaded on pageload JS loadTheme(); -->
                     <li class="js-menu-theme" <?php echo "title=\"" . _( 'form-navbar-titleAttr-toggleTheme' ) . "\""; ?>><span class="fa fa-lg"></span></li>
                 </ul>

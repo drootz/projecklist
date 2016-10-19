@@ -8,7 +8,7 @@
 
                         <div class="row">
 
-                            <div class="col-pad-06 m-footer-block">
+                            <div class="col-pad-04 m-footer-block">
                                 <div class="m-share">
                                     <h4>Share</h4>
                                     <ul>
@@ -20,7 +20,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-pad-06 m-footer-block">
+                            <div class="col-pad-04 m-footer-block">
                                 <div class="m-github">
 
                                     <h4>Github</h4>                                    
@@ -42,6 +42,19 @@
                                     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
                                 </div>
                             </div>
+
+                            <div class="col-pad-04 m-info-block">
+
+                                <h4>Projecklist</h4>
+                                <ul class="m-info">
+                                    <li class="m-menu-li-drop is-not-toggled" <?php echo "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?> >
+                                        <!-- $_SESSION['lang'] -->
+                                        <?php echo htmlspecialchars($_SESSION['currentLanguage']) . "<span class=\"fa fa-globe fa-lg\"></span><span class=\"m-currentlanguage\"></span>"; ?>
+                                        <?php echo setLanguageMenu(); ?>
+                                    </li>
+                                </ul>
+                            </div>
+
                             <div class="col-12 m-copyright">
                                 <p><?php echo _( 'footer-copy' ); ?> &copy; <?php echo date("Y")?></p>
                                 <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a>
