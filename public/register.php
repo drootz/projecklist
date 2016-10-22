@@ -41,6 +41,7 @@
                 echo(json_encode($output));
                 exit;
             }
+            $post['fld_register_email'] = strtolower($post['fld_register_email']);
 
             // Check for password confirmation
             if ($post['fld_register_psw'] != $post['fld_register_psw_confirm'])

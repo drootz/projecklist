@@ -21,11 +21,13 @@
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {   
         // Sanitize $_POST and check for submit key
-        $sanitizedPost = sanitizeForm($_POST);
-        if(isset($sanitizedPost['submit'])) 
+        $post = sanitizeForm($_POST);
+        if(isset($post['submit'])) 
         {
+            $post["fld_login_email"] = strtolower($post["fld_login_email"]);
+            
             // query database for user
-            $rows = DB::query("SELECT * FROM users WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+            $rows = DB::query("SELECT * FROM users WHERE user_email = ?", $post["fld_login_email"]);
 
             // if we found user, check password
             if (count($rows) == 1)
@@ -33,7 +35,7 @@
                 // first (and only) row
                 $row = $rows[0];
                 // compare hash of user's input against hash that's in database
-                if (password_verify($sanitizedPost["fld_login_psw"], $row["hash"]))
+                if (password_verify($post["fld_login_psw"], $row["hash"]))
                 {
                     $now = date('Y-m-d H:i:s');
                     // If this is a temporary password. Redirect user to password update screens...
@@ -52,7 +54,7 @@
                             $_SESSION["user_name"] = $row["firstname"];
 
                             // Reset password attempt counter on successful sign in
-                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
+                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $post["fld_login_email"]);
                             if (count($attemptReset) == 0)
                             {
                                 userErrorHandler(0, "login", "Password attempt reset failed 1");
@@ -80,7 +82,7 @@
                         else 
                         {
                             // Reset password attempt counter on successful sign in
-                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+                            $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $post["fld_login_email"]);
                             if (count($attemptReset) == 0)
                             {
                                 userErrorHandler(0, "login", "Password attempt reset failed 2");
@@ -103,7 +105,7 @@
                         $_SESSION["user_name"] = $row["firstname"];
 
                         // Reset password attempt counter on successful sign in
-                        $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
+                        $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $post["fld_login_email"]);
                         if (count($attemptReset) == 0)
                         {
                             userErrorHandler(0, "login", "Password attempt reset failed 3");
@@ -127,7 +129,7 @@
                 else
                 {
                     // Password Attemps Check
-                    $attempt_count = DB::query("SELECT psw_attempt FROM users WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+                    $attempt_count = DB::query("SELECT psw_attempt FROM users WHERE user_email = ?", $post["fld_login_email"]);
                     if (count($attempt_count) != 0)
                     {
                         $attempt_count = $attempt_count[0];
@@ -140,7 +142,7 @@
                                 'modal'     => true,
                                 'redirect'  => true,
                                 'location'  => 'forgot.php',
-                                'notification' => submitMail($sanitizedPost["fld_login_email"], "Account Locked Notification", "Your account is locked because the login attempt exceeded the maximum number of attempt. You can reset your password via this link: LINK", "Plain text goes here")
+                                'notification' => submitMail($post["fld_login_email"], "Account Locked Notification", "Your account is locked because the login attempt exceeded the maximum number of attempt. You can reset your password via this link: LINK", "Plain text goes here")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -150,7 +152,7 @@
                         else
                         {
                             $attempts = $attempt_count['psw_attempt'] + 1;
-                            $increment = DB::query("UPDATE users SET psw_attempt = ? WHERE user_email = ?", $attempts, $sanitizedPost["fld_login_email"]);
+                            $increment = DB::query("UPDATE users SET psw_attempt = ? WHERE user_email = ?", $attempts, $post["fld_login_email"]);
                             if (count($increment) != 0)
                             {
                                 $output = [
@@ -183,7 +185,7 @@
                     'modal'         => true,
                     'data'          => 'This email is not registered.',
                     'transfer'      => true,
-                    'transferData'  => $sanitizedPost["fld_login_email"],
+                    'transferData'  => $post["fld_login_email"],
                     'location'      => 'register.php'
                 ];
                 echo(json_encode($output));

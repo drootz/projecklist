@@ -26,28 +26,30 @@
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         // Sanitize $_POST and check for submit key
-        $sanitized_post = sanitizeForm($_POST);
-        if(isset($sanitized_post['save'])) 
+        $post = sanitizeForm($_POST);
+        if(isset($post['save'])) 
         {
+            $post['fld_profile_email'] = strtolower($post['fld_profile_email']);
+            
             // Update Firstname and Lastname
-            if ($sanitized_post['save'] === "name")
+            if ($post['save'] === "name")
             {
                 $rows = DB::query("
                     UPDATE users SET
                         firstname = ?,
                         lastname = ?
                     WHERE id = ?",
-                    $sanitized_post['fld_profile_fn'], $sanitized_post['fld_profile_ln'], $_SESSION["id"]);
+                    $post['fld_profile_fn'], $post['fld_profile_ln'], $_SESSION["id"]);
 
-                    $_SESSION["user_name"] = $sanitized_post['fld_profile_fn'];
+                    $_SESSION["user_name"] = $post['fld_profile_fn'];
 
                 // Update Done
                 if ($rows != 0)
                 {
                     $output = [
                         'status'    => true,
-                        'firstname' => $sanitized_post['fld_profile_fn'],
-                        'lastname'  => $sanitized_post['fld_profile_ln'],
+                        'firstname' => $post['fld_profile_fn'],
+                        'lastname'  => $post['fld_profile_ln'],
                         'data'      => gettext('Name Updated!')
                     ];
                     echo(json_encode($output));
@@ -67,10 +69,10 @@
             }
 
             // Update Email
-            else if ($sanitized_post['save'] === "email")
+            else if ($post['save'] === "email")
             {
                 // Check if email confrimation match
-                if ($sanitized_post['fld_profile_email'] != $sanitized_post['fld_profile_email_confirm'])
+                if ($post['fld_profile_email'] != $post['fld_profile_email_confirm'])
                 {
                     $output = [
                         'status'    => false,
@@ -86,7 +88,7 @@
                 if (count($rows) == 1)
                 {
                     // Check if the requested email is already registered
-                    $checkEmail = DB::query("SELECT * FROM users WHERE user_email = ?", $sanitized_post['fld_profile_email']);
+                    $checkEmail = DB::query("SELECT * FROM users WHERE user_email = ?", $post['fld_profile_email']);
                     if (count($checkEmail) > 0) {
                         $output = [
                             'status'    => false,
@@ -97,17 +99,17 @@
                     }
 
                     // Check if password is valid
-                    if (password_verify($sanitized_post["fld_profile_email_psw"], $row["hash"]))
+                    if (password_verify($post["fld_profile_email_psw"], $row["hash"]))
                     {   
-                        $updates = DB::query("UPDATE users SET user_email = ? WHERE id = ?", $sanitized_post['fld_profile_email'], $_SESSION["id"]);
+                        $updates = DB::query("UPDATE users SET user_email = ? WHERE id = ?", $post['fld_profile_email'], $_SESSION["id"]);
 
                         if (count($updates) != 0)
                         {
                             $output = [
                                 'status'        => true,
-                                'email'         => $sanitized_post['fld_profile_email'],
+                                'email'         => $post['fld_profile_email'],
                                 'data'          => gettext('Email updated!'),
-                                'notification'  => submitMail($row["user_email"], "Email Change Notification", "Your email was updated and changed to " . $sanitized_post['fld_profile_email'], "Plain text Goes Here")
+                                'notification'  => submitMail($row["user_email"], "Email Change Notification", "Your email was updated and changed to " . $post['fld_profile_email'], "Plain text Goes Here")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -137,7 +139,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -145,10 +147,10 @@
             }
 
             // Update Password
-            else if ($sanitized_post['save'] === "password")
+            else if ($post['save'] === "password")
             {
                 // Check if email confrimation match
-                if ($sanitized_post['fld_profile_new_psw'] != $sanitized_post['fld_profile_psw_confirm'])
+                if ($post['fld_profile_new_psw'] != $post['fld_profile_psw_confirm'])
                 {
                     $output = [
                         'status'    => false,
@@ -164,10 +166,10 @@
                 {
                     // Check if password is valid
                     $row = $rows[0];
-                    if (password_verify($sanitized_post["fld_profile_current_psw"], $row["hash"]))
+                    if (password_verify($post["fld_profile_current_psw"], $row["hash"]))
                     {
                         $updates = DB::query("UPDATE users SET hash = ?, psw_reset_date = NULL, psw_attempt = 0 WHERE id = ?",
-                            password_hash($sanitized_post["fld_profile_new_psw"], PASSWORD_DEFAULT), $_SESSION["id"]);
+                            password_hash($post["fld_profile_new_psw"], PASSWORD_DEFAULT), $_SESSION["id"]);
 
                         if (count($updates) > 0)
                         {
@@ -205,7 +207,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -213,7 +215,7 @@
             }
 
             // Delete Account
-            else if ($sanitized_post['save'] === "delete")
+            else if ($post['save'] === "delete")
             {
                 // query database for user
                 $rows = DB::query("SELECT * FROM users WHERE id = ?", $_SESSION["id"]);
@@ -221,7 +223,7 @@
                 {
                     // Check if password is valid
                     $row = $rows[0];
-                    if (password_verify($sanitized_post['fld_profile_psw_delete'], $row["hash"]))
+                    if (password_verify($post['fld_profile_psw_delete'], $row["hash"]))
                     {
                         $output = [
                             'status'        => true,
@@ -248,7 +250,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
                     ];
                     echo(json_encode($output));
                     exit;

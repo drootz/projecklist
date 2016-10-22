@@ -17,6 +17,8 @@
         $post = sanitizeForm($_POST);
         if(isset($post['submit'])) 
         {
+            $post["fld_login_email"] = strtolower($post["fld_login_email"]);
+            
             // Check for reCaptcha checkbox
             if (!$post['g-recaptcha-response'])
             {
