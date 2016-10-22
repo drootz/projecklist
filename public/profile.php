@@ -21,9 +21,11 @@
             redirect("/logout.php");
         }
     }
+
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
+        // Sanitize $_POST and check for submit key
         $sanitized_post = sanitizeForm($_POST);
         if(isset($sanitized_post['save'])) 
         {
@@ -56,7 +58,8 @@
                 {
                     $output = [
                         'status'    => true,
-                        'data'      => gettext('Name Updated!')
+                        'data'      => gettext('Name Updated!'),
+                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to update username in database")
                     ];
                     echo(json_encode($output));
                     exit;
@@ -133,7 +136,8 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
+                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -165,7 +169,7 @@
                         $updates = DB::query("UPDATE users SET hash = ?, psw_reset_date = NULL, psw_attempt = 0 WHERE id = ?",
                             password_hash($sanitized_post["fld_profile_new_psw"], PASSWORD_DEFAULT), $_SESSION["id"]);
 
-                        if (count($updates) != 0)
+                        if (count($updates) > 0)
                         {
                             $output = [
                                 'status'    => true,
@@ -178,9 +182,9 @@
                         else
                         {
                             $output = [
-                                'status'    => true,
-                                'data'      => gettext('Password updated!'),
-                                'notification' => submitMail($row["user_email"], "Password Change Notification", "Your password was updated! If you did not change your password we recommend you to reset your password now via this link: LINK", "Plain text goes here")
+                                'status'    => false,
+                                'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                                'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to update psw")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -200,7 +204,8 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
+                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -242,27 +247,33 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.')
+                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
                 }
-
             }
+
+            // ERROR
             else
             {
-                // TODO: log errors internally somehow
+                userErrorHandler($_SESSION['id'], 0, "profile", "POST 'save' type invalid");
                 redirect("/logout.php");
             }
         }
+
+        // ERROR
         else
         {
-            // TODO: log errors internally somehow
+            userErrorHandler($_SESSION['id'], 0, "profile", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
+
+    // ERROR
     else
     {
-        // TODO: log errors internally somehow
+        userErrorHandler($_SESSION['id'], 0, "profile", "Server request is not GET or POST");
         redirect("/logout.php");
     }
