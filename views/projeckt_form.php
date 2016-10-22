@@ -2,9 +2,6 @@
 
             <form class="form" method="post" name="projecklist" id="projecklist" autocomplete="off">
 
-
-
-
                 <section id="f-section-planning" class="f-section-planning">
 
                     <div class="l-wrapper">

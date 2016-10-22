@@ -748,7 +748,7 @@
         }
     }
 
-    Function pseudostring($length = 8) {
+    function pseudostring($length = 8) {
 
         // Generate arrays with characters and numbers
         $lowerAlpha = range('a', 'z');
@@ -766,4 +766,23 @@
         }
 
         return $returnString;
+    }
+
+    function userErrorHandler($errid, $errno, $errfile, $errstring)
+    {
+        $insert = DB::query("INSERT INTO user_errors (user_id, err_num, err_file, err_string, err_time) VALUES(?, ?, ?, ?, ?)", 
+            $errid, 
+            $errno, 
+            $errfile, 
+            $errstring, 
+            date('Y-m-d H:i:s'));  
+
+        if (count($insert) > 0)
+        {
+            return true;
+        }   
+        else
+        {
+            return false;
+        }
     }
