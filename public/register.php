@@ -173,11 +173,11 @@
 
             }
 
-            // Error if user email exist
+            // ERROR if user email exist
             else
             {
                 $output = [
-                    'data'      => gettext('Submission Error. The email address submitted is already registered.'),
+                    'data'      => gettext('The email address submitted is already registered.'),
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'logout.php',
@@ -187,16 +187,18 @@
                 exit;
             }
         }
+
+        // ERROR
         else
         {
-            // ERROR
             userErrorHandler(0, 0, "register", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
+
+    // ERROR
     else
     {
-        // ERROR
         userErrorHandler(0, 0, "register", "Server request is not GET or POST");
         redirect("/logout.php");
     }

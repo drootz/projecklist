@@ -20,6 +20,7 @@
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {   
+        // Sanitize $_POST and check for submit key
         $sanitizedPost = sanitizeForm($_POST);
         if(isset($sanitizedPost['submit'])) 
         {
@@ -52,19 +53,19 @@
 
                             // Reset password attempt counter on successful sign in
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
-                            // DB update error check
                             if (count($attemptReset) == 0)
                             {
-                                // TODO: Log error somehow
+                                userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 1");
                             }
 
+                            // Login history log
                             $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
-                            // DB update error check
                             if (count($history) == 0)
                             {
-                                // TODO: Log error somehow
+                                userErrorHandler($_SESSION["id"], 0, "login", "unable to log 'sign in' history");
                             }
 
+                            // SUCCES, redirect to profile page
                             $output = [
                                 'data'      => gettext('Don\'t forget to change your temporary password before it expires.'),
                                 'modal'     => true,
@@ -74,11 +75,16 @@
                             echo(json_encode($output));
                             exit;
                         }
+
                         // If password has expired, user need to resumbmit a password reset request
                         else 
                         {
                             // Reset password attempt counter on successful sign in
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
+                            if (count($attemptReset) == 0)
+                            {
+                                userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 2");
+                            }
 
                             $output = [
                                 'data'      => gettext('The temporary password has exired.'),
@@ -98,17 +104,16 @@
 
                         // Reset password attempt counter on successful sign in
                         $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
-                        // DB update error check
                         if (count($attemptReset) == 0)
                         {
-                            // TODO: Log error somehow
+                            userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 3");
                         }
 
+                        // Login history log
                         $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
-                        // DB update error check
                         if (count($history) == 0)
                         {
-                            // TODO: Log error somehow
+                            userErrorHandler($_SESSION["id"], 0, "login", "unable to log 'sign in' history");
                         }
 
                         $output = [
@@ -123,7 +128,6 @@
                 {
                     // Password Attemps Check
                     $attempt_count = DB::query("SELECT psw_attempt FROM users WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
-
                     if (count($attempt_count) != 0)
                     {
                         $attempt_count = $attempt_count[0];
@@ -147,7 +151,6 @@
                         {
                             $attempts = $attempt_count['psw_attempt'] + 1;
                             $increment = DB::query("UPDATE users SET psw_attempt = ? WHERE user_email = ?", $attempts, $sanitizedPost["fld_login_email"]);
-
                             if (count($increment) != 0)
                             {
                                 $output = [
@@ -157,7 +160,19 @@
                                 echo(json_encode($output));
                                 exit;
                             }
+
+                            // ERROR
+                            else
+                            {
+                                userErrorHandler($_SESSION["id"], 0, "login", "psw attempt increment failed");
+                            }
                         }
+                    }
+
+                    // ERROR 
+                    else
+                    {
+                        userErrorHandler($_SESSION["id"], 0, "login", "unable to get psw attempt count");
                     }
                 }
             }
@@ -175,14 +190,18 @@
                 exit;
             }
         }
+
+        // ERROR
         else
         {
-            // TODO: log errors internally somehow
+            userErrorHandler(0, 0, "register", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
+
+    // ERROR
     else
     {
-        // TODO: log errors internally somehow
+        userErrorHandler(0, 0, "register", "Server request is not GET or POST");
         redirect("/logout.php");
     }
