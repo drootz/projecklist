@@ -22,6 +22,7 @@
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {   
+        // Sanitize $_POST and check for submit key
         $post = sanitizeForm($_POST);
         if(isset($post['submit'])) 
         {
@@ -49,7 +50,8 @@
                         // DB update error check
                         if (count($deltable) == 0)
                         {
-                            // TODO: log errors internally somehow
+                            userErrorHandler(0, "delete", "unable to add user to deleted_users table");
+                            redirect("/logout.php");
                         }
 
                         $deluser = DB::query("DELETE FROM users WHERE id = ?", $_SESSION["id"]);
@@ -65,7 +67,27 @@
                             echo(json_encode($output));
                             exit;
                         }
+
+                        // ERROR unable to delete user from users table
+                        else
+                        {
+                            userErrorHandler(0, "delete", "unable to delete user from users table");
+                            redirect("/logout.php");
+                        }
                     }
+
+                    // ERROR Unable to query user
+                    else
+                    {
+                        userErrorHandler(0, "delete", "unable to query user");
+                        redirect("/logout.php");
+                    }
+                }
+                else
+                {
+                    userErrorHandler(0, "delete", "Invalid delete key");
+                    redirect("/logout.php");
+
                 }
             }
 
@@ -73,14 +95,24 @@
                 'data'      => gettext('Unable to delete the account at this time. Please try again later'),
                 'modal'     => true,
                 'redirect'  => true,
-                'location'  => 'logout.php'
+                'location'  => 'logout.php',
+                'error'     => userErrorHandler(0, "delete", "Delete key not passed as GET parameter")
             ];
             echo(json_encode($output));
             exit;
         }
+
+        // ERROR
+        else
+        {
+            userErrorHandler(0, "delete", "POST submitted without the post key 'submit' set.");
+            redirect("/logout.php");
+        }
     }
+
+    // ERROR
     else
     {
-        // TODO: log errors internally somehow
+        userErrorHandler(0, "delete", "Server request is not GET or POST");
         redirect("/logout.php");
     }
