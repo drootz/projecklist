@@ -55,14 +55,14 @@
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
                             if (count($attemptReset) == 0)
                             {
-                                userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 1");
+                                userErrorHandler(0, "login", "Password attempt reset failed 1");
                             }
 
                             // Login history log
                             $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
                             if (count($history) == 0)
                             {
-                                userErrorHandler($_SESSION["id"], 0, "login", "unable to log 'sign in' history");
+                                userErrorHandler(0, "login", "unable to log 'sign in' history");
                             }
 
                             // SUCCES, redirect to profile page
@@ -83,7 +83,7 @@
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0 WHERE user_email = ?", $sanitizedPost["fld_login_email"]);
                             if (count($attemptReset) == 0)
                             {
-                                userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 2");
+                                userErrorHandler(0, "login", "Password attempt reset failed 2");
                             }
 
                             $output = [
@@ -106,14 +106,14 @@
                         $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, last_loggedin_date = ? WHERE user_email = ?", $now, $sanitizedPost["fld_login_email"]);
                         if (count($attemptReset) == 0)
                         {
-                            userErrorHandler($_SESSION["id"], 0, "login", "Password attempt reset failed 3");
+                            userErrorHandler(0, "login", "Password attempt reset failed 3");
                         }
 
                         // Login history log
                         $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $now);
                         if (count($history) == 0)
                         {
-                            userErrorHandler($_SESSION["id"], 0, "login", "unable to log 'sign in' history");
+                            userErrorHandler(0, "login", "unable to log 'sign in' history");
                         }
 
                         $output = [
@@ -164,7 +164,7 @@
                             // ERROR
                             else
                             {
-                                userErrorHandler($_SESSION["id"], 0, "login", "psw attempt increment failed");
+                                userErrorHandler(0, "login", "psw attempt increment failed");
                             }
                         }
                     }
@@ -172,7 +172,7 @@
                     // ERROR 
                     else
                     {
-                        userErrorHandler($_SESSION["id"], 0, "login", "unable to get psw attempt count");
+                        userErrorHandler(0, "login", "unable to get psw attempt count");
                     }
                 }
             }
@@ -194,7 +194,7 @@
         // ERROR
         else
         {
-            userErrorHandler(0, 0, "register", "POST submitted without the post key 'submit' set.");
+            userErrorHandler(0, "register", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
@@ -202,6 +202,6 @@
     // ERROR
     else
     {
-        userErrorHandler(0, 0, "register", "Server request is not GET or POST");
+        userErrorHandler(0, "register", "Server request is not GET or POST");
         redirect("/logout.php");
     }

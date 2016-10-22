@@ -768,8 +768,9 @@
         return $returnString;
     }
 
-    function userErrorHandler($errid, $errno, $errfile, $errstring)
+    function userErrorHandler($errno, $errfile, $errstring)
     {
+        $errid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;
         $insert = DB::query("INSERT INTO user_errors (user_id, err_num, err_file, err_string, err_time) VALUES(?, ?, ?, ?, ?)", 
             $errid, 
             $errno, 

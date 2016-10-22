@@ -59,7 +59,7 @@
                     $output = [
                         'status'    => true,
                         'data'      => gettext('Name Updated!'),
-                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to update username in database")
+                        'error'     => userErrorHandler(0, "profile", "unable to update username in database")
                     ];
                     echo(json_encode($output));
                     exit;
@@ -137,7 +137,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -184,7 +184,7 @@
                             $output = [
                                 'status'    => false,
                                 'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                                'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to update psw")
+                                'error'     => userErrorHandler(0, "profile", "unable to update psw")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -205,7 +205,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -248,7 +248,7 @@
                     $output = [
                         'status'    => false,
                         'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
-                        'error'     => userErrorHandler($_SESSION['id'], 0, "profile", "unable to query user: " . $sanitized_post['save'])
+                        'error'     => userErrorHandler(0, "profile", "unable to query user: " . $sanitized_post['save'])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -258,7 +258,7 @@
             // ERROR
             else
             {
-                userErrorHandler($_SESSION['id'], 0, "profile", "POST 'save' type invalid");
+                userErrorHandler(0, "profile", "POST 'save' type invalid");
                 redirect("/logout.php");
             }
         }
@@ -266,7 +266,7 @@
         // ERROR
         else
         {
-            userErrorHandler($_SESSION['id'], 0, "profile", "POST submitted without the post key 'submit' set.");
+            userErrorHandler(0, "profile", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
@@ -274,6 +274,6 @@
     // ERROR
     else
     {
-        userErrorHandler($_SESSION['id'], 0, "profile", "Server request is not GET or POST");
+        userErrorHandler(0, "profile", "Server request is not GET or POST");
         redirect("/logout.php");
     }

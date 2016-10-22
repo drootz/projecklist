@@ -78,7 +78,7 @@
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'index.php',
-                    'error'     => userErrorHandler(0, 0, "register", "reCaptcha error, potential bot")
+                    'error'     => userErrorHandler(0, "register", "reCaptcha error, potential bot")
                 ];
                 echo(json_encode($output));
                 exit;
@@ -106,7 +106,7 @@
                         if (count($history) == 0)
                         {
                             // ERROR
-                            userErrorHandler($_SESSION["id"], 0, "register", "unable to log 'sign in' history");
+                            userErrorHandler(0, "register", "unable to log 'sign in' history");
                         }
 
                         // Get user firstname
@@ -134,7 +134,7 @@
                                 'redirect'      => true,
                                 'location'      => 'logout.php',
                                 'notification'  => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
-                                'error'         => userErrorHandler($_SESSION["id"], 0, "register", "New Account Registered but unable to select the last inserted firstname")
+                                'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted firstname")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -149,7 +149,7 @@
                             'redirect'      => true,
                             'location'      => 'logout.php',
                             'notification'  => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
-                            'error'         => userErrorHandler(0, 0, "register", "New Account Registered but unable to select the last inserted id")
+                            'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted id")
                         ];
                         echo(json_encode($output));
                         exit;
@@ -165,7 +165,7 @@
                         'modal'     => true,
                         'redirect'  => true,
                         'location'  => 'logout.php',
-                        'error'     => userErrorHandler(0, 0, "register", "unable to insert registration in the database: " . $post["fld_register_email"])
+                        'error'     => userErrorHandler(0, "register", "unable to insert registration in the database: " . $post["fld_register_email"])
                     ];
                     echo(json_encode($output));
                     exit;
@@ -181,7 +181,7 @@
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'logout.php',
-                    'error'     => userErrorHandler(0, 0, "register", "email address already registered: ". $post["fld_register_email"])
+                    'error'     => userErrorHandler(0, "register", "email address already registered: ". $post["fld_register_email"])
                 ];
                 echo(json_encode($output));
                 exit;
@@ -191,7 +191,7 @@
         // ERROR
         else
         {
-            userErrorHandler(0, 0, "register", "POST submitted without the post key 'submit' set.");
+            userErrorHandler(0, "register", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
@@ -199,6 +199,6 @@
     // ERROR
     else
     {
-        userErrorHandler(0, 0, "register", "Server request is not GET or POST");
+        userErrorHandler(0, "register", "Server request is not GET or POST");
         redirect("/logout.php");
     }

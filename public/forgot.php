@@ -13,10 +13,11 @@
     // else if user reached page via POST (as by submitting a form via POST)
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
     {   
+        // Sanitize $_POST and check for submit key
         $post = sanitizeForm($_POST);
         if(isset($post['submit'])) 
         {
-
+            // Check for reCaptcha checkbox
             if (!$post['g-recaptcha-response'])
             {
                 $output = [
@@ -26,6 +27,7 @@
                 exit;
             }
 
+            // Check for reCaptcha response
             $captcha = $post['g-recaptcha-response'];
             $secretKey = "6LfS5ggTAAAAAKR6w3mDTrT9i7edXNxnmhBl4Kl9";
             $ip = $_SERVER['REMOTE_ADDR'];
@@ -38,8 +40,9 @@
                     'data'      => gettext('Unable to proceed with your request at this time.'),
                     'reset'     => true,
                     'modal'     => true,
-                    'redirect' => true,
-                    'location'  => 'index.php'
+                    'redirect'  => true,
+                    'location'  => 'index.php',
+                    'error'     => userErrorHandler(0, "forgot", "reCaptcha error, potential bot")
                 ];
                 echo(json_encode($output));
                 exit;
@@ -77,7 +80,8 @@
                 {
                     $output = [
                         'data'  => gettext('Unable to reset your password at this time. Please try again.'),
-                        'reset' => true
+                        'reset' => true,
+                        'error' => userErrorHandler(0, "forgot", "unable to reset psw")
                     ];
                     echo(json_encode($output));
                     exit;
@@ -93,14 +97,18 @@
                 exit;
             }
         }
+
+        // ERROR
         else
         {
-            // TODO: log errors internally somehow
+            userErrorHandler(0, "forgot", "POST submitted without the post key 'submit' set.");
             redirect("/logout.php");
         }
     }
+
+    // ERROR
     else
     {
-        // TODO: log errors internally somehow
+        userErrorHandler(0, "forgot", "Server request is not GET or POST");
         redirect("/logout.php");
     }
