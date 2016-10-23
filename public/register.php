@@ -41,7 +41,6 @@
                 echo(json_encode($output));
                 exit;
             }
-            $post['fld_register_email'] = strtolower($post['fld_register_email']);
 
             // Check for password confirmation
             if ($post['fld_register_psw'] != $post['fld_register_psw_confirm'])
@@ -92,7 +91,7 @@
             {
                 // create new account
                 $currentDate = date('Y-m-d H:i:s');
-                $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date) VALUES(?, ?, ?, ?, ?, ?)", $post["fld_register_email"], $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate);
+                $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date) VALUES(?, ?, ?, ?, ?, ?)", strtolower($post["fld_register_email"]), $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate);
                 
                 if (count($rows) != 0)
                 {
@@ -121,7 +120,7 @@
                                 'modal'         => true,
                                 'redirect'      => true,
                                 'location'      => 'index.php',
-                                'notification'  => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here")
+                                'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -134,7 +133,7 @@
                                 'modal'         => true,
                                 'redirect'      => true,
                                 'location'      => 'logout.php',
-                                'notification'  => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
+                                'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
                                 'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted firstname")
                             ];
                             echo(json_encode($output));
@@ -149,7 +148,7 @@
                             'modal'         => true,
                             'redirect'      => true,
                             'location'      => 'logout.php',
-                            'notification'  => submitMail($post["fld_register_email"], "Registration Notification", "Thank you to register! Your sign in email is " . $post["fld_register_email"] . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
+                            'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
                             'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted id")
                         ];
                         echo(json_encode($output));
@@ -182,7 +181,7 @@
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'logout.php',
-                    'error'     => userErrorHandler(0, "register", "email address already registered: ". $post["fld_register_email"])
+                    'error'     => userErrorHandler(0, "register", "email address already registered: ". strtolower($post["fld_register_email"]))
                 ];
                 echo(json_encode($output));
                 exit;

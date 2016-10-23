@@ -768,6 +768,22 @@
         return $returnString;
     }
 
+
+    function getTimeLapse($firstDate, $secondDate) {
+
+        $interval = $firstDate->diff($secondDate);
+        $days = $interval->format('%d');
+        $hours = $interval->format('%h');
+        $minutes = $interval->format('%i');
+
+        $_days = $days > 0 ? $days . gettext(" day, ") : "";
+        $_hours = $hours > 0 ? $hours > 1 ? $hours . gettext(" hours, ") : $hours . gettext(" hour, ") : "";
+        $_minutes = $minutes > 0 ? $minutes > 1 ? $minutes . gettext(" minutes") : $minutes . gettext(" minute") : "";
+
+        return $_days . $_hours . $_minutes;
+    }
+
+
     function userErrorHandler($errno, $errfile, $errstring)
     {
         $errid = isset($_SESSION['id']) ? $_SESSION['id'] : 0;

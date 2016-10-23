@@ -28,9 +28,7 @@
         // Sanitize $_POST and check for submit key
         $post = sanitizeForm($_POST);
         if(isset($post['save'])) 
-        {
-            $post['fld_profile_email'] = strtolower($post['fld_profile_email']);
-            
+        {   
             // Update Firstname and Lastname
             if ($post['save'] === "name")
             {
@@ -60,8 +58,8 @@
                 {
                     $output = [
                         'status'    => true,
-                        'data'      => gettext('Name Updated!'),
-                        'error'     => userErrorHandler(0, "profile", "unable to update username in database")
+                        'data'      => gettext('Name Updated!')
+                        // 'error'     => userErrorHandler(0, "profile", "unable to update username in database")
                     ];
                     echo(json_encode($output));
                     exit;
@@ -88,7 +86,7 @@
                 if (count($rows) == 1)
                 {
                     // Check if the requested email is already registered
-                    $checkEmail = DB::query("SELECT * FROM users WHERE user_email = ?", $post['fld_profile_email']);
+                    $checkEmail = DB::query("SELECT * FROM users WHERE user_email = ?", strtolower($post['fld_profile_email']));
                     if (count($checkEmail) > 0) {
                         $output = [
                             'status'    => false,
@@ -101,7 +99,7 @@
                     // Check if password is valid
                     if (password_verify($post["fld_profile_email_psw"], $row["hash"]))
                     {   
-                        $updates = DB::query("UPDATE users SET user_email = ? WHERE id = ?", $post['fld_profile_email'], $_SESSION["id"]);
+                        $updates = DB::query("UPDATE users SET user_email = ? WHERE id = ?", strtolower($post['fld_profile_email']), $_SESSION["id"]);
 
                         if (count($updates) != 0)
                         {
@@ -109,7 +107,7 @@
                                 'status'        => true,
                                 'email'         => $post['fld_profile_email'],
                                 'data'          => gettext('Email updated!'),
-                                'notification'  => submitMail($row["user_email"], "Email Change Notification", "Your email was updated and changed to " . $post['fld_profile_email'], "Plain text Goes Here")
+                                'notification'  => submitMail($row["user_email"], "Email Change Notification", "Your email was updated and changed to " . strtolower($post['fld_profile_email']), "Plain text Goes Here")
                             ];
                             echo(json_encode($output));
                             exit;
@@ -168,7 +166,7 @@
                     $row = $rows[0];
                     if (password_verify($post["fld_profile_current_psw"], $row["hash"]))
                     {
-                        $updates = DB::query("UPDATE users SET hash = ?, psw_reset_date = NULL, psw_attempt = 0 WHERE id = ?",
+                        $updates = DB::query("UPDATE users SET hash = ?, psw_reset_date = NULL, psw_attempt = 0, psw_unlock_datetime = NULL WHERE id = ?",
                             password_hash($post["fld_profile_new_psw"], PASSWORD_DEFAULT), $_SESSION["id"]);
 
                         if (count($updates) > 0)
@@ -228,7 +226,6 @@
                         $output = [
                             'status'        => true,
                             'transfer'      => true,
-                            // 'key'           => $key,
                             'key'           => getDeleteKey(),
                             'location'      => 'delete.php'
                         ];

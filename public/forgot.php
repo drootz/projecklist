@@ -16,9 +16,7 @@
         // Sanitize $_POST and check for submit key
         $post = sanitizeForm($_POST);
         if(isset($post['submit'])) 
-        {
-            $post["fld_login_email"] = strtolower($post["fld_login_email"]);
-            
+        {   
             // Check for reCaptcha checkbox
             if (!$post['g-recaptcha-response'])
             {
@@ -51,7 +49,7 @@
             }
 
             // query database for user
-            $rows = DB::query("SELECT * FROM users WHERE user_email = ?", $post["fld_login_email"]);
+            $rows = DB::query("SELECT * FROM users WHERE user_email = ?", strtolower($post["fld_login_email"]));
 
             // if we found user, check password
             if (count($rows) == 1)
@@ -64,7 +62,7 @@
                 // DEBUG tmp
                 $tempPsw = "12345";
 
-                $reset = DB::query("UPDATE users SET hash = ?, psw_reset_date = ?, psw_attempt = 0 WHERE user_email = ?", password_hash($tempPsw, PASSWORD_DEFAULT), $currentDate, $row["user_email"]);
+                $reset = DB::query("UPDATE users SET hash = ?, psw_reset_date = ?, psw_attempt = 0, psw_unlock_datetime = NULL WHERE user_email = ?", password_hash($tempPsw, PASSWORD_DEFAULT), $currentDate, $row["user_email"]);
 
                 if (count($reset) != 0)
                 {
