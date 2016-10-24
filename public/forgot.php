@@ -56,6 +56,26 @@
             {
                 // first (and only) row
                 $row = $rows[0];
+
+                // REdirect if user account not activated
+                if ($row['activated'] != true)
+                {
+                    $get = [
+                        'user_id'       => $row['id'],
+                        'user_email'    => $row['user_email']
+                    ];
+
+                    // transfer to registered page if account not activated
+                    $output = [
+                        'transfer'      => true,
+                        'transferData'  => http_build_query($get),
+                        'redirect'      => true,
+                        'location'      => 'registered.php'
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
+
                 $tempPsw = pseudostring(8);
                 $currentDate = date('Y/m/d');
 

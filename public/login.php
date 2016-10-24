@@ -13,8 +13,17 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     else if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // else render form
-        render("login_form.php", "Log In");
+        // Make data transfered from other page via GET avaialble
+        if (isset($_GET['user_email']))
+        {
+            render("login_form.php", "Sign in", [
+                'user_email'    => $_GET['user_email']
+            ]);  
+        }
+        else
+        {
+            render("login_form.php", "Sign in");
+        }
     }
 
     // else if user reached page via POST (as by submitting a form via POST)
@@ -34,10 +43,28 @@
                 // first (and only) row
                 $row = $rows[0];
 
+                if ($row['activated'] != true)
+                {
+                    $get = [
+                        'user_id'       => $row['id'],
+                        'user_email'    => $row['user_email']
+                    ];
+                    // transfer to registered page if account not activated
+                    $output = [
+                        'transfer'      => true,
+                        'transferData'  => http_build_query($get),
+                        'redirect'      => true,
+                        'location'      => 'registered.php'
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
+
                 // compare hash of user's input against hash that's in database
-                if (password_verify($post["fld_login_psw"], $row["hash"]))
+                else if (password_verify($post["fld_login_psw"], $row["hash"]))
                 {
                     $now = date('Y-m-d H:i:s');
+
                     // If this is a temporary password. Redirect user to password update screens...
                     if ($row['psw_reset_date'] != NULL)
                     {
@@ -312,12 +339,17 @@
             }
             else
             {
+
+                $get = [
+                    'user_email'    => $login_email
+                ];
+
                 // transfer to register page if email provided is not already registered
                 $output = [
                     'modal'         => true,
                     'data'          => 'This email is not registered.',
                     'transfer'      => true,
-                    'transferData'  => $login_email,
+                    'transferData'  => http_build_query($get),
                     'location'      => 'register.php'
                 ];
                 echo(json_encode($output));

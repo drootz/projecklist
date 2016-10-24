@@ -112,7 +112,14 @@
             extract($values);
 
             // render view (between header and footer)
-            require("../views/header.php");
+            if ($view == "activation.php" || $view == "registered.php")
+            {
+                require("../views/header_registration.php");
+            }
+            else
+            {
+                require("../views/header.php");
+            }
             require("../views/{$view}");
             require("../views/footer.php");
             exit;
@@ -748,6 +755,34 @@
         }
     }
 
+
+    function signupMail($info) {
+
+        //format each email
+        $_body = formatActivationEmail($info,'html');
+        $_body_plain_txt = formatActivationEmail($info,'txt');
+
+        $mail = new PHPMailer;
+        $mail->setFrom('mailto.danielracine@gmail.com', 'Daniel Racine');
+        $mail->addAddress($info['email'], $info['username']);
+        $mail->addReplyTo('mailto.danielracine@gmail.com', 'Daniel Racine');
+        $mail->isHTML(true);
+
+        $mail->Subject = "Welcome to Projecklist";
+        $mail->Body    = $_body;
+        $mail->AltBody = $_body_plain_txt;
+
+        if(!$mail->send()) {
+            // echo 'Message could not be sent.';
+            // echo 'Mailer Error: ' . $mail->ErrorInfo;
+            // exit;
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
     function pseudostring($length = 8) {
 
         // Generate arrays with characters and numbers
@@ -781,6 +816,31 @@
         $_minutes = $minutes > 0 ? $minutes > 1 ? $minutes . gettext(" minutes") : $minutes . gettext(" minute") : "";
 
         return $_days . $_hours . $_minutes;
+    }
+
+
+    function formatActivationEmail($info, $format){
+     
+        //set the root
+        // Store DEV server root
+        // $server_root = 'http://dracine.local/~dracine/xdev/projecklist/mail';
+        $server_root = dirname(__FILE__) . '/email';
+     
+        //grab the template content
+        $template = file_get_contents($server_root.'/signup_template.'.$format);
+                 
+        //replace all the tags
+        $template = preg_replace('/{USERNAME}/', $info['username'], $template);
+        $template = preg_replace('/{EMAIL}/', $info['email'], $template);
+        $template = preg_replace('/{KEY}/', $info['key'], $template);
+        $template = preg_replace('/{SITEPATH}/','http://dracine.local/~dracine/xdev/projecklist/public', $template);
+        $template = preg_replace('/{SITEPATH_ROOT}/','http://dracine.local/~dracine/xdev/projecklist', $template);
+        $template = preg_replace('/{YEAR}/', date('Y'), $template);
+        $template = preg_replace('/{ADMIN_EMAIL}/', 'mailto.danielracine@gmail.com', $template);
+             
+        //return the html of the template
+        return $template;
+     
     }
 
 

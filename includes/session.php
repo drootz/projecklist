@@ -82,8 +82,8 @@
     // Set Theme Dark/Light
     $_SESSION['html_theme'] = "class=\"".setTheme()."\"";
 
-    // require authentication for all pages except /login.php, /logout.php, and /register.php
-    if (!in_array($_SERVER["PHP_SELF"], [$_SESSION["server_root"]."/login.php", $_SESSION["server_root"]."/logout.php", $_SESSION["server_root"]."/register.php", $_SESSION["server_root"]."/index.php", $_SESSION["server_root"]."/forgot.php", $_SESSION["server_root"]."/projeckt.php"]))
+    // require authentication for all pages except /login.php, /logout.php, activation.php and /register.php
+    if (!in_array($_SERVER["PHP_SELF"], [$_SESSION["server_root"]."/login.php", $_SESSION["server_root"]."/logout.php", $_SESSION["server_root"]."/register.php", $_SESSION["server_root"]."/index.php", $_SESSION["server_root"]."/forgot.php", $_SESSION["server_root"]."/projeckt.php", $_SESSION["server_root"]."/activation.php", $_SESSION["server_root"]."/registered.php"]))
     {
         if (empty($_SESSION["id"]))
         {

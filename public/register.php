@@ -13,10 +13,10 @@
     else if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
         // Make data transfered from other page via GET avaialble
-        if (isset($_GET['transferData']))
+        if (isset($_GET['user_email']))
         {
             render("register_form.php", "Registration", [
-                'transferData'  => $_GET['transferData']
+                'transferData'  => $_GET['user_email']
             ]);  
         }
         // else render form
@@ -36,7 +36,7 @@
             if ($post['fld_register_email'] != $post['fld_register_email_confirm'])
             {
                 $output = [
-                    'data'   => gettext('Email Confirmation Missmatch')
+                    'data' => gettext('Email Confirmation Missmatch')
                 ];
                 echo(json_encode($output));
                 exit;
@@ -46,8 +46,8 @@
             if ($post['fld_register_psw'] != $post['fld_register_psw_confirm'])
             {
                 $output = [
-                    'data'      => gettext('Password Confirmation Missmatch'),
-                    'reset'     => true
+                    'data'  => gettext('Password Confirmation Missmatch'),
+                    'reset' => true
                 ];
                 echo(json_encode($output));
                 exit;
@@ -86,105 +86,125 @@
 
 
             // query database for user
-            $exist = DB::query("SELECT id FROM users WHERE user_email = ?", $post["fld_register_email"]);
-            if (count($exist) == 0)
-            {
-                // create new account
-                $currentDate = date('Y-m-d H:i:s');
-                $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date) VALUES(?, ?, ?, ?, ?, ?)", strtolower($post["fld_register_email"]), $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate);
-                
-                if (count($rows) != 0)
+            $exist = DB::query("SELECT * FROM users WHERE user_email = ?", $post["fld_register_email"]);
+                    
+            // If email exist
+            if (count($exist) != 0)
+            {   
+                $user = $exist[0];
+                $nowDate = new DateTime(date('Y-m-d H:i:s')); 
+                $createdDate = new DateTime($user['created_date']);
+                $interval = $nowDate->diff($createdDate);
+                $dateDiff = $interval->format('%a');
+
+                if ($user['activated'] == 0 && $dateDiff > 1)
                 {
-                    // remember that user's now logged in by storing user's ID in session
-                    $added = DB::query("SELECT LAST_INSERT_ID() AS id");
-                    if (count($added) != 0)
+                    $deluser = DB::query("DELETE FROM users WHERE id = ?", $user["id"]);
+                    if (count($deluser) == 0)
                     {
-                        $_SESSION["id"] = $added[0]["id"];
-
-                        $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $_SESSION["id"], $currentDate);
-                        // DB update error check
-                        if (count($history) == 0)
-                        {
-                            // ERROR
-                            userErrorHandler(0, "register", "unable to log 'sign in' history");
-                        }
-
-                        // Get user firstname
-                        $name = DB::query("SELECT firstname FROM users WHERE id = ?", $_SESSION["id"]);
-                        if (count($name) != 0)
-                        {
-                            // SUCCESS
-                            $_SESSION["user_name"] = $name[0]["firstname"];
-                            $output = [
-                                'data'          => gettext('Registration Successful'),
-                                'modal'         => true,
-                                'redirect'      => true,
-                                'location'      => 'index.php',
-                                'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here")
-                            ];
-                            echo(json_encode($output));
-                            exit;
-                        }
-                        else
-                        {
-                            // SUCCESS with bug
-                            $output = [
-                                'data' => gettext('Registration Successful'),
-                                'modal'         => true,
-                                'redirect'      => true,
-                                'location'      => 'logout.php',
-                                'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
-                                'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted firstname")
-                            ];
-                            echo(json_encode($output));
-                            exit;
-                        }
+                        // ERROR
+                        userErrorHandler(0, "register", "unable to delete user row. " . mysql_error());
                     }
-                    else
+
+                    $delactivation = DB::query("DELETE FROM activation WHERE user_id = ?", $user["id"]);
+                    if (count($delactivation) == 0)
                     {
-                        // SUCCESS with bug
-                        $output = [
-                            'data' => gettext('Registration Successful'),
-                            'modal'         => true,
-                            'redirect'      => true,
-                            'location'      => 'logout.php',
-                            'notification'  => submitMail(strtolower($post["fld_register_email"]), "Registration Notification", "Thank you to register! Your sign in email is " . strtolower($post["fld_register_email"]) . " Note that you can reset your password anytime via this link: LINK", "Plain text goes here"),
-                            'error'         => userErrorHandler(0, "register", "New Account Registered but unable to select the last inserted id")
-                        ];
-                        echo(json_encode($output));
-                        exit;
+                        // ERROR
+                        userErrorHandler(0, "register", "unable to delete activation row. " . mysql_error());
                     }
                 }
-
-                // ERROR if not able to create new user
                 else
-                {   
-                    // ERROR
+                {
+                    // TODO: insert ajax lookup on field blur
+
+                    $get = [
+                        'user_email'    => $user["user_email"]
+                    ];
+
+                    // SUCCESS
                     $output = [
-                        'data'      => gettext('Unable to proceed with your request at this time.'),
-                        'modal'     => true,
-                        'redirect'  => true,
-                        'location'  => 'logout.php',
-                        'error'     => userErrorHandler(0, "register", "unable to insert registration in the database: " . $post["fld_register_email"])
+                        'data'          => gettext('The email address submitted is already registered.'),
+                        'modal'         => true,
+                        'transfer'      => true,
+                        'transferData'  => http_build_query($get),
+                        'redirect'      => true,
+                        'location'      => 'login.php'
                     ];
                     echo(json_encode($output));
                     exit;
                 }
-
             }
 
-            // ERROR if user email exist
-            else
-            {
+            // create new account
+            $currentDate = date('Y-m-d H:i:s');
+            $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date, activated) VALUES(?, ?, ?, ?, ?, ?, ?)", strtolower($post["fld_register_email"]), $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate, 0);
+            
+            if (count($rows) == 0)
+            {  
+                // ERROR
                 $output = [
-                    'data'      => gettext('The email address submitted is already registered.'),
+                    'data'      => gettext('Unable to proceed with your request at this time.'),
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'logout.php',
-                    'error'     => userErrorHandler(0, "register", "email address already registered: ". strtolower($post["fld_register_email"]))
+                    'error'     => userErrorHandler(0, "register", "unable to insert registration in the database: " . $post["fld_register_email"])
                 ];
                 echo(json_encode($output));
                 exit;
+            }
+            // remember that user's now logged in by storing user's ID in session
+            $added = DB::query("SELECT LAST_INSERT_ID() AS id");
+            if (count($added) != 0)
+            {
+                //create a random key
+                $key = $post["fld_register_fn"] . $post["fld_register_email"] . date('mydhis');
+                $key = md5($key);
+                             
+                //add confirm row
+                $activation = DB::query("INSERT INTO activation (user_id, user_email, user_name, user_key) VALUES(?, ?, ?, ?)", $added[0]["id"], strtolower($post["fld_register_email"]), $post["fld_register_fn"], $key);
+                if (count($activation) == 0)
+                {
+                    // ERROR
+                    userErrorHandler(0, "register", "Activation row was not added to the database." . mysql_error());
+                }
+
+                //put info into an array to send to the function
+                $info = array(
+                    'username' => $post["fld_register_fn"],
+                    'email' => strtolower($post["fld_register_email"]),
+                    'key' => $key
+                );
+
+                $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $added[0]["id"], $currentDate);
+                // DB update error check
+                if (count($history) == 0)
+                {
+                    // ERROR
+                    userErrorHandler(0, "register", "unable to log 'sign in' history");
+                }
+
+
+                $get = [
+                    'user_id'       => $added[0]["id"],
+                    'user_email'    => strtolower($post["fld_register_email"]),
+                    'new'           => true
+                ];
+
+                // SUCCESS
+                $output = [
+                    'transfer'      => true,
+                    'transferData'  => http_build_query($get),
+                    'redirect'      => true,
+                    'location'      => 'registered.php',
+                    'notification'  => signupMail($info)
+                ];
+                echo(json_encode($output));
+                exit;
+            }
+            else
+            {
+                userErrorHandler(0, "register", "registration failed, unable to select last inserted id");
+                redirect("/logout.php");
             }
         }
 

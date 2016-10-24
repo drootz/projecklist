@@ -1601,6 +1601,7 @@ $( document ).ready(function() {
 	        ajxFailEmail    =   'Échec du changement de courriel',
 	        ajxFailPsw    	=   'Échec du changement de password',
 	        ajxFailDelete	=	'Échec de la suppression de votre profile. Veuillez réessayer plus tard.',
+	        ajxFailRegistered = 'Échec de l\'envois du courriel d\'activation. Veuillez réessayer plus tard.',
 	        v_pwdCheck      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.',
 	        v_nameCheck     =   'Les noms doivent contenir que des lettres, des espaces et des tirets.',
 	        v_alphaCheck    =   'Doit contenir uniquement des caractères alphabétique',
@@ -1620,6 +1621,8 @@ $( document ).ready(function() {
 	        ajxFailName    	=   'Name Change Failed',
 	        ajxFailEmail    =   'Email Change Failed',
 	        ajxFailPsw    	=   'Password Change Failed',
+	        ajxFailDelete	=	'Unable to delete your account at this time. Please try again later',
+	        ajxFailRegistered = 'Unable to submit the action emat this time. Please try again later',
 	        v_pwdCheck      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
 	        v_nameCheck     =   'Names must contain only letters, space and dashes.',
 	        v_alphaCheck    =   'Must contain only letter characters',
@@ -1751,7 +1754,7 @@ $( document ).ready(function() {
 		// transfer data to another page via GET
 		if (obj.transfer)
 		{
-			window.location.href = obj.location + "?transferData=" + obj.transferData;
+			window.location.href = obj.location + "?" + obj.transferData;
 		}
 		// Redirect to another page
 		else if (obj.redirect)
@@ -1849,6 +1852,22 @@ $( document ).ready(function() {
 			});
 		}
 	});
+
+
+	var formRegistered = $('#registered')
+	formRegistered.validate({
+		submitHandler: function(form) {
+			$.post('registered.php', formRegistered.serialize())
+			.done(function( data ) {
+				formDone(formRegistered, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>" + ajxFailRegistered + "</span>");
+				formFailReset(formRegistered);
+			});
+		}
+	});
+
 
 	var formProfileName = $('#profile-name');
 	formProfileName.validate({
