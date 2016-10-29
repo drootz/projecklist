@@ -90,3 +90,8 @@
             redirect("/");
         }
     }
+    
+    // Set your default timezone here
+    // http://php.net/manual/en/timezones.php
+    $timezone = 'America/Montreal';
+    date_default_timezone_set($timezone);

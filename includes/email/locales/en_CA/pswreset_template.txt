@@ -1,0 +1,22 @@
+Security Alert
+
+
+
+
+Hi {USERNAME},
+
+The password for your Projecklist account {EMAIL} has succesfully been reinitialized. 
+
+Your temporary password is: {PSW}
+
+Sign in your account before it expires.
+
+Thanks!
+
+----
+Copyright {YEAR} Projecklist, All Rights Reversed.
+
+
+
+
+You received this e-mail because you are currently a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.

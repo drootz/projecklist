@@ -72,7 +72,7 @@
                 'transferData'  => http_build_query($get),
                 'redirect'      => true,
                 'location'      => 'login.php',
-                'notification'  => signupMail($info)
+                'notification'  => notificationMail($info)
             ];
             echo(json_encode($output));
             exit;

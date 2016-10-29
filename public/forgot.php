@@ -86,12 +86,22 @@
 
                 if (count($reset) != 0)
                 {
+                    //put info into an array to send to the function
+                    $info = array(
+                        'locale'    => $_SESSION['lang'],
+                        'template'  => 'pswreset_template',
+                        'subject'   => 'Password Reset Notification',
+                        'psw'       => $tempPsw,
+                        'username'  => $row["firstname"],
+                        'email'     => $row["user_email"]
+                    );
+                       
                     $output = [
-                        'data'          => gettext('Your password has been sent by email successfully and will exipre in 24 hours. Check your mail!'),
+                        'data'          => gettext('Your password has been sent by email successfully. Check your mailbox! Make sure to verify your spam folder if you don\'t see it in your mailbox.'),
                         'modal'         => true,
                         'redirect'      => true,
                         'location'      => 'index.php',
-                        'notification'  => submitMail($row["user_email"], "Password Reset Notification", "Reset TMP: " . $tempPsw, "Plain text goes here")
+                        'notification'  => notificationMail($info)
                     ];
                     echo(json_encode($output));
                     exit;

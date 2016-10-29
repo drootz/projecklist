@@ -101,13 +101,30 @@
                     {   
                         $updates = DB::query("UPDATE users SET user_email = ? WHERE id = ?", strtolower($post['fld_profile_email']), $_SESSION["id"]);
 
+                        $history = DB::query("INSERT INTO email_history (email_previous, email_new, change_datetime) VALUES(?, ?, ?)", $row["user_email"], strtolower($post['fld_profile_email']), date('Y-m-d H:i:s'));
+                        if (count($history) == 0)
+                        {
+                            // ERROR
+                            userErrorHandler(0, "profile", "unable to log email history");
+                        }
+
                         if (count($updates) != 0)
                         {
+                            //put info into an array to send to the function
+                            $info = array(
+                                'locale'    => $_SESSION['lang'],
+                                'template'  => 'emailchange_template',
+                                'subject'   => 'Your account email changed',
+                                'altemail' => strtolower($post['fld_profile_email']),
+                                'username'  => $row["firstname"],
+                                'email'     => $row["user_email"]
+                            );
+
                             $output = [
                                 'status'        => true,
                                 'email'         => $post['fld_profile_email'],
                                 'data'          => gettext('Email updated!'),
-                                'notification'  => submitMail($row["user_email"], "Email Change Notification", "Your email was updated and changed to " . strtolower($post['fld_profile_email']), "Plain text Goes Here")
+                                'notification'  => notificationMail($info)
                             ];
                             echo(json_encode($output));
                             exit;
@@ -171,10 +188,19 @@
 
                         if (count($updates) > 0)
                         {
+                            //put info into an array to send to the function
+                            $info = array(
+                                'locale'    => $_SESSION['lang'],
+                                'template'  => 'pswchange_template',
+                                'subject'   => 'Your password changed',
+                                'username'  => $row["firstname"],
+                                'email'     => $row["user_email"]
+                            );
+
                             $output = [
                                 'status'    => true,
                                 'data'      => gettext('Password updated!'),
-                                'notification' => submitMail($row["user_email"], "Password Change Notification", "Your password was updated! If you did not change your password we recommend you to reset your password now via this link: LINK", "Plain text goes here")
+                                'notification'  => notificationMail($info)
                             ];
                             echo(json_encode($output));
                             exit;

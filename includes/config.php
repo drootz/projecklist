@@ -18,16 +18,15 @@
     ini_set("display_errors", true);
     error_reporting(E_ALL);
 
-    require_once(__DIR__ . "/../_debug/functions.php");
-    require_once("functions.php");
-
-    require_once("DB.php");
+    require_once("_DB.php");
     DB::init(__DIR__ . "/../config.json");
+    
+    // DEBUG
+    require_once(__DIR__ . "/../_debug/functions.php");
 
-    require_once("session.php");
+    require_once("_functions.php");
+    require_once("_correspondence.php");
+    
+    require_once("_session.php");
 
-    // Set your default timezone here
-    // http://php.net/manual/en/timezones.php
-    $timezone = 'America/Montreal';
-    date_default_timezone_set($timezone);
 ?>

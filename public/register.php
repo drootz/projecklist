@@ -170,9 +170,12 @@
 
                 //put info into an array to send to the function
                 $info = array(
-                    'username' => $post["fld_register_fn"],
-                    'email' => strtolower($post["fld_register_email"]),
-                    'key' => $key
+                    'locale'    => $_SESSION['lang'],
+                    'template'  => 'signup_template',
+                    'subject'   => 'Welcome to Projecklist!',
+                    'username'  => $post["fld_register_fn"],
+                    'email'     => strtolower($post["fld_register_email"]),
+                    'key'       => $key
                 );
 
                 $history = DB::query("INSERT INTO login_history (user_id, login_datetime) VALUES(?, ?)", $added[0]["id"], $currentDate);
@@ -196,7 +199,7 @@
                     'transferData'  => http_build_query($get),
                     'redirect'      => true,
                     'location'      => 'registered.php',
-                    'notification'  => signupMail($info)
+                    'notification'  => notificationMail($info)
                 ];
                 echo(json_encode($output));
                 exit;

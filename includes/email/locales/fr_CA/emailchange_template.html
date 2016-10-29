@@ -43,14 +43,14 @@
         }*/
 
         /* MEDIA QUERIES */
-        @media only screen and (max-width: 639px){
-          .wrapper{ width:95%!important; padding: 0 !important; }
-          .container{ width:90%!important;  padding: 0 !important; }
-          .mobile{ width:90%!important; display:block!important; padding: 0 !important; }
+        @media only screen and (max-width: 659px){
+          .wrapper{ width:350px!important; padding: 0 !important; }
+          .container{ width:340px!important;  padding: 0 !important; }
+          .mobile{ width:340px!important; display:block!important; padding: 0 !important; }
           .mobile50{ width:150px!important; padding: 0 !important; }
           .center{ margin:0 auto !important; text-align:center !important; }
           .img{ width:100% !important; height:auto; }
-          .header{ width:320px; padding: 0 !important; background-image: url(http://placehold.it/320x400) !important; }
+          .header{ width:350px; padding: 0 !important; background-image: url(http://placehold.it/320x400) !important; }
           *[class="mobileOff"] { width: 0px !important; display: none !important; }
           *[class*="mobileOn"] { display: block !important; max-height:none !important; }
         }
@@ -65,7 +65,7 @@
     <!--<![endif]-->
 
     <center>
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#d6d6d6">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
         <tr>
             <td align="center" valign="top">
             
@@ -74,28 +74,21 @@
 
             <!-- PRE HEADER -->
             <!-- Start Wrapper -->
-            <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#d6d6d6">
-              <tr>
-                <td height="10" style="font-size:12px; line-height:12px;">&nbsp;</td>
-              </tr>
+            <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#FFFFFF">
               <tr>
                 <td align="center">
 
-
                   <!-- Start Container -->
-                  <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:arial;">
+                  <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:Helvetica, Arial, sans-serif;">
                     <tr>
-                      <td width="600" class="mobile" align="left" style="font-size:12px; line-height:18px; color: #969696;">
-                        Registration Confirmation. Click the link to activate your account.
+                      <td width="600" class="mobile" align="left" style="font-size:12px; font-weight: normal; line-height:18px; color: #FFFFFF;">
+                        FR - Security Alert&nbsp;
                       </td>
                     </tr>
                   </table>
                   <!-- End Container -->
 
                 </td>
-              </tr>
-              <tr>
-                <td height="10" style="font-size:12px; line-height:12px;">&nbsp;</td>
               </tr>
             </table>
             <!-- End Wrapper -->
@@ -107,9 +100,6 @@
             <!-- Start Wrapper  -->
             <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#FFFFFF">
               <tr>
-                <td height="10" style="font-size:12px; line-height:12px;">&nbsp;</td>
-              </tr>
-              <tr>
                 <td align="center">
 
                   <!-- Start Container  -->
@@ -119,7 +109,7 @@
                         <a href="{SITEPATH}" target="_blank"><img src="{SITEPATH_ROOT}/includes/email/img/logo_400x100.png" width="200" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" class="centerClass" alt="" /></a>
                       </td>
                       <td height="10" style="font-size:12px; line-height:12px;" class="mobileOn"></td>
-                      <td width="200" class="mobile" style="font-family:arial; font-size:12px; line-height:18px;"></td>
+                      <td width="200" class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:18px;"></td>
                     </tr>
                   </table>
                   <!-- End Container -->
@@ -147,28 +137,18 @@
                   <!-- Start Container -->
                   <table width="480" cellpadding="0" cellspacing="0" border="0" class="container">
                     <tr>
-                      <td class="mobile" style="font-family:arial; font-size:12px; line-height:18px;">
+                      <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight: 300; line-height:18px;">
 
                         <br />
-                        <p>Welcome <strong>{USERNAME}</strong>!</p>
-                        <p>Thank you for creating an account.</p>
-                        <p>Please confirm your account by click the link below!</p>
+                        <p>Hi <strong>{USERNAME}</strong>,</p>
+                        <p>The sign in email for your Projecklist account {EMAIL} was recently changed to {ALTEMAIL}.</p>
                         <br />
 
-                          <!-- Start Button -->
-                          <table cellpadding="5" cellspacing="0" border="0" width="150" height="36" bgcolor="#1EAEDB" style="border-radius:5px;">
-                            <tr>
-                              <td valign="middle" height="36" style="font-size:16px; font-weight:bold;" align="center">
-                                <a href="{SITEPATH}/activation.php?email={EMAIL}&key={KEY}" target="_blank" style="color:#ffffff; display: inline-block; text-decoration: none; line-height:36px; width:150px; font-weight:bold; padding-left: 5px; padding-right: 5px;">Activate Account</a>
-                              </td>
-                            </tr>
-                          </table>
-                          <!-- End Button -->
-
-
+                        <p style="font-weight: 700;">Don't recognize this activity?</p>
+                        <p><a href="mailto:{ADMIN_EMAIL}" style="color: #1EAEDB">Contact us here</a> to reinstate your previous sign in email and reset your password.</p>
                         <br />
-                        <p>If the above link is not working, please copy and paste the following address into your browsers address bar:</p>
-                        <p style="color: #1EAEDB;">{SITEPATH}/activation.php?email={EMAIL}&key={KEY}</p>
+
+                        <p>The Projecklist Team</p>
                         <br />
 
                       </td>
@@ -185,52 +165,24 @@
             <!-- End Wrapper -->
 
 
+
             <!-- FOOTER -->
-            <!-- Start Wrapper  -->
-            <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#969696">
-              <tr>
-                <td height="10" style="font-size:12px; line-height:12px;"><hr style="border: 1px solid #969696;"/></td>
-              </tr>
-              <tr>
-                <td align="center">
-
-                  <!-- Start Container  -->
-                  <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
-                    <tr>
-                      <td width="300" class="mobile" style="font-family:arial; font-size:12px; line-height:18px; color: #d6d6d6">
-                        &copy; {YEAR} Projecklist, All Rights Reversed.
-                      </td>
-                      <td width="300" class="mobile" style="font-family:arial; font-size:12px; line-height:18px;" align="right">
-
-                      </td>
-                    </tr>
-                  </table>
-                  <!-- End Container  -->
-
-                </td>
-              </tr>
-              <tr>
-                <td height="10" style="font-size:10px; line-height:10px;">&nbsp;</td>
-              </tr>
-            </table>
-            <!-- End Wrapper  -->
-
-
-
-            <!-- UNDER FOOTER -->
             <!-- Start Wrapper -->
-            <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#d6d6d6">
+            <table width="640" cellpadding="0" cellspacing="0" border="0" class="wrapper" bgcolor="#FFFFFF">
               <tr>
-                <td height="10" style="font-size:10px; line-height:10px;">&nbsp;</td>
+                <td height="10" style="font-size:12px; line-height:12px;"><hr style="border: 1px solid #d6d6d6;"/></td>
               </tr>
               <tr>
                 <td align="center">
 
                   <!-- Start Container -->
-                  <table width="480" cellpadding="0" cellspacing="0" border="0" class="container">
+                  <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                     <tr>
-                      <td class="mobile" style="font-family:arial; font-size:9px; line-height:18px;">
-                        <p align="center" style="color: #969696;">You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+                      <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight: normal; line-height:18px; color: #969696"">
+
+                        <p>&copy; {YEAR} <strong>Projecklist</strong>, All Rights Reserved.</p>
+                        <p>You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+
                       </td>
                     </tr>
                   </table>
@@ -239,11 +191,13 @@
                 </td>
               </tr>
               <tr>
-                <td height="10" style="font-size:10px; line-height:10px;">&nbsp;</td>
+                <td height="10" style="font-size:12px; line-height:12px;">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="10" style="font-size:12px; line-height:12px;">&nbsp;</td>
               </tr>
             </table>
             <!-- End Wrapper -->
-
 
 
                 

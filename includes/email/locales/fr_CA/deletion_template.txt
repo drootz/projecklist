@@ -1,0 +1,18 @@
+FR - Account Deletion Notification
+
+
+
+
+Hi {USERNAME},
+
+Your account has been successfully deleted with all its data.
+
+Thanks!
+
+----
+Copyright {YEAR} Projecklist, All Rights Reversed.
+
+
+
+
+You received this e-mail because you were a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.

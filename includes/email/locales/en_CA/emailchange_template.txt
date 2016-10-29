@@ -1,0 +1,20 @@
+Security Alert 
+
+
+
+
+Hi {USERNAME},
+
+The sign in email for your Projecklist account {EMAIL} was recently changed to {ALTEMAIL}.
+
+If you don't recognize this activity, contact us via {ADMIN_EMAIL} to reinstate your previous sign in email and reset your password.
+
+Thanks!
+
+----
+Copyright {YEAR} Projecklist, All Rights Reversed.
+
+
+
+
+You received this e-mail because you are currently a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.
