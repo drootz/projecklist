@@ -76,11 +76,11 @@
                     exit;
                 }
 
-                $tempPsw = pseudostring(8);
+                $tempPsw = pseudostring(10);
                 $currentDate = date('Y/m/d');
 
                 // DEBUG tmp
-                $tempPsw = "12345";
+                // $tempPsw = "12345";
 
                 $reset = DB::query("UPDATE users SET hash = ?, psw_reset_date = ?, psw_attempt = 0, psw_unlock_datetime = NULL WHERE user_email = ?", password_hash($tempPsw, PASSWORD_DEFAULT), $currentDate, $row["user_email"]);
 
@@ -97,7 +97,7 @@
                     );
                        
                     $output = [
-                        'data'          => gettext('Your password has been sent by email successfully. Check your mailbox! Make sure to verify your spam folder if you don\'t see it in your mailbox.'),
+                        'data'          => gettext('Your password has been sent by email successfully. Check your mailbox! Make sure to verify your spam folder if you don\'t see it in your inbox.'),
                         'modal'         => true,
                         'redirect'      => true,
                         'location'      => 'index.php',
