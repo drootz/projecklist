@@ -157,9 +157,8 @@
             if (count($added) != 0)
             {
                 //create a random key
-                $key = $post["fld_register_fn"] . $post["fld_register_email"] . date('mydhis');
-                $key = md5($key);
-                             
+                $key = getActivationKey($added[0]["id"]);
+
                 //add confirm row
                 $activation = DB::query("INSERT INTO activation (user_id, user_email, user_name, user_key) VALUES(?, ?, ?, ?)", $added[0]["id"], strtolower($post["fld_register_email"]), $post["fld_register_fn"], $key);
                 if (count($activation) == 0)

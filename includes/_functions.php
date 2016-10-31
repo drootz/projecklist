@@ -289,6 +289,30 @@
     }
 
 
+    function getActivationKey($id)
+    {
+        // query database for user
+        $rows = DB::query("SELECT * FROM users WHERE id = ?", $id);
+        if (count($rows) != 0)
+        {
+            // Validate key to access delete.php page
+            $row = $rows[0];
+
+            //create a random key
+            $key = $row['firstname'] . $row['lastname'] . date('mydhis');
+            $key = md5($key);
+
+            return $key;
+        }
+        else
+        {
+            // ERROR
+            userErrorHandler(0, "registerFunction", "Unable to get last inserted ID" . mysql_error());
+            return 0;
+        }
+    }
+
+
 
 
     function reCheck($pattern, $value)
