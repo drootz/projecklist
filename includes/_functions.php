@@ -98,7 +98,7 @@
         // if view exists, render it
         if (file_exists("../views/{$view}"))
         {
-            $s_displayname = empty($_SESSION["id"]) ? "<a class=\"login_link\" href=\"login.php\">Sign in</a><span class=\"register_link\"> or <a href=\"register.php\">Register</a></span>" : $_SESSION["user_name"];
+            $s_displayname = empty($_SESSION["id"]) ? "<a class=\"login_link\" href=\"login.php\">" . _("Sign in") . "</a><span class=\"register_link\"> " . _("or") . " <a href=\"register.php\">" . _("Register") . "</a></span>" : $_SESSION["user_name"];
             
             $_SESSION["view"] = substr($view, 0, -4);
             $title = $pagename;
@@ -241,6 +241,30 @@
     	{
     		return;
     	}
+    }
+
+
+
+    // Used on the Profile page
+    function setLangPreference() {
+
+        if (isset($_SESSION['form_PO_support']) && count($_SESSION['form_PO_support']) != 0)
+        {
+            $codeBloc  = "<select style=\"width:100%;\" name=\"opt_lang\">";
+            $codeBloc .= "<option disabled selected value>" . _(" -- select an option -- ") . "</option>";
+            
+            foreach ($_SESSION['form_PO_support'] as $display => $code) {
+                $codeBloc .= "<option value=\"" . $code . "\">";
+                $codeBloc .= $display;
+                $codeBloc .= "</option>";
+            }
+            $codeBloc .= "</select>";
+            return $codeBloc;
+        }
+        else
+        {
+            return;
+        }
     }
 
 

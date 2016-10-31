@@ -62,13 +62,13 @@
                             $info = array(
                                 'locale'    => $_SESSION['lang'],
                                 'template'  => 'deletion_template',
-                                'subject'   => 'We are sad to see you leave...',
+                                'subject'   => _('We are sad to see you leave...'),
                                 'username'  => $user["firstname"],
                                 'email'     => $user["user_email"]
                             );
 
                             $output = [
-                                'data'      => gettext('Your account has been deleted. You will now be redirected to the home page.'),
+                                'data'      => _('Your account has been deleted. You will now be redirected to the home page.'),
                                 'modal'     => true,
                                 'redirect'  => true,
                                 'location'  => 'logout.php',
@@ -102,7 +102,7 @@
             }
 
             $output = [
-                'data'      => gettext('Unable to delete the account at this time. Please try again later'),
+                'data'      => _('Unable to delete the account at this time. Please try again later'),
                 'modal'     => true,
                 'redirect'  => true,
                 'location'  => 'logout.php',

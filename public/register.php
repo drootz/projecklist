@@ -36,7 +36,7 @@
             if ($post['fld_register_email'] != $post['fld_register_email_confirm'])
             {
                 $output = [
-                    'data' => gettext('Email Confirmation Missmatch')
+                    'data' => _('Email Confirmation Missmatch')
                 ];
                 echo(json_encode($output));
                 exit;
@@ -46,7 +46,7 @@
             if ($post['fld_register_psw'] != $post['fld_register_psw_confirm'])
             {
                 $output = [
-                    'data'  => gettext('Password Confirmation Missmatch'),
+                    'data'  => _('Password Confirmation Missmatch'),
                     'reset' => true
                 ];
                 echo(json_encode($output));
@@ -57,7 +57,7 @@
             if (!$post['g-recaptcha-response'])
             {
                 $output = [
-                    'data' => gettext('The reCAPTCHA checkbox is required')
+                    'data' => _('The reCAPTCHA checkbox is required')
                 ];
                 echo(json_encode($output));
                 exit;
@@ -73,7 +73,7 @@
             {
                 // ERROR
                 $output = [
-                    'data'      => gettext('Unable to proceed with your request at this time.'),
+                    'data'      => _('Unable to proceed with your request at this time.'),
                     'reset'     => true,
                     'modal'     => true,
                     'redirect'  => true,
@@ -123,7 +123,7 @@
 
                     // SUCCESS
                     $output = [
-                        'data'          => gettext('The email address submitted is already registered.'),
+                        'data'          => _('The email address submitted is already registered.'),
                         'modal'         => true,
                         'transfer'      => true,
                         'transferData'  => http_build_query($get),
@@ -137,13 +137,13 @@
 
             // create new account
             $currentDate = date('Y-m-d H:i:s');
-            $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, created_date, last_loggedin_date, activated) VALUES(?, ?, ?, ?, ?, ?, ?)", strtolower($post["fld_register_email"]), $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $currentDate, $currentDate, 0);
+            $rows = DB::query("INSERT INTO users (user_email, firstname, lastname, hash, language, created_date, last_loggedin_date, activated) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", strtolower($post["fld_register_email"]), $post["fld_register_fn"], $post["fld_register_ln"], password_hash($post["fld_register_psw"], PASSWORD_DEFAULT), $_SESSION['lang'], $currentDate, $currentDate, 0);
             
             if (count($rows) == 0)
             {  
                 // ERROR
                 $output = [
-                    'data'      => gettext('Unable to proceed with your request at this time.'),
+                    'data'      => _('Unable to proceed with your request at this time.'),
                     'modal'     => true,
                     'redirect'  => true,
                     'location'  => 'logout.php',
@@ -152,7 +152,7 @@
                 echo(json_encode($output));
                 exit;
             }
-            // remember that user's now logged in by storing user's ID in session
+            // Send activation email to user
             $added = DB::query("SELECT LAST_INSERT_ID() AS id");
             if (count($added) != 0)
             {
@@ -172,7 +172,7 @@
                 $info = array(
                     'locale'    => $_SESSION['lang'],
                     'template'  => 'signup_template',
-                    'subject'   => 'Welcome to Projecklist!',
+                    'subject'   => _('Welcome to Projecklist!'),
                     'username'  => $post["fld_register_fn"],
                     'email'     => strtolower($post["fld_register_email"]),
                     'key'       => $key

@@ -82,7 +82,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:Helvetica, Arial, sans-serif;">
                     <tr>
                       <td width="600" class="mobile" align="left" style="font-size:12px; font-weight: normal; line-height:18px; color: #FFFFFF;">
-                        Security Alert&nbsp;
+                        SECURITY ALERT&nbsp;-&nbsp;
                       </td>
                     </tr>
                   </table>
@@ -106,7 +106,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                     <tr>
                       <td width="400" class="mobile">
-                        <a href="{SITEPATH}" target="_blank"><img src="{SITEPATH_ROOT}/includes/correspondence/img/logo_400x100.png" width="200" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" class="centerClass" alt="" /></a>
+                        <a href="{SITEPATH}/index.php?lang={LOCALE}" target="_blank"><img src="{SITEPATH_ROOT}/includes/correspondence/img/logo_400x100.png" width="200" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" class="centerClass" alt="" /></a>
                       </td>
                       <td height="10" style="font-size:12px; line-height:12px;" class="mobileOn"></td>
                       <td width="200" class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:18px;"></td>
@@ -145,7 +145,7 @@
 
                         <p style="font-size:36px; line-height: 42px;">{PSW}</p>
 
-                        <p><a href="{SITEPATH}/login.php" target="_blank" style="color:#1EAEDB; text-decoration: none;">Sign in</a> your account with this password before it expires.</p>
+                        <p><a href="{SITEPATH}/login.php?lang={LOCALE}&user_email={EMAIL}" target="_blank" style="color:#1EAEDB; text-decoration: none;">Sign in</a> your account with this password before it expires.</p>
                         <br />
 
                         <p>The Projecklist Team</p>
@@ -181,7 +181,7 @@
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight: normal; line-height:18px; color: #969696"">
 
                         <p>&copy; {YEAR} <strong>Projecklist</strong>, All Rights Reserved.</p>
-                        <p>You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+                        <p>You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}?subject=Email%20Received%20in%20Error%20by%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
 
                       </td>
                     </tr>

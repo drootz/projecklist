@@ -12,6 +12,7 @@
             // else render form
             render("profile_form.php", "Profile", [
                 "email" => $rows[0]["user_email"],
+                "language" => $rows[0]["language"],
                 "firstname" => $rows[0]["firstname"],
                 "lastname" => $rows[0]["lastname"]
             ]);
@@ -48,7 +49,7 @@
                         'status'    => true,
                         'firstname' => $post['fld_profile_fn'],
                         'lastname'  => $post['fld_profile_ln'],
-                        'data'      => gettext('Name Updated!')
+                        'data'      => _('Name Updated!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -58,7 +59,7 @@
                 {
                     $output = [
                         'status'    => true,
-                        'data'      => gettext('Name Updated!')
+                        'data'      => _('Name Updated!')
                         // 'error'     => userErrorHandler(0, "profile", "unable to update username in database")
                     ];
                     echo(json_encode($output));
@@ -74,7 +75,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('Email confirmation missmatch!')
+                        'data'      => _('Email confirmation missmatch!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -90,7 +91,7 @@
                     if (count($checkEmail) > 0) {
                         $output = [
                             'status'    => false,
-                            'data'      => gettext('This email is already registered!')
+                            'data'      => _('This email is already registered!')
                         ];
                         echo(json_encode($output));
                         exit;
@@ -114,7 +115,7 @@
                             $info = array(
                                 'locale'    => $_SESSION['lang'],
                                 'template'  => 'emailchange_template',
-                                'subject'   => 'Your account email changed',
+                                'subject'   => _('Your account email changed'),
                                 'altemail' => strtolower($post['fld_profile_email']),
                                 'username'  => $row["firstname"],
                                 'email'     => $row["user_email"]
@@ -123,7 +124,7 @@
                             $output = [
                                 'status'        => true,
                                 'email'         => $post['fld_profile_email'],
-                                'data'          => gettext('Email updated!'),
+                                'data'          => _('Email updated!'),
                                 'notification'  => notificationMail($info)
                             ];
                             echo(json_encode($output));
@@ -133,7 +134,7 @@
                         {
                             $output = [
                                 'status'    => false,
-                                'data'      => gettext('Email updated!')
+                                'data'      => _('Email updated!')
                             ];
                             echo(json_encode($output));
                             exit;
@@ -143,7 +144,7 @@
                     {   
                         $output = [
                             'status'    => false,
-                            'data'      => gettext('Invalid password!')
+                            'data'      => _('Invalid password!')
                         ];
                         echo(json_encode($output));
                         exit;
@@ -153,8 +154,45 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'data'      => _('We are unable to fullfil your request at this time. Please try again later.'),
                         'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
+            }
+
+            // Update Language
+            else if ($post['save'] === "lang")
+            {
+
+                $updates = DB::query("UPDATE users SET language = ? WHERE id = ?", $post['opt_lang'], $_SESSION["id"]);
+
+                if (count($updates) != 0)
+                {
+                    $_SESSION['lang'] = $post['opt_lang'];
+
+                    $get = [
+                        'lang'       => $post['opt_lang']
+                    ];
+
+                    $output = [
+                        'status'    => true,
+                        'language'  => array_search($post['opt_lang'], $_SESSION['form_PO_support']),
+                        'data'      => _('Language Updated!'),
+                        'transfer'      => true,
+                        'transferData'  => http_build_query($get),
+                        'redirect'      => true,
+                        'location'      => 'profile.php'
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
+                else
+                {
+                    $output = [
+                        'status'    => false,
+                        'data'      => _('Email updated!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -169,7 +207,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('Password confirmation missmatch!')
+                        'data'      => _('Password confirmation missmatch!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -192,14 +230,14 @@
                             $info = array(
                                 'locale'    => $_SESSION['lang'],
                                 'template'  => 'pswchange_template',
-                                'subject'   => 'Your password changed',
+                                'subject'   => _('Your password changed'),
                                 'username'  => $row["firstname"],
                                 'email'     => $row["user_email"]
                             );
 
                             $output = [
                                 'status'    => true,
-                                'data'      => gettext('Password updated!'),
+                                'data'      => _('Password updated!'),
                                 'notification'  => notificationMail($info)
                             ];
                             echo(json_encode($output));
@@ -209,7 +247,7 @@
                         {
                             $output = [
                                 'status'    => false,
-                                'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                                'data'      => _('We are unable to fullfil your request at this time. Please try again later.'),
                                 'error'     => userErrorHandler(0, "profile", "unable to update psw")
                             ];
                             echo(json_encode($output));
@@ -220,7 +258,7 @@
                     {
                         $output = [
                             'status'    => false,
-                            'data'      => gettext('Invalid password!')
+                            'data'      => _('Invalid password!')
                         ];
                         echo(json_encode($output));
                         exit;
@@ -230,7 +268,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'data'      => _('We are unable to fullfil your request at this time. Please try again later.'),
                         'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
                     ];
                     echo(json_encode($output));
@@ -262,7 +300,7 @@
                     {
                         $output = [
                             'status'    => false,
-                            'data'      => gettext('Invalid password!')
+                            'data'      => _('Invalid password!')
                         ];
                         echo(json_encode($output));
                         exit;
@@ -272,7 +310,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => gettext('We are unable to fullfil your request at this time. Please try again later.'),
+                        'data'      => _('We are unable to fullfil your request at this time. Please try again later.'),
                         'error'     => userErrorHandler(0, "profile", "unable to query user: " . $post['save'])
                     ];
                     echo(json_encode($output));

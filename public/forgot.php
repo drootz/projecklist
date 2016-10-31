@@ -21,7 +21,7 @@
             if (!$post['g-recaptcha-response'])
             {
                 $output = [
-                    'data' => gettext('The reCAPTCHA checkbox is required')
+                    'data' => _('The reCAPTCHA checkbox is required')
                 ];
                 echo(json_encode($output));
                 exit;
@@ -37,7 +37,7 @@
             if(intval($responseKeys["success"]) !== 1)
             {
                 $output = [
-                    'data'      => gettext('Unable to proceed with your request at this time.'),
+                    'data'      => _('Unable to proceed with your request at this time.'),
                     'reset'     => true,
                     'modal'     => true,
                     'redirect'  => true,
@@ -90,14 +90,14 @@
                     $info = array(
                         'locale'    => $_SESSION['lang'],
                         'template'  => 'pswreset_template',
-                        'subject'   => 'Password Reset Notification',
+                        'subject'   => _('Password Reset Notification'),
                         'psw'       => $tempPsw,
                         'username'  => $row["firstname"],
                         'email'     => $row["user_email"]
                     );
                        
                     $output = [
-                        'data'          => gettext('Your password has been sent by email successfully. Check your mailbox! Make sure to verify your spam folder if you don\'t see it in your inbox.'),
+                        'data'          => _('Your password has been sent by email successfully. Check your mailbox! Make sure to verify your spam folder if you don\'t see it in your inbox.'),
                         'modal'         => true,
                         'redirect'      => true,
                         'location'      => 'index.php',
@@ -109,7 +109,7 @@
                 else
                 {
                     $output = [
-                        'data'  => gettext('Unable to reset your password at this time. Please try again.'),
+                        'data'  => _('Unable to reset your password at this time. Please try again.'),
                         'reset' => true,
                         'error' => userErrorHandler(0, "forgot", "unable to reset psw")
                     ];
@@ -120,7 +120,7 @@
             else
             {
                 $output = [
-                    'data'  => gettext('Invalid email address.'),
+                    'data'  => _('Invalid email address.'),
                     'reset' => true
                 ];
                 echo(json_encode($output));

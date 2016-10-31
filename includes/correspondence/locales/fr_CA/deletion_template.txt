@@ -1,18 +1,18 @@
-FR - Account Deletion Notification
+AVIS DE SUPRESSION 
 
 
 
 
-Hi {USERNAME},
+Bonjour {USERNAME},
 
-Your account has been successfully deleted with all its data.
+Votre compte a été supprimé avec succès avec toutes ses données.
 
-Thanks!
+Merci!
 
 ----
-Copyright {YEAR} Projecklist, All Rights Reversed.
+Copyright {YEAR} Projecklist, tous droits réservés.
 
 
 
 
-You received this e-mail because you were a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.
+Vous avez reçu ce courriel parce que vous aviez un compte sur 'Projecklist'. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.

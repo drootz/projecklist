@@ -19,11 +19,11 @@
         {
             if (isset($_GET['new']) && $_GET['new'])
             {
-                $title = gettext('Successful Registration');
+                $title = _('Successful Registration');
             }
             else
             {
-                $title = gettext('Account Not Activated');
+                $title = _('Account Not Activated');
             }
 
             render("registered.php", "Registration", [
@@ -56,6 +56,9 @@
             $activation = $activations[0];
 
             $info = [
+                'locale'    => $_SESSION['lang'],
+                'template'  => 'signup_template',
+                'subject'   => _('Welcome to Projecklist!'),
                 'username' => $activation['user_name'],
                 'email' => $activation['user_email'],
                 'key' => $activation['user_key']
@@ -66,7 +69,7 @@
             ];
 
             $output = [
-                'data'          => gettext('Please check your mailbox for your registration confirmation email and click on the activation link to be able to access your account.'),
+                'data'          => _('Please check your mailbox for your registration confirmation email and click on the activation link to be able to access your account.'),
                 'modal'         => true,
                 'transfer'      => true,
                 'transferData'  => http_build_query($get),

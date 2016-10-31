@@ -98,7 +98,7 @@
 
                             // SUCCES, redirect to profile page
                             $output = [
-                                'data'      => gettext('Please change the temporary password before it expires on your profile page.'),
+                                'data'      => _('Please change the temporary password before it expires on your profile page.'),
                                 'modal'     => true,
                                 'redirect'  => true,
                                 'location'  => 'profile.php'
@@ -119,7 +119,7 @@
                             }
 
                             $output = [
-                                'data'      => gettext('The temporary password has exired.'),
+                                'data'      => _('The temporary password has exired.'),
                                 'modal'     => true,
                                 'redirect'  => true,
                                 'location'  => 'forgot.php'
@@ -169,7 +169,7 @@
                         else
                         {
                             $output = [
-                                'data' => gettext("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . gettext(". Please try again later or reset your password manually.</span> (1)"),
+                                'data' => _("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . _(". Please try again later or reset your password manually.</span> (1)"),
                                     'reset' => true
                             ];
                             echo(json_encode($output));
@@ -182,6 +182,7 @@
                     {
                         // remember that user's now logged in by storing user's ID in session
                         $_SESSION["id"] = $row["id"];
+                        $_SESSION["lang"] = $row["language"];
                         $_SESSION["user_name"] = $row["firstname"];
 
                         // Reset password attempt counter on successful sign in
@@ -235,7 +236,7 @@
                         }
 
                         $output = [
-                            'data'  => gettext('Invalid username and/or password.'),
+                            'data'  => _('Invalid username and/or password.'),
                             'reset' => true
                         ];
                         echo(json_encode($output));
@@ -262,7 +263,7 @@
                             }
 
                             $output = [
-                                'data'  => gettext("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . gettext(". Please try again later or reset your password manually.</span> (2)"),
+                                'data'  => _("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . _(". Please try again later or reset your password manually.</span> (2)"),
                                 'reset' => true
                             ];
                             echo(json_encode($output));
@@ -293,7 +294,7 @@
                                 }
 
                                 $output = [
-                                    'data'  => gettext("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . gettext(". Please try again later or reset your password manually.</span> (3)"),
+                                    'data'  => _("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . _(". Please try again later or reset your password manually.</span> (3)"),
                                     'reset' => true
                                 ];
                                 echo(json_encode($output));
@@ -304,7 +305,7 @@
                             else if ($now < $unlockDatetime )
                             {
                                 $output = [
-                                    'data'  => gettext("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . gettext(". Please try again later or reset your password manually.</span> (4)"),
+                                    'data'  => _("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . _(". Please try again later or reset your password manually.</span> (4)"),
                                     'reset' => true
                                 ];
                                 echo(json_encode($output));
@@ -327,7 +328,7 @@
                                 }
 
                                 $output = [
-                                    'data'  => gettext("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . gettext(". Please try again later or reset your password manually.</span> (5)"),
+                                    'data'  => _("Maximum password attempts reached.<br/><span style=\"font-weight: normal;\">Your account is locked for ") . getTimeLapse($now, $unlockDatetime) . _(". Please try again later or reset your password manually.</span> (5)"),
                                     'reset' => true
                                 ];
                                 echo(json_encode($output));

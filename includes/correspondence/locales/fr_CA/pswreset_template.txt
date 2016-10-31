@@ -1,22 +1,22 @@
-FR - Security Alert
+ALERTE DE SéCURITé 
 
 
 
 
-Hi {USERNAME},
+Bonjour {USERNAME},
 
-The password for your Projecklist account {EMAIL} has succesfully been reinitialized. 
+Le mot de passe de votre compte {EMAIL} sur Projecklist a été réinitialisé avec succès.
 
-Your temporary password is: {PSW}
+Votre mot de passe temporaire est: {PSW}
 
-Sign in your account before it expires.
+Veuillez vous connecter avant qu'il expire.
 
-Thanks!
+Merci!
 
 ----
-Copyright {YEAR} Projecklist, All Rights Reversed.
+Copyright {YEAR} Projecklist, tous droits réservés.
 
 
 
 
-You received this e-mail because you are currently a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.
+Vous avez reçu ce courriel parce que vous êtes actuellement membre de 'Projecklist'. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.

@@ -1,20 +1,20 @@
-FR - Security Alert 
+ALERTE DE SéCURITé 
 
 
 
 
-Hi {USERNAME},
+Bonjour {USERNAME},
 
-The sign in email for your Projecklist account {EMAIL} was recently changed to {ALTEMAIL}.
+Le courriel {EMAIL} inscrit sur Projecklist a récemment été changé pour {ALTEMAIL}.
 
-If you don't recognize this activity, contact us via {ADMIN_EMAIL} to reinstate your previous sign in email and reset your password.
+Si vous ne reconnaissez pas cette activité, Veuillez nous contacter à {ADMIN_EMAIL} pour corriger la situation et réinitialiser votre mot de passe.
 
-Thanks!
+Merci!
 
 ----
-Copyright {YEAR} Projecklist, All Rights Reversed.
+Copyright {YEAR} Projecklist, tous droits réservés.
 
 
 
 
-You received this e-mail because you are currently a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.
+Vous avez reçu ce courriel parce que vous êtes actuellement membre de 'Projecklist'. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.

@@ -11,22 +11,22 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-pad-12">
-                            <input type="email" name="fld_register_email" id="f-register-email" required aria-required="true" placeholder="Email" maxlength="50" autocomplete="off" <?= isset($transferData) ? "value=\"" . $transferData . "\"" : "" ?> />
+                            <input type="email" name="fld_register_email" id="f-register-email" required aria-required="true" <?= _("placeholder=\"Email\""); ?> maxlength="50" autocomplete="off" <?= isset($transferData) ? "value=\"" . $transferData . "\"" : "" ?> />
                         </div>
                         <div class="col-pad-12">
-                            <input type="email" name="fld_register_email_confirm" id="f-register-email-confirm" required aria-required="true" placeholder="Confirm Email" maxlength="50" autocomplete="off" />
+                            <input type="email" name="fld_register_email_confirm" id="f-register-email-confirm" required aria-required="true" <?= _("placeholder=\"Confirm Email\""); ?> maxlength="50" autocomplete="off" />
                         </div>
                         <div class="col-pad-12">
-                            <input type="text" name="fld_register_fn" id="f-register-fn" required aria-required="true" placeholder="First Name" maxlength="50" autocomplete="off" />
+                            <input type="text" name="fld_register_fn" id="f-register-fn" required aria-required="true" <?= _("placeholder=\"First Name\""); ?> maxlength="50" autocomplete="off" />
                         </div>
                         <div class="col-pad-12">
-                            <input type="text" name="fld_register_ln" id="f-register-ln" required aria-required="true" placeholder="Last Name" maxlength="50" autocomplete="off" />
+                            <input type="text" name="fld_register_ln" id="f-register-ln" required aria-required="true" <?= _("placeholder=\"Last Name\""); ?> maxlength="50" autocomplete="off" />
                         </div>
                         <div class="col-pad-12">
-                            <input type="password" name="fld_register_psw" id="f-register-password" required aria-required="true" placeholder="Password" maxlength="50" />
+                            <input type="password" name="fld_register_psw" id="f-register-password" required aria-required="true" <?= _("placeholder=\"Password\""); ?> maxlength="50" />
                         </div>
                         <div class="col-pad-12">
-                            <input type="password" name="fld_register_psw_confirm" id="f-register-psw-confirm" required aria-required="true" placeholder="Confirm Password" maxlength="50" />
+                            <input type="password" name="fld_register_psw_confirm" id="f-register-psw-confirm" required aria-required="true" <?= _("placeholder=\"Confirm Password\""); ?> maxlength="50" />
                         </div>
                     </div> <!-- .row END -->
 
@@ -38,8 +38,8 @@
 
                 <div class="m-login-button">
                     <br />
-                    <button class="button" type="submit" value="submit" name="submit">Register</button>
-                    <span>&nbsp;or&nbsp;&nbsp;<a href="login.php">Sign in</a></span>
+                    <button class="button" type="submit" value="submit" name="submit"><?= _("Register"); ?></button>
+                    <span>&nbsp;<?= _("or"); ?>&nbsp;&nbsp;<a href="login.php"><?= _("Sign in"); ?></a></span>
                 </div>
 
             </fieldset>

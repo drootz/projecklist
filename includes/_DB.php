@@ -96,7 +96,8 @@
                     $handle = new PDO(
                         "mysql:dbname=" . self::$config["database"]["name"] . ";host=" . self::$config["database"]["host"],
                         self::$config["database"]["username"],
-                        self::$config["database"]["password"]
+                        self::$config["database"]["password"],
+                        array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
                     );
                 }
                 catch (Exception $e)

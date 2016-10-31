@@ -1,22 +1,22 @@
-FR - Registration Confirmation
+CONFIRMATION D'INSCRIPTION 
 
 
 
 
-Welcome {USERNAME}!
+Bonjour {USERNAME}!
 
-Thank you for creating an account on Projecklist.
+Nous vous remercions d'avoir créé un compte sur Projecklist.
 
-Please copy and paste the following address into your browsers address bar to activate your account:
+Veuillez copier et coller l'adresse suivante dans votre navigateur pour activer votre compte:
 
-{SITEPATH}/activation.php?email={EMAIL}&key={KEY}
+{SITEPATH}/activation.php?lang={LOCALE}&email={EMAIL}&key={KEY}
 
-Thanks!
+Merci!
 
 ----
-Copyright {YEAR} Projecklist, All Rights Reversed.
+Copyright {YEAR} Projecklist, tous droits réservés.
 
 
 
 
-You received this e-mail because you are currently a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.
+Vous avez reçu ce courriel parce que vous êtes actuellement membre de 'Projecklist'. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.

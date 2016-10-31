@@ -1,4 +1,4 @@
-Security Alert 
+SECURITY ALERT 
 
 
 
@@ -9,7 +9,7 @@ The password for your Projecklist account {EMAIL} was recently changed.
 
 If you don't recognize this activity, please copy and paste the following address into your browsers address bar to reset your password.
 
-{SITEPATH}/forgot.php
+{SITEPATH}/forgot.php?lang={LOCALE}
 
 Thanks!
 

@@ -39,21 +39,21 @@
             $update_users = DB::query("UPDATE users SET activated = 1 WHERE id = ?", $confirm_info['user_id']);
             if(count($update_users) == 0)
             {
-                $action['result'] = gettext('Account Activation Failed');
-                $action['text'] = gettext('We are unable to activate the account registered with ') . $email . gettext(' at this time. Please try again later.');
+                $action['result'] = _('Account Activation Failed');
+                $action['text'] = _('We are unable to activate the account registered with ') . $email . _(' at this time. Please try again later.');
                 userErrorHandler(0, "activation", "unable to activate user");
             }
             else
             {
-                $action['result'] = gettext('Account Activated');
-                $action['text'] = gettext('The account registered with ') . $email . gettext(' is now activated. Thank you!');
+                $action['result'] = _('Account Activated');
+                $action['text'] = _('The account registered with ') . $email . _(' is now activated. Thank you!');
                 // $action['text'] = 'The user could not be updated Reason: '.mysql_error();
             }
         }
         else
         {
-            $action['result'] = gettext('Oops!');
-            $action['text'] = gettext('This link seems to have expired.');
+            $action['result'] = _('Oops!');
+            $action['text'] = _('This link seems to have expired.');
             userErrorHandler(0, "activation", "unable to check activation key - already activated");
         }
 

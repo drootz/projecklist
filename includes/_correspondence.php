@@ -24,7 +24,10 @@
         $_body = formatNotificationEmail($info,'html');
         $_body_plain_txt = formatNotificationEmail($info,'txt');
 
-        $mail = new PHPMailer;
+        $mail = new PHPMailer();
+        $mail->CharSet = 'UTF-8';
+        // $mail->CharSet = 'ISO-8859-15';
+        
                               
         //Set PHPMailer to use SMTP.
         $mail->isSMTP();            
@@ -52,7 +55,6 @@
             exit;
         }
 
-        // $mail->addReplyTo('projecklist@gmail.com', 'Projecklist');
         $mail->isHTML(true);
 
         if (isset($info['subject']))
@@ -127,6 +129,11 @@
         if (isset($info['altemail']))
         {
             $template = preg_replace('/{ALTEMAIL}/', $info['altemail'], $template);
+        }
+
+        if (isset($info['locale']))
+        {
+            $template = preg_replace('/{LOCALE}/', $info['locale'], $template);
         }
 
         $template = preg_replace('/{SITEPATH}/','http://dracine.local/~dracine/xdev/projecklist/public', $template);

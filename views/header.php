@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php echo $_SESSION['html_lang'] ?> prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?= $_SESSION['html_lang'] ?> prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
 
 <head>
 
@@ -12,12 +12,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <?php if (isset($title)): ?>
-        <title><?php echo _( 'form-htmltag-ttl' ); ?>: <?= htmlspecialchars($title) ?></title>
+        <title><?= _( 'form-htmltag-ttl' ); ?> - <?= htmlspecialchars($title) ?></title>
     <?php else: ?>
-        <title><?php echo _( 'form-htmltag-ttl' ); ?></title>
+        <title><?= _( 'form-htmltag-ttl' ); ?></title>
     <?php endif ?>
 
-    <meta name="description" <?php echo "content=\""._( 'form-htmlmeta-description' )."\""; ?> >
+    <meta name="description" <?= "content=\""._( 'form-htmlmeta-description' )."\""; ?> >
     <link rel="author" href="humans.txt" />
 
     <!-- Mobile Specific Metas
@@ -25,23 +25,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
     <!-- Schema.org markup for Facebook -->
-    <meta property="og:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
-    <meta property="og:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
+    <meta property="og:title" <?= "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
+    <meta property="og:image" <?= "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="2000">
     <meta property="og:image:height" content="1050">
-    <meta property="og:url" <?php echo "content=\"" . _( 'head-og-url' ) . "\""; ?>/> <!-- http://www.projecklist.oneprojct.space/?lang=en_CA -->
+    <meta property="og:url" <?= "content=\"" . _( 'head-og-url' ) . "\""; ?>/> <!-- http://www.projecklist.oneprojct.space/?lang=en_CA -->
     <meta property="og:site_name" content="Projecklist"/>
-    <meta property="og:locale:alternate" <?php echo "content=\"" . _( 'head-og-fb-locale' ) . "\""; ?>/>
-    <meta property="og:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
+    <meta property="og:locale:alternate" <?= "content=\"" . _( 'head-og-fb-locale' ) . "\""; ?>/>
+    <meta property="og:description" <?= "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
 
     <!-- Schema.org markup for Twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@projecklist">
     <meta name="twitter:creator" content="@_dracine">
-    <meta name="twitter:title" <?php echo "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
-    <meta name="twitter:description" <?php echo "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
-    <meta name="twitter:image" <?php echo "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
+    <meta name="twitter:title" <?= "content=\"" . _( 'head-og-title' ) . "\""; ?>/>
+    <meta name="twitter:description" <?= "content=\"" . _( 'head-og-description' ) . "\""; ?>/>
+    <meta name="twitter:image" <?= "content=\"" . _( 'head-og-image' ) . "\""; ?>/>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -72,7 +72,7 @@
 
 </head>
 
-<body <?php echo $_SESSION['html_theme'] ?>>
+<body <?= $_SESSION['html_theme'] ?>>
     <!--[if lt IE 9]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -111,16 +111,16 @@
     <div id="overlay">
         <div id="overlay-safety" onclick="overlay()" value="0"></div>
         <div id="overlay-container" class="overlay-container spring-out">
-            <p class="js-dialog-contact is-hidden"><?php echo _( 'form-dialogbox-pra-contact' ); ?></p>
-            <p class="js-dialog-hours is-hidden"><?php echo _( 'form-dialogbox-pra-hours' ); ?></p>
-            <p class="js-dialog-competitors is-hidden"><?php echo _( 'form-dialogbox-pra-competitors' ); ?></p>
-            <p class="js-dialog-weblist is-hidden"><?php echo _( 'form-dialogbox-pra-weblist' ); ?></p>
-            <p class="js-dialog-domain is-hidden"><?php echo _( 'form-dialogbox-pra-domain' ); ?></p>
-            <p class="js-dialog-primary is-hidden"><?php echo _( 'form-dialogbox-pra-primary' ); ?></p>
-            <p class="js-dialog-noprimary is-hidden"><?php echo _( 'form-dialogbox-pra-noprimary' ); ?></p>
-            <button class="button overlay m-accept is-visible" onclick="overlay(this)" value="1"><?php echo _( 'form-dialogbox-btn-accept' ); ?></button>
-            <button class="button overlay m-decline is-visible" onclick="overlay(this)" value="0"><?php echo _( 'form-dialogbox-btn-decline' ); ?></button>
-            <button class="button overlay m-alert is-hidden" onclick="overlay(this)" value="1"><?php echo _( 'form-dialogbox-btn-ok' ); ?></button>
+            <p class="js-dialog-contact is-hidden"><?= _( 'form-dialogbox-pra-contact' ); ?></p>
+            <p class="js-dialog-hours is-hidden"><?= _( 'form-dialogbox-pra-hours' ); ?></p>
+            <p class="js-dialog-competitors is-hidden"><?= _( 'form-dialogbox-pra-competitors' ); ?></p>
+            <p class="js-dialog-weblist is-hidden"><?= _( 'form-dialogbox-pra-weblist' ); ?></p>
+            <p class="js-dialog-domain is-hidden"><?= _( 'form-dialogbox-pra-domain' ); ?></p>
+            <p class="js-dialog-primary is-hidden"><?= _( 'form-dialogbox-pra-primary' ); ?></p>
+            <p class="js-dialog-noprimary is-hidden"><?= _( 'form-dialogbox-pra-noprimary' ); ?></p>
+            <button class="button overlay m-accept is-visible" onclick="overlay(this)" value="1"><?= _( 'form-dialogbox-btn-accept' ); ?></button>
+            <button class="button overlay m-decline is-visible" onclick="overlay(this)" value="0"><?= _( 'form-dialogbox-btn-decline' ); ?></button>
+            <button class="button overlay m-alert is-hidden" onclick="overlay(this)" value="1"><?= _( 'form-dialogbox-btn-ok' ); ?></button>
         </div>
     </div>
 
@@ -130,7 +130,7 @@
             <div class="l-wrapper is-relative">
                 <div class="m-float-radial">
                     <!-- fa icon loaded on pageload JS loadTheme(); -->
-                    <div class="js-menu-theme" <?php echo "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?>><span class="fa fa-lg"></span></div>
+                    <div class="js-menu-theme" <?= "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?>><span class="fa fa-lg"></span></div>
                 </div>
             </div>
         </div>
@@ -146,21 +146,18 @@
                 <div class="m-mobile-menu"><span class="fa fa-lg fa-bars" aria-hidden="true"></span></div class="m-mobile-menu">
                 <ul class="m-menu">
                     <!-- <li id="f-debug-fill-form" title="debug -> fill form button"><span class="fa fa-bug fa-lg"></span></li> -->
-                    <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-getStarted' ) . "\""; ?>><a href="projeckt.php"><span class="fa fa-lg fa-rocket" aria-hidden="true"></span></a></li>
+                    <li <?= "title=\"" . _( 'form-navbar-titleAttr-getStarted' ) . "\""; ?>><a href="projeckt.php"><span class="fa fa-lg fa-rocket" aria-hidden="true"></span></a></li>
                     <!-- fa icon loaded on pageload JS loadTheme(); -->
-                    <li class="js-menu-theme" <?php echo "title=\"" . _( 'form-navbar-titleAttr-toggleTheme' ) . "\""; ?>><span class="fa fa-lg"></span></li>
+                    <li class="js-menu-theme" <?= "title=\"" . _( 'form-navbar-titleAttr-toggleTheme' ) . "\""; ?>><span class="fa fa-lg"></span></li>
                 </ul>
             </div>
 
             <div class="l-wrapper-nav clearfix is-relative">
                 <ul class="m-nav-login">
                     <li><span><?= _( 'Hello' ); ?></span>, <span id="js-display-name"><?= $s_displayname ?></span></li>
-                    <?php if (empty($_SESSION["id"])): ?>
-                        <!-- <li <?php //echo "title=\"" . _( 'form-navbar-titleAttr-signIn' ) . "\""; ?>>Sign in&nbsp;&nbsp;<a href="login.php"><span class="fa fa-lg fa-sign-in" aria-hidden="true"></span></a></li> -->
-                    <?php endif ?>
                     <?php if (!empty($_SESSION["id"])): ?>
-                        <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-logOut' ) . "\""; ?>><a href="logout.php"><span class="fa fa-lg fa-sign-out" aria-hidden="true"></span></a></li>
-                        <li <?php echo "title=\"" . _( 'form-navbar-titleAttr-profile' ) . "\""; ?>><a href="profile.php"><span class="fa fa-lg fa-user" aria-hidden="true"></span></a></li>
+                        <li <?= "title=\"" . _( 'form-navbar-titleAttr-logOut' ) . "\""; ?>><a href="logout.php"><span class="fa fa-lg fa-sign-out" aria-hidden="true"></span></a></li>
+                        <li <?= "title=\"" . _( 'form-navbar-titleAttr-profile' ) . "\""; ?>><a href="profile.php"><span class="fa fa-lg fa-user" aria-hidden="true"></span></a></li>
                     <?php endif ?>
                 </ul>
             </div>

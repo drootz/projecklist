@@ -1,4 +1,4 @@
 <div>
-    <h1>Sorry!</h1>
+    <h1><?= _("Sorry"); ?>!</h1>
     <p><?= htmlspecialchars($message) ?></p>
 </div>

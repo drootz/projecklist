@@ -82,7 +82,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:Helvetica, Arial, sans-serif;">
                     <tr>
                       <td width="600" class="mobile" align="left" style="font-size:12px; font-weight: normal; line-height:18px; color: #FFFFFF;">
-                        FR - Security Alert&nbsp;
+                        ALERTE DE SÉCURITÉ&nbsp;-&nbsp;
                       </td>
                     </tr>
                   </table>
@@ -106,7 +106,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                     <tr>
                       <td width="400" class="mobile">
-                        <a href="{SITEPATH}" target="_blank"><img src="{SITEPATH_ROOT}/includes/correspondence/img/logo_400x100.png" width="200" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" class="centerClass" alt="" /></a>
+                        <a href="{SITEPATH}/index.php?lang={LOCALE}" target="_blank"><img src="{SITEPATH_ROOT}/includes/correspondence/img/logo_400x100.png" width="200" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" class="centerClass" alt="" /></a>
                       </td>
                       <td height="10" style="font-size:12px; line-height:12px;" class="mobileOn"></td>
                       <td width="200" class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:18px;"></td>
@@ -140,17 +140,17 @@
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight: 300; line-height:22px;">
 
                         <br />
-                        <p>Hi <strong>{USERNAME}</strong>,</p>
-                        <p>The password for your Projecklist account {EMAIL} was recently changed.</p>
+                        <p>Bonjour <strong>{USERNAME}</strong>,</p>
+                        <p>Le mot de passe de votre compte {EMAIL} sur Projecklist a été changé avec succès.</p>
                         <br />
 
-                        <p style="font-weight: 700;">Don't recognize this activity?</p>
-                        <p>Click <a href="{SITEPATH}/forgot.php" target="_blank" style="color:#1EAEDB; text-decoration: none;">here</a> to reset your password.</p>
-                        <p>If the above link is not working, please copy and paste the following address into your browsers address bar:</p>
-                        <p style="color: #1EAEDB;">{SITEPATH}/forgot.php</p>
+                        <p style="font-weight: 700;">Vous ne reconnaissez pas cette activité?</p>
+                        <p>Cliquez <a href="{SITEPATH}/forgot.php?lang={LOCALE}" target="_blank" style="color:#1EAEDB; text-decoration: none;">ici</a> pour réinitialisé votre mot de passe.</p>
+                        <p>Si le lien ci-dessus ne fonctionne pas, veuillez copier et coller l'adresse suivante dans votre navigateur et réinitialisez votre mot de passe:</p>
+                        <p style="color: #1EAEDB;">{SITEPATH}/forgot.php?lang={LOCALE}</p>
                         <br />
 
-                        <p>The Projecklist Team</p>
+                        <p>L'équipe Projecklist</p>
                         <br />
 
                       </td>
@@ -182,8 +182,8 @@
                     <tr>
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight: normal; line-height:18px; color: #969696"">
 
-                        <p>&copy; {YEAR} <strong>Projecklist</strong>, All Rights Reserved.</p>
-                        <p>You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+                        <p>&copy; {YEAR} <strong>Projecklist</strong>, tous droits réservés.</p>
+                        <p>Vous avez reçu ce courriel parce que vous êtes actuellement membre de <strong>Projecklist</strong>. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à <a href="mailto:{ADMIN_EMAIL}?subject=Courriel%20reçu%20par%20erreur%20de%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
 
                       </td>
                     </tr>

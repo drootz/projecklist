@@ -10,11 +10,11 @@
 
                             <div class="col-pad-04 m-footer-block">
                                 <div class="m-share">
-                                    <h4>Share</h4>
+                                    <h4><?= _("Share"); ?></h4>
                                     <ul>
-                                        <li><a <?php echo "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
-                                        <li><a <?php echo "href=\"" . _( 'footer-tw-share-link' ) . "\""; ?>><span class="fa fa-twitter-square fa-2x"></span></a></li>
-                                        <li><a <?php echo "href=\"" . _( 'footer-in-share-link' ) . "\""; ?>><span class="fa fa-linkedin-square fa-2x"></span></a></li>
+                                        <li><a <?= "href=\"" . _( 'footer-fb-share-link' ) . "\""; ?>><span class="fa fa-facebook-square fa-2x"></span></a></li>
+                                        <li><a <?= "href=\"" . _( 'footer-tw-share-link' ) . "\""; ?>><span class="fa fa-twitter-square fa-2x"></span></a></li>
+                                        <li><a <?= "href=\"" . _( 'footer-in-share-link' ) . "\""; ?>><span class="fa fa-linkedin-square fa-2x"></span></a></li>
                                         <!-- <li><a href="https://twitter.com/intent/tweet?text=WEB PROJECT EVALUATION FORM&via=projecklist&url=http%3A%2F%2Fwww.projecklist.oneprojct.space%2F%3Flang%3Den_CA">Tweet</a></li> testing tw link sharing -->
                                     </ul>
                                 </div>
@@ -47,16 +47,16 @@
 
                                 <h4>Projecklist</h4>
                                 <ul class="m-info">
-                                    <li class="m-menu-li-drop is-not-toggled" <?php echo "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?> >
+                                    <li class="m-menu-li-drop is-not-toggled" <?= "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?> >
                                         <!-- $_SESSION['lang'] -->
-                                        <?php echo htmlspecialchars($_SESSION['currentLanguage']) . "<span class=\"fa fa-globe fa-lg\"></span><span class=\"m-currentlanguage\"></span>"; ?>
-                                        <?php echo setLanguageMenu(); ?>
+                                        <?= htmlspecialchars($_SESSION['currentLanguage']) . "<span class=\"fa fa-globe fa-lg\"></span><span class=\"m-currentlanguage\"></span>"; ?>
+                                        <?= setLanguageMenu(); ?>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="col-12 m-copyright">
-                                <p><?php echo _( 'footer-copy' ); ?> &copy; <?php echo date("Y")?></p>
+                                <p><?= _( 'footer-copy' ); ?> &copy; <?= date("Y")?></p>
                                 <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a>
                             </div>
 

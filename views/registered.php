@@ -17,7 +17,7 @@
 
 	                <div class="m-login-button">
 	                    <br/>
-	                    <button class="button" type="submit" value="<?= $user_id ?>" name="submit">Resend</button>
+	                    <button class="button" type="submit" value="<?= $user_id ?>" name="submit"><?= _("Resend"); ?></button>
 	                </div>
 
 	            </fieldset>
