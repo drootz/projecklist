@@ -1045,6 +1045,17 @@ $( document ).ready(function() {
 		$divider.first().addClass("animate");
 	}
 
+	$(function() {
+	    var tabindex = 1;
+	    $('input,select,button,textarea').each(function() {
+	        // if (this.type != "hidden") {
+            var $input = $(this);
+            $input.attr("tabindex", tabindex);
+            tabindex++;
+	        // }
+	    });
+	});
+
 
 	$(".m-mobile-menu").click( function() {
 		var ico = $(this).children();
@@ -1611,7 +1622,8 @@ $( document ).ready(function() {
 	        v_upperCheck    =   'Doit contenir au moins 1 caractère alphabétique majuscule',
 	        v_confirmMail   =   'Confirmation du courriel invalide',
 	        v_confirmPsw    =   'Confirmation du mot de passe invalide',
-	        v_rangePsw      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.';
+	        v_rangePsw      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.'
+	        v_usernameCheck =   'Ce courriel est déjà enregistré';
 	}
 	// Default to english (en_CA)
 	else
@@ -1633,7 +1645,8 @@ $( document ).ready(function() {
 	        v_upperCheck    =   'Must contain at least 1 upper-case character',
 	        v_confirmMail   =   'Email Confirmation Mismatch',
 	        v_confirmPsw    =   'Password Confirmation Mismatch',
-	        v_rangePsw      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.';
+	        v_rangePsw      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
+	        v_usernameCheck =   'This email is already registered';
 	}
 
 	// Declare jQuery Validation custom method
@@ -1674,6 +1687,35 @@ $( document ).ready(function() {
 
 	$.validator.addMethod("rangePsw", $.validator.methods.rangelength,
 	v_rangePsw);
+
+	// Check if user email is already registered
+	$("#f-register-email, #f-profile-email").blur(function () {
+
+		var el = $(this);
+		var value = this.value;
+		var elfor = el.attr( "id" );	
+
+	    $.ajax(
+	    {
+	        type: "POST",
+	        url: "ajaxcheckemail.php",
+	        dataType: "json",
+	        data: { "submit": "usernameCheck", "user_email": value },
+	        success: function(data)
+	        {
+	            if (data.data)
+	            {
+					el.after( "<label id=\"f-email-exist\" class=\"error\" for=\"" + elfor + "\">" + v_usernameCheck + "</label>" );
+	            }
+	        },
+	        error: function(xhr, textStatus, errorThrown)
+	        {	
+	        	console.log("AJAX ERROR:\n" + xhr + "\n" + textStatus + "\n" + errorThrown);
+	            return false;
+	        }
+	    });
+
+	});
 
 
 	// Clear form input fields and re-instate their default placeholders (bug fix)
