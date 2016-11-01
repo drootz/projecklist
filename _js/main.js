@@ -1705,6 +1705,7 @@ $( document ).ready(function() {
 	$.validator.addMethod("rangePsw", $.validator.methods.rangelength,
 	v_rangePsw);
 
+
 	// Check if user email is already registered
 	$("#f-register-email, #f-profile-email").blur(function () {
 
@@ -1731,6 +1732,19 @@ $( document ).ready(function() {
 	            return false;
 	        }
 	    });
+
+	});
+
+	// Remove error message to avoid multiple error message label.
+	$("#f-register-email, #f-profile-email").focus(function () {
+
+		// remove label
+		var el = $(this).next('#f-email-exist');
+		if (el.length)
+		{	
+			console.log('el removed');
+		    el.remove();
+		}
 
 	});
 
