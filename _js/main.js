@@ -1741,8 +1741,7 @@ $( document ).ready(function() {
 		// remove label
 		var el = $(this).next('#f-email-exist');
 		if (el.length)
-		{	
-			console.log('el removed');
+		{
 		    el.remove();
 		}
 
