@@ -107,6 +107,11 @@
     </div>
     -->
 
+
+    <div class="m-loading">
+        <div><i class="fa fa-circle-o-notch fa-lg fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;<?= _( 'please wait...' ) ?></div>
+    </div>
+
     <!-- // Dialog box overlay -->
     <div id="overlay">
         <div id="overlay-safety" onclick="overlay()" value="0"></div>

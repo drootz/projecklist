@@ -1602,6 +1602,23 @@ $( document ).ready(function() {
 		return (result === null) ? null : result[1];
 	}
 
+
+	var spinner = $(".m-loading");
+	$(document).ready(function () {
+	    $(document).ajaxStart(function () {
+	    	if (!spinner.hasClass('isLoading'))
+	    	{
+	    		spinner.addClass('isLoading');
+	    	}
+	    }).ajaxStop(function () {
+	    	if (spinner.hasClass('isLoading'))
+	    	{
+	    		spinner.removeClass('isLoading');
+	    	}
+	    });
+	});
+
+
 	// Localize the form validation error labels
 	if (getCookie("lang") == 'fr_CA')
 	{

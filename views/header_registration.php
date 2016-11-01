@@ -96,6 +96,10 @@
         <li class="js-viewport-size"><span id="js-vw"></span> x <span id="js-vh"></span></li>
     </ul> -->
 
+    <div class="m-loading">
+        <div><i class="fa fa-circle-o-notch fa-lg fa-spin" aria-hidden="true"></i>&nbsp;&nbsp;<?= _( 'please wait...' ) ?></div>
+    </div>
+
     <div id="f-container" class="l-form-container is-clear">
 
         <nav class="m-navbar">
