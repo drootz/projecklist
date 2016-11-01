@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-30 15:56-0400\n"
-"PO-Revision-Date: 2016-10-30 15:57-0400\n"
+"POT-Creation-Date: 2016-10-31 23:22-0400\n"
+"PO-Revision-Date: 2016-10-31 23:26-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Poedit-SearchPath-1: public\n"
 "X-Poedit-SearchPath-2: includes\n"
 
-#: includes/_functions.php:101 views/header_registration.php:116
+#: includes/_functions.php:101 views/header_registration.php:120
 #: views/login_form.php:7 views/login_form.php:29 views/register_form.php:42
 msgid "Sign in"
 msgstr "Connexion"
@@ -45,53 +45,57 @@ msgstr "ou"
 msgid "Register"
 msgstr "Inscription"
 
-#: includes/_functions.php:483
+#: includes/_functions.php:254
+msgid " -- select an option -- "
+msgstr " -- choisir une option -- "
+
+#: includes/_functions.php:531
 #, php-format
 msgid "fld_hours_closed"
 msgstr "OUVERT"
 
-#: includes/_functions.php:506
+#: includes/_functions.php:554
 #, php-format
 msgid "fld_hours_opened"
 msgstr "FERMER"
 
-#: includes/_functions.php:508
+#: includes/_functions.php:556
 #, php-format
 msgid "fld_hours_from"
 msgstr "de"
 
-#: includes/_functions.php:513
+#: includes/_functions.php:561
 #, php-format
 msgid "fld_hours_to"
 msgstr "à"
 
-#: includes/_functions.php:527
+#: includes/_functions.php:575
 #, php-format
 msgid "_debug-hours-norange"
 msgstr "aucune journée selectionné"
 
-#: includes/_functions.php:534
+#: includes/_functions.php:582
 #, php-format
 msgid "_debug-hours-invalidrange"
 msgstr "journée invalide"
 
-#: includes/_functions.php:647
+#: includes/_functions.php:695
 msgid " day, "
 msgstr " jour, "
 
-#: includes/_functions.php:648
+#: includes/_functions.php:696
 msgid " hours, "
 msgstr " heures, "
 
-#: includes/_functions.php:648
+#: includes/_functions.php:696
 msgid " hour, "
 msgstr " heure, "
 
-#: includes/_functions.php:649
+#: includes/_functions.php:697
 msgid " minutes"
 msgstr ""
 
-#: includes/_functions.php:649
+#: includes/_functions.php:697
 msgid " minute"
 msgstr ""
 
@@ -190,8 +194,8 @@ msgstr ""
 msgid "The temporary password has exired."
 msgstr "Le mot de passe temporaire a expiré."
 
-#: public/login.php:172 public/login.php:265 public/login.php:296
-#: public/login.php:307 public/login.php:330
+#: public/login.php:172 public/login.php:266 public/login.php:297
+#: public/login.php:308 public/login.php:331
 msgid ""
 "Maximum password attempts reached.<br/><span style=\"font-weight: normal;"
 "\">Your account is locked for "
@@ -205,75 +209,79 @@ msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (1)"
 
-#: public/login.php:238
+#: public/login.php:239
 msgid "Invalid username and/or password."
 msgstr "Nom d'utilisateur et/ou mot de passe incorrect."
 
-#: public/login.php:265
+#: public/login.php:266
 msgid ". Please try again later or reset your password manually.</span> (2)"
 msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (2)"
 
-#: public/login.php:296
+#: public/login.php:297
 msgid ". Please try again later or reset your password manually.</span> (3)"
 msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (3)"
 
-#: public/login.php:307
+#: public/login.php:308
 msgid ". Please try again later or reset your password manually.</span> (4)"
 msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (4)"
 
-#: public/login.php:330
+#: public/login.php:331
 msgid ". Please try again later or reset your password manually.</span> (5)"
 msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (5)"
 
-#: public/profile.php:51 public/profile.php:61
+#: public/profile.php:52 public/profile.php:62
 msgid "Name Updated!"
 msgstr "Nom mis à jour!"
 
-#: public/profile.php:77
+#: public/profile.php:78
 msgid "Email confirmation missmatch!"
 msgstr "Confirmation du courriel incorrect!"
 
-#: public/profile.php:93
+#: public/profile.php:94
 msgid "This email is already registered!"
 msgstr "Cet courriel est déjà enregistré!"
 
-#: public/profile.php:117
+#: public/profile.php:118
 msgid "Your account email changed"
 msgstr "Mis à jour du courriel"
 
-#: public/profile.php:126 public/profile.php:136
+#: public/profile.php:127 public/profile.php:137 public/profile.php:195
 msgid "Email updated!"
 msgstr "Courriel mis à jour!"
 
-#: public/profile.php:146 public/profile.php:223 public/profile.php:265
+#: public/profile.php:147 public/profile.php:261 public/profile.php:303
 msgid "Invalid password!"
 msgstr "Mot de passe incorrect!"
 
-#: public/profile.php:156 public/profile.php:212 public/profile.php:233
-#: public/profile.php:275
+#: public/profile.php:157 public/profile.php:250 public/profile.php:271
+#: public/profile.php:313
 msgid ""
 "We are unable to fullfil your request at this time. Please try again later."
 msgstr ""
 "Nous sommes incapables de procéder à votre demande pour le moment. Veuillez "
 "réessayer plus tard."
 
-#: public/profile.php:172
+#: public/profile.php:182
+msgid "Language Updated!"
+msgstr "Langue mis à jour!"
+
+#: public/profile.php:210
 msgid "Password confirmation missmatch!"
 msgstr "Confirmation du mot de passe incorrect!"
 
-#: public/profile.php:195
+#: public/profile.php:233
 msgid "Your password changed"
 msgstr "Mis à jour de mot de passe"
 
-#: public/profile.php:202
+#: public/profile.php:240
 msgid "Password updated!"
 msgstr "Mot de passe mis à jour!"
 
@@ -289,7 +297,7 @@ msgstr "Confirmation du mot de passe incorrect!"
 msgid "The email address submitted is already registered."
 msgstr "L'adresse de courriel soumise est déjà enregistré."
 
-#: public/register.php:175
+#: public/register.php:174 public/registered.php:61
 msgid "Welcome to Projecklist!"
 msgstr "Bienvenue sur Projecklist!"
 
@@ -301,7 +309,7 @@ msgstr "Inscription complété avec succès"
 msgid "Account Not Activated"
 msgstr "Le compte n’a pas été activé"
 
-#: public/registered.php:69 views/registered.php:12
+#: public/registered.php:72 views/registered.php:12
 msgid ""
 "Please check your mailbox for your registration confirmation email and click "
 "on the activation link to be able to access your account."
@@ -314,7 +322,7 @@ msgstr ""
 msgid "Sorry"
 msgstr "Désoler"
 
-#: views/delete_form.php:7 views/profile_form.php:71
+#: views/delete_form.php:7 views/profile_form.php:89
 msgid "Delete Account"
 msgstr "Supprimer le compte"
 
@@ -328,7 +336,8 @@ msgstr ""
 "par la suite."
 
 #: views/delete_form.php:15 views/profile_form.php:18 views/profile_form.php:38
-#: views/profile_form.php:57 views/profile_form.php:80
+#: views/profile_form.php:56 views/profile_form.php:75
+#: views/profile_form.php:98
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -366,7 +375,7 @@ msgstr ""
 "https://www.linkedin.com/shareArticle?mini=true&title&summary&url=http://www."
 "projecklist.oneprojct.space/?lang=fr_CA"
 
-#: views/footer.php:50 views/header.php:133
+#: views/footer.php:50 views/header.php:138
 msgid "form-navbar-titleAttr-langSwitch"
 msgstr "Langue"
 
@@ -430,75 +439,79 @@ msgstr ""
 "Facilitez le processus d’évaluation des couts et entamez de façon efficace "
 "le processus de conception avec ce questionnaire interactif."
 
-#: views/header.php:114
+#: views/header.php:112 views/header_registration.php:100
+msgid "please wait..."
+msgstr "veuillez patienter..."
+
+#: views/header.php:119
 msgid "form-dialogbox-pra-contact"
 msgstr ""
 "Êtes-vous sûr de vouloir retirer les informations du Contact Secondaire?"
 
-#: views/header.php:115
+#: views/header.php:120
 msgid "form-dialogbox-pra-hours"
 msgstr ""
 "Êtes-vous sûr de vouloir retirer les informations du dernier bloc de plage "
 "horaire?"
 
-#: views/header.php:116
+#: views/header.php:121
 msgid "form-dialogbox-pra-competitors"
 msgstr "Êtes-vous sûr de vouloir retirer le dernier URL entrée?"
 
-#: views/header.php:117
+#: views/header.php:122
 msgid "form-dialogbox-pra-weblist"
 msgstr ""
 "Êtes-vous sûr de vouloir retirer les informations du dernier champ entré?"
 
-#: views/header.php:118
+#: views/header.php:123
 msgid "form-dialogbox-pra-domain"
 msgstr "Êtes-vous sûr de vouloir retirer le dernier domaine entré?"
 
-#: views/header.php:119
+#: views/header.php:124
 msgid "form-dialogbox-pra-primary"
 msgstr ""
 "Êtes-vous sûr de vouloir remplacer les informations déjà entrées avec celles "
 "du Contact Principal?"
 
-#: views/header.php:120
+#: views/header.php:125
 msgid "form-dialogbox-pra-noprimary"
 msgstr ""
 "Il n’y a pas d’information entrée comme Contact Principal. Veuillez vérifier "
 "les données du Contact Principal et recommencer."
 
-#: views/header.php:121
+#: views/header.php:126
 msgid "form-dialogbox-btn-accept"
 msgstr "Accepter"
 
-#: views/header.php:122
+#: views/header.php:127
 msgid "form-dialogbox-btn-decline"
 msgstr "Refuser"
 
-#: views/header.php:123
+#: views/header.php:128
 msgid "form-dialogbox-btn-ok"
 msgstr "OK"
 
-#: views/header.php:149
+#: views/header.php:154
 msgid "form-navbar-titleAttr-getStarted"
 msgstr "Projecklist"
 
-#: views/header.php:151 views/header_registration.php:110
+#: views/header.php:156 views/header_registration.php:114
 msgid "form-navbar-titleAttr-toggleTheme"
 msgstr "Thème"
 
-#: views/header.php:157
+#: views/header.php:162
 msgid "Hello"
 msgstr "Bonjour"
 
-#: views/header.php:159
+#: views/header.php:164
 msgid "form-navbar-titleAttr-logOut"
 msgstr "Déconnexion"
 
-#: views/header.php:160
+#: views/header.php:165
 msgid "form-navbar-titleAttr-profile"
 msgstr "Profil"
 
-#: views/header_registration.php:116
+#: views/header_registration.php:120
 msgid "form-navbar-titleAttr-signIn"
 msgstr "Connexion"
 
@@ -600,7 +613,7 @@ msgstr ""
 msgid "Email"
 msgstr "Courriel"
 
-#: views/login_form.php:21 views/profile_form.php:35 views/profile_form.php:77
+#: views/login_form.php:21 views/profile_form.php:35 views/profile_form.php:95
 #: views/register_form.php:26
 msgid "placeholder=\"Password\""
 msgstr "placeholder=\"Mot de passe\""
@@ -609,12 +622,12 @@ msgstr "placeholder=\"Mot de passe\""
 msgid "Profile"
 msgstr "Profil"
 
-#: views/profile_form.php:9 views/profile_form.php:28
+#: views/profile_form.php:9 views/profile_form.php:28 views/profile_form.php:48
 msgid "change"
 msgstr "changer"
 
 #: views/profile_form.php:17 views/profile_form.php:37
-#: views/profile_form.php:56
+#: views/profile_form.php:55 views/profile_form.php:74
 msgid "Save"
 msgstr "Sauvegarder"
 
@@ -631,30 +644,34 @@ msgid "placeholder=\"Confirm Email\""
 msgstr "placeholder=\"Confirmation du courriel\""
 
 #: views/profile_form.php:46
+msgid "Prefered Language"
+msgstr "Langue"
+
+#: views/profile_form.php:64
 msgid "Change Password"
 msgstr "Changer le mot de passe"
 
-#: views/profile_form.php:47
+#: views/profile_form.php:65
 msgid "Forgot Password?"
 msgstr "Mot de passe oublié?"
 
-#: views/profile_form.php:52
+#: views/profile_form.php:70
 msgid "placeholder=\"Current Password\""
 msgstr "placeholder=\"Mot de passe actuel\""
 
-#: views/profile_form.php:53
+#: views/profile_form.php:71
 msgid "placeholder=\"New Password\""
 msgstr "placeholder=\"Nouveau mot de passe\""
 
-#: views/profile_form.php:54 views/register_form.php:29
+#: views/profile_form.php:72 views/register_form.php:29
 msgid "placeholder=\"Confirm Password\""
 msgstr "placeholder=\"Confirmation du mot de passe\""
 
-#: views/profile_form.php:76
+#: views/profile_form.php:94
 msgid "Enter password to delete your account"
 msgstr "Entrez votre mot de passe pour supprimer le compte"
 
-#: views/profile_form.php:79
+#: views/profile_form.php:97
 msgid "Delete"
 msgstr "Supprimer"
 
