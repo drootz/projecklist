@@ -58,7 +58,7 @@
         }
 
         // else render form//setup some variables
-        render("activation.php", "Account Activation", [
+        render("activation.php", _("Account Activation"), [
             'result'    => $action['result'],
             'text'      => $action['text']
         ]);

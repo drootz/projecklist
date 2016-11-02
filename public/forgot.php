@@ -7,7 +7,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
         // else render form
-        render("forgot_form.php", "Forgot Password");
+        render("forgot_form.php", _("Forgot Password"));
     }
 
     // else if user reached page via POST (as by submitting a form via POST)

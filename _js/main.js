@@ -1631,6 +1631,7 @@ $( document ).ready(function() {
 	        ajxFailDelete	=	'Échec de la suppression de votre profile. Veuillez réessayer plus tard.',
 	        ajxFailRegistered = 'Échec de l\'envois du courriel d\'activation. Veuillez réessayer plus tard.',
 	        ajxFailLang		=	'Échec du changement de langue',
+	        ajxFailContact	=	'Échec de l\'envois du message',
 	        v_pwdCheck      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.',
 	        v_nameCheck     =   'Les noms doivent contenir que des lettres, des espaces et des tirets.',
 	        v_alphaCheck    =   'Doit contenir uniquement des caractères alphabétique',
@@ -1654,6 +1655,7 @@ $( document ).ready(function() {
 	        ajxFailDelete	=	'Unable to delete your account at this time. Please try again later',
 	        ajxFailRegistered = 'Unable to submit the action emat this time. Please try again later',
 	        ajxFailLang		=	'Language Change Failed',
+	        ajxFailContact	=	'Unable to send the message at this time',
 	        v_pwdCheck      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
 	        v_nameCheck     =   'Names must contain only letters, space and dashes.',
 	        v_alphaCheck    =   'Must contain only letter characters',
@@ -2173,6 +2175,20 @@ $( document ).ready(function() {
 			.fail(function() {
 				$('#js-form-output').html("<span>" + ajxFailDelete + "</span>");
 				formFailReset(formForgot);
+			});
+		}
+	});
+
+	var formContact = $('#contact');
+	formContact.validate({
+		submitHandler: function(form) {
+			$.post('contact.php', formContact.serialize())
+			.done(function( data ) {
+				formDone(formContact, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>" + ajxFailContact + "</span>");
+				formFailReset(formContact);
 			});
 		}
 	});

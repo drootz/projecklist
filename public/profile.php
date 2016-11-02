@@ -10,7 +10,7 @@
         if ($rows != 0)
         {
             // else render form
-            render("profile_form.php", "Profile", [
+            render("profile_form.php", _("Profile"), [
                 "email" => $rows[0]["user_email"],
                 "language" => $rows[0]["language"],
                 "firstname" => $rows[0]["firstname"],

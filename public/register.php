@@ -15,14 +15,14 @@
         // Make data transfered from other page via GET avaialble
         if (isset($_GET['user_email']))
         {
-            render("register_form.php", "Registration", [
+            render("register_form.php", _("Registration"), [
                 'transferData'  => $_GET['user_email']
             ]);  
         }
         // else render form
         else
         {
-            render("register_form.php", "Registration");   
+            render("register_form.php", _("Registration"));   
         }
     }
     // else if user reached page via POST (as by submitting a form via POST)

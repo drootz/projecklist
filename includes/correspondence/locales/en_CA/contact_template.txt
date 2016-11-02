@@ -1,0 +1,25 @@
+Account Deletion Notification
+
+
+
+
+Hi {USERNAME},
+
+This is to confirm that we have received your correspondence. You can expect to receive a response shortly.
+
+Thanks!
+
+----
+
+{REASON}
+
+{CORR}
+
+
+----
+Copyright {YEAR} Projecklist, All Rights Reversed.
+
+
+
+
+You received this e-mail because you were a member of 'Projecklist'. If you think you should not have received this email, please contact {ADMIN_EMAIL}.

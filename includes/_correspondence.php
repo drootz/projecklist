@@ -45,6 +45,7 @@
 
         $mail->setFrom('noreply.tetsingstuff@gmail.com', 'Projecklist');
 
+
         if (isset($info['email']) && isset($info['username']))
         {
             $mail->addAddress($info['email'], $info['username']);
@@ -54,6 +55,15 @@
             userErrorHandler(0, '_correspondence.php', 'no email and username specified');
             exit;
         }
+
+        // If this is a "contact us" correspondence, change the reply email
+        if (isset($info['bcc_projecklist']) && $info['bcc_projecklist'])
+        {
+            $eml = 'projecklist@gmail.com';
+            $mail->addReplyTo($eml, 'Projecklist');
+            $mail->addBCC($eml);
+        }
+
 
         $mail->isHTML(true);
 
@@ -66,8 +76,10 @@
             $mail->Subject = "Notification";
         }
 
+
         $mail->Body    = $_body;
         $mail->AltBody = $_body_plain_txt;
+
 
         if(!$mail->send()) {
             // DEBUG
@@ -134,6 +146,16 @@
         if (isset($info['locale']))
         {
             $template = preg_replace('/{LOCALE}/', $info['locale'], $template);
+        }
+
+        if (isset($info['reason']))
+        {
+            $template = preg_replace('/{REASON}/', $info['reason'], $template);
+        }
+
+        if (isset($info['correspondence']))
+        {
+            $template = preg_replace('/{CORR}/', $info['correspondence'], $template);
         }
 
         $template = preg_replace('/{SITEPATH}/','http://dracine.local/~dracine/xdev/projecklist/public', $template);

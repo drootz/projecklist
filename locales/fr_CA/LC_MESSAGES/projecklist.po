@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-31 23:22-0400\n"
-"PO-Revision-Date: 2016-10-31 23:26-0400\n"
+"POT-Creation-Date: 2016-11-02 09:21-0400\n"
+"PO-Revision-Date: 2016-11-02 09:24-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -30,8 +30,9 @@ msgstr ""
 "X-Poedit-SearchPath-1: public\n"
 "X-Poedit-SearchPath-2: includes\n"
 
-#: includes/_functions.php:101 views/header_registration.php:120
-#: views/login_form.php:7 views/login_form.php:29 views/register_form.php:42
+#: includes/_functions.php:101 public/login.php:19 public/login.php:25
+#: views/header_registration.php:120 views/login_form.php:7
+#: views/login_form.php:29 views/register_form.php:42
 msgid "Sign in"
 msgstr "Connexion"
 
@@ -45,7 +46,7 @@ msgstr "ou"
 msgid "Register"
 msgstr "Inscription"
 
-#: includes/_functions.php:254
+#: includes/_functions.php:254 views/contact_form.php:16
 msgid " -- select an option -- "
 msgstr " -- choisir une option -- "
 
@@ -135,6 +136,31 @@ msgstr "Oups!"
 msgid "This link seems to have expired."
 msgstr "Ce lien est maintenant expiré."
 
+#: public/activation.php:61
+msgid "Account Activation"
+msgstr "Activation"
+
+#: public/contact.php:10 views/contact_form.php:7 views/footer.php:58
+#: views/profile_form.php:83
+msgid "Contact Us"
+msgstr "Contactez-Nous"
+
+#: public/contact.php:46
+msgid "Contact Us Ref# "
+msgstr "Contactez-Nous Réf# "
+
+#: public/contact.php:61
+msgid ""
+"Thank you for contacting us. Check your mailbox for the acknowledgement "
+"email and reference number."
+msgstr ""
+"Merci de nous contacter. Vérifiez votre boîte aux lettres pour l’accusé de "
+"réception et le numéro de référence."
+
+#: public/delete.php:14 views/delete_form.php:7 views/profile_form.php:96
+msgid "Delete Account"
+msgstr "Supprimer le compte"
+
 #: public/delete.php:65
 msgid "We are sad to see you leave..."
 msgstr "Nous sommes désolé de vous voir quitter…"
@@ -151,6 +177,10 @@ msgid "Unable to delete the account at this time. Please try again later"
 msgstr ""
 "Impossible de supprimer le compte pour l’instant. S’il vous plaît, réessayer "
 "plus tard."
+
+#: public/forgot.php:10
+msgid "Forgot Password"
+msgstr "Mot de passe oublié?"
 
 #: public/forgot.php:24 public/register.php:60
 msgid "The reCAPTCHA checkbox is required"
@@ -182,6 +212,10 @@ msgstr ""
 #: public/forgot.php:123
 msgid "Invalid email address."
 msgstr "Adresse courriel invalide."
+
+#: public/index.php:6
+msgid "Home"
+msgstr "Acceuil"
 
 #: public/login.php:101
 msgid ""
@@ -237,6 +271,10 @@ msgstr ""
 ". S'il vous plaît réessayer plus tard ou réinitialiser votre mot de passe "
 "manuellement. </span> (5)"
 
+#: public/profile.php:13 views/profile_form.php:4
+msgid "Profile"
+msgstr "Profil"
+
 #: public/profile.php:52 public/profile.php:62
 msgid "Name Updated!"
 msgstr "Nom mis à jour!"
@@ -285,6 +323,14 @@ msgstr "Mis à jour de mot de passe"
 msgid "Password updated!"
 msgstr "Mot de passe mis à jour!"
 
+#: public/projeckt.php:8
+msgid "Projeckt Form"
+msgstr "Formulaire Projecklist"
+
+#: public/register.php:18 public/register.php:25 public/registered.php:29
+msgid "Registration"
+msgstr "Inscription"
+
 #: public/register.php:39
 msgid "Email Confirmation Missmatch"
 msgstr "Confirmation du courriel incorrect!"
@@ -322,9 +368,17 @@ msgstr ""
 msgid "Sorry"
 msgstr "Désoler"
 
-#: views/delete_form.php:7 views/profile_form.php:89
-msgid "Delete Account"
-msgstr "Supprimer le compte"
+#: views/contact_form.php:17
+msgid "value=\"General Inquiry\""
+msgstr "value=\"Question Générale\""
+
+#: views/contact_form.php:17
+msgid "Genreal Inquiry"
+msgstr "Question Générale"
+
+#: views/contact_form.php:27 views/forgot_form.php:26
+msgid "Submit"
+msgstr "Soumettre"
 
 #: views/delete_form.php:14
 msgid ""
@@ -337,7 +391,7 @@ msgstr ""
 
 #: views/delete_form.php:15 views/profile_form.php:18 views/profile_form.php:38
 #: views/profile_form.php:56 views/profile_form.php:75
-#: views/profile_form.php:98
+#: views/profile_form.php:105
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -349,7 +403,7 @@ msgstr ""
 "S'il vous plaît, faites-nous part des raisons de votre départ pour que nous "
 "puissions nous améliorer!"
 
-#: views/delete_form.php:28
+#: views/delete_form.php:25
 msgid "Delete Now"
 msgstr "Supprimer définitivement"
 
@@ -379,7 +433,7 @@ msgstr ""
 msgid "form-navbar-titleAttr-langSwitch"
 msgstr "Langue"
 
-#: views/footer.php:59
+#: views/footer.php:65
 msgid "footer-copy"
 msgstr "Créé à Montréal"
 
@@ -399,10 +453,6 @@ msgstr ""
 #: views/forgot_form.php:15 views/login_form.php:15 views/register_form.php:14
 msgid "placeholder=\"Email\""
 msgstr "placeholder=\"Courriel\""
-
-#: views/forgot_form.php:26
-msgid "Submit"
-msgstr "Soumettre"
 
 #: views/header.php:15 views/header.php:17 views/header_registration.php:15
 #: views/header_registration.php:17
@@ -613,14 +663,10 @@ msgstr ""
 msgid "Email"
 msgstr "Courriel"
 
-#: views/login_form.php:21 views/profile_form.php:35 views/profile_form.php:95
+#: views/login_form.php:21 views/profile_form.php:35 views/profile_form.php:102
 #: views/register_form.php:26
 msgid "placeholder=\"Password\""
 msgstr "placeholder=\"Mot de passe\""
-
-#: views/profile_form.php:4
-msgid "Profile"
-msgstr "Profil"
 
 #: views/profile_form.php:9 views/profile_form.php:28 views/profile_form.php:48
 msgid "change"
@@ -667,11 +713,11 @@ msgstr "placeholder=\"Nouveau mot de passe\""
 msgid "placeholder=\"Confirm Password\""
 msgstr "placeholder=\"Confirmation du mot de passe\""
 
-#: views/profile_form.php:94
+#: views/profile_form.php:101
 msgid "Enter password to delete your account"
 msgstr "Entrez votre mot de passe pour supprimer le compte"
 
-#: views/profile_form.php:97
+#: views/profile_form.php:104
 msgid "Delete"
 msgstr "Supprimer"
 

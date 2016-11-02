@@ -26,7 +26,7 @@
                 $title = _('Account Not Activated');
             }
 
-            render("registered.php", "Registration", [
+            render("registered.php", _("Registration"), [
                 'bodyTitle'     => $title,
                 'user_id'       => $_GET['user_id'],
                 'user_email'    => $_GET['user_email']

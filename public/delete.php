@@ -11,7 +11,7 @@
             $key = getDeleteKey();
             if ($_GET['key'] == $key)
             {
-                render("delete_form.php", "Delete Account", [
+                render("delete_form.php", _("Delete Account"), [
                     'key' => $key
                 ]);
             }

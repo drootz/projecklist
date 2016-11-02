@@ -251,7 +251,7 @@
         if (isset($_SESSION['form_PO_support']) && count($_SESSION['form_PO_support']) != 0)
         {
             $codeBloc  = "<select style=\"width:100%;\" name=\"opt_lang\">";
-            $codeBloc .= "<option disabled selected value>" . _(" -- select an option -- ") . "</option>";
+            $codeBloc .= "<option disabled selected>" . _(" -- select an option -- ") . "</option>";
             
             foreach ($_SESSION['form_PO_support'] as $display => $code) {
                 $codeBloc .= "<option value=\"" . $code . "\">";

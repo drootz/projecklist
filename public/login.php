@@ -16,13 +16,13 @@
         // Make data transfered from other page via GET avaialble
         if (isset($_GET['user_email']))
         {
-            render("login_form.php", "Sign in", [
+            render("login_form.php", _("Sign in"), [
                 'user_email'    => $_GET['user_email']
             ]);  
         }
         else
         {
-            render("login_form.php", "Sign in");
+            render("login_form.php", _("Sign in"));
         }
     }
 

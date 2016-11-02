@@ -1,0 +1,25 @@
+Accusé de réception 
+
+
+
+
+Bonjour {USERNAME},
+
+Ceci est pour confirmer que nous avons reçu votre correspondance. Vous pouvez vous attendre à recevoir une réponse sous peu.
+
+Merci!
+
+----
+
+{REASON}
+
+{CORR}
+
+
+----
+Copyright {YEAR} Projecklist, tous droits réservés.
+
+
+
+
+Vous avez reçu ce courriel parce que vous aviez un compte sur 'Projecklist'. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.

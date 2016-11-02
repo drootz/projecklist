@@ -82,7 +82,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:Helvetica, Arial, sans-serif;">
                     <tr>
                       <td width="600" class="mobile" align="left" style="font-size:12px; font-weight: normal; line-height:18px; color: #FFFFFF;">
-                        CONFIRMATION D'INSCRIPTION - Cliquer le bouton pour activé votre compte.&nbsp;-&nbsp;
+                        Correspondence Acknowledgement&nbsp;-&nbsp;
                       </td>
                     </tr>
                   </table>
@@ -140,27 +140,15 @@
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight: 300; line-height:22px;">
 
                         <br />
-                        <p>Bonjour <strong>{USERNAME}</strong>!</p>
-                        <p>Nous vous remercions pour votre inscription.</p>
-                        <p>Veuillez confirmer votre inscription en en cliquant sur ce bouton!</p>
+                        <p>Hi <strong>{USERNAME}</strong>,</p>
+                        <p>This is to confirm that we have received your correspondence. You can expect to receive a response shortly.</p>
+                        <p>The Projecklist Team</p>
                         <br />
 
-                          <!-- Start Button -->
-                          <table cellpadding="5" cellspacing="0" border="0" width="150" height="36" bgcolor="#1EAEDB" style="border-radius:5px;">
-                            <tr>
-                              <td valign="middle" height="36" style="font-size:16px; font-weight:700;" align="center">
-                                <a href="{SITEPATH}/activation.php?lang={LOCALE}&email={EMAIL}&key={KEY}" target="_blank" style="color:#ffffff; display: inline-block; text-decoration: none; line-height:36px; width:150px; font-weight:bold; padding-left: 5px; padding-right: 5px;">Activation</a>
-                              </td>
-                            </tr>
-                          </table>
-                          <!-- End Button -->
-
-
-                        <!-- <p>Si le bouton ne fonctionne pas, veuillez copier et coller l'adresse suivante dans votre navigateur pour activer votre compte:</p>
-                        <p style="color: #1EAEDB;">{SITEPATH}/activation.php?lang={LOCALE}&email={EMAIL}&key={KEY}</p>
-                        <br /> -->
-                        
-                        <p>L'équipe Projecklist</p>
+                        <hr style="border: 1px solid #d6d6d6;"/>
+                        <br />
+                        <p style="font-weight: 700;">{REASON}</p>
+                        <p>{CORR}</p>
                         <br />
 
                       </td>
@@ -192,8 +180,8 @@
                     <tr>
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight: normal; line-height:18px; color: #969696"">
 
-                        <p>&copy; {YEAR} <strong>Projecklist</strong>, tous droits réservés.</p>
-                        <p>Vous avez reçu ce courriel parce que vous êtes actuellement membre de <strong>Projecklist</strong>. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à <a href="mailto:{ADMIN_EMAIL}?subject=Courriel%20reçu%20par%20erreur%20de%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+                        <p>&copy; {YEAR} <strong>Projecklist</strong>, All Rights Reserved.</p>
+                        <p>You received this e-mail because you were a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}?subject=Email%20Received%20in%20Error%20by%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
 
                       </td>
                     </tr>

@@ -49,9 +49,15 @@
                                 <ul class="m-info">
                                     <li class="m-menu-li-drop is-not-toggled" <?= "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?> >
                                         <!-- $_SESSION['lang'] -->
-                                        <?= htmlspecialchars($_SESSION['currentLanguage']) . "<span class=\"fa fa-globe fa-lg\"></span><span class=\"m-currentlanguage\"></span>"; ?>
+                                        <?= htmlspecialchars($_SESSION['currentLanguage']) . "<span class=\"fa fa-globe fa-lg\"></span>"; ?>
+                                        <!-- <span class=\"m-currentlanguage\"></span> -->
                                         <?= setLanguageMenu(); ?>
                                     </li>
+
+                                    <?php if (!empty($_SESSION["id"])): ?>
+                                        <li><a href="contact.php"><?= _('Contact Us'); ?><span class="fa fa-envelope fa-lg"></span></a></li>
+                                    <?php endif ?>
+
                                 </ul>
                             </div>
 

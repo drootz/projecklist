@@ -16,17 +16,16 @@
                             <hr />
                             <p><?= _( 'Please let us know why your are leaving us so we can get better and get you back!' ); ?></p>
 
-                            <input type="number" class="visuallyhidden" name="fld_delete_key" id="f-delete-key" required aria-required="true" value="<?= $key ?>" maxlength="500" />
-
                             <textarea name="txt_profile_delete" id="f-profile-delete" rows="2" maxlength="500"></textarea>
                         </div>
                     </div> <!-- .row END -->
                 </fieldset>
 
                 <div class="m-login-button">
-                    <br/>
                     <button class="button" type="submit" value="submit" id="f-delete-account" name="submit"><?= _("Delete Now"); ?></button>
                 </div>
+
+                <input type="number" class="visuallyhidden" name="fld_delete_key" id="f-delete-key" required aria-required="true" value="<?= $key ?>" maxlength="500" />
 
             </fieldset>
         </div>

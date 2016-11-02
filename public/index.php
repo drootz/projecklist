@@ -3,6 +3,6 @@
 	//**** config
 	require_once(__DIR__ . "/../includes/config.php");
 
-    render("home.php", "Home");
+    render("home.php", _("Home"));
 
 ?>

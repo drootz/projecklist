@@ -79,6 +79,13 @@
         </div> <!-- .row END -->
 
         <div class="row">
+            <div class="col-pad-06">
+                <div><span><a href="contact.php"><?= _( 'Contact Us' ); ?></a></span></div>
+            </div>
+        </div> <!-- .row END -->
+
+
+        <div class="row">
             <div class="col-pad-12">
                 <hr />
             </div>
