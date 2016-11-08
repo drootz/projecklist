@@ -1,4 +1,13 @@
 
+        <div class="m-float-btn">
+            <div class="l-wrapper is-relative">
+                <div class="m-float-radial">
+                    <!-- fa icon loaded on pageload JS loadTheme(); -->
+                    <div class="js-menu-theme" <?= "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?>><span class="fa fa-lg"></span></div>
+                </div>
+            </div>
+        </div>
+        
         <div class="m-hero">
             <div class="l-wrapper">
                 <div class="row">

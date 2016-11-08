@@ -79,6 +79,7 @@
                             // remember that user's now logged in by storing user's ID in session
                             $_SESSION["id"] = $row["id"];
                             $_SESSION["user_name"] = $row["firstname"];
+                            $_SESSION['last_action'] = time();
 
                             // Reset password attempt counter on successful sign in
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, psw_unlock_datetime = NULL, last_loggedin_date = ? WHERE user_email = ?", $now, $login_email);
@@ -140,6 +141,7 @@
                             // remember that user's now logged in by storing user's ID in session
                             $_SESSION["id"] = $row["id"];
                             $_SESSION["user_name"] = $row["firstname"];
+                            $_SESSION['last_action'] = time();
 
                             // Reset password attempt counter on successful sign in
                             $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, psw_unlock_datetime = NULL, last_loggedin_date = ? WHERE user_email = ?", $nowStamp, $login_email);
@@ -184,6 +186,7 @@
                         $_SESSION["id"] = $row["id"];
                         $_SESSION["lang"] = $row["language"];
                         $_SESSION["user_name"] = $row["firstname"];
+                        $_SESSION['last_action'] = time();
 
                         // Reset password attempt counter on successful sign in
                         $attemptReset = DB::query("UPDATE users SET psw_attempt = 0, psw_unlock_datetime = NULL, last_loggedin_date = ? WHERE user_email = ?", $now, $login_email);

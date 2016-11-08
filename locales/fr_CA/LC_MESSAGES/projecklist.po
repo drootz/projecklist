@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-02 09:21-0400\n"
-"PO-Revision-Date: 2016-11-02 09:24-0400\n"
+"PO-Revision-Date: 2016-11-03 23:26-0400\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -2068,7 +2068,7 @@ msgstr "Outils Webmestres disponnible"
 
 #: views/projeckt_form.php:3092 views/projeckt_form.php:3094
 msgid "cbx_seo_tool_google"
-msgstr "\"<i>Google Search Console</i>\""
+msgstr "Google Search Console"
 
 #: views/projeckt_form.php:3094
 msgid "https://www.google.ca/webmasters/"
@@ -2076,7 +2076,7 @@ msgstr "https://www.google.com/webmasters/?hl=fr"
 
 #: views/projeckt_form.php:3098 views/projeckt_form.php:3100
 msgid "cbx_seo_tool_bing"
-msgstr "\"<i>Bing Webmaster Tools</i>\""
+msgstr "Bing Webmaster Tools"
 
 #: views/projeckt_form.php:3100
 msgid "http://www.bing.com/toolbox/webmaster"
@@ -2084,7 +2084,7 @@ msgstr ""
 
 #: views/projeckt_form.php:3104 views/projeckt_form.php:3106
 msgid "cbx_seo_tool_yandex"
-msgstr "\"<i>Yandex Webmaster</i>\""
+msgstr "Yandex Webmaster"
 
 #: views/projeckt_form.php:3106
 msgid "https://webmaster.yandex.com"

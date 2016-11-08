@@ -2,7 +2,7 @@
     <div class="l-wrapper">
     
 	    <div class="m-login">
-	        <h3><?= htmlspecialchars($result); ?></h3>
+	        <h2><?= htmlspecialchars($result); ?></h2>
 	        <p><?= htmlspecialchars($text); ?></p>
 	    </div>
 

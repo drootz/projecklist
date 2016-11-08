@@ -131,15 +131,6 @@
 
     <div id="f-container" class="l-form-container is-clear">
 
-        <div class="m-float-btn">
-            <div class="l-wrapper is-relative">
-                <div class="m-float-radial">
-                    <!-- fa icon loaded on pageload JS loadTheme(); -->
-                    <div class="js-menu-theme" <?= "title=\"" . _( 'form-navbar-titleAttr-langSwitch' ) . "\""; ?>><span class="fa fa-lg"></span></div>
-                </div>
-            </div>
-        </div>
-
         <div class="m-theme-indicator"></div>
 
         <nav class="m-navbar">
@@ -151,7 +142,10 @@
                 <div class="m-mobile-menu"><span class="fa fa-lg fa-bars" aria-hidden="true"></span></div class="m-mobile-menu">
                 <ul class="m-menu">
                     <!-- <li id="f-debug-fill-form" title="debug -> fill form button"><span class="fa fa-bug fa-lg"></span></li> -->
-                    <li <?= "title=\"" . _( 'form-navbar-titleAttr-getStarted' ) . "\""; ?>><a href="projeckt.php"><span class="fa fa-lg fa-rocket" aria-hidden="true"></span></a></li>
+                    <li <?= "title=\"" . _( 'form-navbar-titleAttr-getStarted' ) . "\""; ?>><a href="projeckt.php"><span class="fa fa-lg fa-folder-open" aria-hidden="true"></span></a></li>
+                    <?php if (!empty($_SESSION["id"])): ?>
+                    <li <?= "title=\"" . _( 'form-navbar-titleAttr-archive' ) . "\""; ?>><a href="archive.php"><span class="fa fa-lg fa-folder" aria-hidden="true"></span></a></li>
+                    <?php endif ?>
                     <!-- fa icon loaded on pageload JS loadTheme(); -->
                     <li class="js-menu-theme" <?= "title=\"" . _( 'form-navbar-titleAttr-toggleTheme' ) . "\""; ?>><span class="fa fa-lg"></span></li>
                 </ul>

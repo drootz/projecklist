@@ -4,7 +4,7 @@
         <div class="m-login">
             <fieldset>
 
-                <h3><?= _( 'Sign in' ); ?></h3>
+                <h2><?= _( 'Sign in' ); ?></h2>
 
                 <div id="js-form-output" class="m-form-output"></div>
 

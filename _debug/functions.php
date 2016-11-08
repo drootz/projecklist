@@ -61,4 +61,28 @@
 
 	}
 
+
+	function sendtocsv($array) {
+
+        $_postsLabel = [];
+        $_postsValue = [];
+		foreach ($array as $key => $value) {
+            $_postsLabel[$key] = $key;
+            $_postsValue[$key] = $value;
+		}
+
+        $output = array(
+            "label" => $_postsLabel,
+            "value" => $_postsValue
+        );
+
+        $attach_dir = __DIR__.'/output/';
+		$fp = fopen($attach_dir.'file.csv', 'w');
+		foreach ($output as $el) {
+			fputcsv($fp, $el);
+		}
+		fclose($fp);
+
+	}
+
  ?>

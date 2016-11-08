@@ -1196,7 +1196,74 @@ $( document ).ready(function() {
 		}
  	});
 
+ 	// Scroll to top
+ 	$(".js-menu-totop").click( function() {
+		$("html, body").animate({
+			scrollTop: $("body").offset().top
+		}, 500);
+ 	});
 
+	// Scroll to bottom
+ 	$(".js-menu-tobottom").click( function() {
+		$("html, body").animate({
+			scrollTop: $(document).height()
+		}, 500);
+ 		
+ 	});
+
+	// Submit page form "save"
+ 	$(".js-menu-save").click( function() {
+ 		$( "#f-save" ).trigger( "click" );
+
+ 		// DEBUG
+		// $("html, body").animate({
+		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
+		// }, 500);
+ 	});
+
+	// Submit page form "submit"
+ 	$(".js-menu-submit").click( function() {
+ 		$( "#f-submit" ).trigger( "click" );
+
+ 		// DEBUG
+		// $("html, body").animate({
+		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
+		// }, 500);
+ 	});
+
+	// Submit page form "reset"
+ 	$(".js-menu-reset").click( function() {
+ 		$( "#f-reset" ).trigger( "click" );
+ 	});
+
+
+	// Submit page form "save"
+ 	$(".js-archive-delete").click( function() {
+ 		var el = $(this);
+ 		el.parents('td').find('.js-submit').trigger( "click" );
+ 		// $( "#f-save" ).trigger( "click" );
+
+ 		// DEBUG
+		// $("html, body").animate({
+		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
+		// }, 500);
+ 	});
+
+
+
+
+	
+	$("#f-project-name").keyup( function() {
+		var el = $(this).val();
+		if (el)
+		{
+			$('#js-projeckt-title').text(el);	
+		}
+		else
+		{
+			$('#js-projeckt-title').text("New Projeckt!");
+		}
+	});
 
 
  	// Set autoGrow of textarea to all textarea tags
@@ -1383,7 +1450,7 @@ $( document ).ready(function() {
 		}
 		else
 		{
-			console.log("i have NO selection");
+			// console.log("i have NO selection");
 			if (thisSelect.hasClass("has-selection"))
 			{
 				thisSelect.removeClass("has-selection");
@@ -1641,7 +1708,9 @@ $( document ).ready(function() {
 	        v_confirmMail   =   'Confirmation du courriel invalide',
 	        v_confirmPsw    =   'Confirmation du mot de passe invalide',
 	        v_rangePsw      =   'Le mot de passe doit être compter au moins 6 caractères, mais pas plus de 20. Il doit avoir au moins une minuscule, une majuscule et un caractère numérique. Seuls les caractères spéciaux suivants sont valide @*_-!.'
-	        v_usernameCheck =   'Ce courriel est déjà enregistré';
+	        v_usernameCheck =   'Ce courriel est déjà enregistré',
+	        v_projektCheck	=	'Ce nom de projet est déjà enregistré',
+	        v_delConf 		=	'Êtes-vous certain de vouloir supprimer ce projet?';
 	}
 	// Default to english (en_CA)
 	else
@@ -1665,7 +1734,9 @@ $( document ).ready(function() {
 	        v_confirmMail   =   'Email Confirmation Mismatch',
 	        v_confirmPsw    =   'Password Confirmation Mismatch',
 	        v_rangePsw      =   'The password must at least 6 characters long but no more then 20. It must have at least one lower-case, one upper-case and one digit character. Only the following special characters are supported @*_-!.',
-	        v_usernameCheck =   'This email is already registered';
+	        v_usernameCheck =   'This email is already registered',
+	        v_projektCheck	=	'This Projekt name is already registered',
+	        v_delConf 		=	'Are you sure you want to delete this projeckt?';
 	}
 
 	// Declare jQuery Validation custom method
@@ -1742,6 +1813,64 @@ $( document ).ready(function() {
 
 		// remove label
 		var el = $(this).next('#f-email-exist');
+		if (el.length)
+		{
+		    el.remove();
+		}
+
+	});
+
+
+	// Check if projekt name already exist
+	$("#f-project-name").blur(function () {
+
+		var el = $(this);
+		var value = this.value;
+		var elfor = el.attr( "id" );
+
+
+	    $.ajax(
+	    {
+	        type: "POST",
+	        url: "ajaxcheckprojekt.php",
+	        dataType: "json",
+	        data: { "submit": "projektCheck", "name": value },
+	        success: function(data)
+	        {
+	        	// Projeckt name exist in database
+	            if (data.exist)
+	            {	
+	            	// If existing projeckt
+			    	if(get('pid'))
+	            	{
+	            		// Verify This is not the same projeckt
+		            	if (data.pid != get('pid'))
+		            	{
+							el.after( "<label id=\"f-name-exist\" class=\"error\" for=\"" + elfor + "\">" + v_projektCheck + "</label>" );
+		            	}
+	            	}
+	            	// If new projekt
+	            	else
+	            	{
+						el.after( "<label id=\"f-name-exist\" class=\"error\" for=\"" + elfor + "\">" + v_projektCheck + "</label>" );
+	            	}
+	            }
+	        },
+	        error: function(xhr, textStatus, errorThrown)
+	        {	
+	        	console.log("AJAX ERROR:\n" + xhr + "\n" + textStatus + "\n" + errorThrown);
+	            return false;
+	        }
+	    });
+
+
+	});
+
+	// Remove error message to avoid multiple error message label.
+	$("#f-project-name").focus(function () {
+
+		// remove label
+		var el = $(this).next('#f-name-exist');
 		if (el.length)
 		{
 		    el.remove();
@@ -1840,33 +1969,26 @@ $( document ).ready(function() {
 		// Output an error message
 		else
 		{
-			if ($('#js-form-output').length)
+			// Delete a record
+			if (("del_id" in obj))
 			{
-				$('#js-form-output').html('<span>' + obj.data + '</span>');
+				if (confirm(v_delConf)) { 
+					$(obj.del_id).remove();	
+				}
 			}
-			$(document).scrollTop( form.offset().top );
+
+			// Output an error message
+			else
+			{
+				if ($('#js-form-output').length)
+				{
+					$('#js-form-output').html('<span>' + obj.data + '</span>');
+				}
+				$(document).scrollTop( form.offset().top );	
+			}
 		}
 	}
 
-	var formProjecklist = $('#projecklist');
-	formProjecklist.validate({
-		submitHandler: function(form) {
-			$.post('projeckt.php', formProjecklist.serialize(), function(data) {
-				if(data === "SUCCESS")
-				{	
-					// redirect to home screen
-					// window.location.href = 'index.php';
-					$('#results').html(data);
-				}
-				else
-				{
-					// output errors detected on the form
-					$('#results').html(data);
-
-				}
-			});
-		}
-	});
 
 	var formLogin = $('#login')
 	formLogin.validate({
@@ -2194,6 +2316,36 @@ $( document ).ready(function() {
 	});
 
 
+	var formProjecklist = $('#projecklist')
+	formProjecklist.validate({
+		submitHandler: function(form) {
+			$.post('projeckt.php', formProjecklist.serialize())
+			.done(function( data ) {
+				formDone(formProjecklist, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>FAILED SUBMISSION</span>"); // TODO change label here
+				formFailReset(formProjecklist);
+			});
+		}
+	});
+
+
+	var formDelProjeckt = $('#delete_projeckt')
+	formDelProjeckt.validate({
+		submitHandler: function(form) {
+			$.post('archive.php', formDelProjeckt.serialize())
+			.done(function( data ) {
+				formDone(formDelProjeckt, data);
+			})
+			.fail(function() {
+				$('#js-form-output').html("<span>FAILED SUBMISSION</span>"); // TODO change label here
+				formFailReset(formDelProjeckt);
+			});
+		}
+	});
+
+
 
 
 
@@ -2208,6 +2360,10 @@ $( document ).ready(function() {
 
  	// DEBUG menu button click behavor -> Fill all input/textarea fieldsets
 	$("#f-debug-fill-form").click( function() {
+
+		// var currentPos = document.documentElement.scrollTop;
+		var doc = document.documentElement;
+		var currentPos = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
 		$(".js-btn-show").each( function() {
 			$(this).trigger( "click" );
@@ -2286,7 +2442,15 @@ $( document ).ready(function() {
 						}
 						else if (/\bproject\b/ig.test(thisField.attr("id")))
 						{
-							thisField.val("XXXX's website");
+							var currentdate = new Date(); 
+							var datetime = currentdate.getDate() + "/"
+											+ (currentdate.getMonth()+1)  + "/" 
+											+ currentdate.getFullYear() + " @ "  
+											+ currentdate.getHours() + ":"  
+											+ currentdate.getMinutes() + ":" 
+											+ currentdate.getSeconds();
+
+							thisField.val("Projeckt: " + datetime);
 							thisField.keyup();
 						}
 						else
@@ -2324,17 +2488,17 @@ $( document ).ready(function() {
 			var thisField = $(this);
 			if (!thisField.parents("[class*='js-fieldset']").hasClass("is-hidden")) {
 				if (!thisField.hasClass("is-hidden") && $(this).attr("name") !== "g-recaptcha-response") {
-					thisField.val("First line od text\nSecond line of text");
+					thisField.val("textarea");
 					thisField.keyup();
 				}
 			}
 		});
 
-		$("#f-submit").focus();
+		// $("#f-submit").focus();
 
 		// scroll to btn when finished *ios fix
 		$("html, body").animate({
-			scrollTop: $("#f-submit").offset().top - vh/2
+			scrollTop: currentPos
 		}, 500);
 
 	});
@@ -2358,6 +2522,169 @@ $( document ).ready(function() {
 		});
 
 	});
+
+	// Function used in ajax call to edit existing projeckt
+	function unhideField(el, selectorString) {
+		if (el.parents(selectorString).hasClass("is-hidden"))
+		{
+			el.parents(selectorString).removeClass("is-hidden");
+			el.parents(selectorString).addClass("is-visible");
+		}
+	}
+
+	function loadProjeckt(obj) {
+	    for (key in obj)
+	    {
+	    	if ( key != 'id' && key != 'user_id' && key != 'projeckt_ref' && key != 'lastmodified_datetime'  )
+	    	{
+	    		if (obj[key] != null)
+	    		{
+	        		// console.log(key + ": " + obj[key]);
+	        		var fieldType = key.substr(0,3),
+	        			keyString = key.slice(4),
+	        			len = keyString.length,
+	        			i = 0;
+
+	        		while (true)
+	        		{
+	        			if (keyString[i] == '_')
+	        			{
+	        				break;
+	        			}
+
+	        			if (i == len)
+	        			{
+	        				break;
+	        			}
+	        			i++;
+	        		}
+
+	        		var fieldCategory = keyString.substring(0,i);
+	        		var el = document.getElementsByName(key)[0];
+	        		var thisField = $('#' + el.id);
+
+	        		// Identify the exact element ID for radio type input
+	        		if (fieldType == 'rdo')
+	        		{
+	        			var els = document.getElementsByName(key);
+	        			for (i = 0; i < els.length; i++) { 
+						    if (els[i].value == obj[key])
+						    {
+	        					thisField = $('#' + els[i].id);
+						    	break;
+						    }
+						}
+	        		}
+
+					switch(fieldType) {
+						// Text
+					    case 'fld':
+							unhideField(thisField,"[class*='js-fieldset']");
+						    thisField.val(obj[key]);
+							thisField.keyup();
+					        break;
+					    // Tel
+					    case 'tel':
+							unhideField(thisField,"[class*='js-fieldset']");
+						    thisField.val(obj[key]);
+							thisField.keyup();
+					        break;
+					    // Email
+					    case 'eml':
+							unhideField(thisField,"[class*='js-fieldset']");
+						    thisField.val(obj[key]);
+							thisField.keyup();
+					        break;
+					    // Select Drop Down Selection
+					    case 'opt':
+							unhideField(thisField,"[class*='js-fieldset']");
+					        $('#' + el.id + ' option[value="' + obj[key] +'"]').prop("selected", true);
+						        // If bug try this code instead
+								// $('#' + el.id + ' option').filter(function(){
+								//     return this.value == obj[key];
+								// }).prop("selected", true);
+					        break;
+						// Textarea
+					    case 'txt':
+							unhideField(thisField,"[class*='js-fieldset']");
+					    	if (thisField.hasClass('is-hidden'))
+					    	{
+					    		thisField.removeClass('is-hidden');
+					    		thisField.addClass('is-visible');
+					    		thisField.parents('.l-check-container').children('input:checkbox').prop('checked', true);
+					    	}
+
+						    thisField.val(obj[key]);
+							thisField.keyup();
+					        break;
+						// Select Drop Down Selection
+					    case 'hra':
+							unhideField(thisField,"[class*='js-fieldset']");
+					        $('#' + el.id + ' option[value="' + obj[key] +'"]').prop("selected", true);
+					        break;
+						// Select Drop Down Selection
+					    case 'hhm':
+							unhideField(thisField,"[class*='js-fieldset']");
+					        $('#' + el.id + ' option[value="' + obj[key] +'"]').prop("selected", true);
+					        break;
+						// Radio
+					    case 'rdo':
+							thisField.prop("checked", true);
+							toggleArea(thisField);
+					        break;
+						// Checkbox
+					    case 'cbx':
+							unhideField(thisField,"[class*='js-fieldset']");
+					    	if (thisField.parents(".js-toggle-area").hasClass("is-hidden"))
+					    	{
+								thisField.parents(".js-toggle-area").removeClass("is-hidden");
+								thisField.parents(".js-toggle-area").addClass("is-visible");
+					    		thisField.parents('.l-check-container').children('input:checkbox').prop('checked', true);
+					    	}
+							thisField.prop('checked', true);
+					        break;
+					    default:
+					        // Not Applicable
+					}
+	    		}
+	    	}
+	    }
+	}
+
+
+	// Function to detect GET parameters
+    function get(name){
+	   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+	      return decodeURIComponent(name[1]);
+	}
+
+	// Detect existing data on project_form.php via the GET parameter when user want to edit an existing project
+    $(function() {
+    	if(get('pid'))
+    	{
+		    $.ajax(
+		    {
+		        type: "POST",
+		        url: "ajaxobtainPID.php",
+		        dataType: "json",
+		        data: { "submit": "getData", "projeckt_id": get('pid') },
+		        success: function(data)
+		        {
+		            if (data.exist)
+		            {
+						loadProjeckt(data.projeckt);
+						$('#f-project-name').focus();
+						$(document).scrollTop(0);
+		            }
+		        },
+		        error: function(xhr, textStatus, errorThrown)
+		        {	
+		        	console.log("AJAX ERROR:\n" + xhr + "\n" + textStatus + "\n" + errorThrown);
+		            return false;
+		        }
+		    });
+    	}
+    });
 
 }); // DOCUMENT.READY END
 
@@ -2407,6 +2734,30 @@ $( window ).scroll(function() {
 	    else
 	    {
 			var themeButton = $(".m-float-radial .js-menu-theme");
+	    	if (themeButton.is(":visible"))
+	    	{
+	    		themeButton.hide();
+	    	}
+	    }	
+	}	
+
+
+	// Trigger the theme toggle button onScroll 
+	var secFormStart = $("#projecklist");
+	if (secFormStart.length)
+	{
+		var menuPos = secFormStart.offset().top;
+	    if (scrollPostion > menuPos)
+	    {
+			var themeButton = $(".js-menu-float");
+	    	if (!themeButton.is(":visible"))
+	    	{
+	    		themeButton.show();
+	    	}
+	    }
+	    else
+	    {
+			var themeButton = $(".js-menu-float");
 	    	if (themeButton.is(":visible"))
 	    	{
 	    		themeButton.hide();
@@ -2526,6 +2877,7 @@ $( window ).scroll(function() {
     		thisSection.addClass("animate");
     	}
     });
+
 
 
 });

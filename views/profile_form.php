@@ -1,7 +1,7 @@
 <div class="view-profile th-divider">
     <div class="m-profile">
         
-        <h3><?= _( 'Profile' ); ?></h3>
+        <h2><?= _( 'Profile' ); ?></h2>
 
         <div class="row">
             <div class="col-pad-06">
