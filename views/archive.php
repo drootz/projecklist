@@ -1,19 +1,20 @@
 <div class="view-archive th-divider">
 <div class="l-wrapper">
 
-    <h2><?= _( 'Projeckt Archive' ); ?></h2>
+    <h2><?= _( 'Project Archive' ); ?></h2>
 
     <div id="js-form-output" class="m-form-output"></div>
     
     <?php if (isset($projeckts)): ?>
     <form id="delete_projeckt" method="get" action="?" autocomplete="off">
-    <table>
+    <table class="m-table">
 
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Projeckt Name</th>
-                <th>Last Modified</th>
+                <th><?= _('ID'); ?></th>
+                <th><?= _('Project Name') ?></th>
+                <th><?= _('Last Modified') ?></th>
+                <!-- <th colspan="3"><?php // _('Action') ?></th> -->
                 <th></th>
                 <th></th>
                 <th></th>
@@ -26,11 +27,10 @@
                 <td><?= $projeckt["projeckt_ref"] ?></td>
                 <td><?= $projeckt["fld_project_name"] ?></td>
                 <td><?= $projeckt["lastmodified_datetime"] ?></td>
-                <td><span class="js-archive-delete fa fa-lg fa-download" aria-hidden="true"></span></td>
-                <td><a href="projeckt.php?pid=<?= $projeckt["projeckt_id"] ?>&ref=<?= $projeckt["projeckt_ref"] ?>&pname=<?= $projeckt["fld_project_name"] ?>"><span class="js-archive-delete fa fa-lg fa-pencil-square-o" aria-hidden="true"></span></a></td>
-                <td>
+                <td class="m-cell-ico"><span class="js-archive-delete fa fa-lg fa-download" aria-hidden="true"></span></td>
+                <td class="m-cell-ico"><a href="projeckt.php?pid=<?= $projeckt["projeckt_id"] ?>&ref=<?= $projeckt["projeckt_ref"] ?>&pname=<?= $projeckt["fld_project_name"] ?>"><span class="js-archive-delete fa fa-lg fa-pencil-square-o" aria-hidden="true"></span></a></td>
+                <td class="m-cell-ico">
                     <input class="visuallyhidden js-submit" type="submit" name="delete" value="<?= $projeckt["projeckt_id"] ?>" />
-                    <!-- <span class="js-archive-delete">Delete</span> -->
                     <span class="js-archive-delete fa fa-lg fa-trash" aria-hidden="true"></span>
                 </td>
             </tr>
@@ -39,9 +39,10 @@
         
     </table>
     </form>
+    <p class="js-table-error is-hidden"><?= _('No project saved yet!'); ?> <a href="projeckt.php"><?= _('Get Started'); ?></a></p>
     <?php endif ?>
     <?php if (!isset($projeckts)): ?>
-        <p>No projeckt saved yet! <a href="projeckt.php">Get Started</a></p>
+        <p><?= _('No project saved yet!'); ?> <a href="projeckt.php"><?= _('Get Started'); ?></a></p>
     <?php endif ?>
 </div>
 </div>

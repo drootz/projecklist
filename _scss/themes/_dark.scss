@@ -281,6 +281,26 @@ body.th-dark {
 	}
 
 
+
+	/* Zebra striping */
+	tr:nth-of-type(odd) { 
+	  background: $dark; 
+	}
+
+	/* Zebra striping */
+	tr:nth-of-type(even) { 
+	  background: lighten($dark, 10%); 
+	}
+
+	th { 
+	  background: $light; 
+	  color: $dark;
+	}
+
+	td, th { 
+	  border-color: lighten($dark, 30%);
+	}
+
 }
 
 
@@ -291,5 +311,6 @@ html.touch .th-dark select {
 	&.has-selection {
 		border-color: $dark;
 	}
+
 }
 

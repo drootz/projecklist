@@ -40,7 +40,7 @@
                         {
                             // ERROR
                             $output = [
-                                'data'      => _('This Projekt name is already registered')
+                                'data'      => _('This Project name is already registered.')
                             ];
                             echo(json_encode($output));
                             exit;
@@ -102,7 +102,7 @@
 
                     // SUCCESS
                     $output = [
-                        'data'          => _('Projeckt ID ') . $clean[0]['projeckt_ref'] . _(' Saved!'),
+                        'data'          => _('Project ID ') . $clean[0]['projeckt_ref'] . _(' Saved!'),
                         'modal'         => true,
                         'redirect'      => true,
                         'location'      => 'archive.php'
@@ -114,7 +114,7 @@
                 // IF NEW PROJECT
                 else
                 {
-                    // query database for projekt name for this user if it exist already
+                    // query database for projeckt name for this user if it exist already
                     $exist = DB::query("SELECT id FROM projecklist WHERE user_id = ? AND fld_project_name = ?", $_SESSION['id'], $post['fld_project_name']);
                             
                     // If name exist
@@ -122,7 +122,7 @@
                     {   
                         // Name exist
                         $output = [
-                            'data'      => _('This projekt name is already registered.'),
+                            'data'      => _('This Project name is already registered.'),
                             'modal'     => true
                         ];
                         echo(json_encode($output));
@@ -209,7 +209,7 @@
 
                     // SUCCESS
                     $output = [
-                        'data'          => _('Form Saved!'),
+                        'data'          => _('Saved!'),
                         'modal'         => true,
                         'redirect'      => true,
                         'location'      => 'archive.php'
@@ -258,7 +258,7 @@
 
                 // DEBUG
                 $output = [
-                    'data'          => _('DEBUG: Form Submitted!'),
+                    'data'          => 'DEBUG: Form Submitted!',
                     'modal'         => true,
                     'redirect'      => true,
                     'location'      => 'projeckt.php'

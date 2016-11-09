@@ -1,4 +1,4 @@
- /**
+	 /**
  * File name: main.js
  *
  * This file is part of PROJECKLIST
@@ -1972,8 +1972,12 @@ $( document ).ready(function() {
 			// Delete a record
 			if (("del_id" in obj))
 			{
-				if (confirm(v_delConf)) { 
-					$(obj.del_id).remove();	
+				$(obj.del_id).remove();
+				if ($('.m-table td').length == 0)
+				{
+					switchClass($('.js-table-error'),'is-hidden','is-visible');
+					$('.m-table').remove();
+
 				}
 			}
 
@@ -2334,14 +2338,16 @@ $( document ).ready(function() {
 	var formDelProjeckt = $('#delete_projeckt')
 	formDelProjeckt.validate({
 		submitHandler: function(form) {
-			$.post('archive.php', formDelProjeckt.serialize())
-			.done(function( data ) {
-				formDone(formDelProjeckt, data);
-			})
-			.fail(function() {
-				$('#js-form-output').html("<span>FAILED SUBMISSION</span>"); // TODO change label here
-				formFailReset(formDelProjeckt);
-			});
+			if (confirm(v_delConf)) {
+				$.post('archive.php', formDelProjeckt.serialize())
+				.done(function( data ) {
+					formDone(formDelProjeckt, data);
+				})
+				.fail(function() {
+					$('#js-form-output').html("<span>FAILED SUBMISSION</span>"); // TODO change label here
+					formFailReset(formDelProjeckt);
+				});
+			}
 		}
 	});
 

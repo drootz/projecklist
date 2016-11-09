@@ -2,16 +2,16 @@
 <div class="m-float-menu">
     <div class="l-wrapper is-relative">
         <ul>
-            <li class="js-menu-float js-menu-theme"><span class="fa fa-lg"></span></li> <!-- Theme -->
+            <li class="js-menu-float js-menu-theme" title="<?= _( 'form-navbar-titleAttr-toggleTheme' ) ?>"><span class="fa fa-lg"></span></li> <!-- Theme -->
             <!-- <li class="js-menu-float js-menu-tobottom"><span class="fa fa-lg fa-arrow-down"></span></li> --> <!-- Bottom -->
             <!-- <li class="js-menu-float js-menu-totop"><span class="fa fa-lg fa-arrow-up"></span></li> --> <!-- Top -->
-            <li class="js-menu-float js-menu-reset"><span class="fa fa-lg fa-refresh"></span></li> <!-- Reset -->
-            <li class="js-menu-float js-menu-submit"><span class="fa fa-lg fa-paper-plane"></span></li> <!-- Submit -->
+            <li class="js-menu-float js-menu-reset" title="<?= _('Reset') ?>"><span class="fa fa-lg fa-refresh"></span></li> <!-- Reset -->
+            <li class="js-menu-float js-menu-submit" title="<?= _('Send') ?>"><span class="fa fa-lg fa-paper-plane"></span></li> <!-- Submit -->
             <?php if (!empty($_SESSION["id"])): ?>
-            <li class="js-menu-float js-menu-save"><span class="fa fa-lg fa-floppy-o"></span></li> <!-- Save -->
+            <li class="js-menu-float js-menu-save" title="<?= _('Save') ?>"><span class="fa fa-lg fa-floppy-o"></span></li> <!-- Save -->
             <?php endif ?>
             <!-- DEBUG -->
-            <li id="f-debug-fill-form" class="js-menu-float"><span class="fa fa-lg fa-bug"></span></li> <!-- Save -->
+            <li id="f-debug-fill-form" class="js-menu-float" title="<?= _('Debug') ?>"><span class="fa fa-lg fa-bug"></span></li> <!-- Save -->
         </ul>
     </div>
 </div>
@@ -23,9 +23,9 @@
         <section id="f-section-planning" class="f-section-planning">
 
             <div class="l-wrapper">
-                <h2 id="js-projeckt-title"><?php if (!empty($pname)): ?><?= $pname ?><?php endif ?><?php if (empty($pname)): ?><?= _( 'New Projeckt!' ); ?><?php endif ?></h2>
+                <h2 id="js-projeckt-title"><?php if (!empty($pname)): ?><?= $pname ?><?php endif ?><?php if (empty($pname)): ?><?= _( 'New Project!' ); ?><?php endif ?></h2>
                 <?php if (!empty($pid)): ?>
-                <div class="m-refid">Projeckt ID: <?= $ref ?></div>
+                <div class="m-refid"><?= _('Project ID: ') ?><?= $ref ?></div>
                 <?php endif ?>
             </div>
 

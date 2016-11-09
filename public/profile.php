@@ -75,7 +75,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => _('Email confirmation missmatch!')
+                        'data'      => _('Email Confirmation Missmatch!')
                     ];
                     echo(json_encode($output));
                     exit;
@@ -207,7 +207,7 @@
                 {
                     $output = [
                         'status'    => false,
-                        'data'      => _('Password confirmation missmatch!')
+                        'data'      => _('Password Confirmation Missmatch!')
                     ];
                     echo(json_encode($output));
                     exit;

@@ -60,7 +60,7 @@
                     'data'           => _('Thank you for contacting us. Check your mailbox for the acknowledgement email and reference number.'),
                     'modal'          => true,
                     'redirect'       => true,
-                    'location'       => 'profile.php',
+                    'location'       => 'index.php',
                     'notification'   => notificationMail($info)
                 ];
                 echo(json_encode($output));

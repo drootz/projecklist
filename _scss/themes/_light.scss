@@ -271,6 +271,40 @@ body.th-light {
 	}
 
 
+	/* Zebra striping */
+	tr:nth-of-type(odd) { 
+	  background: $alt-white; 
+	}
+
+	/* Zebra striping */
+	tr:nth-of-type(even) { 
+	  background: lighten($dark, 75%); 
+	}
+
+	th { 
+	  background: $dark; 
+	  color: $alt-white; 
+	}
+
+	td, th { 
+	  border-color: lighten($dark, 50%);
+	}
+
+
+
+
+	.view-archive {
+		@media 
+		only screen and (max-width: 760px),
+		(min-device-width: 768px) and (max-device-width: 1024px)  {
+			
+			tr { border: 1px solid lighten($dark, 50%); }
+			
+			td { 
+				border-top: $dark;
+			}
+		}
+	}
 
 }
 
@@ -283,7 +317,5 @@ html.touch .th-light select {
 	&.has-selection {
 		border-color: $alt-white;
 	}
+
 }
-
-
-
