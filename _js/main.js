@@ -2655,6 +2655,14 @@ $( document ).ready(function() {
 	    		}
 	    	}
 	    }
+
+		$(".js-btn-show").each( function() {
+			btnCheck($(this));
+		});
+
+		$(".js-btn-hide").each( function() {
+			btnCheck($(this));
+		});
 	}
 
 
