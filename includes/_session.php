@@ -115,7 +115,7 @@
             //Kill their session.
             session_unset();
             session_destroy();
-            redirect("/");
+            redirect("/~dracine/xdev/projecklist/public/login.php");
         }
 
         //Assign the current timestamp as the user's

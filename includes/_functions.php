@@ -568,148 +568,197 @@
     }
 
 
-    
-    // // Function use in labelvalueSplit(); -> Process and extract the "hours of operation" data in a single string
-    // function formatHours($hours_set_name, $posts, $option)
-    // {
-    //     $hours_setID;
-    //     $re_setID = '/\B[1-7]{1}\B/';
-    //     $isLabel = $option == "LAB";
-    //     $return_string;
+    // Function use in projectFilter() -> Process and extract the "hours of operation" data in a single string
+    function formatHours($hours_set_name, $posts)
+    {
+        $hours_setID;
+        $re_setID = '/(\d+)(?!.*\d)/';
+        $return_string;
 
-    //     if (preg_match($re_setID, $hours_set_name, $matches)) 
-    //     {
-    //         $hours_setID = $matches[0];
+        if (preg_match($re_setID, $hours_set_name, $matches)) 
+        {
+            $hours_setID = $matches[0];
 
-    //         // If hours range value is set
-    //         if ( $posts['opt_hours_regular_set_'. $hours_setID .'_range'] !== "n/a" )
-    //         {
-    //             // If the CLOSED checkbox is checked
-    //             if ( isset( $posts['cbx_hours_regular_set_'. $hours_setID .'_closed'] ) )
-    //             {
-    //                 // If this iteration is to set the LABEL value
-    //                 if ($isLabel)
-    //                 {   
-    //                     $return_string = $posts['opt_hours_regular_set_'. $hours_setID .'_range'];
-    //                 }
-    //                 // If this iteration is to set the VALUE data
-    //                 else
-    //                 {
-    //                     $return_string = sprintf(  _( 'fld_hours_closed' ) );
-    //                 }
-    //             }
+            // If hours range value is set
+            if ( $posts['hra_hours_'. $hours_setID ] !== "not specified" )
+            {
+                // If the CLOSED checkbox is checked
+                if ( isset( $posts['cbx_hours_closed_'. $hours_setID] ) )
+                {
+                    $return_string = _('Closed');
+                }
 
-    //             // If the CLOSED checkbox is NOT checked
-    //             else
-    //             {
-    //                 $identifier = [ "_range", "_start_h", "_start_m", "_end_h", "_end_m" ];
-    //                 for ($i = 0, $j = count($identifier); $i < $j ; $i++) {
+                // If the CLOSED checkbox is NOT checked
+                else
+                {
+                    $identifier = ["_sh_", "_sm_", "_eh_", "_em_" ];
+                    for ($i = 0, $j = count($identifier); $i < $j ; $i++) {
 
-    //                     $id[$identifier[$i]] = isset( $posts['opt_hours_regular_set_'. $hours_setID . $identifier[$i] ] )
-    //                                            ? $posts['opt_hours_regular_set_'. $hours_setID . $identifier[$i] ]
-    //                                            : "_debug: No Range Selected";
-    //                 }
+                        $id[$identifier[$i]] = isset( $posts['hhm_hours'. $identifier[$i] . $hours_setID ] )
+                                               ? $posts['hhm_hours'. $identifier[$i] . $hours_setID ]
+                                               : '00';
+                    }
 
-    //                 // If this iteration is to set the LABEL value
-    //                 if ($isLabel) 
-    //                 {
-    //                     $return_string  = $id["_range"];
-    //                 }
-    //                 // If this iteration is to set the VALUE data
-    //                 else
-    //                 {
-    //                     $return_string  = sprintf( _( 'fld_hours_opened' ) );
-    //                     $return_string .= " ";
-    //                     $return_string .= sprintf( _( 'fld_hours_from' ) );
-    //                     $return_string .= " ";
-    //                     $return_string .= $id["_start_h"];
-    //                     $return_string .= $id["_start_m"];
-    //                     $return_string .= " ";
-    //                     $return_string .= sprintf( _( 'fld_hours_to' ) );
-    //                     $return_string .= " ";
-    //                     $return_string .= $id["_end_h"];
-    //                     $return_string .= $id["_end_m"];
-    //                 }
+                    $return_string  = _( 'Open' );
+                    $return_string .= " ";
+                    $return_string .= _( 'from' );
+                    $return_string .= " ";
+                    $return_string .= $id["_sh_"].'h';
+                    $return_string .= $id["_sm_"];
+                    $return_string .= " ";
+                    $return_string .= _( 'to' );
+                    $return_string .= " ";
+                    $return_string .= $id["_eh_"].'h';
+                    $return_string .= $id["_em_"];
+                }
+            }
 
-    //             }
+            // If hours range value is NOT set
+            else
+            {
+                $return_string = "not specified";
+            }
 
-    //         }
+            return $return_string;
+        }
+        else 
+        {
+          return "not specified";  
+        }
+    }
 
-    //         // If hours range value is NOT set
-    //         else
-    //         {
-    //             // no range slected
-    //             $return_string = sprintf( _( '_debug-hours-norange' ) );
-    //         }
+    // Split Label / Values in key/value pair array
+    function projectFilter($_postArray)
+    {
+        $_posts = $_postArray;
+        $_postsLabel = [];
+        $_postsValue = [];
 
-    //         return $return_string;
-    //     }
-    //     else 
-    //     {
-    //       return sprintf( _( '_debug-hours-invalidrange' ) );  
-    //     }
-    // }
+        // Replace NULL values with "not specified"
+        foreach ($_posts as $key => $value)
+        {
+            if (!$value)
+            {
+                $_posts[$key] = "not specified";
+            }
+        }
 
-    // // Split Label / Values in key/value pair array
-    // function labelvalueSplit($_postArray)
-    // {
-    //     $_posts = $_postArray;
-    //     $_postsLabel = [];
-    //     $_postsValue = [];
+        // Process submission post for output in email layout
+        foreach ($_posts as $key => $value)
+        {
+            // Exclude procedural key/pairs values not required in email/file output
+            $isOutputField = $key != "eml_contact_primary_email_verification" &&
+                             $key != "eml_contact_alt_email_verification" &&
+                             $key != "eml_billing_email_verification" &&
+                             $key != "g-recaptcha-response" &&
+                             $key != "f_pid_exist" &&
+                             $key != "submit" &&
+                             $key != "pid" &&
+                             $key != "id" &&
+                             $key != "user_id" &&
+                             $key != "lastmodified_datetime" &&
+                             // $value != "not specified" &&
+                             $value != NULL; 
 
-    //     // Replace NULL values with "n/a"
-    //     foreach ($_posts as $key => $value)
-    //     {
-    //         if (!$value)
-    //         {
-    //             $_posts[$key] = "n/a";
-    //         }
-    //     }
+            if ($isOutputField)
+            {
+                // "Hours of operation" data require separate handling bcause of the multiple input fields for hours and minutes selection.
+                if ( preg_match('/\bhra_.\w*\b/', $key, $match) === 1 )
+                {
+                    $rangeName = $match[0];
 
-    //     // Process submission post for output in email layout
-    //     foreach ($_posts as $key => $value)
-    //     {
-    //         // Exclude procedural key/pairs values not required in email/file output
-    //         $isOutputField = $key != "eml_contact_primary_email_verification" &&
-    //                          $key != "eml_contact_alt_email_verification" &&
-    //                          $key != "eml_billing_email_verification" &&
-    //                          $key != "bol_t_and_c_reviewed" &&
-    //                          $key != "g-recaptcha-response" &&
-    //                          $key != "submit" &&
-    //                          $value != "n/a" &&
-    //                          $value != NULL;
+                    // RANGE
+                    $_postsLabel[$rangeName] = $rangeName;
+                    $_postsValue[$rangeName] = $value;
 
-    //         if ($isOutputField)
-    //         {
-    //             // "Hours of operation" data require separate handling bcause of the multiple input fields for hours and minutes selection.
-    //             if ( preg_match('/^opt_hours_regular_set_\d_range$/', $key, $match) )
-    //             {
-    //                 $rangeName = substr($match[0], 0, 23);
+                    // HOURS
+                    $id = $rangeName."_hours";
+                    $_postsLabel[$id] = $id;
+                    $_postsValue[$id] = formatHours($key, $_posts);
+                }
 
-    //                 // RANGE
-    //                 $_postsLabel[$match[0]] = _($match[0]);
-    //                 $_postsValue[$match[0]] = formatHours($key, $_posts, "LAB");
+                // Handling the remaining post items in two arays to facilitate L18N integration.
+                else if ( preg_match('/hhm_hours_(sh|sm|eh|em)_\d/', $key, $match) === 0 && preg_match('/cbx_hours_closed_\d/', $key, $match) === 0 ) 
+                {
+                    $_postsLabel[$key] = $key;
+                    $_postsValue[$key] = $value;
+                }
+            }
+        }
 
-    //                 // HOURS
-    //                 $id = $rangeName."_hours";
-    //                 $_postsLabel[$id] = _($id);
-    //                 $_postsValue[$id] = formatHours($key, $_posts, "VAL");
-    //             }
+        $returned_array = array(
+            "label" => $_postsLabel,
+            "value" => $_postsValue
+        );
 
-    //             // Handling the remaining post items in two arays to facilitate L18N integration.
-    //             else if ( !preg_match('/^opt_hours_regular_set_\d_(start|end)_(h|m)$/', $key, $match) && !preg_match('/^cbx_hours_regular_set_\d_closed$/', $key, $match) ) 
-    //             {
-    //                 $_postsLabel[$key] = _($key);
-    //                 $_postsValue[$key] = $value;
-    //             }
-    //         }
-    //     }
+        return $returned_array;
+    }
 
-    //     $returned_array = array(
 
-    //         "label" => $_postsLabel,
-    //         "value" => $_postsValue
+    function sendtotxt($array) {
 
-    //     );
-    //     return $returned_array;
-    // }
+        $_postsLabel = [];
+        $_postsValue = [];
+        foreach ($array as $key => $value) {
+            $_postsLabel[$key] = $key;
+            $_postsValue[$key] = $value;
+        }
+
+        $output = array(
+            "label" => $_postsLabel,
+            "value" => $_postsValue
+        );
+
+        $uid = date('ymdhiss');
+
+        $attach_dir = __DIR__.'/send/';
+        $fp = fopen($attach_dir . 'send_' . $uid. '.txt', 'w');
+
+        $write = "Email Attachment" . "\n\n";
+        foreach ($_postsValue as $key => $value) {
+            $write .= $key . "\n";
+            $write .= $value . "\n";
+            $write .= "\n";
+        }
+
+        fwrite($fp, $write);
+        fclose($fp);
+
+    }
+
+
+    function createAttachment($data, $ext, $id = 0) {
+
+            $ref = date('ymi');
+            if ($id != 0)
+            {
+                // Generate Project Reference
+                $rows = DB::query("SELECT projeckt_ref FROM projecklist WHERE id = ?", $id);
+                if (count($rows) != 0)
+                {
+                    $ref = $rows[0]['projeckt_ref'];
+                }
+            }
+
+            $attach_dir = __DIR__.'/send/';
+
+            if ($ext === 'txt')
+            {
+                $fp = fopen($attach_dir . "Projecklist_text_ref_" . $ref . "." . "txt", "w");
+                fwrite($fp, $data);
+                fclose($fp);
+                return $ref;
+            }
+            else if ($ext === 'md')
+            {
+                $fp = fopen($attach_dir . "Projecklist_markdown_ref_" . $ref . "." . "md", "w");
+                fwrite($fp, $data);
+                fclose($fp);
+                return $ref;
+            }
+            else
+            {
+                return false;
+            }
+
+    }

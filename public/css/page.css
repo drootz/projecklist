@@ -2587,8 +2587,8 @@ button.js-ico-debug {
  *
  */
 .m-refid {
-  -webkit-transform: translateY(-35px);
-          transform: translateY(-35px);
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
   opacity: 0.5; }
 
 .m-loading {

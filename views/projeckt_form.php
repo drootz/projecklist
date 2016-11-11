@@ -3,8 +3,6 @@
     <div class="l-wrapper is-relative">
         <ul>
             <li class="js-menu-float js-menu-theme" title="<?= _( 'form-navbar-titleAttr-toggleTheme' ) ?>"><span class="fa fa-lg"></span></li> <!-- Theme -->
-            <!-- <li class="js-menu-float js-menu-tobottom"><span class="fa fa-lg fa-arrow-down"></span></li> --> <!-- Bottom -->
-            <!-- <li class="js-menu-float js-menu-totop"><span class="fa fa-lg fa-arrow-up"></span></li> --> <!-- Top -->
             <li class="js-menu-float js-menu-reset" title="<?= _('Reset') ?>"><span class="fa fa-lg fa-refresh"></span></li> <!-- Reset -->
             <li class="js-menu-float js-menu-submit" title="<?= _('Send') ?>"><span class="fa fa-lg fa-paper-plane"></span></li> <!-- Submit -->
             <?php if (!empty($_SESSION["id"])): ?>
@@ -26,6 +24,9 @@
                 <h2 id="js-projeckt-title"><?php if (!empty($pname)): ?><?= $pname ?><?php endif ?><?php if (empty($pname)): ?><?= _( 'New Project!' ); ?><?php endif ?></h2>
                 <?php if (!empty($pid)): ?>
                 <div class="m-refid"><?= _('Project ID: ') ?><?= $ref ?></div>
+                <?php endif ?>
+                <?php if (empty($pid)): ?>
+                <div class="m-refid error"><a href="register.php"><?= _('Register') ?></a> <?= _('to be able to save your progress or create multiple projects.') ?></div>
                 <?php endif ?>
             </div>
 
@@ -3484,10 +3485,10 @@
                     <?php endif ?>
 
                     <div class="l-txt-center">
-                        <button class="button" type="submit" value="save" id="f-save" name="submit"><?= _( 'form-btn-save' ); ?></button>
                         <?php if (!empty($_SESSION["id"])): ?>
-                            <button class="button" type="submit" value="submit" id="f-submit" name="submit"><?= _( 'form-btn-submit' ); ?></button>
+                        <button class="button" type="submit" value="save" id="f-save" name="submit"><?= _( 'form-btn-save' ); ?></button>
                         <?php endif ?>
+                        <button class="button" type="submit" value="submit" id="f-submit" name="submit"><?= _( 'form-btn-submit' ); ?></button>
                         <button class="button" type="reset" value="reset" id="f-reset" name="reset"><?= _( 'form-btn-reset' ); ?></button>
                     </div>
 

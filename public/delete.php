@@ -54,6 +54,7 @@
                             redirect("/logout.php");
                         }
 
+                        $delproject = DB::query("DELETE FROM projecklist WHERE user_id = ?", $_SESSION["id"]);
                         $deluser = DB::query("DELETE FROM users WHERE id = ?", $_SESSION["id"]);
                         if (count($deluser) != 0)
                         {

@@ -1197,38 +1197,27 @@ $( document ).ready(function() {
  	});
 
  	// Scroll to top
- 	$(".js-menu-totop").click( function() {
-		$("html, body").animate({
-			scrollTop: $("body").offset().top
-		}, 500);
- 	});
+ 	// $(".js-menu-totop").click( function() {
+		// $("html, body").animate({
+		// 	scrollTop: $("body").offset().top
+		// }, 500);
+ 	// });
 
 	// Scroll to bottom
- 	$(".js-menu-tobottom").click( function() {
-		$("html, body").animate({
-			scrollTop: $(document).height()
-		}, 500);
- 		
- 	});
+ 	// $(".js-menu-tobottom").click( function() {
+		// $("html, body").animate({
+		// 	scrollTop: $(document).height()
+		// }, 500);
+ 	// });
 
 	// Submit page form "save"
  	$(".js-menu-save").click( function() {
  		$( "#f-save" ).trigger( "click" );
-
- 		// DEBUG
-		// $("html, body").animate({
-		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
-		// }, 500);
  	});
 
 	// Submit page form "submit"
  	$(".js-menu-submit").click( function() {
  		$( "#f-submit" ).trigger( "click" );
-
- 		// DEBUG
-		// $("html, body").animate({
-		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
-		// }, 500);
  	});
 
 	// Submit page form "reset"
@@ -1236,18 +1225,6 @@ $( document ).ready(function() {
  		$( "#f-reset" ).trigger( "click" );
  	});
 
-
-	// Submit page form "save"
- 	$(".js-archive-delete").click( function() {
- 		var el = $(this);
- 		el.parents('td').find('.js-submit').trigger( "click" );
- 		// $( "#f-save" ).trigger( "click" );
-
- 		// DEBUG
-		// $("html, body").animate({
-		// 	scrollTop: $('#results-container').offset().top - (vh / 2)
-		// }, 500);
- 	});
 
 
 
@@ -1738,6 +1715,22 @@ $( document ).ready(function() {
 	        v_projektCheck	=	'This Projekt name is already registered',
 	        v_delConf 		=	'Are you sure you want to delete this projeckt?';
 	}
+
+
+	// Submit page form "save"
+ 	$(".js-archive-delete").click( function() {
+		if (confirm(v_delConf)) {
+	 		var el = $(this);
+	 		el.parents('td').find('.js-submit').trigger( "click" );
+		}
+ 	});
+
+	// Submit page form "save"
+ 	$(".js-archive-submit").click( function() {
+ 		var el = $(this);
+ 		el.parents('td').find('.js-submit').trigger( "click" );
+ 	});
+
 
 	// Declare jQuery Validation custom method
 	$.validator.addMethod("pwdCheck", function(value) {
@@ -2338,7 +2331,7 @@ $( document ).ready(function() {
 	var formDelProjeckt = $('#delete_projeckt')
 	formDelProjeckt.validate({
 		submitHandler: function(form) {
-			if (confirm(v_delConf)) {
+			// if (confirm(v_delConf)) {
 				$.post('archive.php', formDelProjeckt.serialize())
 				.done(function( data ) {
 					formDone(formDelProjeckt, data);
@@ -2347,7 +2340,7 @@ $( document ).ready(function() {
 					$('#js-form-output').html("<span>FAILED SUBMISSION</span>"); // TODO change label here
 					formFailReset(formDelProjeckt);
 				});
-			}
+			// }
 		}
 	});
 

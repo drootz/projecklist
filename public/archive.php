@@ -74,6 +74,32 @@
                 exit;
             }
         }
+
+        // Delete a projekt record
+        else if(isset($post['send'])) 
+        {
+            // Generate Project Reference
+            $rows = DB::query("SELECT * FROM projecklist WHERE id = ?", $post['send']);
+            if (count($rows) != 0)
+            {
+                $getVal = projectFilter($rows[0]);
+
+                $textFile = formatAttachment($getVal['value'], "txt");
+                $file_txt = createAttachment($textFile, "txt", $rows[0]['id']);
+
+                $markdownFile = formatAttachment($getVal['value'], "md");
+                $file_md = createAttachment($markdownFile, "md", $rows[0]['id']);
+
+                if ($file_txt != false && $file_md != false)
+                {
+                    // Send Email
+                }
+                else
+                {
+                    // ERROR
+                }
+            }
+        }
     }
     else
     {

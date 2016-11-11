@@ -27,11 +27,18 @@
                 <td><?= $projeckt["projeckt_ref"] ?></td>
                 <td><?= $projeckt["fld_project_name"] ?></td>
                 <td><?= $projeckt["lastmodified_datetime"] ?></td>
-                <td class="m-cell-ico"><span class="js-archive-delete fa fa-lg fa-download" aria-hidden="true"></span></td>
-                <td class="m-cell-ico"><a href="projeckt.php?pid=<?= $projeckt["projeckt_id"] ?>&ref=<?= $projeckt["projeckt_ref"] ?>&pname=<?= $projeckt["fld_project_name"] ?>"><span class="js-archive-delete fa fa-lg fa-pencil-square-o" aria-hidden="true"></span></a></td>
+                <td class="m-cell-ico">
+                    <input class="visuallyhidden js-submit" type="submit" name="send" value="<?= $projeckt["projeckt_id"] ?>" />
+                    <span title="<?= _('Send by Email') ?>" class="js-archive-submit fa fa-lg fa-paper-plane" aria-hidden="true"></span>
+                </td>
+                <td class="m-cell-ico">
+                    <a href="projeckt.php?pid=<?= $projeckt["projeckt_id"] ?>&ref=<?= $projeckt["projeckt_ref"] ?>&pname=<?= $projeckt["fld_project_name"] ?>">
+                        <span title="<?= _('Edit') ?>" class="fa fa-lg fa-pencil-square-o" aria-hidden="true"></span>
+                    </a>
+                </td>
                 <td class="m-cell-ico">
                     <input class="visuallyhidden js-submit" type="submit" name="delete" value="<?= $projeckt["projeckt_id"] ?>" />
-                    <span class="js-archive-delete fa fa-lg fa-trash" aria-hidden="true"></span>
+                    <span title="<?= _('Delete') ?>" class="js-archive-delete fa fa-lg fa-trash" aria-hidden="true"></span>
                 </td>
             </tr>
             <?php endforeach ?>

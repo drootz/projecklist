@@ -161,7 +161,7 @@
 
                             $output = [
                                 'redirect' => true,
-                                'location' => 'index.php'
+                                'location' => 'archive.php'
                             ];
                             echo(json_encode($output));
                             exit;
@@ -206,7 +206,7 @@
 
                         $output = [
                             'redirect' => true,
-                            'location' => 'index.php'
+                            'location' => 'archive.php'
                         ];
                         echo(json_encode($output));
                         exit;

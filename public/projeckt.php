@@ -254,14 +254,52 @@
                         echo(json_encode($output));
                         exit;
                     }
+
+                    $getVal = projectFilter($post);
+
+                    $textFile = formatAttachment($getVal['value'], "txt");
+                    $file_txt = createAttachment($textFile, "txt");
+
+                    $markdownFile = formatAttachment($getVal['value'], "md");
+                    $file_md = createAttachment($markdownFile, "md");
+
+                    if ($file_txt != false && $file_md != false)
+                    {
+                        // Send Email
+                    }
+                    else
+                    {
+                        // ERROR
+                    }
                 }
+                else
+                {
+                    $getVal = projectFilter($post);
+
+                    $textFile = formatAttachment($getVal['value'], "txt");
+                    $file_txt = createAttachment($textFile, "txt", $post['f_pid_exist']);
+
+                    $markdownFile = formatAttachment($getVal['value'], "md");
+                    $file_md = createAttachment($markdownFile, "md", $post['f_pid_exist']);
+
+                    if ($file_txt != false && $file_md != false)
+                    {
+                        // Send Email
+                    }
+                    else
+                    {
+                        // ERROR
+                    }
+                }
+
+
 
                 // DEBUG
                 $output = [
                     'data'          => 'DEBUG: Form Submitted!',
                     'modal'         => true,
                     'redirect'      => true,
-                    'location'      => 'projeckt.php'
+                    'location'      => 'archive.php'
                 ];
                 echo(json_encode($output));
                 exit;
