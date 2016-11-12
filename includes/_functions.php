@@ -729,14 +729,18 @@
 
     function createAttachment($data, $ext, $id = 0) {
 
-            $ref = date('ymi');
+            $ref = pseudostring(5);
             if ($id != 0)
             {
-                // Generate Project Reference
+                // if existing projeckt
                 $rows = DB::query("SELECT projeckt_ref FROM projecklist WHERE id = ?", $id);
-                if (count($rows) != 0)
+                if (count($rows) != 0 && isset($_SESSION['id']))
                 {
-                    $ref = $rows[0]['projeckt_ref'];
+                    $ref = $_SESSION['id'] . "_" . $rows[0]['projeckt_ref'];
+                }
+                else
+                {
+                    return false;
                 }
             }
 
@@ -744,14 +748,14 @@
 
             if ($ext === 'txt')
             {
-                $fp = fopen($attach_dir . "Projecklist_text_ref_" . $ref . "." . "txt", "w");
+                $fp = fopen($attach_dir . "Projecklist_ref_" . $ref . "." . "txt", "w");
                 fwrite($fp, $data);
                 fclose($fp);
                 return $ref;
             }
             else if ($ext === 'md')
             {
-                $fp = fopen($attach_dir . "Projecklist_markdown_ref_" . $ref . "." . "md", "w");
+                $fp = fopen($attach_dir . "Projecklist_ref_" . $ref . "." . "md", "w");
                 fwrite($fp, $data);
                 fclose($fp);
                 return $ref;

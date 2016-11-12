@@ -4,7 +4,9 @@
         <ul>
             <li class="js-menu-float js-menu-theme" title="<?= _( 'form-navbar-titleAttr-toggleTheme' ) ?>"><span class="fa fa-lg"></span></li> <!-- Theme -->
             <li class="js-menu-float js-menu-reset" title="<?= _('Reset') ?>"><span class="fa fa-lg fa-refresh"></span></li> <!-- Reset -->
+            <?php if (empty($_SESSION["id"])): ?>
             <li class="js-menu-float js-menu-submit" title="<?= _('Send') ?>"><span class="fa fa-lg fa-paper-plane"></span></li> <!-- Submit -->
+            <?php endif ?>
             <?php if (!empty($_SESSION["id"])): ?>
             <li class="js-menu-float js-menu-save" title="<?= _('Save') ?>"><span class="fa fa-lg fa-floppy-o"></span></li> <!-- Save -->
             <?php endif ?>
@@ -26,7 +28,8 @@
                 <div class="m-refid"><?= _('Project ID: ') ?><?= $ref ?></div>
                 <?php endif ?>
                 <?php if (empty($pid)): ?>
-                <div class="m-refid error"><a href="register.php"><?= _('Register') ?></a> <?= _('to be able to save your progress or create multiple projects.') ?></div>
+                <div class="m-refid error"><?= _("<a href=\"register.php\">Register</a> to be able to save your progress or create multiple projects.") ?></div>
+                <div class="m-refid"><?= _('Note that the project will be sent to the <strong>Primary Contact</strong> by email upon submission.') ?></div>
                 <?php endif ?>
             </div>
 

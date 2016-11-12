@@ -23,6 +23,7 @@
         //format each email
         $_body = formatNotificationEmail($info,'html');
         $_body_plain_txt = formatNotificationEmail($info,'txt');
+        
 
         $mail = new PHPMailer();
         $mail->CharSet = 'UTF-8';
@@ -81,13 +82,35 @@
         $mail->AltBody = $_body_plain_txt;
 
 
-        if(!$mail->send()) {
-            // DEBUG
-            // echo 'Message could not be sent.';
-            // echo 'Mailer Error: ' . $mail->ErrorInfo;
-            // exit;
+        $attach_dir = __DIR__.'/send/';
+        if (isset($info['f_txt']))
+        {   
+            $mail->addAttachment($attach_dir.$info['f_txt']);
+        }
+
+        if (isset($info['f_md']))
+        {
+            $mail->addAttachment($attach_dir.$info['f_md']);
+        }
+
+        // Send Mail
+        if(!$mail->send())
+        {
             return false;
-        } else {
+        } 
+        else 
+        {
+            // IF ATTACHMENT, DELETE ATTACHMENT
+            if (file_exists($attach_dir.$info['f_txt']))
+            {
+                unlink($attach_dir.$info['f_txt']);
+            }
+
+            if (file_exists($attach_dir.$info['f_md']))
+            {
+                unlink($attach_dir.$info['f_md']);
+            }
+
             return true;
         }
     }
@@ -158,6 +181,16 @@
             $template = preg_replace('/{CORR}/', $info['correspondence'], $template);
         }
 
+        if (isset($info['pref']))
+        {
+            $template = preg_replace('/{PROJECTREF}/', $info['pref'], $template);
+        }
+
+        if (isset($info['pname']))
+        {
+            $template = preg_replace('/{PROJECTNAME}/', $info['pname'], $template);
+        }
+
         $template = preg_replace('/{SITEPATH}/','http://dracine.local/~dracine/xdev/projecklist/public', $template);
         $template = preg_replace('/{SITEPATH_ROOT}/','http://dracine.local/~dracine/xdev/projecklist', $template);
         $template = preg_replace('/{YEAR}/', date('Y'), $template);
@@ -169,121 +202,7 @@
     }
 
 
-
-    
-    // function submitEmail($_postArray) {
-
-    //     $_post = labelvalueSplit($_postArray);
-
-    //     // Get the email template and store it in a variable
-    //     ob_start();
-    //     require(__DIR__ . "/../mail/email_html.php");
-    //     $email_html = ob_get_clean();
-
-    //     // Get the plain email template and store it in a variable
-    //     ob_start();
-    //     require(__DIR__ . "/../mail/email_plain.php");
-    //     $email_plain = ob_get_clean();
-
-    //     // Get the plain email template and store it in a variable
-    //     ob_start();
-    //     echo debug_SubmitTable($_post);
-    //     $email_htmltable = ob_get_clean();
-
-    //     $attach_dir = __DIR__."/../mail/attach";
-    //     $attach_name = _( 'process_email_attach_name' );
-    //     $file_plain = $attach_dir . "/" . $attach_name . ".txt";
-    //     $file_htmltable = $attach_dir . "/" . $attach_name . ".html";
-
-    //     if( chmod($attach_dir, 0755) )
-    //     {
-    //         chmod($attach_dir, 0777);
-
-    //         // Write the contents back to the file
-    //         file_put_contents($file_plain, $email_plain, LOCK_EX);
-    //         file_put_contents($file_htmltable, $email_htmltable, LOCK_EX);
-
-    //         if( chmod($attach_dir, 0777) ) {
-    //             chmod($attach_dir, 0755);
-    //         }
-    //     }
-
-    //     $plain_attachment = chunk_split(base64_encode(file_get_contents($file_plain)));
-    //     $htmltable_attachment = chunk_split(base64_encode(file_get_contents($file_htmltable)));
-        
-    //     $email_subject = "New Form Submission from " . $_post['value']['fld_contact_primary_fn'] . " " . $_post['value']['fld_contact_primary_ln'] . " | " . $_post['value']['fld_project_name'];
-        
-    //     // boundarie
-    //     $semi_rand = md5(time()); 
-    //     $mime_boundary = "BOUNDARY_mixed_{$semi_rand}"; 
-    //     $alt_mime_boundary = "BOUNDARY_alt_{$semi_rand}"; 
-
-    //     $email_headers  = "From: " . "do_not_reply@danwebco.ca" . "\r\n";
-    //     $email_headers .= "Reply-To: " . $_post['value']['eml_contact_primary_email'] . "\r\n";
-    //     // $email_headers .= "Cc: " . $_post['value']['eml_contact_primary_email'] . "\r\n";
-    //     $email_headers .= "Content-Type: multipart/mixed; boundary=\"{$mime_boundary}\"\r\n";
-    //     // $email_headers .= "MIME-Version: 1.0\r\n"; // if I add this header, gmail tag it as spam... no clue how to fix this
-
-    //     $email_message = "\r\n--{$mime_boundary}\r\n";
-    //     $email_message .= "Content-Type: multipart/alternative; boundary=\"{$alt_mime_boundary}\"\r\n";
-        
-    //     $email_message .= "\r\n--{$alt_mime_boundary}\r\n";
-    //     $email_message .= "Content-Type: text/plain; charset=UTF-8; format=\"fixed\"\r\n".
-    //                       // "Content-Transfer-Encoding: 7bit\r\n".
-    //                       "Content-Transfer-Encoding: quoted-printable\r\n".
-    //                       "Content-Disposition: inline\r\n".
-    //                       $email_plain;
-
-    //     $email_message .= "\r\n--{$alt_mime_boundary}\r\n";
-    //     $email_message .= "Content-Type: text/html; charset=UTF-8\r\n".
-    //                       // "Content-Transfer-Encoding: 7bit\r\n".
-    //                       "Content-Transfer-Encoding: quoted-printable\r\n".
-    //                       "Content-Disposition: inline\r\n".
-    //                       $email_html;
-    //     $email_message .= "\r\n--{$alt_mime_boundary}--\r\n";
-        
-    //     $email_message .= "\r\n--{$mime_boundary}\r\n";
-    //     $email_message .= "Content-Type: text/plain; charset=UTF-8; name=\"" . $attach_name . ".txt\"\r\n".
-    //                       "Content-Disposition: attachment; filename=\"" . $attach_name . ".txt\"\r\n".
-    //                       "Content-Transfer-Encoding: base64\r\n".
-    //                       "\r\n".
-    //                       $plain_attachment;
-
-    //     $email_message .= "\r\n--{$mime_boundary}\r\n";
-    //     $email_message .= "Content-Type: text/html; charset=UTF-8; name=\"" . $attach_name . ".html\"\r\n".
-    //                       "Content-Disposition: attachment; filename=\"" . $attach_name . ".html\"\r\n".
-    //                       "Content-Transfer-Encoding: base64\r\n".
-    //                       "\r\n".
-    //                       $htmltable_attachment;
-        
-    //     $email_message .= "\r\n--{$mime_boundary}--\r\n";
-
-    //     //send the email
-    //     $mail = mail( $_post['value']['eml_contact_primary_email'], $email_subject , $email_message, $email_headers );
-
-
-    //     if( chmod($attach_dir, 0755) )
-    //     {
-    //         chmod($attach_dir, 0777);
-    //         unlink($file_plain);
-    //         unlink($file_htmltable);
-
-    //         if( chmod($attach_dir, 0777) )
-    //         {
-    //             chmod($attach_dir, 0755);
-    //         }
-    //     }
-
-    //     // DEBUG Ouput the result of sending the email in the cron notification email
-    //     echo $mail ? "\n\nMail sent\n\n" : "\n\nMail failed\n\n";
-
-    // }
-
-
     function formatAttachment($arr, $extension) {
-
-        // // DEBUG
-        // $output = ['data' => "DEBUG within\n\n" . $txtOut,'modal' => true]; echo(json_encode($output)); exit;
 
         if ($extension !== "txt" && $extension !== "md")
         {
@@ -309,9 +228,6 @@
         // Beging of content line
         $cnt = "";
 
-        // // DEBUG
-        // $output = ['data' => "DEBUG within\n\n" . $txtOut,'modal' => true]; echo(json_encode($output)); exit;
-        
         $txtOut = "";
         if ($extension === 'txt')
         {
@@ -341,9 +257,9 @@
         {
             $txtOut .= $nlx2;
             $txtOut .= $h1 . _( 'Table of Contents' ) . $nlx1;
-            $txtOut .= "1. [" . _( 'form-planning-ttl' ) . "](#" . _( 'form-planning-ttl' ) . ")" . $nlx1;
-            $txtOut .= "2. [" . _( 'form-design-ttl' ) . "](#" . _( 'form-design-ttl' ) . ")" . $nlx1;
-            $txtOut .= "3. [" . _( 'form-technology-ttl' ) . "](#" . _( 'form-technology-ttl' ) . ")" . $nlx1;
+            $txtOut .= "1. [" . _( 'form-planning-ttl' ) . "](##" . _( 'form-planning-ttl' ) . ")" . $nlx1;
+            $txtOut .= "2. [" . _( 'form-design-ttl' ) . "](##" . _( 'form-design-ttl' ) . ")" . $nlx1;
+            $txtOut .= "3. [" . _( 'form-technology-ttl' ) . "](##" . _( 'form-technology-ttl' ) . ")" . $nlx1;
             $txtOut .= $nlx2;
         }
 

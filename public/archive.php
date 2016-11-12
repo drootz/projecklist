@@ -67,7 +67,7 @@
             else
             {
                 $output = [
-                    'data'      => _('Unable to delete your projeckt at this time.'),
+                    'data'      => _('Unable to delete your project at this time.'),
                     'modal'     => true
                 ];
                 echo(json_encode($output));
@@ -90,13 +90,59 @@
                 $markdownFile = formatAttachment($getVal['value'], "md");
                 $file_md = createAttachment($markdownFile, "md", $rows[0]['id']);
 
+                // SEND MAIL
                 if ($file_txt != false && $file_md != false)
                 {
-                    // Send Email
+                    $users = DB::query("SELECT * FROM users WHERE id = ?", $_SESSION['id']);
+                    if (count($users) != 0)
+                    {
+                        // Send Email
+                        $file_txt_name = "Projecklist_ref_" . $file_txt . ".txt";
+                        $file_md_name = "Projecklist_ref_" . $file_md . ".md";
+
+                        //put info into an array to send to the function
+                        $info = array(
+                            'locale'    => $_SESSION['lang'],
+                            'template'  => 'submit_template',
+                            'subject'   => _('Project ID: ') . $rows[0]['projeckt_ref'] . " " . $rows[0]['fld_project_name'],
+                            'username'  => $users[0]["firstname"],
+                            'email'     => $users[0]["user_email"],
+                            'f_txt'     => $file_txt_name,
+                            'f_md'      => $file_md_name,
+                            'pref'      => ", ref: " . $rows[0]['projeckt_ref'] . ", ",
+                            'pname'     => $rows[0]['fld_project_name']
+                        );
+
+                        $output = [
+                            'data'          => _('Project sucessfully sent. Check your mailbox!'),
+                            'modal'         => true,
+                            'redirect'      => true,
+                            'location'      => 'archive.php',
+                            'notification'  => notificationMail($info)
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
+                    else
+                    {
+                        $output = [
+                            'data'      => _('Unable to submit your project at this time.'),
+                            'modal'     => true
+                        ];
+                        echo(json_encode($output));
+                        exit;
+                    }
                 }
+
+                // ERROR
                 else
                 {
-                    // ERROR
+                    $output = [
+                        'data'      => _('Unable to submit your project at this time.'),
+                        'modal'     => true
+                    ];
+                    echo(json_encode($output));
+                    exit;
                 }
             }
         }

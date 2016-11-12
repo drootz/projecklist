@@ -82,7 +82,7 @@
                   <table width="600" cellpadding="0" cellspacing="0" border="0" class="container" style="font-family:Helvetica, Arial, sans-serif;">
                     <tr>
                       <td width="600" class="mobile" align="left" style="font-size:12px; font-weight: normal; line-height:18px; color: #FFFFFF;">
-                        SECURITY ALERT&nbsp;-&nbsp;
+                        SOUMISSION DE PROJECT&nbsp;-&nbsp;Ouvrir les fichier en pièce jointe&nbsp;-&nbsp;
                       </td>
                     </tr>
                   </table>
@@ -140,14 +140,19 @@
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight: 300; line-height:22px;">
 
                         <br />
-                        <p>Hi <strong>{USERNAME}</strong>,</p>
-                        <p>The sign in email for your Projecklist account {EMAIL} was recently changed to {ALTEMAIL}.</p>
-                        <br />
+                        <p>Bonjour <strong>{USERNAME}</strong>,</p>
+                        <p>Votre projet <span style="font-style: italic;">{PROJECTNAME}</span>{PROJECTREF} est joint à ce courriel sous deux formats différents.</p>
 
-                        <p style="font-weight: 700;">Don't recognize this activity?</p>
-                        <p><a href="mailto:{ADMIN_EMAIL}?subject=Email%20Changed%20in%20Error%20from%20{EMAIL}" style="color: #1EAEDB">Contact us here</a> to reinstate your previous sign in email and reset your password.</p>
+                        <p>Les fichiers <span style="font-style: italic;">Markdown</span> (.md) sont nouveaux pour vous? Ne vous inquiétez pas, sachez qu'ils peuvent être ouverts et édités dans n'importe quel éditeur de texte. Markdown est un langage simple de balisage conçu pour convertir du texte brut en HTML. Il est largement utilisé pour l'écriture en ligne. Les éditeurs de texte supportant le markdown peuvent exporter des documents dans plusieurs autres formats, comme PDF ou Microsoft Word. Si vous êtes curieux, voici deux liens vers des éditeurs en ligne gratuits pour Markdown. Essayez d'y copier votre projet et voir ce qui se passe!</p>
 
-                        <p>_<br />The Projecklist Team</p>
+                        <ul>
+                          <li><a href="https://stackedit.io">stackedit.io</a></li>
+                          <li><a href="http://dillinger.io">dillinger.io</a></li>
+                        </ul>
+
+                        <p>Merci d'utiliser Projecklist!</p>
+
+                        <p>_<br />L'équipe Projecklist</p>
                         <br />
 
                       </td>
@@ -179,8 +184,8 @@
                     <tr>
                       <td class="mobile" style="font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight: normal; line-height:18px; color: #969696"">
 
-                        <p>&copy; {YEAR} <strong>Projecklist</strong>, All Rights Reserved.</p>
-                        <p>You received this e-mail because you are currently a member of <strong>Projecklist</strong>. If you think you should not have received this email, please contact <a href="mailto:{ADMIN_EMAIL}?subject=Email%20Received%20in%20Error%20by%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
+                        <p>&copy; {YEAR} <strong>Projecklist</strong>, tous droits réservés.</p>
+                        <p>Vous avez reçu ce courriel parce que vous êtes actuellement membre de <strong>Projecklist</strong> ou vous avez utilisé son service. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à <a href="mailto:{ADMIN_EMAIL}?subject=Courriel%20reçu%20par%20erreur%20de%20{EMAIL}" style="color: #1EAEDB">{ADMIN_EMAIL}</a>.</p>
 
                       </td>
                     </tr>

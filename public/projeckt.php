@@ -255,55 +255,57 @@
                         exit;
                     }
 
-                    $getVal = projectFilter($post);
-
-                    $textFile = formatAttachment($getVal['value'], "txt");
-                    $file_txt = createAttachment($textFile, "txt");
-
-                    $markdownFile = formatAttachment($getVal['value'], "md");
-                    $file_md = createAttachment($markdownFile, "md");
-
-                    if ($file_txt != false && $file_md != false)
-                    {
-                        // Send Email
-                    }
-                    else
-                    {
-                        // ERROR
-                    }
                 }
+
+                $getVal = projectFilter($post);
+
+                $textFile = formatAttachment($getVal['value'], "txt");
+                $file_txt = createAttachment($textFile, "txt");
+
+                $markdownFile = formatAttachment($getVal['value'], "md");
+                $file_md = createAttachment($markdownFile, "md");
+
+                // SEND MAIL
+                if ($file_txt != false && $file_md != false)
+                {
+                    // Send Email
+                    $file_txt_name = "Projecklist_ref_" . $file_txt . ".txt";
+                    $file_md_name = "Projecklist_ref_" . $file_md . ".md";
+
+                    //put info into an array to send to the function
+                    $info = array(
+                        'locale'    => $_SESSION['lang'],
+                        'template'  => 'submit_template',
+                        'subject'   => _('Project Name: ') . $post['fld_project_name'],
+                        'username'  => $post["fld_contact_primary_fn"],
+                        'email'     => $post["eml_contact_primary_email"],
+                        'f_txt'     => $file_txt_name,
+                        'f_md'      => $file_md_name,
+                        'pref'      => "",
+                        'pname'     => $post['fld_project_name']
+                    );
+
+                    $output = [
+                        'data'          => _('Project sucessfully sent. Check your mailbox!'),
+                        'modal'         => true,
+                        'redirect'      => true,
+                        'location'      => 'projeckt.php',
+                        'notification'  => notificationMail($info)
+                    ];
+                    echo(json_encode($output));
+                    exit;
+                }
+
+                // ERROR
                 else
                 {
-                    $getVal = projectFilter($post);
-
-                    $textFile = formatAttachment($getVal['value'], "txt");
-                    $file_txt = createAttachment($textFile, "txt", $post['f_pid_exist']);
-
-                    $markdownFile = formatAttachment($getVal['value'], "md");
-                    $file_md = createAttachment($markdownFile, "md", $post['f_pid_exist']);
-
-                    if ($file_txt != false && $file_md != false)
-                    {
-                        // Send Email
-                    }
-                    else
-                    {
-                        // ERROR
-                    }
+                    $output = [
+                        'data'      => _('Unable to submit your project at this time.'),
+                        'modal'     => true
+                    ];
+                    echo(json_encode($output));
+                    exit;
                 }
-
-
-
-                // DEBUG
-                $output = [
-                    'data'          => 'DEBUG: Form Submitted!',
-                    'modal'         => true,
-                    'redirect'      => true,
-                    'location'      => 'archive.php'
-                ];
-                echo(json_encode($output));
-                exit;
-
             }
 		}
     }

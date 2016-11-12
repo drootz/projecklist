@@ -1,0 +1,23 @@
+SOUMISSION DE PROJECT - Ouvrir les fichier en pièce jointe - 
+
+
+
+
+Bonjour {USERNAME},
+
+Votre projet "{PROJECTNAME}"{PROJECTREF} est joint à ce courriel sous deux formats différents.
+
+Les fichiers Markdown (.md) sont nouveaux pour vous? Ne vous inquiétez pas, sachez qu'ils peuvent être ouverts et édités dans n'importe quel éditeur de texte. Markdown est un langage simple de balisage conçu pour convertir du texte brut en HTML. Il est largement utilisé pour l'écriture en ligne. Les éditeurs de texte supportant le markdown peuvent exporter des documents dans plusieurs autres formats, comme PDF ou Microsoft Word. Si vous êtes curieux, voici deux liens vers des éditeurs en ligne gratuits pour Markdown. Essayez d'y copier votre projet et voir ce qui se passe!
+
+- https://stackedit.io
+- http://dillinger.io
+
+Merci!
+
+----
+Copyright {YEAR} Projecklist, tous droits réservés.
+
+
+
+
+Vous avez reçu ce courriel parce que vous êtes actuellement membre de 'Projecklist' ou vous avez utilisé son service. Si vous ne devriez pas avoir reçu ce courriel, contacter nous à {ADMIN_EMAIL}.
