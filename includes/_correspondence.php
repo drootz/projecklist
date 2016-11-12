@@ -257,9 +257,9 @@
         {
             $txtOut .= $nlx2;
             $txtOut .= $h1 . _( 'Table of Contents' ) . $nlx1;
-            $txtOut .= "1. [" . _( 'form-planning-ttl' ) . "](##" . _( 'form-planning-ttl' ) . ")" . $nlx1;
-            $txtOut .= "2. [" . _( 'form-design-ttl' ) . "](##" . _( 'form-design-ttl' ) . ")" . $nlx1;
-            $txtOut .= "3. [" . _( 'form-technology-ttl' ) . "](##" . _( 'form-technology-ttl' ) . ")" . $nlx1;
+            $txtOut .= "1. [" . _( 'form-planning-ttl' ) . "](#" . strtolower(_( 'form-planning-ttl' )) . ")" . $nlx1;
+            $txtOut .= "2. [" . _( 'form-design-ttl' ) . "](#" . strtolower(_( 'form-design-ttl' )) . ")" . $nlx1;
+            $txtOut .= "3. [" . _( 'form-technology-ttl' ) . "](#" . strtolower(_( 'form-technology-ttl' )) . ")" . $nlx1;
             $txtOut .= $nlx2;
         }
 

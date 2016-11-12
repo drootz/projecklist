@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: projecklist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-12 10:53-0500\n"
-"PO-Revision-Date: 2016-11-12 10:56-0500\n"
+"POT-Creation-Date: 2016-11-12 12:26-0500\n"
+"PO-Revision-Date: 2016-11-12 12:44-0500\n"
 "Last-Translator: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language-Team: Daniel Racine <idaniel.racine@gmail.com>\n"
 "Language: fr_CA\n"
@@ -40,12 +40,12 @@ msgid "form-planning-ttl"
 msgstr "PLANIFICATION"
 
 #: includes/_correspondence.php:261 includes/_correspondence.php:600
-#: views/projeckt_form.php:2073
+#: views/projeckt_form.php:2078
 msgid "form-design-ttl"
 msgstr "Design"
 
 #: includes/_correspondence.php:262 includes/_correspondence.php:876
-#: views/projeckt_form.php:2981
+#: views/projeckt_form.php:2986
 msgid "form-technology-ttl"
 msgstr "TECHNOLOGIE"
 
@@ -53,7 +53,7 @@ msgstr "TECHNOLOGIE"
 msgid "form-planning-contact-ttl"
 msgstr "Prise de Contact"
 
-#: includes/_correspondence.php:280 views/projeckt_form.php:112
+#: includes/_correspondence.php:280 views/projeckt_form.php:117
 msgid "form-planning-contact-primary-ttl"
 msgstr "Contact Principal"
 
@@ -67,27 +67,27 @@ msgstr "Tel: "
 msgid "Email: "
 msgstr "Courriel: "
 
-#: includes/_correspondence.php:288 views/projeckt_form.php:158
+#: includes/_correspondence.php:288 views/projeckt_form.php:163
 msgid "form-planning-contact-alternate-ttl"
 msgstr "Contact Secondaire"
 
-#: includes/_correspondence.php:296 views/projeckt_form.php:243
+#: includes/_correspondence.php:296 views/projeckt_form.php:248
 msgid "form-planning-familiarity-ttl"
 msgstr "Quel est votre niveau de familiarité avec la conception de site web?"
 
-#: includes/_correspondence.php:303 views/projeckt_form.php:277
+#: includes/_correspondence.php:303 views/projeckt_form.php:282
 msgid "form-planning-timeline-ttl"
 msgstr "Échéancier"
 
-#: includes/_correspondence.php:310 views/projeckt_form.php:312
+#: includes/_correspondence.php:310 views/projeckt_form.php:317
 msgid "form-planning-budget-ttl"
 msgstr "Indication budgétaire"
 
-#: includes/_correspondence.php:317 views/projeckt_form.php:350
+#: includes/_correspondence.php:317 views/projeckt_form.php:355
 msgid "form-planning-billing-ttl"
 msgstr "Facturation"
 
-#: includes/_correspondence.php:319 views/projeckt_form.php:372
+#: includes/_correspondence.php:319 views/projeckt_form.php:377
 msgid "form-planning-billing-stl-attn"
 msgstr "Attn.:"
 
@@ -95,23 +95,23 @@ msgstr "Attn.:"
 msgid "Fax: "
 msgstr ""
 
-#: includes/_correspondence.php:330 views/projeckt_form.php:423
+#: includes/_correspondence.php:330 views/projeckt_form.php:428
 msgid "form-planning-billing-stl-address"
 msgstr "Adresse:"
 
-#: includes/_correspondence.php:343 views/projeckt_form.php:553
+#: includes/_correspondence.php:343 views/projeckt_form.php:558
 msgid "form-content-info-ttl"
 msgstr "Informations aux fins d’affichage"
 
-#: includes/_correspondence.php:345 views/projeckt_form.php:567
+#: includes/_correspondence.php:345 views/projeckt_form.php:572
 msgid "fld_info_legal"
 msgstr "Nom légal:"
 
-#: includes/_correspondence.php:346 views/projeckt_form.php:573
+#: includes/_correspondence.php:346 views/projeckt_form.php:578
 msgid "fld_info_brand"
 msgstr "Nom d'affichage:"
 
-#: includes/_correspondence.php:347 views/projeckt_form.php:580
+#: includes/_correspondence.php:347 views/projeckt_form.php:585
 msgid "fld_info_tagline"
 msgstr "Slogan:"
 
@@ -127,288 +127,288 @@ msgstr ""
 msgid "Email:"
 msgstr "Courriel:"
 
-#: includes/_correspondence.php:353 views/projeckt_form.php:610
+#: includes/_correspondence.php:353 views/projeckt_form.php:615
 msgid "form-content-info-adress-stl"
 msgstr "Adresse:"
 
-#: includes/_correspondence.php:367 views/projeckt_form.php:649
+#: includes/_correspondence.php:367 views/projeckt_form.php:654
 msgid "txt_info_description"
 msgstr "Faite une brève description de vos principales activités:"
 
-#: includes/_correspondence.php:374 views/projeckt_form.php:670
+#: includes/_correspondence.php:374 views/projeckt_form.php:675
 msgid "form-content-hours-ttl"
 msgstr "Heures d’ouverture"
 
-#: includes/_correspondence.php:430 views/projeckt_form.php:1678
+#: includes/_correspondence.php:430 views/projeckt_form.php:1683
 msgid "form-content-holiday-ttl"
 msgstr "Jours fériés"
 
-#: includes/_correspondence.php:438 views/projeckt_form.php:1707
+#: includes/_correspondence.php:438 views/projeckt_form.php:1712
 msgid "form-content-product-ttl"
 msgstr "Liste de vos 3 produits et services principaux."
 
-#: includes/_correspondence.php:449 views/projeckt_form.php:1755
+#: includes/_correspondence.php:449 views/projeckt_form.php:1760
 msgid "form-content-asset-ttl"
 msgstr "Avez-vous déjà du contenu visuel prêt à être utilisé pour ce projet?"
 
-#: includes/_correspondence.php:460 views/projeckt_form.php:1797
+#: includes/_correspondence.php:460 views/projeckt_form.php:1802
 msgid "txt_asset_othercomments"
 msgstr "Autre ou Commentaires:"
 
-#: includes/_correspondence.php:469 views/projeckt_form.php:1829
+#: includes/_correspondence.php:469 views/projeckt_form.php:1834
 msgid "form-content-content-ttl"
 msgstr "Fournissez-vous du nouveau contenu pour votre site?"
 
-#: includes/_correspondence.php:478 views/projeckt_form.php:1860
+#: includes/_correspondence.php:478 views/projeckt_form.php:1865
 msgid "xxx_content_otherdetails"
 msgstr "Autre ou Commentaires:"
 
-#: includes/_correspondence.php:487 views/projeckt_form.php:1885
+#: includes/_correspondence.php:487 views/projeckt_form.php:1890
 msgid "form-content-feature-ttl"
 msgstr ""
 "Quels sont les fonctionnalités et attributs dont  vous pensez avoir besoin "
 "sur le site?"
 
-#: includes/_correspondence.php:607 views/projeckt_form.php:2100
+#: includes/_correspondence.php:607 views/projeckt_form.php:2105
 msgid "form-design-siteGoal-ttl"
 msgstr "But du site web"
 
-#: includes/_correspondence.php:609 views/projeckt_form.php:2114
+#: includes/_correspondence.php:609 views/projeckt_form.php:2119
 msgid "txt_site_goal_1"
 msgstr "Pourquoi pensez-vous que les gens viendront visiter votre site?"
 
-#: includes/_correspondence.php:615 views/projeckt_form.php:2123
+#: includes/_correspondence.php:615 views/projeckt_form.php:2128
 msgid "txt_site_goal_2"
 msgstr ""
 "Si les gens ne savent pas que vous existez, pourquoi et comment devraient-"
 "ils trouver votre site?"
 
-#: includes/_correspondence.php:621 views/projeckt_form.php:2132
+#: includes/_correspondence.php:621 views/projeckt_form.php:2137
 msgid "txt_site_goal_3"
 msgstr "Si les gens vous connaissent, pourquoi devraient-ils visiter le site?"
 
-#: includes/_correspondence.php:627 views/projeckt_form.php:2141
+#: includes/_correspondence.php:627 views/projeckt_form.php:2146
 msgid "txt_site_goal_4"
 msgstr ""
 "Dans quelle mesure est-ce que votre site devrait aider votre entreprise, "
 "projet ou événement?"
 
-#: includes/_correspondence.php:639 views/projeckt_form.php:2165
+#: includes/_correspondence.php:639 views/projeckt_form.php:2170
 msgid "form-design-action-ttl"
 msgstr "Quelle action(s) devrait prendre un visiteur de votre site?"
 
-#: includes/_correspondence.php:652 views/projeckt_form.php:2215
+#: includes/_correspondence.php:652 views/projeckt_form.php:2220
 msgid "txt_action_othercomments"
 msgstr "Autre ou Commentaires:"
 
-#: includes/_correspondence.php:661 views/projeckt_form.php:2242
+#: includes/_correspondence.php:661 views/projeckt_form.php:2247
 msgid "form-design-adjective-ttl"
 msgstr ""
 "Écrivez une liste de 3 adjectifs qui décrivent au mieux votre entreprise, "
 "projet ou événement et sa vision."
 
-#: includes/_correspondence.php:671 views/projeckt_form.php:2282
+#: includes/_correspondence.php:671 views/projeckt_form.php:2287
 msgid "form-design-target-ttl"
 msgstr "Qui est votre utilisateur ou clientèle cible?"
 
-#: includes/_correspondence.php:675 views/projeckt_form.php:2297
+#: includes/_correspondence.php:675 views/projeckt_form.php:2302
 msgid "form-design-target-stl-age"
 msgstr "Âge"
 
-#: includes/_correspondence.php:684 views/projeckt_form.php:2328
+#: includes/_correspondence.php:684 views/projeckt_form.php:2333
 msgid "form-design-target-stl-geographic"
 msgstr "Géographique"
 
-#: includes/_correspondence.php:693 views/projeckt_form.php:2362
+#: includes/_correspondence.php:693 views/projeckt_form.php:2367
 msgid "form-design-target-stl-education"
 msgstr "Éducation"
 
-#: includes/_correspondence.php:702 views/projeckt_form.php:2393
+#: includes/_correspondence.php:702 views/projeckt_form.php:2398
 msgid "form-design-target-stl-job"
 msgstr "Emplois"
 
-#: includes/_correspondence.php:711 views/projeckt_form.php:2427
+#: includes/_correspondence.php:711 views/projeckt_form.php:2432
 msgid "form-design-target-stl-wealth"
 msgstr "Revenue"
 
-#: includes/_correspondence.php:718 views/projeckt_form.php:2452
+#: includes/_correspondence.php:718 views/projeckt_form.php:2457
 msgid "form-design-target-stl-gender"
 msgstr "Genre"
 
-#: includes/_correspondence.php:723 views/projeckt_form.php:2482
+#: includes/_correspondence.php:723 views/projeckt_form.php:2487
 msgid "txt_audience_description"
 msgstr "Faite une brève description du public cible pour le site:"
 
-#: includes/_correspondence.php:730 views/projeckt_form.php:2510
+#: includes/_correspondence.php:730 views/projeckt_form.php:2515
 msgid "form-design-design-ttl"
 msgstr "Vous avez des préférences au niveau du style?"
 
-#: includes/_correspondence.php:732 views/projeckt_form.php:2525
+#: includes/_correspondence.php:732 views/projeckt_form.php:2530
 msgid "txt_design_colour"
 msgstr "Palette de couleurs?"
 
-#: includes/_correspondence.php:735 views/projeckt_form.php:2533
+#: includes/_correspondence.php:735 views/projeckt_form.php:2538
 msgid "txt_design_theme"
 msgstr "Thématique? <i>(ex. sombre, fi-fille, clair, rafraîchissant, etc.)</i>"
 
-#: includes/_correspondence.php:738 views/projeckt_form.php:2541
+#: includes/_correspondence.php:738 views/projeckt_form.php:2546
 msgid "txt_design_style"
 msgstr ""
 "Style? <i>(ex. arrondi, rectangulaire, plusieurs images, pas d'images, "
 "etc.)</i>"
 
-#: includes/_correspondence.php:741 views/projeckt_form.php:2549
+#: includes/_correspondence.php:741 views/projeckt_form.php:2554
 msgid "txt_design_brand"
 msgstr "Besoin d'afficher les couleurs officiel de votre organisation?"
 
-#: includes/_correspondence.php:744 views/projeckt_form.php:2557
+#: includes/_correspondence.php:744 views/projeckt_form.php:2562
 msgid "txt_design_othercomments"
 msgstr "Autre ou Commentaires:"
 
 #: includes/_correspondence.php:753 includes/_correspondence.php:767
-#: views/projeckt_form.php:2581
+#: views/projeckt_form.php:2586
 msgid "form-design-competitor-ttl"
 msgstr "Présence web similaire"
 
-#: includes/_correspondence.php:772 views/projeckt_form.php:2681
+#: includes/_correspondence.php:772 views/projeckt_form.php:2686
 msgid "form-design-like-stl-site-1"
 msgstr "premier site"
 
-#: includes/_correspondence.php:773 views/projeckt_form.php:2684
+#: includes/_correspondence.php:773 views/projeckt_form.php:2689
 msgid "fld_like_1_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:774 views/projeckt_form.php:2688
+#: includes/_correspondence.php:774 views/projeckt_form.php:2693
 msgid "fld_like_1_like"
 msgstr "J’aime:"
 
-#: includes/_correspondence.php:775 views/projeckt_form.php:2692
+#: includes/_correspondence.php:775 views/projeckt_form.php:2697
 msgid "fld_like_1_improve"
 msgstr "À améliorer:"
 
-#: includes/_correspondence.php:781 views/projeckt_form.php:2702
+#: includes/_correspondence.php:781 views/projeckt_form.php:2707
 msgid "form-design-like-stl-site-2"
 msgstr "deuxième site"
 
-#: includes/_correspondence.php:782 views/projeckt_form.php:2705
+#: includes/_correspondence.php:782 views/projeckt_form.php:2710
 msgid "fld_like_2_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:783 views/projeckt_form.php:2709
+#: includes/_correspondence.php:783 views/projeckt_form.php:2714
 msgid "fld_like_2_like"
 msgstr "J’aime:"
 
-#: includes/_correspondence.php:784 views/projeckt_form.php:2713
+#: includes/_correspondence.php:784 views/projeckt_form.php:2718
 msgid "fld_like_2_improve"
 msgstr "À améliorer:"
 
-#: includes/_correspondence.php:790 views/projeckt_form.php:2726
+#: includes/_correspondence.php:790 views/projeckt_form.php:2731
 msgid "form-design-like-stl-site-3"
 msgstr "troisième site"
 
-#: includes/_correspondence.php:791 views/projeckt_form.php:2729
+#: includes/_correspondence.php:791 views/projeckt_form.php:2734
 msgid "fld_like_3_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:792 views/projeckt_form.php:2733
+#: includes/_correspondence.php:792 views/projeckt_form.php:2738
 msgid "fld_like_3_like"
 msgstr "J’aime:"
 
-#: includes/_correspondence.php:793 views/projeckt_form.php:2737
+#: includes/_correspondence.php:793 views/projeckt_form.php:2742
 msgid "fld_like_3_improve"
 msgstr "À améliorer:"
 
-#: includes/_correspondence.php:799 views/projeckt_form.php:2747
+#: includes/_correspondence.php:799 views/projeckt_form.php:2752
 msgid "form-design-like-stl-site-4"
 msgstr "quatrième site"
 
-#: includes/_correspondence.php:800 views/projeckt_form.php:2750
+#: includes/_correspondence.php:800 views/projeckt_form.php:2755
 msgid "fld_like_4_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:801 views/projeckt_form.php:2754
+#: includes/_correspondence.php:801 views/projeckt_form.php:2759
 msgid "fld_like_4_like"
 msgstr "J’aime:"
 
-#: includes/_correspondence.php:802 views/projeckt_form.php:2758
+#: includes/_correspondence.php:802 views/projeckt_form.php:2763
 msgid "fld_like_4_improve"
 msgstr "À améliorer:"
 
-#: includes/_correspondence.php:812 views/projeckt_form.php:2801
+#: includes/_correspondence.php:812 views/projeckt_form.php:2806
 msgid "form-design-dislike-ttl"
 msgstr "Nommez deux sites que vous n'aimez <strong>PAS</strong>"
 
-#: includes/_correspondence.php:817 views/projeckt_form.php:2821
+#: includes/_correspondence.php:817 views/projeckt_form.php:2826
 msgid "form-design-dislike-stl-site-1"
 msgstr "premier site"
 
-#: includes/_correspondence.php:818 views/projeckt_form.php:2824
+#: includes/_correspondence.php:818 views/projeckt_form.php:2829
 msgid "fld_dislike_1_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:819 views/projeckt_form.php:2828
+#: includes/_correspondence.php:819 views/projeckt_form.php:2833
 msgid "fld_dislike_1_dislike"
 msgstr "N’aime pas:"
 
-#: includes/_correspondence.php:825 views/projeckt_form.php:2838
+#: includes/_correspondence.php:825 views/projeckt_form.php:2843
 msgid "form-design-dislike-stl-site-2"
 msgstr "deuxième site"
 
-#: includes/_correspondence.php:826 views/projeckt_form.php:2841
+#: includes/_correspondence.php:826 views/projeckt_form.php:2846
 msgid "fld_dislike_2_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:827 views/projeckt_form.php:2845
+#: includes/_correspondence.php:827 views/projeckt_form.php:2850
 msgid "fld_dislike_2_dislike"
 msgstr "N’aime pas:"
 
-#: includes/_correspondence.php:833 views/projeckt_form.php:2860
+#: includes/_correspondence.php:833 views/projeckt_form.php:2865
 msgid "form-design-dislike-stl-site-3"
 msgstr "troisième site"
 
-#: includes/_correspondence.php:834 views/projeckt_form.php:2863
+#: includes/_correspondence.php:834 views/projeckt_form.php:2868
 msgid "fld_dislike_3_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:835 views/projeckt_form.php:2867
+#: includes/_correspondence.php:835 views/projeckt_form.php:2872
 msgid "fld_dislike_3_dislike"
 msgstr "N’aime pas:"
 
-#: includes/_correspondence.php:841 views/projeckt_form.php:2878
+#: includes/_correspondence.php:841 views/projeckt_form.php:2883
 msgid "form-design-dislike-stl-site-4"
 msgstr "quatrième site"
 
-#: includes/_correspondence.php:842 views/projeckt_form.php:2881
+#: includes/_correspondence.php:842 views/projeckt_form.php:2886
 msgid "fld_dislike_4_url"
 msgstr "URL:"
 
-#: includes/_correspondence.php:843 views/projeckt_form.php:2885
+#: includes/_correspondence.php:843 views/projeckt_form.php:2890
 msgid "fld_dislike_4_dislike"
 msgstr "N’aime pas:"
 
-#: includes/_correspondence.php:853 views/projeckt_form.php:2930
+#: includes/_correspondence.php:853 views/projeckt_form.php:2935
 msgid "form-design-remark-ttl"
 msgstr ""
 "Est-ce que vous avez certaines remarques définitives sur ce que vous ne "
 "voulez PAS sur votre site?"
 
-#: includes/_correspondence.php:883 views/projeckt_form.php:2992
+#: includes/_correspondence.php:883 views/projeckt_form.php:2997
 msgid "form-technology-architecture-ttl"
 msgstr "Navigateurs et architecture"
 
-#: includes/_correspondence.php:891 views/projeckt_form.php:3031
+#: includes/_correspondence.php:891 views/projeckt_form.php:3036
 msgid "txt_architecture_othercomments"
 msgstr "Autre ou Commentaires"
 
-#: includes/_correspondence.php:900 views/projeckt_form.php:3055
+#: includes/_correspondence.php:900 views/projeckt_form.php:3060
 msgid "form-technology-accessibility-ttl"
 msgstr "Accessibilité et usage"
 
-#: includes/_correspondence.php:908 views/projeckt_form.php:3083
+#: includes/_correspondence.php:908 views/projeckt_form.php:3088
 msgid "txt_accessibility_othercomments"
 msgstr "Autre ou Commentaires:"
 
-#: includes/_correspondence.php:916 views/projeckt_form.php:3120
+#: includes/_correspondence.php:916 views/projeckt_form.php:3125
 msgid "form-technology-seo-instruction"
 msgstr ""
 "Sélectionnez toutes autres fonctionnalités de référencement (SEO) dont vous "
@@ -422,32 +422,32 @@ msgstr "Outils Webmestre(s):"
 msgid "Open Graph(s):"
 msgstr ""
 
-#: includes/_correspondence.php:945 views/projeckt_form.php:3229
+#: includes/_correspondence.php:945 views/projeckt_form.php:3234
 msgid "form-technology-domain-ttl"
 msgstr "Nom de Domaine"
 
-#: includes/_correspondence.php:959 views/projeckt_form.php:3308
+#: includes/_correspondence.php:959 views/projeckt_form.php:3313
 msgid "form-technology-hosting-ttl"
 msgstr "Est-ce que vous avez besoin d’un service d’hébergement?"
 
-#: includes/_correspondence.php:968 views/projeckt_form.php:3345
+#: includes/_correspondence.php:968 views/projeckt_form.php:3350
 msgid "form-technology-email-ttl"
 msgstr ""
 "Avez-vous besoin d’une adresse courriel correspondant à votre nom de domaine?"
 
-#: includes/_correspondence.php:976 views/projeckt_form.php:3381
+#: includes/_correspondence.php:976 views/projeckt_form.php:3386
 msgid "form-technology-maintenance-ttl"
 msgstr "Qui sera responsable de la maintenance ou mis à jour pour le site?"
 
-#: includes/_correspondence.php:993 views/projeckt_form.php:3419
+#: includes/_correspondence.php:993 views/projeckt_form.php:3424
 msgid "form-other-ttl"
 msgstr "AUTRE"
 
-#: includes/_correspondence.php:999 views/projeckt_form.php:3430
+#: includes/_correspondence.php:999 views/projeckt_form.php:3435
 msgid "form-other-future"
 msgstr "Vous avez des projets pour future pour le site?"
 
-#: includes/_correspondence.php:1006 views/projeckt_form.php:3455
+#: includes/_correspondence.php:1006 views/projeckt_form.php:3460
 msgid "form-other-comment"
 msgstr "Autres détails importants relatifs au projet?"
 
@@ -1074,9 +1074,9 @@ msgstr ""
 msgid "hero-pra-action-description"
 msgstr "Compte rendu prêt à imprimer et à partager par courriel!"
 
-#: views/home.php:30
+#: views/home.php:30 views/home.php:140
 msgid "hero-pra-action-button"
-msgstr "Voir un exemple!"
+msgstr "Nouveau Projet!"
 
 #: views/home.php:67
 msgid "action-first-ttl"
@@ -1096,7 +1096,7 @@ msgstr "Remplissez seulement les sections dont vous avez besoin!"
 
 #: views/home.php:103
 msgid "action-third-ttl"
-msgstr "Envoyer"
+msgstr "Soumettre"
 
 #: views/home.php:104
 msgid "action-third-txt"
@@ -1109,26 +1109,26 @@ msgstr "Introduction"
 #: views/home.php:123
 msgid "form-intro-pra-validate"
 msgstr ""
-"Il est important pour moi de bien comprendre vos besoins, vos attentes et "
-"vos exigences. Je vous invite donc à parcourir le questionnaire ci-dessous "
-"dont le contenu sera discuté à notre première rencontre. Cette rencontre "
-"aura aussi pour but de se donner une direction, établir un échéancier et "
-"identifier les prochaines étapes."
+"Pour tout agence ou développeur indépendant, il est important de bien "
+"comprendre vos besoins, vos attentes et vos exigences. Je vous invite donc à "
+"parcourir le questionnaire dont le contenu sera discuté à votre première "
+"rencontre avec votre agence ou développeur. Cette rencontre aura aussi pour "
+"but de donner une direction, établir un échéancier et identifier les "
+"prochaines étapes."
 
 #: views/home.php:124
 msgid "form-intro-pra-design"
 msgstr ""
 "Ce questionnaire est la base du processus de développement, donc la première "
-"étape que nous franchirons ensemble. S'il y a lieu, tout autre aspect qui "
-"n’est pas couvert dans le présent questionnaire sera discuté et inclus nos "
-"<a href=\"#\">Conditions Générales</a>."
+"étape que vous franchirez avec votre développeur. S'il y a lieu, tout autre "
+"aspect qui n’est pas couvert dans le présent questionnaire sera discuté et "
+"inclus vos Conditions Générales."
 
 #: views/home.php:125
 msgid "form-intro-pra-confirm"
 msgstr ""
-"Je suppose que vous êtes d'accord qu'un bon processus de planification "
-"contribue à une meilleure gestion de notre temps et une meilleure "
-"collaboration."
+"Un bon processus de planification contribue à une meilleure gestion de temps "
+"et une meilleure collaboration."
 
 #: views/home.php:126
 msgid "form-intro-pra-article"
@@ -1142,15 +1142,21 @@ msgstr ""
 msgid "form-intro-pra-end"
 msgstr "Merci de prendre le temps de parcourir ce questionnaire!"
 
-#: views/home.php:138
-msgid "form-intro-pra-privacy"
+#: views/home.php:128
+msgid "-<br />The Projecklist Team"
+msgstr "-<br />L’Équipe Projecklist"
+
+#: views/home.php:139 views/projeckt_form.php:31
+msgid ""
+"<a href=\"register.php\">Register</a> to be able to save your progress or "
+"create multiple projects."
 msgstr ""
-"<strong>Confidentialité:</strong> toute information que vous partager, comme "
-"vos adresses et numéros de téléphone, est sauvegarder de façon "
-"confidentielle. Ces informations sont utilisées pour les évaluations de "
-"projets, la préparation de factures et pour rédiger les <a href=\"#"
-"\">Conditions Générales</a> (contrat), si applicable. Je ne vends ou partage "
-"ces informations avec personne."
+"<a href=\"register.php\">Inscrivez-vous</a> pour enregistrer votre progrès "
+"ou créer de plusieurs projets."
+
+#: views/home.php:140
+msgid "Or "
+msgstr "Ou commencer un "
 
 #: views/login_form.php:17
 msgid "Email"
@@ -1213,7 +1219,7 @@ msgstr "Réinitialiser"
 
 #: views/projeckt_form.php:8
 msgid "Send"
-msgstr "Envoyer"
+msgstr "Soumettre"
 
 #: views/projeckt_form.php:14
 msgid "Debug"
@@ -1222,14 +1228,6 @@ msgstr ""
 #: views/projeckt_form.php:26
 msgid "New Project!"
 msgstr "Nouveau Projet!"
-
-#: views/projeckt_form.php:31
-msgid ""
-"<a href=\"register.php\">Register</a> to be able to save your progress or "
-"create multiple projects."
-msgstr ""
-"<a href=\"register.php\">Inscrivez-vous</a> pour enregistrer votre progrès "
-"ou créer de plusieurs projets."
 
 #: views/projeckt_form.php:32
 msgid ""
@@ -1257,535 +1255,535 @@ msgstr ""
 msgid "fld_project_name"
 msgstr "Nom de Projet:"
 
-#: views/projeckt_form.php:102
+#: views/projeckt_form.php:103
 msgid "form-planning-contact-info"
-msgstr ""
-"Pour la première prise de contact, seulement le Contact Principal sera "
-"contacté."
+msgstr "Seulement le Contact Principal recevra le projet par courriel."
 
-#: views/projeckt_form.php:115
+#: views/projeckt_form.php:106
+msgid "form-planning-contact-info-alt"
+msgstr "Évidemment!"
+
+#: views/projeckt_form.php:120
 msgid "form-planning-contact-primary-stl-name"
 msgstr "Nom:"
 
-#: views/projeckt_form.php:118
+#: views/projeckt_form.php:123
 msgid "fld_contact_primary_fn"
 msgstr "Prénom"
 
-#: views/projeckt_form.php:122
+#: views/projeckt_form.php:127
 msgid "fld_contact_primary_ln"
 msgstr "Nom"
 
-#: views/projeckt_form.php:132
+#: views/projeckt_form.php:137
 msgid "tel_contact_primary_tel"
 msgstr "Téléphone:"
 
-#: views/projeckt_form.php:139
+#: views/projeckt_form.php:144
 msgid "eml_contact_primary_email"
 msgstr "Courriel:"
 
-#: views/projeckt_form.php:143
+#: views/projeckt_form.php:148
 msgid "eml_contact_primary_email_verification"
 msgstr "Confirmation du courriel:"
 
-#: views/projeckt_form.php:162
+#: views/projeckt_form.php:167
 msgid "form-planning-contact-alternate-stl-name"
 msgstr "Nom:"
 
-#: views/projeckt_form.php:166
+#: views/projeckt_form.php:171
 msgid "fld_contact_alt_fn"
 msgstr "Prénom"
 
-#: views/projeckt_form.php:171
+#: views/projeckt_form.php:176
 msgid "fld_contact_alt_ln"
 msgstr "Nom"
 
-#: views/projeckt_form.php:183
+#: views/projeckt_form.php:188
 msgid "tel_contact_alt_contact_tel"
 msgstr "Téléphone:"
 
-#: views/projeckt_form.php:193
+#: views/projeckt_form.php:198
 msgid "eml_contact_alt_email"
 msgstr "Courriel:"
 
-#: views/projeckt_form.php:199
+#: views/projeckt_form.php:204
 msgid "eml_contact_alt_email_verification"
 msgstr "Confirmation du courriel:"
 
-#: views/projeckt_form.php:217 views/projeckt_form.php:1652
-#: views/projeckt_form.php:2635 views/projeckt_form.php:2772
-#: views/projeckt_form.php:2900 views/projeckt_form.php:3283
+#: views/projeckt_form.php:222 views/projeckt_form.php:1657
+#: views/projeckt_form.php:2640 views/projeckt_form.php:2777
+#: views/projeckt_form.php:2905 views/projeckt_form.php:3288
 msgid "form-subFields-btn-add"
 msgstr "AJOUTER"
 
-#: views/projeckt_form.php:220 views/projeckt_form.php:1655
-#: views/projeckt_form.php:2638 views/projeckt_form.php:2775
-#: views/projeckt_form.php:2903 views/projeckt_form.php:3286
+#: views/projeckt_form.php:225 views/projeckt_form.php:1660
+#: views/projeckt_form.php:2643 views/projeckt_form.php:2780
+#: views/projeckt_form.php:2908 views/projeckt_form.php:3291
 msgid "form-subFields-btn-remove"
 msgstr "RETIRER"
 
-#: views/projeckt_form.php:248
+#: views/projeckt_form.php:253
 msgid "form-planning-familiarity-info"
 msgstr ""
-"Pour m’assurez que l'information soit véhiculée de la bonne façon et ainsi "
-"faciliter nos interactions, veuillez indiquer votre niveau de familiarité "
+"Pour s’assurez que l'information soit véhiculée de la bonne façon et ainsi "
+"faciliter vos interactions, veuillez indiquer votre niveau de familiarité "
 "avec les technologies web et ses techniques de conception."
 
-#: views/projeckt_form.php:255
+#: views/projeckt_form.php:260
 msgid "form-planning-familiarity-opt-choose"
 msgstr " — sélection — "
 
-#: views/projeckt_form.php:256
+#: views/projeckt_form.php:261
 msgid "form-planning-familiarity-opt-notComfortable"
 msgstr "Peu familier"
 
-#: views/projeckt_form.php:257
+#: views/projeckt_form.php:262
 msgid "form-planning-familiarity-opt-comfortable"
 msgstr "Familier"
 
-#: views/projeckt_form.php:258
+#: views/projeckt_form.php:263
 msgid "form-planning-familiarity-opt-veryComfortable"
 msgstr "Très familier"
 
-#: views/projeckt_form.php:282
+#: views/projeckt_form.php:287
 msgid "form-planning-timeline-info"
 msgstr ""
 "S’il vous plaît, indiquez si vous avez un échéancier pour votre projet."
 
-#: views/projeckt_form.php:289
+#: views/projeckt_form.php:294
 msgid "form-planning-timeline-opt-choose"
 msgstr " — sélection — "
 
-#: views/projeckt_form.php:290
+#: views/projeckt_form.php:295
 msgid "form-planning-timeline-opt-none"
 msgstr "Aucun échéancier précis"
 
-#: views/projeckt_form.php:291
+#: views/projeckt_form.php:296
 msgid "form-planning-timeline-opt-weeks_0_5"
 msgstr "0-5 semaines"
 
-#: views/projeckt_form.php:292
+#: views/projeckt_form.php:297
 msgid "form-planning-timeline-opt-months_1_3"
 msgstr "1-3 mois"
 
-#: views/projeckt_form.php:293
+#: views/projeckt_form.php:298
 msgid "form-planning-timeline-opt-months_3_6"
 msgstr "3-6 mois"
 
-#: views/projeckt_form.php:294
+#: views/projeckt_form.php:299
 msgid "form-planning-timeline-opt-months_6plus"
 msgstr "6 mois et +"
 
-#: views/projeckt_form.php:317
+#: views/projeckt_form.php:322
 msgid "form-planning-budget-info"
 msgstr "Avez-vous établi un budget pour votre projet?"
 
-#: views/projeckt_form.php:325
+#: views/projeckt_form.php:330
 msgid "form-planning-budget-opt-choose"
 msgstr " — sélection — "
 
-#: views/projeckt_form.php:326
+#: views/projeckt_form.php:331
 msgid "form-planning-budget-opt-none"
 msgstr "Aucun budget précis"
 
-#: views/projeckt_form.php:327
+#: views/projeckt_form.php:332
 msgid "form-planning-budget-opt-1k"
 msgstr "moins de 1 000 $"
 
-#: views/projeckt_form.php:328
+#: views/projeckt_form.php:333
 msgid "form-planning-budget-opt-2k"
 msgstr "1 000 $ - 2 000 $"
 
-#: views/projeckt_form.php:329
+#: views/projeckt_form.php:334
 msgid "form-planning-budget-opt-5k"
 msgstr "2 000 $ - 5 000 $"
 
-#: views/projeckt_form.php:330
+#: views/projeckt_form.php:335
 msgid "form-planning-budget-opt-10k"
 msgstr "5 000 $ - 10 000 $"
 
-#: views/projeckt_form.php:331
+#: views/projeckt_form.php:336
 msgid "form-planning-budget-opt-10kplus"
 msgstr "plus de 10 000 $"
 
-#: views/projeckt_form.php:355
+#: views/projeckt_form.php:360
 msgid "form-planning-billing-info"
 msgstr ""
-"Ces informations seront utilisées uniquement pour la facturation et la "
-"rédaction des <a href=\"#\">Conditions Générales</a> (du contrat), si "
-"applicable."
+"Ces informations seront utilisées pour la facturation et la rédaction des "
+"Conditions Générales (du contrat), si applicable."
 
-#: views/projeckt_form.php:365
+#: views/projeckt_form.php:370
 msgid "xxx_billing_sameas_primary"
 msgstr "Mêmes informations que le <u>Contact Principal</u>"
 
-#: views/projeckt_form.php:376
+#: views/projeckt_form.php:381
 msgid "fld_billing_fn"
 msgstr "Prénom"
 
-#: views/projeckt_form.php:381
+#: views/projeckt_form.php:386
 msgid "fld_billing_ln"
 msgstr "Nom"
 
-#: views/projeckt_form.php:393
+#: views/projeckt_form.php:398
 msgid "fld_billing_coname"
 msgstr "Nom d’entreprise:"
 
-#: views/projeckt_form.php:399
+#: views/projeckt_form.php:404
 msgid "fld_billing_area"
 msgstr "Département / Service:"
 
-#: views/projeckt_form.php:409
+#: views/projeckt_form.php:414
 msgid "tel_billing_tel"
 msgstr "Téléphone:"
 
-#: views/projeckt_form.php:415
+#: views/projeckt_form.php:420
 msgid "tel_billing_fax"
 msgstr "Fax:"
 
-#: views/projeckt_form.php:427
+#: views/projeckt_form.php:432
 msgid "fld_billing_address"
 msgstr "Ligne 1"
 
-#: views/projeckt_form.php:432
+#: views/projeckt_form.php:437
 msgid "fld_billing_address_2"
 msgstr "Ligne 2"
 
-#: views/projeckt_form.php:440
+#: views/projeckt_form.php:445
 msgid "fld_billing_city"
 msgstr "Ville:"
 
-#: views/projeckt_form.php:445
+#: views/projeckt_form.php:450
 msgid "opt_billing_province"
 msgstr "Province"
 
-#: views/projeckt_form.php:453
+#: views/projeckt_form.php:458
 msgid "fld_billing_postalcode"
 msgstr "Code Postale"
 
-#: views/projeckt_form.php:458
+#: views/projeckt_form.php:463
 msgid "fld_billing_country"
 msgstr "Pays"
 
-#: views/projeckt_form.php:471
+#: views/projeckt_form.php:476
 msgid "eml_billing_email"
 msgstr "Courriel:"
 
-#: views/projeckt_form.php:477
+#: views/projeckt_form.php:482
 msgid "eml_billing_email_verification"
 msgstr "Confirmation du courriel:"
 
-#: views/projeckt_form.php:541
+#: views/projeckt_form.php:546
 msgid "form-content-ttl"
 msgstr "CONTENU & DESIGN"
 
-#: views/projeckt_form.php:558
+#: views/projeckt_form.php:563
 msgid "form-content-info-info"
 msgstr ""
 "Informations générales à propos de votre entreprise, projet ou événement aux "
 "fins d’affichage sur le site."
 
-#: views/projeckt_form.php:586
+#: views/projeckt_form.php:591
 msgid "eml_info_email"
 msgstr "Courriel:"
 
-#: views/projeckt_form.php:594
+#: views/projeckt_form.php:599
 msgid "tel_info_tel"
 msgstr "Téléphone:"
 
-#: views/projeckt_form.php:602
+#: views/projeckt_form.php:607
 msgid "tel_info_fax"
 msgstr "Fax:"
 
-#: views/projeckt_form.php:614
+#: views/projeckt_form.php:619
 msgid "fld_info_address"
 msgstr "Ligne 1"
 
-#: views/projeckt_form.php:619
+#: views/projeckt_form.php:624
 msgid "fld_info_address_2"
 msgstr "Ligne 2"
 
-#: views/projeckt_form.php:625
+#: views/projeckt_form.php:630
 msgid "fld_info_city"
 msgstr "Ville"
 
-#: views/projeckt_form.php:630
+#: views/projeckt_form.php:635
 msgid "opt_info_province"
 msgstr "Province"
 
-#: views/projeckt_form.php:636
+#: views/projeckt_form.php:641
 msgid "fld_info_postalcode"
 msgstr "Code Postale"
 
-#: views/projeckt_form.php:641
+#: views/projeckt_form.php:646
 msgid "fld_info_country"
 msgstr "Pays"
 
-#: views/projeckt_form.php:675
+#: views/projeckt_form.php:680
 msgid "form-content-hours-info"
 msgstr "S’il vous plait indiquer vos heure d’ouverture à afficher sur le site."
 
-#: views/projeckt_form.php:686 views/projeckt_form.php:831
-#: views/projeckt_form.php:968 views/projeckt_form.php:1105
-#: views/projeckt_form.php:1242 views/projeckt_form.php:1379
-#: views/projeckt_form.php:1516
-msgid "form-planning-hours-stl-range"
-msgstr "Jour(s)"
-
-#: views/projeckt_form.php:693 views/projeckt_form.php:834
-#: views/projeckt_form.php:971 views/projeckt_form.php:1108
-#: views/projeckt_form.php:1245 views/projeckt_form.php:1382
-#: views/projeckt_form.php:1519
-msgid "form-planning-hours-range-opt-choose"
-msgstr " — sélection — "
-
-#: views/projeckt_form.php:695 views/projeckt_form.php:836
+#: views/projeckt_form.php:691 views/projeckt_form.php:836
 #: views/projeckt_form.php:973 views/projeckt_form.php:1110
 #: views/projeckt_form.php:1247 views/projeckt_form.php:1384
 #: views/projeckt_form.php:1521
-msgid "form-planning-hours-range-lbl-days"
-msgstr "Plage Horaire Hebdomadaire"
-
-#: views/projeckt_form.php:696 views/projeckt_form.php:837
-#: views/projeckt_form.php:974 views/projeckt_form.php:1111
-#: views/projeckt_form.php:1248 views/projeckt_form.php:1385
-#: views/projeckt_form.php:1522
-msgid "form-planning-hours-range-opt-everyday"
-msgstr "Tout les jours"
-
-#: views/projeckt_form.php:697 views/projeckt_form.php:838
-#: views/projeckt_form.php:975 views/projeckt_form.php:1112
-#: views/projeckt_form.php:1249 views/projeckt_form.php:1386
-#: views/projeckt_form.php:1523
-msgid "form-planning-hours-range-opt-weekend"
-msgstr "Fin de semaine"
+msgid "form-planning-hours-stl-range"
+msgstr "Jour(s)"
 
 #: views/projeckt_form.php:698 views/projeckt_form.php:839
 #: views/projeckt_form.php:976 views/projeckt_form.php:1113
 #: views/projeckt_form.php:1250 views/projeckt_form.php:1387
 #: views/projeckt_form.php:1524
-msgid "form-planning-hours-range-opt-mondayToFriday"
-msgstr "Lundi au Vendredi"
+msgid "form-planning-hours-range-opt-choose"
+msgstr " — sélection — "
 
 #: views/projeckt_form.php:700 views/projeckt_form.php:841
 #: views/projeckt_form.php:978 views/projeckt_form.php:1115
 #: views/projeckt_form.php:1252 views/projeckt_form.php:1389
 #: views/projeckt_form.php:1526
-msgid "form-planning-hours-range-lbl-day"
-msgstr "Jour Unique"
+msgid "form-planning-hours-range-lbl-days"
+msgstr "Plage Horaire Hebdomadaire"
 
 #: views/projeckt_form.php:701 views/projeckt_form.php:842
 #: views/projeckt_form.php:979 views/projeckt_form.php:1116
 #: views/projeckt_form.php:1253 views/projeckt_form.php:1390
 #: views/projeckt_form.php:1527
-msgid "form-planning-hours-range-opt-mon"
-msgstr "Lundi"
+msgid "form-planning-hours-range-opt-everyday"
+msgstr "Tout les jours"
 
 #: views/projeckt_form.php:702 views/projeckt_form.php:843
 #: views/projeckt_form.php:980 views/projeckt_form.php:1117
 #: views/projeckt_form.php:1254 views/projeckt_form.php:1391
 #: views/projeckt_form.php:1528
-msgid "form-planning-hours-range-opt-tue"
-msgstr "Mardi"
+msgid "form-planning-hours-range-opt-weekend"
+msgstr "Fin de semaine"
 
 #: views/projeckt_form.php:703 views/projeckt_form.php:844
 #: views/projeckt_form.php:981 views/projeckt_form.php:1118
 #: views/projeckt_form.php:1255 views/projeckt_form.php:1392
 #: views/projeckt_form.php:1529
-msgid "form-planning-hours-range-opt-wed"
-msgstr "Mercredi"
-
-#: views/projeckt_form.php:704 views/projeckt_form.php:845
-#: views/projeckt_form.php:982 views/projeckt_form.php:1119
-#: views/projeckt_form.php:1256 views/projeckt_form.php:1393
-#: views/projeckt_form.php:1530
-msgid "form-planning-hours-range-opt-thu"
-msgstr "Jeudi"
+msgid "form-planning-hours-range-opt-mondayToFriday"
+msgstr "Lundi au Vendredi"
 
 #: views/projeckt_form.php:705 views/projeckt_form.php:846
 #: views/projeckt_form.php:983 views/projeckt_form.php:1120
 #: views/projeckt_form.php:1257 views/projeckt_form.php:1394
 #: views/projeckt_form.php:1531
-msgid "form-planning-hours-range-opt-fri"
-msgstr "Vendredi"
+msgid "form-planning-hours-range-lbl-day"
+msgstr "Jour Unique"
 
 #: views/projeckt_form.php:706 views/projeckt_form.php:847
 #: views/projeckt_form.php:984 views/projeckt_form.php:1121
 #: views/projeckt_form.php:1258 views/projeckt_form.php:1395
 #: views/projeckt_form.php:1532
-msgid "form-planning-hours-range-opt-sat"
-msgstr "Samedi"
+msgid "form-planning-hours-range-opt-mon"
+msgstr "Lundi"
 
 #: views/projeckt_form.php:707 views/projeckt_form.php:848
 #: views/projeckt_form.php:985 views/projeckt_form.php:1122
 #: views/projeckt_form.php:1259 views/projeckt_form.php:1396
 #: views/projeckt_form.php:1533
+msgid "form-planning-hours-range-opt-tue"
+msgstr "Mardi"
+
+#: views/projeckt_form.php:708 views/projeckt_form.php:849
+#: views/projeckt_form.php:986 views/projeckt_form.php:1123
+#: views/projeckt_form.php:1260 views/projeckt_form.php:1397
+#: views/projeckt_form.php:1534
+msgid "form-planning-hours-range-opt-wed"
+msgstr "Mercredi"
+
+#: views/projeckt_form.php:709 views/projeckt_form.php:850
+#: views/projeckt_form.php:987 views/projeckt_form.php:1124
+#: views/projeckt_form.php:1261 views/projeckt_form.php:1398
+#: views/projeckt_form.php:1535
+msgid "form-planning-hours-range-opt-thu"
+msgstr "Jeudi"
+
+#: views/projeckt_form.php:710 views/projeckt_form.php:851
+#: views/projeckt_form.php:988 views/projeckt_form.php:1125
+#: views/projeckt_form.php:1262 views/projeckt_form.php:1399
+#: views/projeckt_form.php:1536
+msgid "form-planning-hours-range-opt-fri"
+msgstr "Vendredi"
+
+#: views/projeckt_form.php:711 views/projeckt_form.php:852
+#: views/projeckt_form.php:989 views/projeckt_form.php:1126
+#: views/projeckt_form.php:1263 views/projeckt_form.php:1400
+#: views/projeckt_form.php:1537
+msgid "form-planning-hours-range-opt-sat"
+msgstr "Samedi"
+
+#: views/projeckt_form.php:712 views/projeckt_form.php:853
+#: views/projeckt_form.php:990 views/projeckt_form.php:1127
+#: views/projeckt_form.php:1264 views/projeckt_form.php:1401
+#: views/projeckt_form.php:1538
 msgid "form-planning-hours-range-opt-sun"
 msgstr "Dimanche"
 
-#: views/projeckt_form.php:717 views/projeckt_form.php:854
-#: views/projeckt_form.php:991 views/projeckt_form.php:1128
-#: views/projeckt_form.php:1265 views/projeckt_form.php:1402
-#: views/projeckt_form.php:1539
+#: views/projeckt_form.php:722 views/projeckt_form.php:859
+#: views/projeckt_form.php:996 views/projeckt_form.php:1133
+#: views/projeckt_form.php:1270 views/projeckt_form.php:1407
+#: views/projeckt_form.php:1544
 msgid "form-planning-hours-stl-from"
 msgstr "De:"
 
-#: views/projeckt_form.php:719 views/projeckt_form.php:770
-#: views/projeckt_form.php:856 views/projeckt_form.php:907
-#: views/projeckt_form.php:993 views/projeckt_form.php:1044
-#: views/projeckt_form.php:1130 views/projeckt_form.php:1181
-#: views/projeckt_form.php:1267 views/projeckt_form.php:1318
-#: views/projeckt_form.php:1404 views/projeckt_form.php:1455
-#: views/projeckt_form.php:1541 views/projeckt_form.php:1592
+#: views/projeckt_form.php:724 views/projeckt_form.php:775
+#: views/projeckt_form.php:861 views/projeckt_form.php:912
+#: views/projeckt_form.php:998 views/projeckt_form.php:1049
+#: views/projeckt_form.php:1135 views/projeckt_form.php:1186
+#: views/projeckt_form.php:1272 views/projeckt_form.php:1323
+#: views/projeckt_form.php:1409 views/projeckt_form.php:1460
+#: views/projeckt_form.php:1546 views/projeckt_form.php:1597
 msgid "form-planning-hours-from-lbl-hours"
 msgstr "Heure"
 
-#: views/projeckt_form.php:746 views/projeckt_form.php:759
-#: views/projeckt_form.php:797 views/projeckt_form.php:810
-#: views/projeckt_form.php:883 views/projeckt_form.php:896
-#: views/projeckt_form.php:934 views/projeckt_form.php:947
-#: views/projeckt_form.php:1020 views/projeckt_form.php:1033
-#: views/projeckt_form.php:1071 views/projeckt_form.php:1084
-#: views/projeckt_form.php:1157 views/projeckt_form.php:1170
-#: views/projeckt_form.php:1208 views/projeckt_form.php:1221
-#: views/projeckt_form.php:1294 views/projeckt_form.php:1307
-#: views/projeckt_form.php:1345 views/projeckt_form.php:1358
-#: views/projeckt_form.php:1431 views/projeckt_form.php:1444
-#: views/projeckt_form.php:1482 views/projeckt_form.php:1495
-#: views/projeckt_form.php:1568 views/projeckt_form.php:1581
-#: views/projeckt_form.php:1619 views/projeckt_form.php:1632
+#: views/projeckt_form.php:751 views/projeckt_form.php:764
+#: views/projeckt_form.php:802 views/projeckt_form.php:815
+#: views/projeckt_form.php:888 views/projeckt_form.php:901
+#: views/projeckt_form.php:939 views/projeckt_form.php:952
+#: views/projeckt_form.php:1025 views/projeckt_form.php:1038
+#: views/projeckt_form.php:1076 views/projeckt_form.php:1089
+#: views/projeckt_form.php:1162 views/projeckt_form.php:1175
+#: views/projeckt_form.php:1213 views/projeckt_form.php:1226
+#: views/projeckt_form.php:1299 views/projeckt_form.php:1312
+#: views/projeckt_form.php:1350 views/projeckt_form.php:1363
+#: views/projeckt_form.php:1436 views/projeckt_form.php:1449
+#: views/projeckt_form.php:1487 views/projeckt_form.php:1500
+#: views/projeckt_form.php:1573 views/projeckt_form.php:1586
+#: views/projeckt_form.php:1624 views/projeckt_form.php:1637
 msgid "form-planning-hours-from-lbl-closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:752 views/projeckt_form.php:803
-#: views/projeckt_form.php:889 views/projeckt_form.php:940
-#: views/projeckt_form.php:1026 views/projeckt_form.php:1077
-#: views/projeckt_form.php:1163 views/projeckt_form.php:1214
-#: views/projeckt_form.php:1300 views/projeckt_form.php:1351
-#: views/projeckt_form.php:1437 views/projeckt_form.php:1488
-#: views/projeckt_form.php:1574 views/projeckt_form.php:1625
+#: views/projeckt_form.php:757 views/projeckt_form.php:808
+#: views/projeckt_form.php:894 views/projeckt_form.php:945
+#: views/projeckt_form.php:1031 views/projeckt_form.php:1082
+#: views/projeckt_form.php:1168 views/projeckt_form.php:1219
+#: views/projeckt_form.php:1305 views/projeckt_form.php:1356
+#: views/projeckt_form.php:1442 views/projeckt_form.php:1493
+#: views/projeckt_form.php:1579 views/projeckt_form.php:1630
 msgid "form-planning-hours-from-lbl-minutes"
 msgstr "Minute"
 
-#: views/projeckt_form.php:768 views/projeckt_form.php:905
-#: views/projeckt_form.php:1042 views/projeckt_form.php:1179
-#: views/projeckt_form.php:1316 views/projeckt_form.php:1453
-#: views/projeckt_form.php:1590
+#: views/projeckt_form.php:773 views/projeckt_form.php:910
+#: views/projeckt_form.php:1047 views/projeckt_form.php:1184
+#: views/projeckt_form.php:1321 views/projeckt_form.php:1458
+#: views/projeckt_form.php:1595
 msgid "form-planning-hours-stl-to"
 msgstr "À:"
 
-#: views/projeckt_form.php:818
+#: views/projeckt_form.php:823
 msgid "cbx_hours_regular_set_1_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:955
+#: views/projeckt_form.php:960
 msgid "cbx_hours_regular_set_2_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1092
+#: views/projeckt_form.php:1097
 msgid "cbx_hours_regular_set_3_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1229
+#: views/projeckt_form.php:1234
 msgid "cbx_hours_regular_set_4_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1366
+#: views/projeckt_form.php:1371
 msgid "cbx_hours_regular_set_5_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1503
+#: views/projeckt_form.php:1508
 msgid "cbx_hours_regular_set_6_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1640
+#: views/projeckt_form.php:1645
 msgid "cbx_hours_regular_set_7_closed"
 msgstr "Fermer"
 
-#: views/projeckt_form.php:1683
+#: views/projeckt_form.php:1688
 msgid "form-content-holiday-info"
 msgstr ""
 "Indiquez vos heures d’ouverture pour les journées fériés, si applicable. "
 "(aux fins d’affichage sur le site)"
 
-#: views/projeckt_form.php:1712
+#: views/projeckt_form.php:1717
 msgid "form-content-product-info"
 msgstr ""
-"Savoir quels sont vos produits et services principaux me permettra "
-"d’organiser le contenu de votre site plus efficacement."
+"Savoir quels sont vos produits et services principaux permettra d’organiser "
+"le contenu de votre site plus efficacement."
 
-#: views/projeckt_form.php:1760
+#: views/projeckt_form.php:1765
 msgid "form-content-asset-info"
 msgstr ""
 "Par exemple: Est ce qu’il y a du contenu de votre site web précédant que "
 "vous souhaitez réutiliser pour ce projet-ci."
 
-#: views/projeckt_form.php:1768 views/projeckt_form.php:1769
+#: views/projeckt_form.php:1773 views/projeckt_form.php:1774
 msgid "rdo_existing_asset-yes"
 msgstr "Oui"
 
-#: views/projeckt_form.php:1773
+#: views/projeckt_form.php:1778
 msgid "form-content-asset-stl-select"
 msgstr "quels types de contenu?"
 
-#: views/projeckt_form.php:1776 views/projeckt_form.php:1777
+#: views/projeckt_form.php:1781 views/projeckt_form.php:1782
 msgid "cbx_asset_logo"
 msgstr "Logo(s)"
 
-#: views/projeckt_form.php:1780 views/projeckt_form.php:1781
+#: views/projeckt_form.php:1785 views/projeckt_form.php:1786
 msgid "cbx_asset_img"
 msgstr "Image(s)/Photo(s)"
 
-#: views/projeckt_form.php:1784 views/projeckt_form.php:1785
+#: views/projeckt_form.php:1789 views/projeckt_form.php:1790
 msgid "cbx_asset_audio"
 msgstr "Audio(s)"
 
-#: views/projeckt_form.php:1788 views/projeckt_form.php:1789
+#: views/projeckt_form.php:1793 views/projeckt_form.php:1794
 msgid "cbx_asset_video"
 msgstr "Vidéo(s)"
 
-#: views/projeckt_form.php:1792 views/projeckt_form.php:1793
+#: views/projeckt_form.php:1797 views/projeckt_form.php:1798
 msgid "cbx_asset_docs"
 msgstr "Document(s)"
 
-#: views/projeckt_form.php:1808 views/projeckt_form.php:1809
+#: views/projeckt_form.php:1813 views/projeckt_form.php:1814
 msgid "rdo_existing_asset-no"
 msgstr "Non"
 
-#: views/projeckt_form.php:1834
+#: views/projeckt_form.php:1839
 msgid "form-content-content-info-1"
 msgstr ""
-"Il est préférable que vous fournissiez le contenu texte de votre propre site "
-"web. Vous connaissez votre entreprise, projet ou évènement mieux que moi. "
-"Vous avez généralement du meilleur contenu pour les pages web. Ceci dit, je "
-"fournirai toujours de la rétroaction sur celui-ci afin de faciliter son "
-"intégration au site web et moteur de recherches."
+"Si vous avez besoin de ces services, à un coût supplémentaire, un "
+"professionnel peut être embauché."
 
-#: views/projeckt_form.php:1835
+#: views/projeckt_form.php:1840
 msgid "form-content-content-info-2"
 msgstr ""
-"Je ne suis pas rédacteur, designer graphique ou expert en photographie. Je "
-"peux créer et fournir du contenu de qualité à un coût afférent et/ou je peux "
-"aussi vous mettre en contact avec des experts."
+"Il est préférable que vous fournissiez le contenu texte de votre propre site "
+"web. Vous connaissez votre entreprise, projet ou évènement mieux que "
+"quiconque. Vous avez généralement du meilleur contenu pour les pages web. "
+"Ceci dit, votre développeur fournira de la rétroaction sur le contenu afin "
+"de faciliter son intégration au site web et moteur de recherches."
 
-#: views/projeckt_form.php:1843 views/projeckt_form.php:1844
+#: views/projeckt_form.php:1848 views/projeckt_form.php:1849
 msgid "cbx_content_copywriting"
 msgstr "Rédaction (<i>contenu textuel</i>)"
 
-#: views/projeckt_form.php:1847 views/projeckt_form.php:1848
+#: views/projeckt_form.php:1852 views/projeckt_form.php:1853
 msgid "cbx_content_graphicdesign"
 msgstr "Design Graphique"
 
-#: views/projeckt_form.php:1851 views/projeckt_form.php:1852
+#: views/projeckt_form.php:1856 views/projeckt_form.php:1857
 msgid "cbx_content_photography"
 msgstr "Photographie"
 
-#: views/projeckt_form.php:1855 views/projeckt_form.php:1856
+#: views/projeckt_form.php:1860 views/projeckt_form.php:1861
 msgid "cbx_content_none"
 msgstr ""
 "Non, aucun; j’ai besoin de services de rédaction, de design graphique et/ou "
 "photographique."
 
-#: views/projeckt_form.php:1890
+#: views/projeckt_form.php:1895
 msgid "form-content-feature-info"
 msgstr ""
 "Les sites avec beaucoup d’éléments personnalisés sont certes plus attirants, "
@@ -1794,134 +1792,134 @@ msgstr ""
 "éléments me permettent entre autres d’évaluer l’étendue et le niveau de "
 "complexité d’un projet."
 
-#: views/projeckt_form.php:1897
+#: views/projeckt_form.php:1902
 msgid "form-content-feature-par-instruction"
 msgstr ""
 "Sélectionnez tous les choix applicables. Pour chacune des options choisies, "
 "indiquez la raison pour laquelle vous pensez avoir besoin de cette fonction."
 
-#: views/projeckt_form.php:1902 views/projeckt_form.php:1903
+#: views/projeckt_form.php:1907 views/projeckt_form.php:1908
 msgid "cbx_feature_forum"
 msgstr "Forum"
 
-#: views/projeckt_form.php:1910 views/projeckt_form.php:1911
+#: views/projeckt_form.php:1915 views/projeckt_form.php:1916
 msgid "cbx_feature_login"
 msgstr "Session d’utilisateur"
 
-#: views/projeckt_form.php:1919 views/projeckt_form.php:1920
+#: views/projeckt_form.php:1924 views/projeckt_form.php:1925
 msgid "cbx_feature_chart"
 msgstr "Tableau de prix"
 
-#: views/projeckt_form.php:1927 views/projeckt_form.php:1928
+#: views/projeckt_form.php:1932 views/projeckt_form.php:1933
 msgid "cbx_feature_catalog"
 msgstr "Catalogue de produits"
 
-#: views/projeckt_form.php:1935 views/projeckt_form.php:1936
+#: views/projeckt_form.php:1940 views/projeckt_form.php:1941
 msgid "cbx_feature_comparechart"
 msgstr "Tableau comparatif"
 
-#: views/projeckt_form.php:1943 views/projeckt_form.php:1944
+#: views/projeckt_form.php:1948 views/projeckt_form.php:1949
 msgid "cbx_feature_form"
 msgstr "Formulaire simple"
 
-#: views/projeckt_form.php:1951 views/projeckt_form.php:1952
+#: views/projeckt_form.php:1956 views/projeckt_form.php:1957
 msgid "cbx_feature_advancedform"
 msgstr "Formulaire avancé"
 
-#: views/projeckt_form.php:1959 views/projeckt_form.php:1960
+#: views/projeckt_form.php:1964 views/projeckt_form.php:1965
 msgid "cbx_feature_animation"
 msgstr "Animations"
 
-#: views/projeckt_form.php:1971 views/projeckt_form.php:1972
+#: views/projeckt_form.php:1976 views/projeckt_form.php:1977
 msgid "cbx_feature_search"
 msgstr "Fonctionnalité de recherche"
 
-#: views/projeckt_form.php:1979 views/projeckt_form.php:1980
+#: views/projeckt_form.php:1984 views/projeckt_form.php:1985
 msgid "cbx_feature_advancedsearch"
 msgstr "Recherche avancée"
 
-#: views/projeckt_form.php:1987 views/projeckt_form.php:1988
+#: views/projeckt_form.php:1992 views/projeckt_form.php:1993
 msgid "cbx_feature_social"
 msgstr "Intégration des réseaux sociaux"
 
-#: views/projeckt_form.php:1995 views/projeckt_form.php:1996
+#: views/projeckt_form.php:2000 views/projeckt_form.php:2001
 msgid "cbx_feature_blog"
 msgstr "Blog"
 
-#: views/projeckt_form.php:2004 views/projeckt_form.php:2005
+#: views/projeckt_form.php:2009 views/projeckt_form.php:2010
 msgid "cbx_feature_timeline"
 msgstr "Calendrier"
 
-#: views/projeckt_form.php:2012 views/projeckt_form.php:2013
+#: views/projeckt_form.php:2017 views/projeckt_form.php:2018
 msgid "cbx_feature_newsletter"
 msgstr "Infolettre"
 
-#: views/projeckt_form.php:2020 views/projeckt_form.php:2021
+#: views/projeckt_form.php:2025 views/projeckt_form.php:2026
 msgid "cbx_feature_calculator"
 msgstr "Calculateur"
 
-#: views/projeckt_form.php:2028 views/projeckt_form.php:2029
+#: views/projeckt_form.php:2033 views/projeckt_form.php:2034
 msgid "cbx_feature_otherdetails"
 msgstr "Autre:"
 
-#: views/projeckt_form.php:2105
+#: views/projeckt_form.php:2110
 msgid "form-design-siteGoal-info"
 msgstr ""
-"Il est exagéré de penser que votre clientèle accédera simplement le site. "
-"Les questions ci-dessus permettent d’évaluer les raisons pour lesquelles les "
+"Il est exagéré de penser que votre audience accédera simplement le site. Les "
+"questions ci-dessus permettent d’évaluer les raisons pour lesquelles les "
 "utilisateurs accéderont à votre site. Par exemple, des sites web de style "
 "brochure attirent des utilisateurs qui cherchent simplement une adresse ou "
 "un numéro de téléphone. Par conséquent, nous pouvons créer une page ou site "
 "web à cet effet. Ces questionnements permettent de mieux identifier les buts "
 "et les besoins du site web."
 
-#: views/projeckt_form.php:2170
+#: views/projeckt_form.php:2175
 msgid "form-design-action-info"
 msgstr ""
-"J’utilise cette information afin de mieux cerner les besoins de "
+"Cette information est utilisé afin de mieux cerner les besoins de "
 "fonctionnalité du site."
 
-#: views/projeckt_form.php:2177
+#: views/projeckt_form.php:2182
 msgid "form-design-action-pra-apply"
 msgstr "Sélectionnez tous les choix applicables:"
 
-#: views/projeckt_form.php:2182 views/projeckt_form.php:2183
+#: views/projeckt_form.php:2187 views/projeckt_form.php:2188
 msgid "cbx_action_call"
 msgstr "Vous téléphoner"
 
-#: views/projeckt_form.php:2186 views/projeckt_form.php:2187
+#: views/projeckt_form.php:2191 views/projeckt_form.php:2192
 msgid "cbx_action_mail"
 msgstr "Vous envoyer un courriel"
 
-#: views/projeckt_form.php:2190 views/projeckt_form.php:2191
+#: views/projeckt_form.php:2195 views/projeckt_form.php:2196
 msgid "cbx_action_fillform"
 msgstr "Remplir un formulaire"
 
-#: views/projeckt_form.php:2194 views/projeckt_form.php:2195
+#: views/projeckt_form.php:2199 views/projeckt_form.php:2200
 msgid "cbx_action_socialshare"
 msgstr "Partager sur media sociaux"
 
-#: views/projeckt_form.php:2198 views/projeckt_form.php:2199
+#: views/projeckt_form.php:2203 views/projeckt_form.php:2204
 msgid "cbx_action_subscribeemail"
 msgstr "Souscrire à une infolettre"
 
-#: views/projeckt_form.php:2202 views/projeckt_form.php:2203
+#: views/projeckt_form.php:2207 views/projeckt_form.php:2208
 msgid "cbx_action_article"
 msgstr "Lire un article"
 
-#: views/projeckt_form.php:2206 views/projeckt_form.php:2207
+#: views/projeckt_form.php:2211 views/projeckt_form.php:2212
 msgid "cbx_action_searchinfo"
 msgstr "Rechercher de l’information"
 
-#: views/projeckt_form.php:2210 views/projeckt_form.php:2211
+#: views/projeckt_form.php:2215 views/projeckt_form.php:2216
 msgid "cbx_action_purchase"
 msgstr "Faire un achat en ligne"
 
-#: views/projeckt_form.php:2247
+#: views/projeckt_form.php:2252
 msgid "form-design-adjective-info"
 msgstr "Cette information aide à la conception du design."
 
-#: views/projeckt_form.php:2287
+#: views/projeckt_form.php:2292
 msgid "form-design-target-info"
 msgstr ""
 "Quel est votre public cible? Un site web créé à l’attention d’étudiants "
@@ -1931,166 +1929,167 @@ msgstr ""
 "contribue tous à la conception du design pour le site afin d’assurer la "
 "meilleure expérience possible."
 
-#: views/projeckt_form.php:2300 views/projeckt_form.php:2301
+#: views/projeckt_form.php:2305 views/projeckt_form.php:2306
 msgid "cbx_audience_age_kids"
 msgstr "Enfants"
 
-#: views/projeckt_form.php:2304 views/projeckt_form.php:2305
+#: views/projeckt_form.php:2309 views/projeckt_form.php:2310
 msgid "cbx_audience_age_teen"
 msgstr "Adolescents"
 
-#: views/projeckt_form.php:2308 views/projeckt_form.php:2309
+#: views/projeckt_form.php:2313 views/projeckt_form.php:2314
 msgid "cbx_audience_age_young"
 msgstr "Jeunes adultes"
 
-#: views/projeckt_form.php:2312 views/projeckt_form.php:2313
+#: views/projeckt_form.php:2317 views/projeckt_form.php:2318
 msgid "cbx_audience_age_adult"
 msgstr "Adultes"
 
-#: views/projeckt_form.php:2316 views/projeckt_form.php:2317
+#: views/projeckt_form.php:2321 views/projeckt_form.php:2322
 msgid "cbx_audience_age_senior"
 msgstr "Aines"
 
-#: views/projeckt_form.php:2331 views/projeckt_form.php:2332
+#: views/projeckt_form.php:2336 views/projeckt_form.php:2337
 msgid "cbx_audience_geo_local"
 msgstr "Communauté locale"
 
-#: views/projeckt_form.php:2335 views/projeckt_form.php:2336
+#: views/projeckt_form.php:2340 views/projeckt_form.php:2341
 msgid "cbx_audience_geo_city"
 msgstr "Ville précise"
 
-#: views/projeckt_form.php:2339 views/projeckt_form.php:2340
+#: views/projeckt_form.php:2344 views/projeckt_form.php:2345
 msgid "cbx_audience_geo_province"
 msgstr "Province précise"
 
-#: views/projeckt_form.php:2343 views/projeckt_form.php:2344
+#: views/projeckt_form.php:2348 views/projeckt_form.php:2349
 msgid "cbx_audience_geo_country"
 msgstr "Pays précis"
 
-#: views/projeckt_form.php:2347 views/projeckt_form.php:2348
+#: views/projeckt_form.php:2352 views/projeckt_form.php:2353
 msgid "cbx_audience_geo_world"
 msgstr "International"
 
-#: views/projeckt_form.php:2365 views/projeckt_form.php:2366
+#: views/projeckt_form.php:2370 views/projeckt_form.php:2371
 msgid "cbx_audience_education_hschool"
 msgstr "Étude secondaire"
 
-#: views/projeckt_form.php:2369 views/projeckt_form.php:2370
+#: views/projeckt_form.php:2374 views/projeckt_form.php:2375
 msgid "cbx_audience_education_college"
 msgstr "Collège / CÉGEP"
 
-#: views/projeckt_form.php:2373 views/projeckt_form.php:2374
+#: views/projeckt_form.php:2378 views/projeckt_form.php:2379
 msgid "cbx_audience_education_undergrad"
 msgstr "1<sup>er</sup> cycle universitaire"
 
-#: views/projeckt_form.php:2377 views/projeckt_form.php:2378
+#: views/projeckt_form.php:2382 views/projeckt_form.php:2383
 msgid "cbx_audience_education_grad"
 msgstr "2<sup>e</sup> cycle universitaire"
 
-#: views/projeckt_form.php:2381 views/projeckt_form.php:2382
+#: views/projeckt_form.php:2386 views/projeckt_form.php:2387
 msgid "cbx_audience_education_none"
 msgstr "Aucune éducation"
 
-#: views/projeckt_form.php:2396 views/projeckt_form.php:2397
+#: views/projeckt_form.php:2401 views/projeckt_form.php:2402
 msgid "cbx_audience_job_salaried"
 msgstr "Salarié"
 
-#: views/projeckt_form.php:2400 views/projeckt_form.php:2401
+#: views/projeckt_form.php:2405 views/projeckt_form.php:2406
 msgid "cbx_audience_job_self"
 msgstr "Travailleur autonome"
 
-#: views/projeckt_form.php:2404 views/projeckt_form.php:2405
+#: views/projeckt_form.php:2409 views/projeckt_form.php:2410
 msgid "cbx_audience_job_professional"
 msgstr "Professionnel"
 
-#: views/projeckt_form.php:2408 views/projeckt_form.php:2409
+#: views/projeckt_form.php:2413 views/projeckt_form.php:2414
 msgid "cbx_audience_job_entrepreneur"
 msgstr "Entrepreneur"
 
-#: views/projeckt_form.php:2412 views/projeckt_form.php:2413
+#: views/projeckt_form.php:2417 views/projeckt_form.php:2418
 msgid "cbx_audience_job_unemployed"
 msgstr "Sans emplois"
 
-#: views/projeckt_form.php:2430 views/projeckt_form.php:2431
+#: views/projeckt_form.php:2435 views/projeckt_form.php:2436
 msgid "cbx_audience_wealth_below"
 msgstr "Sous la moyenne"
 
-#: views/projeckt_form.php:2434 views/projeckt_form.php:2435
+#: views/projeckt_form.php:2439 views/projeckt_form.php:2440
 msgid "cbx_audience_wealth_average"
 msgstr "Dans la moyenne"
 
-#: views/projeckt_form.php:2438 views/projeckt_form.php:2439
+#: views/projeckt_form.php:2443 views/projeckt_form.php:2444
 msgid "cbx_audience_wealth_above"
 msgstr "Au-dessus de la moyenne"
 
-#: views/projeckt_form.php:2455 views/projeckt_form.php:2456
+#: views/projeckt_form.php:2460 views/projeckt_form.php:2461
 msgid "cbx_audience_gender_man"
 msgstr "Masculin"
 
-#: views/projeckt_form.php:2459 views/projeckt_form.php:2460
+#: views/projeckt_form.php:2464 views/projeckt_form.php:2465
 msgid "cbx_audience_gender_woman"
 msgstr "Féminin"
 
-#: views/projeckt_form.php:2464
+#: views/projeckt_form.php:2469
 msgid "xxx_gender_placeholder"
 msgstr "placeholder"
 
-#: views/projeckt_form.php:2515
+#: views/projeckt_form.php:2520
 msgid "form-design-design-info"
-msgstr "Ces informations me seront utiles pour la conception du design."
+msgstr "Ces informations seront utiles pour la conception du design."
 
-#: views/projeckt_form.php:2586
+#: views/projeckt_form.php:2591
 msgid "form-design-competitor-info"
 msgstr ""
-"Inscrivez un ou plusieurs sites d’entreprises similaires à la vôtre. Ils me "
-"donneront des indices sur les mots clefs à utiliser. J’aurai aussi une "
+"Inscrivez un ou plusieurs sites d’entreprises similaires à la vôtre. Ils "
+"donneront des indices sur les mots clefs à utiliser et donneront aussi une "
 "meilleure représentation de votre milieu d’affaires."
 
-#: views/projeckt_form.php:2660
+#: views/projeckt_form.php:2665
 msgid "form-design-like-ttl"
 msgstr "Nommez deux sites web que vous <strong>AIMEZ</strong>"
 
-#: views/projeckt_form.php:2665
+#: views/projeckt_form.php:2670
 msgid "form-design-like-info"
 msgstr ""
 "Ces sites n’ont pas à être reliés à votre champ d’activité. En ayant un "
-"aperçu au genre de site que vous aimez et amélioreriez, j’ai une meilleure "
-"compréhension de vos goûts et de vos attentes au niveau du design."
+"aperçu du genre de site que vous aimez et ce qui vous y amélioreriez, votre "
+"développeur aura une meilleure compréhension de vos goûts et de vos attentes "
+"au niveau du design."
 
-#: views/projeckt_form.php:2672
+#: views/projeckt_form.php:2677
 msgid "form-design-like-par-instruction"
 msgstr ""
 "Saisissez l’URL, une chose que vous aimez et une chose à améliorer pour "
 "chacun des sites identifiés:"
 
-#: views/projeckt_form.php:2806
+#: views/projeckt_form.php:2811
 msgid "form-design-dislike-info"
 msgstr ""
-"Ces exemples me permettent de savoir quoi ne pas inclure dans le vôtre. "
-"C’est encore une fois pour avoir une meilleure compréhension de vos "
-"préférences et vos attentes."
+"Ces exemples permettent de savoir quoi ne pas inclure dans le vôtre. C’est "
+"encore une fois pour avoir une meilleure compréhension de vos préférences et "
+"vos attentes."
 
-#: views/projeckt_form.php:2812
+#: views/projeckt_form.php:2817
 msgid "form-design-dislike-par-instruction"
 msgstr ""
 "Saisissez l’URL et une chose que vous n’aimez pas pour chacun des sites "
 "identifiés:"
 
-#: views/projeckt_form.php:2935
+#: views/projeckt_form.php:2940
 msgid "form-design-remark-info"
 msgstr ""
 "<strong>Exemple:</strong> image particulière, page d’accueil “splash”, "
 "couleur particulière, etc."
 
-#: views/projeckt_form.php:2944 views/projeckt_form.php:2945
+#: views/projeckt_form.php:2949 views/projeckt_form.php:2950
 msgid "rdo_remark_yes"
 msgstr "Oui"
 
-#: views/projeckt_form.php:2954 views/projeckt_form.php:2955
+#: views/projeckt_form.php:2959 views/projeckt_form.php:2960
 msgid "rdo_remark_no"
 msgstr "Non"
 
-#: views/projeckt_form.php:2997
+#: views/projeckt_form.php:3002
 msgid "form-technology-architecture-info"
 msgstr ""
 "Que vous vouliez ou non un site adaptatif bureau/mobile ou encore un site "
@@ -2103,41 +2102,41 @@ msgstr ""
 "restrictive. Par conséquent, cette phase requiert plus de temps à développer "
 "ce qui augmente donc le coût global du projet)</i>"
 
-#: views/projeckt_form.php:3004
+#: views/projeckt_form.php:3009
 msgid "form-technology-architecture-instruction"
 msgstr ""
 "Identifiez le type de navigateur ou terminal que votre site devrait être "
 "compatible."
 
-#: views/projeckt_form.php:3007 views/projeckt_form.php:3008
+#: views/projeckt_form.php:3012 views/projeckt_form.php:3013
 msgid "rdo_architecture_mobile"
 msgstr "Mobile seulement"
 
-#: views/projeckt_form.php:3011 views/projeckt_form.php:3012
+#: views/projeckt_form.php:3016 views/projeckt_form.php:3017
 msgid "rdo_architecture_desktop"
 msgstr "Bureau seulement"
 
-#: views/projeckt_form.php:3015 views/projeckt_form.php:3016
+#: views/projeckt_form.php:3020 views/projeckt_form.php:3021
 msgid "rdo_architecture_responsive"
 msgstr "Design Adaptatif (RWD -> "
 
-#: views/projeckt_form.php:3016
+#: views/projeckt_form.php:3021
 msgid "rdo_architecture_responsive_note"
 msgstr "Bureau et Mobile)"
 
-#: views/projeckt_form.php:3022 views/projeckt_form.php:3023
+#: views/projeckt_form.php:3027 views/projeckt_form.php:3028
 msgid "cbx_architecture_hd"
 msgstr "Support d’images en haute résolution"
 
-#: views/projeckt_form.php:3026 views/projeckt_form.php:3027
+#: views/projeckt_form.php:3031 views/projeckt_form.php:3032
 msgid "cbx_architecture_legacysupport"
 msgstr "Support pour ancien navigateur"
 
-#: views/projeckt_form.php:3027
+#: views/projeckt_form.php:3032
 msgid "cbx_architecture_legacysupport_note"
 msgstr "(ex. Microsoft Internet Explorer 6 - 9)"
 
-#: views/projeckt_form.php:3060
+#: views/projeckt_form.php:3065
 msgid "form-technology-accessibility-info"
 msgstr ""
 "Similaire à la question précédente, que vous vouliez ou non un site avec "
@@ -2149,193 +2148,189 @@ msgstr ""
 "limiter les effets négatifs sur les performances du site pour un utilisateur "
 "qui n’a pas la haute résolution disponible ou d’écran HD)"
 
-#: views/projeckt_form.php:3067
+#: views/projeckt_form.php:3072
 msgid "form-technology-accessibility-instruction"
 msgstr "Veuillez fournir des détails pour chacune de vos sélections:"
 
-#: views/projeckt_form.php:3070 views/projeckt_form.php:3071
+#: views/projeckt_form.php:3075 views/projeckt_form.php:3076
 msgid "cbx_accessibility_eyesight"
 msgstr "Vision restreinte"
 
-#: views/projeckt_form.php:3071
+#: views/projeckt_form.php:3076
 msgid "cbx_accessibility_eyesight_note"
 msgstr ""
 " (support pour logiciel de lecture d’écran ou ajustement du design pour de "
 "plus grosses polices)"
 
-#: views/projeckt_form.php:3074 views/projeckt_form.php:3075
+#: views/projeckt_form.php:3079 views/projeckt_form.php:3080
 msgid "cbx_accessibility_mobility"
 msgstr "Mobilité réduite"
 
-#: views/projeckt_form.php:3075
+#: views/projeckt_form.php:3080
 msgid "cbx_accessibility_mobility_note"
 msgstr ""
 " (support pour logiciel de navigation alternative ou raccourcis clavier)"
 
-#: views/projeckt_form.php:3078 views/projeckt_form.php:3079
+#: views/projeckt_form.php:3083 views/projeckt_form.php:3084
 msgid "cbx_accessibility_readinglevel"
 msgstr "Niveau de lecture réduit"
 
-#: views/projeckt_form.php:3107
+#: views/projeckt_form.php:3112
 msgid "form-technology-seo-ttl"
 msgstr ""
 "Optimisation des moteurs de recherche <sup><a id=\"ffn1\" href=\"#fn1\" "
 "class=\"footnote\">1</a></sup> (SEO)"
 
-#: views/projeckt_form.php:3112
+#: views/projeckt_form.php:3117
 msgid "form-technology-seo-info-1"
 msgstr ""
-"Mes techniques de conception sont conforme avec certaines conventions "
-"architecturales moderne. J’utilise également des technologies et outils de "
-"pointe pour travailler de façon sécuritaire, afin d’assurer une bonne "
-"qualité et optimiser ma productivité. <sup><a id=\"ffn9\" href=\"#fn9\" "
-"class=\"footnote\">9</a></sup> une bonne conception affecte positivement le "
-"rendement en SEO. Ces méthodologies représentent seulement une petite partie "
-"d'un processus optimale en optimisation des moteurs de recherche (SEO)."
+"Assurez-vous de choisir un développeur qui utilise les conventions de "
+"développement actuelles et les meilleures pratiques architecturales. Bien "
+"qu'une bonne architecture de site aient un impact positif sur les "
+"classements d'optimisation de moteur de recherche (SEO), ce n'est qu'une "
+"petite partie d'un processus de SEO optimal."
 
-#: views/projeckt_form.php:3113
+#: views/projeckt_form.php:3118
 msgid "form-technology-seo-info-2"
 msgstr ""
 "Les options ci-dessous ne représentent pas une liste exhaustive de toutes "
-"les pratiques de SEO disponibles. Elle représente seulement ceux que je suis "
-"en mesure de vous offrir. Si vous désirez plus d’options, nous pouvons vous "
-"mettre en contact avec des experts."
+"les pratiques de SEO disponibles. Elle représente seulement les plus commune."
 
-#: views/projeckt_form.php:3125
+#: views/projeckt_form.php:3130
 msgid "xxx_seo_tool"
 msgstr ""
 "Intégration du site dans un ou plusieurs systèmes de type <em>Outils "
 "Webmestres</em>"
 
-#: views/projeckt_form.php:3125
+#: views/projeckt_form.php:3130
 msgid "xxx_seo_tool_note"
 msgstr ""
 "incluant la gestion des fichiers \"<i>sitemaps</i>\" et \"<i>robots</i>\""
 
-#: views/projeckt_form.php:3129
+#: views/projeckt_form.php:3134
 msgid "form-technology-seo-stl-wmt"
 msgstr "Outils Webmestres disponnible"
 
-#: views/projeckt_form.php:3132 views/projeckt_form.php:3134
+#: views/projeckt_form.php:3137 views/projeckt_form.php:3139
 msgid "cbx_seo_tool_google"
 msgstr "Google Search Console"
 
-#: views/projeckt_form.php:3134
+#: views/projeckt_form.php:3139
 msgid "https://www.google.ca/webmasters/"
 msgstr "https://www.google.com/webmasters/?hl=fr"
 
-#: views/projeckt_form.php:3138 views/projeckt_form.php:3140
+#: views/projeckt_form.php:3143 views/projeckt_form.php:3145
 msgid "cbx_seo_tool_bing"
 msgstr "Bing Webmaster Tools"
 
-#: views/projeckt_form.php:3140
+#: views/projeckt_form.php:3145
 msgid "http://www.bing.com/toolbox/webmaster"
 msgstr ""
 
-#: views/projeckt_form.php:3144 views/projeckt_form.php:3146
+#: views/projeckt_form.php:3149 views/projeckt_form.php:3151
 msgid "cbx_seo_tool_yandex"
 msgstr "Yandex Webmaster"
 
-#: views/projeckt_form.php:3146
+#: views/projeckt_form.php:3151
 msgid "https://webmaster.yandex.com"
 msgstr ""
 
-#: views/projeckt_form.php:3154
+#: views/projeckt_form.php:3159
 msgid "cbx_seo_url_optimization"
 msgstr "Optimisation et canonisation des URL"
 
-#: views/projeckt_form.php:3154
+#: views/projeckt_form.php:3159
 msgid "cbx_seo_url_optimization_note"
 msgstr "commun avec l’utilisation d’un système de gestion de contenu"
 
-#: views/projeckt_form.php:3158
+#: views/projeckt_form.php:3163
 msgid "cbx_seo_structured_data"
 msgstr "\"<i>Rich Snippets</i>\" et \"<i>Structured Data</i>\""
 
-#: views/projeckt_form.php:3158
+#: views/projeckt_form.php:3163
 msgid "cbx_seo_structured_data_note"
 msgstr "schema.org, datavocabulary.org, microformats.org"
 
-#: views/projeckt_form.php:3162
+#: views/projeckt_form.php:3167
 msgid "cbx_seo_localization"
 msgstr "Cibler plusieurs langues"
 
-#: views/projeckt_form.php:3162
+#: views/projeckt_form.php:3167
 msgid "cbx_seo_localization_note"
 msgstr "localisation"
 
-#: views/projeckt_form.php:3166
+#: views/projeckt_form.php:3171
 msgid "cbx_seo_mobile_meta"
 msgstr "Configuration pour les <em>site mobile</em> avec sous-domaines"
 
-#: views/projeckt_form.php:3166
+#: views/projeckt_form.php:3171
 msgid "cbx_seo_mobile_meta_note"
 msgstr "ex. http://www<strong>.m</strong>.domain.com"
 
-#: views/projeckt_form.php:3170
+#: views/projeckt_form.php:3175
 msgid "xxx_seo_opengraph"
 msgstr ""
 "Intégration des balises meta \"<i>Open Graph</i>\" pour réseaux sociaux"
 
-#: views/projeckt_form.php:3170
+#: views/projeckt_form.php:3175
 msgid "xxx_seo_opengraph_note"
 msgstr "configuration au niveau des meta tags"
 
-#: views/projeckt_form.php:3174
+#: views/projeckt_form.php:3179
 msgid "form-technology-seo-stl-opengraph"
 msgstr "réseaux sociaux"
 
-#: views/projeckt_form.php:3178 views/projeckt_form.php:3179
+#: views/projeckt_form.php:3183 views/projeckt_form.php:3184
 msgid "cbx_seo_opengraph_fb"
 msgstr "Facebook"
 
-#: views/projeckt_form.php:3179
+#: views/projeckt_form.php:3184
 msgid "https://www.facebook.com"
 msgstr ""
 
-#: views/projeckt_form.php:3184 views/projeckt_form.php:3185
+#: views/projeckt_form.php:3189 views/projeckt_form.php:3190
 msgid "cbx_seo_opengraph_tw"
 msgstr "Twitter"
 
-#: views/projeckt_form.php:3185
+#: views/projeckt_form.php:3190
 msgid "https://twitter.com"
 msgstr ""
 
-#: views/projeckt_form.php:3190 views/projeckt_form.php:3191
+#: views/projeckt_form.php:3195 views/projeckt_form.php:3196
 msgid "cbx_seo_opengraph_gplus"
 msgstr "Google plus"
 
-#: views/projeckt_form.php:3191
+#: views/projeckt_form.php:3196
 msgid "https://plus.google.com"
 msgstr ""
 
-#: views/projeckt_form.php:3196 views/projeckt_form.php:3197
+#: views/projeckt_form.php:3201 views/projeckt_form.php:3202
 msgid "cbx_seo_opengraph_linkedin"
 msgstr "LinkedIn"
 
-#: views/projeckt_form.php:3197
+#: views/projeckt_form.php:3202
 msgid "https://ca.linkedin.com/nhome/"
 msgstr ""
 
-#: views/projeckt_form.php:3202 views/projeckt_form.php:3203
+#: views/projeckt_form.php:3207 views/projeckt_form.php:3208
 msgid "cbx_seo_opengraph_pinterest"
 msgstr "Pinterest"
 
-#: views/projeckt_form.php:3203
+#: views/projeckt_form.php:3208
 msgid "https://www.pinterest.com"
 msgstr ""
 
-#: views/projeckt_form.php:3211
+#: views/projeckt_form.php:3216
 msgid "cbx_seo_analytic"
 msgstr ""
 "Création, intégration et configuration des fonctionnalités de <i>Google "
 "Analytics</i>"
 
-#: views/projeckt_form.php:3211
+#: views/projeckt_form.php:3216
 msgid "cbx_seo_analytic_note"
 msgstr "&nbsp;"
 
-#: views/projeckt_form.php:3234
+#: views/projeckt_form.php:3239
 msgid "form-technology-domain-info"
 msgstr ""
 "Indiquez tous les noms de domaines et sous-domaine pour le site. Si vous "
@@ -2343,51 +2338,49 @@ msgstr ""
 "celui que vous désirez utiliser. -> vous pouvez facilement vérifier s’il est "
 "disponible sur ce site:"
 
-#: views/projeckt_form.php:3234
+#: views/projeckt_form.php:3239
 msgid "https://www.namecheap.com"
 msgstr ""
 
-#: views/projeckt_form.php:3234
+#: views/projeckt_form.php:3239
 msgid "Namecheap.com"
 msgstr ""
 
-#: views/projeckt_form.php:3313
+#: views/projeckt_form.php:3318
 msgid "form-technology-hosting-info"
 msgstr ""
-"Je ne suis pas une entreprise d’hébergement web. Par contre, je peux vous "
-"aider avec l’hébergement de votre site web. Je fais affaire et vous "
-"recommande \"<i><a href=\"https://asmallorange.com\" target=\"_BLANK\">A "
-"Small Orange</a></i>\", une entreprise spécialisée en service d’hébergement. "
-"Sinon, je suis en mesure en mesure d’installer et configurer votre site sur "
-"le service d’hébergement de votre choix."
+"Projecklist fais affaire et vous recommande \"<i><a href=\"https://"
+"asmallorange.com\" target=\"_BLANK\">A Small Orange</a></i>\", une "
+"entreprise spécialisée en service d’hébergement. Sinon, votre développeur "
+"sera en mesure d’installer et configurer votre site sur le service "
+"d’hébergement de votre choix."
 
-#: views/projeckt_form.php:3321 views/projeckt_form.php:3322
+#: views/projeckt_form.php:3326 views/projeckt_form.php:3327
 msgid "rdo_requirehosting_yes"
 msgstr "Oui, j’ai besoin d’un service d’hébergement."
 
-#: views/projeckt_form.php:3325 views/projeckt_form.php:3326
+#: views/projeckt_form.php:3330 views/projeckt_form.php:3331
 msgid "rdo_requirehosting_no"
 msgstr "Non, j’ai accès à un service d’hébergement."
 
-#: views/projeckt_form.php:3350
+#: views/projeckt_form.php:3355
 msgid "form-technology-email-info"
 msgstr ""
 "Si vous avez besoin d'une adresse électronique correspondant avec votre nom "
-"de domaine, je peux aider avec la mise en place d'un compte <a href="
-"\"https://www.google.com/intx/fr/work/apps/business/\" target=\"_BLANK"
-"\">Google Apps for Work</a>. C’est un moyen économique de synchroniser vos "
-"courriels dans le nuage et de le rendre facilement accessible à partir de "
-"tous vos appareils (ordinateur ou mobiles)."
+"de domaine, ouvrez un compte <a href=\"https://www.google.com/intx/fr/work/"
+"apps/business/\" target=\"_BLANK\">Google Apps for Work</a>. C’est un moyen "
+"économique de synchroniser vos courriels dans le nuage et de le rendre "
+"facilement accessible à partir de tous vos appareils (ordinateur ou mobiles)."
 
-#: views/projeckt_form.php:3357 views/projeckt_form.php:3358
+#: views/projeckt_form.php:3362 views/projeckt_form.php:3363
 msgid "rdo_domain_mailmatch_yes"
 msgstr "Oui, je veux les services de <i>Google Apps for Work</i>"
 
-#: views/projeckt_form.php:3361 views/projeckt_form.php:3362
+#: views/projeckt_form.php:3366 views/projeckt_form.php:3367
 msgid "rdo_domain_mailmatch_no"
 msgstr "Non"
 
-#: views/projeckt_form.php:3386
+#: views/projeckt_form.php:3391
 msgid "form-technology-maintenance-info"
 msgstr ""
 "Par exemple, si vous désirez un calendrier d’événement personnalisé ou un "
@@ -2396,7 +2389,7 @@ msgstr ""
 "a les ressources nécessaires pour ce besoin? (avez-vous besoin d’une "
 "plateforme de gestion de contenu? CMS: exemple -> Wordpress)"
 
-#: views/projeckt_form.php:3435
+#: views/projeckt_form.php:3440
 msgid "form-other-future-info"
 msgstr ""
 "Soyez le plus spécifique et le plus clairvoyant possible. Exemple: pages "
@@ -2406,25 +2399,25 @@ msgstr ""
 "réduira les couts développement au moment de faire l’intégration de ces "
 "nouveaux éléments."
 
-#: views/projeckt_form.php:3460
+#: views/projeckt_form.php:3465
 msgid "form-other-comment-info"
 msgstr ""
 "Partagez toute autre information pertinente pour la réalisation de votre "
 "site."
 
-#: views/projeckt_form.php:3492
+#: views/projeckt_form.php:3497
 msgid "form-btn-save"
 msgstr "Sauvegarder"
 
-#: views/projeckt_form.php:3494
+#: views/projeckt_form.php:3499
 msgid "form-btn-submit"
 msgstr "Soumettre"
 
-#: views/projeckt_form.php:3495
+#: views/projeckt_form.php:3500
 msgid "form-btn-reset"
 msgstr "Réinitialiser"
 
-#: views/projeckt_form.php:3521
+#: views/projeckt_form.php:3526
 msgid "form-footnote-fn1"
 msgstr ""
 "Bien que fortement recommandée dans la plupart des cas, l'intégration de "
@@ -2441,7 +2434,7 @@ msgstr ""
 "a vis ses concurrents augmentant ainsi son classement sur les moteurs de "
 "recherche."
 
-#: views/projeckt_form.php:3522
+#: views/projeckt_form.php:3527
 msgid "form-footnote-fn2"
 msgstr ""
 "Les outils pour les webmestres (ou WMT ) sont des outils populaires en "
@@ -2450,7 +2443,7 @@ msgstr ""
 "visualiser et d'améliorer la visibilité de leurs sites web sur différents "
 "moteurs de recherche."
 
-#: views/projeckt_form.php:3523
+#: views/projeckt_form.php:3528
 msgid "form-footnote-fn3"
 msgstr ""
 "En recherche sur le web et en référencement, la canonisation des URL est "
@@ -2459,7 +2452,7 @@ msgstr ""
 "recherche - en particulier lorsqu’il s’agit de déterminer l'URL qui doit "
 "être représentée dans les résultats de recherche."
 
-#: views/projeckt_form.php:3524
+#: views/projeckt_form.php:3529
 msgid "form-footnote-fn4"
 msgstr ""
 "Cette approche permet aux moteurs de recherche de traiter les informations "
@@ -2472,22 +2465,21 @@ msgstr ""
 "plus riche pour les utilisateurs. Cette fonction contribue à un meilleur "
 "référencement (SEO)."
 
-#: views/projeckt_form.php:3525
+#: views/projeckt_form.php:3530
 msgid "form-footnote-fn5"
 msgstr ""
 "La <i>localisation</i> diffère de l'activité de traduction car elle implique "
 "une étude approfondie de la culture cible afin d’adapter le contenu du site "
 "correctement aux besoins locaux. (format de la date, de l'heure, la monnaie, "
-"les vidéos, les image, la langage, etc.) Le balisage HTML lui-même doit être "
-"modifié avec des étiquettes spécifiques."
+"les vidéos, les image, la langage, etc.)"
 
-#: views/projeckt_form.php:3526
+#: views/projeckt_form.php:3531
 msgid "form-footnote-fn6"
 msgstr ""
-"Google a récemment annoncé que les <i>sites mobiles</i> se classent mieux "
-"sur les recherches Google effectuées à partir d'un appareil mobile."
+"Google a annoncé que les <i>sites mobiles</i> se classent mieux sur les "
+"recherches Google effectuées à partir d'un appareil mobile."
 
-#: views/projeckt_form.php:3527
+#: views/projeckt_form.php:3532
 msgid "form-footnote-fn7"
 msgstr ""
 "<i>Open Graph</i> est une collection des balises HTML avancées qui ajoutent "
@@ -2497,16 +2489,10 @@ msgstr ""
 "dédié. (ex. auteur, images, description, dates de publication, liens "
 "internet , etc.)"
 
-#: views/projeckt_form.php:3528
+#: views/projeckt_form.php:3533
 msgid "form-footnote-fn8"
 msgstr ""
 "Recueillir des informations utiles à propos de l’achalandage de votre site."
-
-#: views/projeckt_form.php:3529
-msgid "form-footnote-fn9"
-msgstr ""
-"Exemple d’outils: contrôle de version GIT, SASS, <i>auto-préfixers</i>, "
-"logiciel pour fichier vectoriel, etc."
 
 #: views/register_form.php:20
 msgid "placeholder=\"First Name\""
@@ -2526,7 +2512,7 @@ msgstr ""
 
 #: views/registered.php:20
 msgid "Resend"
-msgstr "Renvoyer"
+msgstr "Resoumettre"
 
 #~ msgid "to be able to save your progress or create multiple projects."
 #~ msgstr "pour pouvoir enregistrer votre progrès ou créer plusieurs projets."

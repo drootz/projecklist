@@ -11,7 +11,7 @@
             <li class="js-menu-float js-menu-save" title="<?= _('Save') ?>"><span class="fa fa-lg fa-floppy-o"></span></li> <!-- Save -->
             <?php endif ?>
             <!-- DEBUG -->
-            <li id="f-debug-fill-form" class="js-menu-float" title="<?= _('Debug') ?>"><span class="fa fa-lg fa-bug"></span></li> <!-- Save -->
+            <!-- <li id="f-debug-fill-form" class="js-menu-float" title="<?php // _('Debug') ?>"><span class="fa fa-lg fa-bug"></span></li> -->
         </ul>
     </div>
 </div>
@@ -99,7 +99,12 @@
 
                         <div class="m-block-info">
                             <blockquote class="slide-left">
+                                <?php if (empty($_SESSION["id"])): ?>
                                 <p><?= _( 'form-planning-contact-info' ); ?></p>
+                                <?php endif ?>
+                                <?php if (!empty($_SESSION["id"])): ?>
+                                <p><?= _( 'form-planning-contact-info-alt' ); ?></p>
+                                <?php endif ?>
                             </blockquote>
                         </div>
                     </div>
@@ -3526,7 +3531,7 @@
                             <li id="fn6"><?= _( 'form-footnote-fn6' ); ?> <a href="#ffn6">&#8617;</a></li>
                             <li id="fn7"><?= _( 'form-footnote-fn7' ); ?> <a href="#ffn7">&#8617;</a></li>
                             <li id="fn8"><?= _( 'form-footnote-fn8' ); ?> <a href="#ffn8">&#8617;</a></li>
-                            <li id="fn9"><?= _( 'form-footnote-fn9' ); ?> <a href="#ffn9">&#8617;</a></li>
+                            <!-- <li id="fn9"><?php // _( 'form-footnote-fn9' ); ?> <a href="#ffn9">&#8617;</a></li> -->
                         </ol>
                     </div>
 

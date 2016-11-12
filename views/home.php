@@ -27,7 +27,7 @@
                                     <div class="l-blocktext-wrapper m-hero-badge js-badge">
                                         <div class="m-text-wrap">
                                             <div class="m-badge-description"><?= _( 'hero-pra-action-description' ); ?></div>
-                                            <a href="#" target="_BLANK"><div class="button m-badge-example"><?= _( 'hero-pra-action-button' ); ?></div></a>
+                                            <a href="projeckt.php"><div class="button m-badge-example"><?= _( 'hero-pra-action-button' ); ?></div></a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,6 +125,7 @@
                         <p><?= _( 'form-intro-pra-confirm' ); ?></p>
                         <p><?= _( 'form-intro-pra-article' ); ?></p>
                         <p><?= _( 'form-intro-pra-end' ); ?></p>
+                        <p><?= _( '-<br />The Projecklist Team' ); ?></p>
 
                     </div>
 
@@ -135,7 +136,8 @@
                 <hr class="th-hr-dark" />
 
                 <blockquote class="l-bq-header">
-                    <p><?= _( 'form-intro-pra-privacy' ); ?></p>
+                    <p style="text-align: center;"><?= _("<a href=\"register.php\">Register</a> to be able to save your progress or create multiple projects."); ?></p>
+                    <p style="text-align: center;"><?= _('Or '); ?><a href="projeckt.php"><?= _( 'hero-pra-action-button' ); ?></a>
                 </blockquote>
             </div>
         </section>
