@@ -60,14 +60,14 @@
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <script src="https://use.fontawesome.com/57fd7ffc48.js"></script>
+    <script src="https://use.fontawesome.com/57fd7ffc48.js" async></script>
     <link rel="stylesheet" href="css/page.css">
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="css/style-ie.css"/>
     <![endif]-->    
 
     <!-- DEBUG css file -> to be deleted from production -->
-    <link rel="stylesheet" href="css/ipad_dev.css">
+    <!-- <link rel="stylesheet" href="css/ipad_dev.css"> -->
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
