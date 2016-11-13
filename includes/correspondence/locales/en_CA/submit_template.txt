@@ -7,7 +7,7 @@ Hi {USERNAME},
 
 Your project "{PROJECTNAME}"{PROJECTREF} is attached to this email in two different file formats.
 
-Markdown (.md) files are new to you? Don't worry, know that they can be opened and edited in any text editors Markdown is a simple markup language designed to convert plain text into HTML. It is widely used for online writing/publishing. Text editors supporting markdown can export documents in multiple other formats like PDF or Microsoft Word. If you are curious, here are two links to free Markdown online editors. Try copying your project in them and see what happens!
+Markdown (.md) files are new to you? Don't worry, know that they can be opened and edited in any text editors Markdown is a simple markup language designed to convert plain text into HTML. It is widely used for online writing/publishing. Text editors supporting markdown can export documents in multiple other formats like PDF or Microsoft Word. If you are curious, here are two links to free Markdown online editors. If you are curious, here is a link to a free online editor. Copy and paste your project in it and see what happens!
 
 - https://stackedit.io
 - http://dillinger.io

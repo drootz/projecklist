@@ -62,8 +62,8 @@
                             </div>
 
                             <div class="col-12 m-copyright">
-                                <p><?= _( 'footer-copy' ); ?> &copy; <?= date("Y")?></p>
-                                <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a>
+                                <p><?= _( 'footer-copy' ); ?><br/><small><?= date("Y")?> &copy; <a href="mailto:&#109;ailt&#111;&#58;%6Da%69l&#37;74o&#46;dan&#105;e%6&#67;%72acin&#37;65&#64;%&#54;7%6Da&#105;l&#46;%6&#51;om">Daniel Racine</a>, All Rights Reserved</small></p>
+                                <!-- <a href="humans.txt" target="_BLANK"><img src="img/humans/humanstxt-isolated-orange.gif" alt="humans.org"></a> -->
                             </div>
 
                         </div> <!-- row END -->

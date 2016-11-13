@@ -27,7 +27,7 @@
                 <?php if (!empty($pid)): ?>
                 <div class="m-refid"><?= _('Project ID: ') ?><?= $ref ?></div>
                 <?php endif ?>
-                <?php if (empty($pid)): ?>
+                <?php if (empty($pid) && !isset($_SESSION['id'])): ?>
                 <div class="m-refid error"><?= _("<a href=\"register.php\">Register</a> to be able to save your progress or create multiple projects.") ?></div>
                 <div class="m-refid"><?= _('Note that the project will be sent to the <strong>Primary Contact</strong> by email upon submission.') ?></div>
                 <?php endif ?>
@@ -3496,7 +3496,9 @@
                         <?php if (!empty($_SESSION["id"])): ?>
                         <button class="button" type="submit" value="save" id="f-save" name="submit"><?= _( 'form-btn-save' ); ?></button>
                         <?php endif ?>
+                        <?php if (empty($_SESSION["id"])): ?>
                         <button class="button" type="submit" value="submit" id="f-submit" name="submit"><?= _( 'form-btn-submit' ); ?></button>
+                        <?php endif ?>
                         <button class="button" type="reset" value="reset" id="f-reset" name="reset"><?= _( 'form-btn-reset' ); ?></button>
                     </div>
 

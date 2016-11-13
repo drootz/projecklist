@@ -43,6 +43,8 @@ Standards: HTML5/CSS3, PHP, JS
 ## Features
 
 - Responsive Form (RWD)
+- Account Registration
+- Save projects > Submit by email > delete.
 - User's automatic L18N locale detection -> Fallback to en-CA if not supported
 - L18N current locale support:
 	- `en-CA -> DONE`
@@ -58,10 +60,10 @@ YES please
 
 - Implementing new locales -> *localization*
 - Additional content -> *question fields*
-- Saving progress function
-- Any other content or layout improvements that could help users of this form.
+- Attachment options (ex. PDF, MSWord, etc.)
 
-> Make sure to create and change the [reCaptcha](https://www.google.com/recaptcha) site key for your own usage.
+> Ensure to create and change the [reCaptcha](https://www.google.com/recaptcha) site key for your own usage.
+> Ensure to create a config.json in the root directory to link to your database. Configuration files in "_doc" directory
 
 ## Content and Dependencies
 
@@ -74,7 +76,7 @@ YES please
 
 - [Gettext](http://www.gnu.org/software/gettext/), Required
 - [Poedit](https://poedit.net), Optional
-- [Postfix](http://www.postfix.org), Optional -> *for local development only*
+- PHP 5.5+
 
 ### Components
 
@@ -84,6 +86,7 @@ YES please
 - [jQuery Validation Plugin](http://jqueryvalidation.org)
 - [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 - [Google Fonts](https://www.google.com/fonts)
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 ### Snippets
 Implementation of existing solutions to common problems found online. Attribution notices are embeded in the source code next to their implementation location.
@@ -91,11 +94,7 @@ Implementation of existing solutions to common problems found online. Attributio
 ## License
 
 The MIT License
-Copyright (c) 2015 Daniel Racine
-
-## Who is me?
-
-I code for fun and love it. I find it relaxing, isn't it? At the time of this writing I have only a couple months of programming experience. I qualify myself a self taught hobbyist in this field of expertise... In order of preference, I am actively learning with: trials and error; online reference documentation sites; reading books and some online educational resources. I am not a professional programmer or developper and I have very limited knowledge in programming. For me, this project is a useful way to explore Github functionalities, responsive HTML forms, JS, PHP and the L18N process (localisation) all at once. On my day job, I lead people and solve problems in a big corporation... 
+Copyright (c) 2016 Daniel Racine
 
 
 

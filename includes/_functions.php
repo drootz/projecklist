@@ -580,7 +580,7 @@
             $hours_setID = $matches[0];
 
             // If hours range value is set
-            if ( $posts['hra_hours_'. $hours_setID ] !== "not specified" )
+            if ( $posts['hra_hours_'. $hours_setID ] !== "n/a" )
             {
                 // If the CLOSED checkbox is checked
                 if ( isset( $posts['cbx_hours_closed_'. $hours_setID] ) )
@@ -616,14 +616,14 @@
             // If hours range value is NOT set
             else
             {
-                $return_string = "not specified";
+                $return_string = "n/a";
             }
 
             return $return_string;
         }
         else 
         {
-          return "not specified";  
+          return "n/a";  
         }
     }
 
@@ -634,12 +634,12 @@
         $_postsLabel = [];
         $_postsValue = [];
 
-        // Replace NULL values with "not specified"
+        // Replace NULL values with "n/a"
         foreach ($_posts as $key => $value)
         {
             if (!$value)
             {
-                $_posts[$key] = "not specified";
+                $_posts[$key] = "n/a";
             }
         }
 
@@ -657,7 +657,7 @@
                              $key != "id" &&
                              $key != "user_id" &&
                              $key != "lastmodified_datetime" &&
-                             // $value != "not specified" &&
+                             // $value != "n/a" &&
                              $value != NULL; 
 
             if ($isOutputField)
